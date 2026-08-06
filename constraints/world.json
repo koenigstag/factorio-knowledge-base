@@ -1,3 +1,4 @@
 {
-  "chunk_size_tiles": 32
+  "chunk_size_tiles": 32,
+  "map_coordinate_max_tiles": 1000000
 }
