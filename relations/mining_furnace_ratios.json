@@ -1,0 +1,11 @@
+{
+  "energy_required_3.2": {
+    "recipes": ["copper-plate", "iron-plate", "stone-brick"],
+    "ore_mining_time": 1,
+    "drills_per_furnace": {
+      "stone-furnace": { "electric-mining-drill": 0.625, "burner-mining-drill": 1.25, "big-mining-drill": 0.125 },
+      "steel-furnace": { "electric-mining-drill": 1.25, "burner-mining-drill": 2.5, "big-mining-drill": 0.25 },
+      "electric-furnace": { "electric-mining-drill": 1.25, "burner-mining-drill": 2.5, "big-mining-drill": 0.25 }
+    }
+  }
+}

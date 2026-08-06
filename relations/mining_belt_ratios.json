@@ -1,0 +1,32 @@
+{
+  "mining_time_1": {
+    "resources": ["iron-ore", "copper-ore", "coal", "stone", "calcite"],
+    "drills_per_belt": {
+      "electric-mining-drill": { "transport-belt": 30, "fast-transport-belt": 60, "express-transport-belt": 90, "turbo-transport-belt": 120 },
+      "burner-mining-drill": { "transport-belt": 60, "fast-transport-belt": 120, "express-transport-belt": 180, "turbo-transport-belt": 240 },
+      "big-mining-drill": { "transport-belt": 6, "fast-transport-belt": 12, "express-transport-belt": 18, "turbo-transport-belt": 24 }
+    }
+  },
+  "mining_time_0.5": {
+    "resources": ["scrap"],
+    "drills_per_belt": {
+      "electric-mining-drill": { "transport-belt": 15, "fast-transport-belt": 30, "express-transport-belt": 45, "turbo-transport-belt": 60 },
+      "burner-mining-drill": { "transport-belt": 30, "fast-transport-belt": 60, "express-transport-belt": 90, "turbo-transport-belt": 120 },
+      "big-mining-drill": { "transport-belt": 3, "fast-transport-belt": 6, "express-transport-belt": 9, "turbo-transport-belt": 12 }
+    }
+  },
+  "mining_time_2": {
+    "resources": ["uranium-ore"],
+    "drills_per_belt": {
+      "electric-mining-drill": { "transport-belt": 60, "fast-transport-belt": 120, "express-transport-belt": 180, "turbo-transport-belt": 240 },
+      "burner-mining-drill": { "transport-belt": 120, "fast-transport-belt": 240, "express-transport-belt": 360, "turbo-transport-belt": 480 },
+      "big-mining-drill": { "transport-belt": 12, "fast-transport-belt": 24, "express-transport-belt": 36, "turbo-transport-belt": 48 }
+    }
+  },
+  "mining_time_5": {
+    "resources": ["tungsten-ore"],
+    "drills_per_belt": {
+      "big-mining-drill": { "transport-belt": 30, "fast-transport-belt": 60, "express-transport-belt": 90, "turbo-transport-belt": 120 }
+    }
+  }
+}
