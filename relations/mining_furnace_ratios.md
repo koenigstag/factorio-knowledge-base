@@ -20,20 +20,34 @@ Formula: furnace ore-consumption rate (`production_rate(crafting_speed,
 
 ## energy_required_3.2 (recipes: copper-plate, iron-plate, stone-brick; ore_mining_time: 1)
 
+`drills_per_furnace` (decimal) and `drills_per_furnace_ratio`
+(simplified integer `drills:furnaces`, via Python's
+`fractions.Fraction` — not a new derivation, just a different
+notation of the same value) both live in `mining_furnace_ratios.json`:
+
 | furnace | electric-mining-drill | burner-mining-drill | big-mining-drill |
 |---|---|---|---|
-| stone-furnace | 0.625 | 1.25 | 0.125 |
-| steel-furnace | 1.25 | 2.5 | 0.25 |
-| electric-furnace | 1.25 | 2.5 | 0.25 |
+| stone-furnace | 0.625 (5:8) | 1.25 (5:4) | 0.125 (1:8) |
+| steel-furnace | 1.25 (5:4) | 2.5 (5:2) | 0.25 (1:4) |
+| electric-furnace | 1.25 (5:4) | 2.5 (5:2) | 0.25 (1:4) |
 
 `steel-furnace` and `electric-furnace` match row for row — same
 reason as in `smelting_ratios.md`: both have `crafting_speed=2`.
 
 **Reading a fractional drill count**: e.g. 1.25 `electric-mining-drill`
-per `steel-furnace` means 4 drills feed exactly 5 furnaces (1.25 × 4 =
-5), not that a single furnace needs a fraction of a drill running.
+per `steel-furnace` (ratio 5:4) means 4 drills feed exactly 5 furnaces,
+not that a single furnace needs a fraction of a drill running — this
+is also why the integer-ratio form is often more directly actionable
+for laying out a blueprint than the per-unit decimal.
+
+**Community cross-check**: `steel-furnace`/`electric-mining-drill` =
+5:4 matches an independent community-published ratio exactly (see
+`examples/full_iron_plate_chain.md`'s cross-check section for the
+source and caveats — ore patch depletion and research/module levels
+drift this from the unmodified baseline in a real base).
 
 All 9 values verified by actually running the formula against the
-real datapack values.
+real datapack values; the 9 ratio strings via `fractions.Fraction`,
+not by hand.
 
 Verified: 2026-08-06

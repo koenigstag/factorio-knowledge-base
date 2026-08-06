@@ -6,6 +6,11 @@
       "stone-furnace": { "electric-mining-drill": 0.625, "burner-mining-drill": 1.25, "big-mining-drill": 0.125 },
       "steel-furnace": { "electric-mining-drill": 1.25, "burner-mining-drill": 2.5, "big-mining-drill": 0.25 },
       "electric-furnace": { "electric-mining-drill": 1.25, "burner-mining-drill": 2.5, "big-mining-drill": 0.25 }
+    },
+    "drills_per_furnace_ratio": {
+      "stone-furnace": { "electric-mining-drill": "5:8", "burner-mining-drill": "5:4", "big-mining-drill": "1:8" },
+      "steel-furnace": { "electric-mining-drill": "5:4", "burner-mining-drill": "5:2", "big-mining-drill": "1:4" },
+      "electric-furnace": { "electric-mining-drill": "5:4", "burner-mining-drill": "5:2", "big-mining-drill": "1:4" }
     }
   }
 }
