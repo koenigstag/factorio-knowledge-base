@@ -8,7 +8,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 ## Key principle
 
-**Formula over constant.** No numeric rule (e.g. "24 steel furnaces saturate a yellow belt") is stored as a bare number. It's built from raw sourced data (`datapacks/`, `constraints/`) and, once available, a derivation function (`formulas/`) producing a checkable result. Every entry in `datapacks/` and `constraints/` carries a `source_url` and `verified_date` — see [CLAUDE.md](CLAUDE.md) for the sourcing rule.
+**Formula over constant.** No numeric rule (e.g. "24 steel furnaces saturate a yellow belt") is stored as a bare number. It's built from raw sourced data (`datapacks/`, `constraints/`) and, once available, a derivation function (`formulas/`) producing a checkable result. Every fact is sourced, but not the same way everywhere — `datapacks/dump/` provenance lives in a shared manifest, `constraints/` splits bare values from their sourcing into a paired file — see [CLAUDE.md](CLAUDE.md) for the exact convention per domain.
 
 ## Repository layout
 

@@ -1,14 +1,3 @@
 {
-  "domain": "constraints",
-  "topic": "world grid",
-  "entries": [
-    {
-      "name": "chunk_size_tiles",
-      "value": 32,
-      "unit": "tiles (square)",
-      "description": "Size of a single map chunk - the engine's world-generation and alignment unit.",
-      "source_url": "https://wiki.factorio.com/Map_structure",
-      "verified_date": "2026-08-06"
-    }
-  ]
+  "chunk_size_tiles": 32
 }

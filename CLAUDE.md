@@ -14,16 +14,20 @@ factories.
 
 ## Hard rules
 
-1. **Never add a numeric fact without a source.** Every entry in
-   `constraints/` must include `source_url` and `verified_date`.
-   Entries under `datapacks/dump/<mod-set>/` get their provenance from
-   the shared `datapacks/dump/<mod-set>/source.json` manifest instead
-   of a per-file field — see rule 5. A bare remembered number is
-   rejected — this
-   project already caught an error this way once: an early pass cited
-   rail turn radius as 10 tiles from an unreliable search snippet; the
-   actual sourced value (Friday Facts #377) is 11 tiles pre-2.0 / 13
-   tiles in 2.0.
+1. **Never add a numeric fact without a source.** In `constraints/`,
+   the bare value lives in `<topic>.json` (no source fields — keep it
+   lean so an LLM can query the fact without loading prose), and its
+   sourcing/history/caveats live in a paired `<topic>.md` of the same
+   basename (`Source:`/`Verified:` per value, plus whatever narrative
+   context applies — e.g. `rails.json`'s `curve_radius_tiles` is
+   explained in `rails.md`). The pairing is by filename convention,
+   not an explicit cross-reference field. Entries under
+   `datapacks/dump/<mod-set>/` get their provenance from the shared
+   `datapacks/dump/<mod-set>/source.json` manifest instead — see rule
+   5. A bare remembered number is rejected — this project already
+   caught an error this way once: an early pass cited rail turn radius
+   as 10 tiles from an unreliable search snippet; the actual sourced
+   value (Friday Facts #377) is 11 tiles pre-2.0 / 13 tiles in 2.0.
 
 2. **Distinguish `constraints/` from `datapacks/`.** A constraint is a
    hard engine limit that cannot be recalculated differently (e.g.
@@ -61,7 +65,7 @@ factories.
 
 ```
 datapacks/dump/vanilla/   data.raw extract, base+DLC, one file per prototype — provenance in source.json
-constraints/               hard engine limits — sourced, cited per entry
+constraints/               hard engine limits — <topic>.json (bare values) + <topic>.md (sourcing/history)
 glossary/                  canonical/ (established terms) vs invented/ (ours)
 ```
 

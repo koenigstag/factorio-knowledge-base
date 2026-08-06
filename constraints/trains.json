@@ -1,15 +1,3 @@
 {
-  "domain": "constraints",
-  "topic": "train loading",
-  "entries": [
-    {
-      "name": "max_inserters_per_wagon",
-      "value": 12,
-      "unit": "inserters",
-      "description": "Maximum number of inserters that can access a single cargo wagon, both sides combined.",
-      "source_url": "https://wiki.factorio.com/Cargo_wagon",
-      "verified_date": "2026-08-06",
-      "notes": "A Steam forum thread claims up to 24 using long-handed inserters in a double row; not confirmed by the wiki page itself, treat as unverified."
-    }
-  ]
+  "max_inserters_per_wagon": 12
 }

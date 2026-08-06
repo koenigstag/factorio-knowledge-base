@@ -1,24 +1,4 @@
 {
-  "domain": "constraints",
-  "topic": "rail geometry",
-  "entries": [
-    {
-      "name": "curve_radius_tiles",
-      "value": 13,
-      "unit": "tiles",
-      "game_version": "2.0",
-      "description": "Minimum rail turning radius.",
-      "source_url": "https://factorio.com/blog/post/fff-377",
-      "verified_date": "2026-08-06",
-      "notes": "Was 11 tiles before 2.0. 1.1 and 2.0 rails are not compatible/mixable."
-    },
-    {
-      "name": "track_width_tiles",
-      "value": 2,
-      "unit": "tiles",
-      "description": "Width of a single rail track.",
-      "source_url": "https://wiki.factorio.com/Rail",
-      "verified_date": "2026-08-06"
-    }
-  ]
+  "curve_radius_tiles": 13,
+  "track_width_tiles": 2
 }
