@@ -1,0 +1,9 @@
+{
+  "max_speed_tiles_per_tick": {
+    "coal": 1.2,
+    "wood": 1.2,
+    "solid-fuel": 1.26,
+    "rocket-fuel": 1.38,
+    "nuclear-fuel": 1.38
+  }
+}
