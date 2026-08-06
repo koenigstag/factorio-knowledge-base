@@ -1,0 +1,20 @@
+{
+  "type": "reactor",
+  "name": "nuclear-reactor",
+  "consumption": "40MW",
+  "neighbour_bonus": 1,
+  "collision_box": [
+    [
+      -2.2,
+      -2.2
+    ],
+    [
+      2.2,
+      2.2
+    ]
+  ],
+  "tile_box": [
+    5,
+    5
+  ]
+}
