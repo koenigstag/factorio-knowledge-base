@@ -11,6 +11,12 @@
       "fast-transport-belt": 48,
       "express-transport-belt": 72,
       "turbo-transport-belt": 96
+    },
+    "electric-furnace": {
+      "transport-belt": 24,
+      "fast-transport-belt": 48,
+      "express-transport-belt": 72,
+      "turbo-transport-belt": 96
     }
   }
 }
