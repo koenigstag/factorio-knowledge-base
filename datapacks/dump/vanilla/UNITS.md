@@ -135,12 +135,9 @@ input/output connection point, not per pipe or per distance; Factorio
 throughput entirely, see FFF #416). `pump/pump.json`'s
 `pumping_speed=20` × 60 = 1200/s, also wiki-confirmed.
 
-**Softer, not data.raw-backed**: the wiki separately states *actual*
-practical throughput is "usually around" 4200/s, below the 6000/s
-theoretical cap — this comes from the segment's fill-level-dependent
-flow dynamics (an emptier segment fills faster than a fuller one), not
-a stored constant. Treat 6000 as the hard, sourced ceiling and ~4200
-as a hedged planning estimate, not a fact of the same weight.
+(The softer "~4200/s practical" figure the wiki also mentions isn't a
+`data.raw` value at all — not a unit-conversion question for this
+file, see `constraints/fluids.md` instead.)
 
 ## pipe_connections.direction — 16-direction enum, cardinals spaced 4 apart
 
