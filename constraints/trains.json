@@ -1,3 +1,4 @@
 {
-  "max_inserters_per_wagon": 12
+  "max_inserters_per_wagon": 12,
+  "max_inserters_per_wagon_long_handed_double_row": 24
 }

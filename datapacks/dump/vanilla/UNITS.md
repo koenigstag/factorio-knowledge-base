@@ -88,9 +88,19 @@ Computed as `ceil(collision_box width)` × `ceil(collision_box height)`
 — cross-checked against 8 independently-known footprints (stone-furnace
 2×2, electric-furnace/assembling-machine-*/pumpjack 3×3,
 electric-mining-drill 3×3, foundry 5×5, transport-belt/inserter 1×1),
-all matched exactly. Not added to rail-bound vehicles (`cargo-wagon`)
-— those sit on rail track, not the building grid, so the same rounding
-isn't meaningful there.
+all matched exactly.
+
+**Exception: `cargo-wagon.tile_box = [2, 6]`** — this one is *not*
+`ceil(collision_box)` (that would wrongly give `[2, 5]` from its
+1.2×4.8 collision box). Rail vehicles don't follow the building
+grid-snap rule the other entities use. `[2, 6]` instead comes from the
+wiki's own `Dimensions: 2×6` infobox value — see the derivation note
+in `constraints/trains.md` (it lines up with the 12-inserters-per-wagon
+cap: 6 tiles × 2 sides, though the wiki doesn't confirm that's the
+actual cause). Every other `tile_box` in this dump is dump-derived; this
+single field on `cargo-wagon` is the one exception sourced from the
+wiki instead — flagged here since `cargo-wagon.json`'s own provenance
+is otherwise entirely the dump manifest, not a wiki citation.
 
 ## item.weight — grams
 
