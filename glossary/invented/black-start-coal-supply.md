@@ -20,6 +20,17 @@ Named after "black start" in real-world power engineering: a power
 station's ability to restart from a total shutdown without drawing on
 an external grid.
 
+**Why this matters more for a micro-factory architecture**: in a
+single large centralized base, a blackout is recoverable by hand —
+walk over, drop fuel in, restart manually. A remote, physically
+distant micro-factory (see `glossary/canonical/city-block.md`) doesn't
+have that option — nobody is standing next to it to intervene, and
+depending on distance/logistics, reaching it to fix a dead plant by
+hand could take a long time or not be practical at all. For an
+isolated module, self-recovery isn't a convenience, it's closer to a
+requirement: without it, one blackout permanently kills that module
+until a player physically travels there.
+
 Coined in this project during discussion of the `self-fueling burner
 drill` mechanic — not yet backed by a `decisions/` entry or a sizing
 formula (how much burner-drill coal throughput is "enough" of a
