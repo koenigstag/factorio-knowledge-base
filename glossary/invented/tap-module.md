@@ -9,4 +9,7 @@ direction differs) — not yet implemented as an actual pattern or
 blueprint.
 
 Coined during initial architecture discussion, alongside the
-`city-block gap` concept.
+`city-block gap` concept. Not an instance of
+[factory module](factory-module.md) despite the shared word — a
+tap-module is bus-tapping infrastructure sitting in the gap, not a
+production cell inside a block.

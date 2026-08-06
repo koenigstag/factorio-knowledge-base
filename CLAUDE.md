@@ -101,8 +101,8 @@ one when the *pattern* of using a formula is worth showing, not one
 per `relations/` entry.
 
 Not created yet (planned, not to be scaffolded speculatively):
-`patterns/`, `contracts/`, `modules/`, `blueprints/`,
-`generators/`, `benchmarks/`, `changelog/`. `contracts/`/`modules/`
+`patterns/`, `contracts/`, `factory-modules/`, `blueprints/`,
+`generators/`, `benchmarks/`, `changelog/`. `contracts/`/`factory-modules/`
 specifically should only be created once a second interchangeable
 implementation of the same slot exists — not upfront. (`layouts/` was
 in this list too until there was a first concrete pattern —
@@ -122,5 +122,5 @@ off the last commit still valid for the old version (e.g. `2.0`),
 freezing it, then keep evolving `main` forward as the new latest.
 Branches are per major version (not per patch/minor release, not a
 folder inside the tree), created reactively like `contracts/`/
-`modules/` — never pre-provisioned for a version that doesn't need to
-diverge yet.
+`factory-modules/` — never pre-provisioned for a version that doesn't
+need to diverge yet.
