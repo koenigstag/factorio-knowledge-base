@@ -44,6 +44,23 @@ equal the belt's own rate, 15 items/sec. The two paths through
 anything special about the chaining method itself; a recipe with a
 different ore:plate ratio would make the two numbers diverge.
 
+## Cross-check against independent community sources
+
+Searched for existing community-published ratios for the same setup,
+after computing the above (not before — the numbers here weren't
+picked to match a target). Found matches on both figures
+independently: "the ratio is 5 drills to 4 steel furnaces for iron...
+24 steel furnaces to smelt all the iron ore of a saturated yellow
+belt" (Factorio Forums / community discussion) — 5:4 = 1.25 drills per
+furnace, exactly this file's number, and 24 furnaces matches too. The
+same source also flags real-world caveats this project's numbers
+don't capture yet: an individual ore patch depletes unevenly, so
+miner:furnace ratios drift over a patch's lifetime in practice, and
+researched mining-productivity technology or speed/productivity
+modules change the effective rate — this example (like all of
+`relations/`) is the unmodified, un-researched baseline, not a claim
+that a real base stays at exactly 24:30 forever.
+
 Verified: 2026-08-06 — both paths computed by reading the actual
 `relations/*.json` files and multiplying/comparing in code, not by
 hand.
