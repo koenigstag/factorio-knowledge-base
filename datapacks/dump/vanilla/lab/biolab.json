@@ -1,0 +1,43 @@
+{
+  "type": "lab",
+  "name": "biolab",
+  "researching_speed": 2,
+  "inputs": [
+    "automation-science-pack",
+    "logistic-science-pack",
+    "military-science-pack",
+    "chemical-science-pack",
+    "production-science-pack",
+    "utility-science-pack",
+    "space-science-pack",
+    "metallurgic-science-pack",
+    "agricultural-science-pack",
+    "electromagnetic-science-pack",
+    "cryogenic-science-pack",
+    "promethium-science-pack"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 8
+    }
+  },
+  "energy_usage": "300kW",
+  "module_slots": 4,
+  "science_pack_drain_rate_percent": 50,
+  "collision_box": [
+    [
+      -2.2,
+      -2.2
+    ],
+    [
+      2.2,
+      2.2
+    ]
+  ],
+  "tile_box": [
+    5,
+    5
+  ]
+}

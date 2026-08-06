@@ -25,8 +25,8 @@ speed multiplier on the *machine* side.
 | Base field | Speed field | Formula | Verification |
 |---|---|---|---|
 | `recipe.energy_required` | `furnace.crafting_speed` / `assembling-machine.crafting_speed` | `energy_required / crafting_speed` = seconds per craft | **Confirmed**: iron-plate `energy_required=3.2` ÷ steel-furnace `crafting_speed=2` = 1.6s, matches the wiki's "~1.6s/plate" for steel furnace. |
-| `resource.minable.mining_time` | `mining-drill.mining_speed` | `mining_time / mining_speed` = seconds per mining cycle | **Inferred, not independently re-verified**: same field-naming/schema convention as recipes (`iron-ore.mining_time=1` ÷ `electric-mining-drill.mining_speed=0.5` = 2s/ore = 0.5 ore/s, plausible against commonly-cited electric-drill baseline) — but this pair hasn't had its own dedicated wiki cross-check the way belt speed and furnace crafting time did. Re-verify before relying on it for a `formulas/` derivation. |
-| `technology.unit.time` | `lab.crafting_speed` (not yet extracted as a datapack) | `time / lab_crafting_speed` = seconds per research unit, × `unit.count` for total | **Inferred by the same schema convention**, not independently re-verified — `lab` isn't in `datapacks/dump/vanilla/` yet, so this can't be cross-checked against a real lab speed value until it is. |
+| `resource.minable.mining_time` | `mining-drill.mining_speed` | `mining_time / mining_speed` = seconds per mining cycle | **Confirmed** via wiki.factorio.com/mining, quoted formula: *"Mining time / Mining speed = Seconds for one resource item"*. `iron-ore.mining_time=1` ÷ `electric-mining-drill.mining_speed=0.5` = 2s/ore = 0.5 ore/s. |
+| `technology.unit.time` | `lab.researching_speed` (not `crafting_speed` — labs use their own field name) | `unit.time / researching_speed` = seconds per research unit at base speed, × `unit.count` for total | **Confirmed** via wiki.factorio.com/lab, quoted formula: adjusted cycle time = *"T[r]"* (research cycle time) *"/ ERS"* (effective research speed, `researching_speed` before module/tech bonuses). `lab.researching_speed=1`, `biolab.researching_speed=2` — cross-checks the wiki's own claim that biolab researches twice as fast as a regular lab. Now extracted as `datapacks/dump/vanilla/lab/`. |
 
 Note: despite the field name, `energy_required` is not an energy unit in
 the everyday sense — numerically it behaves as seconds-at-reference-speed.
@@ -123,8 +123,12 @@ pure cardinals (0/4/8/12) — no diagonal fluid connections in this set.
 
 `module.effect.*` (e.g. `productivity: 0.04` = +4% to the base stat),
 `item.fuel_acceleration_multiplier`/`fuel_top_speed_multiplier` (e.g.
-`1.8` = 80% bonus). These scale a base value multiplicatively; there's
-nothing to convert, just don't mistake them for absolute quantities.
+`1.8` = 80% bonus), `lab.science_pack_drain_rate_percent` (`biolab=50`
+means it consumes science packs at half the normal rate per research
+cycle — confirmed via wiki.factorio.com/lab: "consumes packs half as
+fast", matching the field exactly). These scale a base value
+multiplicatively; there's nothing to convert, just don't mistake them
+for absolute quantities.
 
 ## Plain counts / already unambiguous
 

@@ -1,0 +1,39 @@
+{
+  "type": "lab",
+  "name": "lab",
+  "researching_speed": 1,
+  "inputs": [
+    "automation-science-pack",
+    "logistic-science-pack",
+    "military-science-pack",
+    "chemical-science-pack",
+    "production-science-pack",
+    "utility-science-pack",
+    "space-science-pack",
+    "metallurgic-science-pack",
+    "agricultural-science-pack",
+    "electromagnetic-science-pack",
+    "cryogenic-science-pack",
+    "promethium-science-pack"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input"
+  },
+  "energy_usage": "60kW",
+  "module_slots": 2,
+  "collision_box": [
+    [
+      -1.2,
+      -1.2
+    ],
+    [
+      1.2,
+      1.2
+    ]
+  ],
+  "tile_box": [
+    3,
+    3
+  ]
+}
