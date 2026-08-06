@@ -90,17 +90,23 @@ Computed as `ceil(collision_box width)` × `ceil(collision_box height)`
 electric-mining-drill 3×3, foundry 5×5, transport-belt/inserter 1×1),
 all matched exactly.
 
-**Exception: `cargo-wagon.tile_box = [2, 6]`** — this one is *not*
-`ceil(collision_box)` (that would wrongly give `[2, 5]` from its
-1.2×4.8 collision box). Rail vehicles don't follow the building
-grid-snap rule the other entities use. `[2, 6]` instead comes from the
-wiki's own `Dimensions: 2×6` infobox value — see the derivation note
-in `constraints/trains.md` (it lines up with the 12-inserters-per-wagon
-cap: 6 tiles × 2 sides, though the wiki doesn't confirm that's the
-actual cause). Every other `tile_box` in this dump is dump-derived; this
-single field on `cargo-wagon` is the one exception sourced from the
-wiki instead — flagged here since `cargo-wagon.json`'s own provenance
-is otherwise entirely the dump manifest, not a wiki citation.
+**Exception: `cargo-wagon.tile_box = [2, 6]`, `fluid-wagon.tile_box =
+[2, 6]`** — neither is `ceil(collision_box)` (that would wrongly give
+`[2, 5]` from their identical 1.2×4.8 collision box — both wagon types
+share the same `collision_box`). Rail vehicles don't follow the
+building grid-snap rule the other entities use. `[2, 6]` instead comes
+from the wiki's own `Dimensions: 2×6` infobox value on each entity's
+page — see the derivation note in `constraints/trains.md` (it lines up
+with the 12-inserters-per-wagon cap: 6 tiles × 2 sides, though the
+wiki doesn't confirm that's the actual cause — and that reasoning is
+cargo-wagon-specific anyway, since fluid wagons load via pipes, not
+inserters). `locomotive.tile_box` doesn't need this exception: its
+collision box is 1.2×5.2, and `ceil(5.2)=6` already lands on the
+correct value without an override. Every other `tile_box` in this dump
+is dump-derived; these two fields are the only ones sourced from the
+wiki instead — flagged here since `cargo-wagon.json`/`fluid-wagon.json`'s
+own provenance is otherwise entirely the dump manifest, not a wiki
+citation.
 
 ## item.weight — grams
 
@@ -128,6 +134,10 @@ segment holds 100 units, a storage tank holds 25,000. Connected
 pipes/tanks equalize by *percentage* of their own capacity, not
 absolute amount. `mining-drill.input_fluid_box.volume=200` and
 `pumpjack.output_fluid_box.volume=1000` are on this same scale.
+`fluid-wagon/fluid-wagon.json`'s `capacity=50000` (2× a storage tank)
+is too — wiki-confirmed at normal quality (higher quality tiers hold
+more; not covered here since `quality` isn't extracted as a datapack
+yet).
 
 ## utility-constants.max_fluid_flow / pump.pumping_speed — per tick (× 60 → per second)
 

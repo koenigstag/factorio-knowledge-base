@@ -1,0 +1,7 @@
+{
+  "fill_or_drain_seconds_by_pump_count": {
+    "1_pump": 41.67,
+    "2_pumps": 20.83,
+    "4_pumps": 10.42
+  }
+}
