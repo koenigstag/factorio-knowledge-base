@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "speed-module",
+  "category": "speed",
+  "tier": 1,
+  "effect": {
+    "speed": 0.2,
+    "consumption": 0.5,
+    "quality": -0.1
+  },
+  "stack_size": 50,
+  "weight": 20000
+}

@@ -1,0 +1,34 @@
+{
+  "type": "technology",
+  "name": "health",
+  "prerequisites": [
+    "agricultural-science-pack",
+    "utility-science-pack",
+    "military-science-pack"
+  ],
+  "unit": {
+    "count_formula": "2^L*50",
+    "ingredients": [
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ],
+      [
+        "agricultural-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "character-health-bonus",
+      "modifier": 50
+    }
+  ],
+  "max_level": "infinite"
+}

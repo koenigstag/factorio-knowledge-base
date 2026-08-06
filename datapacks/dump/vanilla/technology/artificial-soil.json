@@ -1,0 +1,23 @@
+{
+  "type": "technology",
+  "name": "artificial-soil",
+  "prerequisites": [
+    "yumako",
+    "jellynut"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "artificial-yumako-soil"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "artificial-jellynut-soil"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "nutrients",
+    "count": 500
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "follower-robot-count-1",
+  "prerequisites": [
+    "defender"
+  ],
+  "unit": {
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30,
+    "count": 100
+  },
+  "effects": [
+    {
+      "type": "maximum-following-robots-count",
+      "modifier": 5
+    }
+  ],
+  "upgrade": true
+}

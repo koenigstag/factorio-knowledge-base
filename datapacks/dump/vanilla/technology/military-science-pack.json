@@ -1,0 +1,29 @@
+{
+  "type": "technology",
+  "name": "military-science-pack",
+  "prerequisites": [
+    "military-2",
+    "stone-wall"
+  ],
+  "unit": {
+    "count": 30,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "military-science-pack"
+    }
+  ],
+  "essential": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "holmium-processing",
+  "prerequisites": [
+    "recycling"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "holmium-solution"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "holmium-plate"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "holmium-ore"
+  }
+}

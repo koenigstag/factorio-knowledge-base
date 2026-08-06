@@ -1,0 +1,28 @@
+{
+  "type": "technology",
+  "name": "solar-panel-equipment",
+  "prerequisites": [
+    "modular-armor",
+    "solar-energy"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "solar-panel-equipment"
+    }
+  ]
+}

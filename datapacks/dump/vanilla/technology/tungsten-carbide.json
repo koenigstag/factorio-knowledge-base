@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "tungsten-carbide",
+  "prerequisites": [
+    "planet-discovery-vulcanus"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "carbon"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "tungsten-carbide"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "big-volcanic-rock"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "type": "technology",
+  "name": "physical-projectile-damage-2",
+  "prerequisites": [
+    "physical-projectile-damage-1",
+    "logistic-science-pack"
+  ],
+  "unit": {
+    "count": 200,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "bullet",
+      "modifier": 0.1
+    },
+    {
+      "type": "turret-attack",
+      "turret_id": "gun-turret",
+      "modifier": 0.1
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.1
+    }
+  ],
+  "upgrade": true
+}

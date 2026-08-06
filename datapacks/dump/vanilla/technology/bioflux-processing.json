@@ -1,0 +1,30 @@
+{
+  "type": "technology",
+  "name": "bioflux-processing",
+  "prerequisites": [
+    "bioflux"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "bioplastic"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "rocket-fuel-from-jelly"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "biosulfur"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "biolubricant"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "bioflux",
+    "count": 25
+  }
+}

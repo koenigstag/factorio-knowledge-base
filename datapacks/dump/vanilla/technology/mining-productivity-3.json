@@ -1,0 +1,38 @@
+{
+  "type": "technology",
+  "name": "mining-productivity-3",
+  "prerequisites": [
+    "mining-productivity-2",
+    "production-science-pack"
+  ],
+  "unit": {
+    "count_formula": "1000*(L - 2)",
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "mining-drill-productivity-bonus",
+      "modifier": 0.1
+    }
+  ],
+  "max_level": "infinite",
+  "upgrade": true
+}

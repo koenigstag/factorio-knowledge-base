@@ -1,0 +1,29 @@
+{
+  "type": "technology",
+  "name": "stronger-explosives-1",
+  "prerequisites": [
+    "military-2"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "grenade",
+      "modifier": 0.25
+    }
+  ],
+  "upgrade": true
+}

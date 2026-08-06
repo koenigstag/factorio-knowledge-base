@@ -1,0 +1,53 @@
+{
+  "type": "technology",
+  "name": "captivity",
+  "prerequisites": [
+    "agricultural-science-pack",
+    "military-3",
+    "rocketry"
+  ],
+  "unit": {
+    "count": 1000,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "agricultural-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "capture-robot-rocket"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "biter-egg"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nutrients-from-biter-egg"
+    }
+  ]
+}

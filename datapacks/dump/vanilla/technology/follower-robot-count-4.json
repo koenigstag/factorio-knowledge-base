@@ -1,0 +1,41 @@
+{
+  "type": "technology",
+  "name": "follower-robot-count-4",
+  "prerequisites": [
+    "follower-robot-count-3",
+    "destroyer"
+  ],
+  "unit": {
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ]
+    ],
+    "time": 30,
+    "count": 400
+  },
+  "effects": [
+    {
+      "type": "maximum-following-robots-count",
+      "modifier": 20
+    }
+  ],
+  "upgrade": true
+}

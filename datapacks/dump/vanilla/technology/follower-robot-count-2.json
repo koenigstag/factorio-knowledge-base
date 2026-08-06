@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "follower-robot-count-2",
+  "prerequisites": [
+    "follower-robot-count-1"
+  ],
+  "unit": {
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30,
+    "count": 200
+  },
+  "effects": [
+    {
+      "type": "maximum-following-robots-count",
+      "modifier": 10
+    }
+  ],
+  "upgrade": true
+}

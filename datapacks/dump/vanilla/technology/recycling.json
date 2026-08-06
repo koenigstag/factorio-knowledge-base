@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "recycling",
+  "prerequisites": [
+    "planet-discovery-fulgora"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "recycler"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "scrap-recycling"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "fulgoran-ruin-vault"
+  }
+}

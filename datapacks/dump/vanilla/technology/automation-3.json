@@ -1,0 +1,37 @@
+{
+  "type": "technology",
+  "name": "automation-3",
+  "prerequisites": [
+    "speed-module",
+    "production-science-pack",
+    "electric-engine"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "assembling-machine-3"
+    }
+  ]
+}

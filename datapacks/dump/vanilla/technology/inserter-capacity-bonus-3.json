@@ -1,0 +1,33 @@
+{
+  "type": "technology",
+  "name": "inserter-capacity-bonus-3",
+  "prerequisites": [
+    "inserter-capacity-bonus-2",
+    "chemical-science-pack"
+  ],
+  "unit": {
+    "count": 250,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "bulk-inserter-capacity-bonus",
+      "modifier": 1
+    }
+  ],
+  "upgrade": true
+}

@@ -1,0 +1,37 @@
+{
+  "type": "technology",
+  "name": "laser-shooting-speed-3",
+  "prerequisites": [
+    "laser-shooting-speed-2"
+  ],
+  "unit": {
+    "count": 200,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "gun-speed",
+      "ammo_category": "laser",
+      "modifier": 0.3
+    }
+  ],
+  "upgrade": true
+}

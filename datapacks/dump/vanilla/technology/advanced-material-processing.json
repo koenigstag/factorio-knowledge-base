@@ -1,0 +1,28 @@
+{
+  "type": "technology",
+  "name": "advanced-material-processing",
+  "prerequisites": [
+    "steel-processing",
+    "logistic-science-pack"
+  ],
+  "unit": {
+    "count": 75,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "steel-furnace"
+    }
+  ]
+}

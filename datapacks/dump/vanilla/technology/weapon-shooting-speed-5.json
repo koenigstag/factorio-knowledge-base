@@ -1,0 +1,53 @@
+{
+  "type": "technology",
+  "name": "weapon-shooting-speed-5",
+  "prerequisites": [
+    "weapon-shooting-speed-4",
+    "chemical-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "gun-speed",
+      "ammo_category": "bullet",
+      "modifier": 0.3
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.4
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "cannon-shell",
+      "modifier": 0.8
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "rocket",
+      "modifier": 0.9
+    }
+  ],
+  "upgrade": true
+}

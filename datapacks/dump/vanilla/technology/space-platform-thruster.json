@@ -1,0 +1,47 @@
+{
+  "type": "technology",
+  "name": "space-platform-thruster",
+  "prerequisites": [
+    "space-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "thruster"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "ice-melting"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "thruster-fuel"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "thruster-oxidizer"
+    }
+  ]
+}

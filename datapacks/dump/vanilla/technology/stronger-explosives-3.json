@@ -1,0 +1,48 @@
+{
+  "type": "technology",
+  "name": "stronger-explosives-3",
+  "prerequisites": [
+    "stronger-explosives-2",
+    "chemical-science-pack"
+  ],
+  "unit": {
+    "count": 300,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "rocket",
+      "modifier": 0.3
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "grenade",
+      "modifier": 0.2
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "landmine",
+      "modifier": 0.2
+    }
+  ],
+  "upgrade": true
+}

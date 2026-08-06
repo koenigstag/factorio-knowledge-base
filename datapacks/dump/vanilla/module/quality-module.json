@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "quality-module",
+  "category": "quality",
+  "tier": 1,
+  "effect": {
+    "quality": 0.1,
+    "speed": -0.05
+  },
+  "stack_size": 50,
+  "weight": 20000
+}

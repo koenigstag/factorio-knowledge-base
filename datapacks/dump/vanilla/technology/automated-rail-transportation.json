@@ -1,0 +1,35 @@
+{
+  "type": "technology",
+  "name": "automated-rail-transportation",
+  "prerequisites": [
+    "railway"
+  ],
+  "unit": {
+    "count": 200,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "train-stop"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "rail-signal"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "rail-chain-signal"
+    }
+  ]
+}

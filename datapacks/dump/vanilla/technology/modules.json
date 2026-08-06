@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "modules",
+  "prerequisites": [
+    "advanced-circuit"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  }
+}

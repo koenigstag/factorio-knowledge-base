@@ -1,0 +1,47 @@
+{
+  "type": "technology",
+  "name": "advanced-oil-processing",
+  "prerequisites": [
+    "chemical-science-pack"
+  ],
+  "unit": {
+    "count": 75,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "advanced-oil-processing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "heavy-oil-cracking"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "light-oil-cracking"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "solid-fuel-from-heavy-oil"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "solid-fuel-from-light-oil"
+    }
+  ]
+}

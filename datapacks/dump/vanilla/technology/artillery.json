@@ -1,0 +1,57 @@
+{
+  "type": "technology",
+  "name": "artillery",
+  "prerequisites": [
+    "military-4",
+    "metallurgic-science-pack",
+    "radar"
+  ],
+  "unit": {
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "metallurgic-science-pack",
+        1
+      ]
+    ],
+    "time": 30,
+    "count": 1500
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "artillery-wagon"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "artillery-turret"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "artillery-shell"
+    }
+  ]
+}

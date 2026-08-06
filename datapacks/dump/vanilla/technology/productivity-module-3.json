@@ -1,0 +1,41 @@
+{
+  "type": "technology",
+  "name": "productivity-module-3",
+  "prerequisites": [
+    "productivity-module-2",
+    "biter-egg-handling"
+  ],
+  "unit": {
+    "count": 300,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "agricultural-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "productivity-module-3"
+    }
+  ],
+  "upgrade": true
+}

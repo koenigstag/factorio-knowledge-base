@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "name": "efficiency-module-3",
+  "category": "efficiency",
+  "tier": 3,
+  "effect": {
+    "consumption": -0.5
+  },
+  "stack_size": 50,
+  "weight": 20000
+}

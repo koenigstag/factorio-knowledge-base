@@ -1,0 +1,30 @@
+{
+  "type": "technology",
+  "name": "electromagnetic-plant",
+  "prerequisites": [
+    "holmium-processing"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "electromagnetic-plant"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "superconductor"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "supercapacitor"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "electrolyte"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "holmium-plate",
+    "count": 50
+  }
+}

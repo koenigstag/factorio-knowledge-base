@@ -1,0 +1,18 @@
+{
+  "type": "technology",
+  "name": "cryogenic-science-pack",
+  "prerequisites": [
+    "cryogenic-plant"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "cryogenic-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "cryogenic-plant"
+  },
+  "essential": true
+}

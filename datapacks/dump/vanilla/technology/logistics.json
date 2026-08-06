@@ -1,0 +1,27 @@
+{
+  "type": "technology",
+  "name": "logistics",
+  "prerequisites": [
+    "automation-science-pack"
+  ],
+  "unit": {
+    "count": 20,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "underground-belt"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "splitter"
+    }
+  ]
+}

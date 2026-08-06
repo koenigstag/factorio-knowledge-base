@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "low-density-structure",
+  "prerequisites": [
+    "advanced-material-processing",
+    "chemical-science-pack"
+  ],
+  "unit": {
+    "count": 300,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 45
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "low-density-structure"
+    }
+  ]
+}

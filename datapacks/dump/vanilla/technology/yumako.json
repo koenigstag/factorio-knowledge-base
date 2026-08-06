@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "yumako",
+  "prerequisites": [
+    "agriculture"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "yumako-processing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "copper-bacteria"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "yumako-tree"
+  }
+}

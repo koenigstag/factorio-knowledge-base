@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "agricultural-science-pack",
+  "prerequisites": [
+    "bioflux-processing",
+    "bacteria-cultivation",
+    "artificial-soil"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "agricultural-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "bioflux",
+    "count": 100
+  },
+  "essential": true
+}

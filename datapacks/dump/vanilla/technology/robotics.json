@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "robotics",
+  "prerequisites": [
+    "electric-engine",
+    "battery"
+  ],
+  "unit": {
+    "count": 75,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "flying-robot-frame"
+    }
+  ]
+}

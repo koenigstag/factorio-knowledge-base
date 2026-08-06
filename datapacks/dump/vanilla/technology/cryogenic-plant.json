@@ -1,0 +1,25 @@
+{
+  "type": "technology",
+  "name": "cryogenic-plant",
+  "prerequisites": [
+    "lithium-processing"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "cryogenic-plant"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "fluoroketone"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "fluoroketone-cooling"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "lithium-plate"
+  }
+}

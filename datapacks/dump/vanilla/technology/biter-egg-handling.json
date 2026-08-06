@@ -1,0 +1,10 @@
+{
+  "type": "technology",
+  "name": "biter-egg-handling",
+  "prerequisites": [
+    "captivity"
+  ],
+  "research_trigger": {
+    "type": "capture-spawner"
+  }
+}

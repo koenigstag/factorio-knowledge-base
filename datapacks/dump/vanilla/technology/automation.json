@@ -1,0 +1,27 @@
+{
+  "type": "technology",
+  "name": "automation",
+  "prerequisites": [
+    "automation-science-pack"
+  ],
+  "unit": {
+    "count": 10,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 10
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "assembling-machine-1"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "long-handed-inserter"
+    }
+  ]
+}

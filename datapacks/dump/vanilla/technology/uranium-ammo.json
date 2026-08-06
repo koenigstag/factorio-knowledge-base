@@ -1,0 +1,49 @@
+{
+  "type": "technology",
+  "name": "uranium-ammo",
+  "prerequisites": [
+    "uranium-processing",
+    "military-4",
+    "tank"
+  ],
+  "unit": {
+    "count": 1000,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ]
+    ],
+    "time": 45
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "uranium-rounds-magazine"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "uranium-cannon-shell"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "explosive-uranium-cannon-shell"
+    }
+  ]
+}

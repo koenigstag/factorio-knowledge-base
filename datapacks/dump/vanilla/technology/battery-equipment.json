@@ -1,0 +1,28 @@
+{
+  "type": "technology",
+  "name": "battery-equipment",
+  "prerequisites": [
+    "battery",
+    "solar-panel-equipment"
+  ],
+  "unit": {
+    "count": 50,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "battery-equipment"
+    }
+  ]
+}

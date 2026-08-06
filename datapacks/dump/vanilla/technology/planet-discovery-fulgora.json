@@ -1,0 +1,42 @@
+{
+  "type": "technology",
+  "name": "planet-discovery-fulgora",
+  "prerequisites": [
+    "space-platform-thruster",
+    "electric-energy-accumulators"
+  ],
+  "unit": {
+    "count": 1000,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-space-location",
+      "space_location": "fulgora",
+      "use_icon_overlay_constant": true
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "lightning-rod"
+    }
+  ],
+  "essential": true
+}

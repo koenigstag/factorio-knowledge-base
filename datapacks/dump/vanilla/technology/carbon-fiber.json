@@ -1,0 +1,39 @@
+{
+  "type": "technology",
+  "name": "carbon-fiber",
+  "prerequisites": [
+    "agricultural-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "agricultural-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "carbon-fiber"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "technology",
+  "name": "metallurgic-science-pack",
+  "prerequisites": [
+    "tungsten-steel"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "metallurgic-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "tungsten-plate"
+  },
+  "essential": true
+}

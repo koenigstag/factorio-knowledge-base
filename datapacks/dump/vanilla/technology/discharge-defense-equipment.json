@@ -1,0 +1,38 @@
+{
+  "type": "technology",
+  "name": "discharge-defense-equipment",
+  "prerequisites": [
+    "laser-turret",
+    "military-3",
+    "power-armor",
+    "solar-panel-equipment"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "discharge-defense-equipment"
+    }
+  ]
+}

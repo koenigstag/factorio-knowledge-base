@@ -1,0 +1,37 @@
+{
+  "type": "technology",
+  "name": "worker-robots-storage-2",
+  "prerequisites": [
+    "worker-robots-storage-1",
+    "production-science-pack"
+  ],
+  "unit": {
+    "count": 300,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "worker-robot-storage",
+      "modifier": 1
+    }
+  ],
+  "upgrade": true
+}

@@ -1,0 +1,45 @@
+{
+  "type": "technology",
+  "name": "cliff-explosives",
+  "prerequisites": [
+    "explosives",
+    "military-science-pack",
+    "metallurgic-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "metallurgic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "cliff-explosives"
+    },
+    {
+      "type": "cliff-deconstruction-enabled",
+      "modifier": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "type": "technology",
+  "name": "quality-module",
+  "prerequisites": [
+    "modules"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "quality-module"
+    },
+    {
+      "type": "unlock-quality",
+      "quality": "uncommon"
+    },
+    {
+      "type": "unlock-quality",
+      "quality": "rare"
+    }
+  ],
+  "upgrade": true
+}

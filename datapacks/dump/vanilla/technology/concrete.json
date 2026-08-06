@@ -1,0 +1,44 @@
+{
+  "type": "technology",
+  "name": "concrete",
+  "prerequisites": [
+    "advanced-material-processing",
+    "automation-2"
+  ],
+  "unit": {
+    "count": 250,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "concrete"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "hazard-concrete"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "refined-concrete"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "refined-hazard-concrete"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "iron-stick"
+    }
+  ]
+}

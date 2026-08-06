@@ -1,0 +1,19 @@
+{
+  "type": "technology",
+  "name": "automation-science-pack",
+  "prerequisites": [
+    "steam-power",
+    "electronics"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "automation-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "lab"
+  },
+  "essential": true
+}

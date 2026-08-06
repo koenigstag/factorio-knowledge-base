@@ -1,0 +1,31 @@
+{
+  "type": "technology",
+  "name": "fish-breeding",
+  "prerequisites": [
+    "tree-seeding"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "agricultural-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "fish-breeding"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nutrients-from-fish"
+    }
+  ]
+}

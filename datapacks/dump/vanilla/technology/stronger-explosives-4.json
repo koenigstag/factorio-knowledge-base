@@ -1,0 +1,52 @@
+{
+  "type": "technology",
+  "name": "stronger-explosives-4",
+  "prerequisites": [
+    "stronger-explosives-3",
+    "utility-science-pack"
+  ],
+  "unit": {
+    "count": 400,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "rocket",
+      "modifier": 0.4
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "grenade",
+      "modifier": 0.2
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "landmine",
+      "modifier": 0.2
+    }
+  ],
+  "upgrade": true
+}

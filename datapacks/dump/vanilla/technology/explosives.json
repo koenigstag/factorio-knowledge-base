@@ -1,0 +1,27 @@
+{
+  "type": "technology",
+  "name": "explosives",
+  "prerequisites": [
+    "sulfur-processing"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "explosives"
+    }
+  ]
+}

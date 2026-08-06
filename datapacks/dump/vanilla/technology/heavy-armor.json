@@ -1,0 +1,24 @@
+{
+  "type": "technology",
+  "name": "heavy-armor",
+  "prerequisites": [
+    "military",
+    "steel-processing"
+  ],
+  "unit": {
+    "count": 30,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "heavy-armor"
+    }
+  ]
+}

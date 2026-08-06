@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "lithium-processing",
+  "prerequisites": [
+    "planet-discovery-aquilo"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "lithium"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "lithium-plate"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "lithium-iceberg-big"
+  }
+}

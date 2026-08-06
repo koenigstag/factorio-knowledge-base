@@ -1,0 +1,18 @@
+{
+  "type": "technology",
+  "name": "electromagnetic-science-pack",
+  "prerequisites": [
+    "electromagnetic-plant"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "electromagnetic-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "supercapacitor"
+  },
+  "essential": true
+}

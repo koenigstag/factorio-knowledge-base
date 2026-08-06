@@ -1,0 +1,31 @@
+{
+  "type": "technology",
+  "name": "sulfur-processing",
+  "prerequisites": [
+    "oil-processing"
+  ],
+  "unit": {
+    "count": 150,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "sulfuric-acid"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "sulfur"
+    }
+  ]
+}

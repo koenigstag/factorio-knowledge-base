@@ -1,0 +1,43 @@
+{
+  "type": "technology",
+  "name": "physical-projectile-damage-4",
+  "prerequisites": [
+    "physical-projectile-damage-3"
+  ],
+  "unit": {
+    "count": 400,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "bullet",
+      "modifier": 0.2
+    },
+    {
+      "type": "turret-attack",
+      "turret_id": "gun-turret",
+      "modifier": 0.2
+    },
+    {
+      "type": "ammo-damage",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.2
+    }
+  ],
+  "upgrade": true
+}

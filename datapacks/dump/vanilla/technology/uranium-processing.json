@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "uranium-processing",
+  "prerequisites": [
+    "uranium-mining"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "centrifuge"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "uranium-processing"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "uranium-ore"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "technology",
+  "name": "space-science-pack",
+  "prerequisites": [
+    "space-platform"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "space-science-pack"
+    }
+  ],
+  "research_trigger": {
+    "type": "build-entity",
+    "entity": "asteroid-collector"
+  },
+  "essential": true
+}

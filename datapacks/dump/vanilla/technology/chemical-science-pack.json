@@ -1,0 +1,29 @@
+{
+  "type": "technology",
+  "name": "chemical-science-pack",
+  "prerequisites": [
+    "advanced-circuit",
+    "sulfur-processing"
+  ],
+  "unit": {
+    "count": 75,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 10
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "chemical-science-pack"
+    }
+  ],
+  "essential": true
+}

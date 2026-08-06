@@ -1,0 +1,23 @@
+{
+  "type": "technology",
+  "name": "repair-pack",
+  "prerequisites": [
+    "automation-science-pack"
+  ],
+  "unit": {
+    "count": 25,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 10
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "repair-pack"
+    }
+  ]
+}

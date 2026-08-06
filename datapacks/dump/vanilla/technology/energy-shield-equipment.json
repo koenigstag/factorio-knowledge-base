@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "energy-shield-equipment",
+  "prerequisites": [
+    "solar-panel-equipment",
+    "military-science-pack"
+  ],
+  "unit": {
+    "count": 150,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "energy-shield-equipment"
+    }
+  ]
+}

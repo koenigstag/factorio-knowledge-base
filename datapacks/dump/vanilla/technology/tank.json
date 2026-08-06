@@ -1,0 +1,45 @@
+{
+  "type": "technology",
+  "name": "tank",
+  "prerequisites": [
+    "automobilism",
+    "military-3",
+    "explosives"
+  ],
+  "unit": {
+    "count": 250,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "tank"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "cannon-shell"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "explosive-cannon-shell"
+    }
+  ]
+}

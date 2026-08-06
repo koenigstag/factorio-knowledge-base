@@ -1,0 +1,17 @@
+{
+  "type": "technology",
+  "name": "tungsten-steel",
+  "prerequisites": [
+    "big-mining-drill"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "tungsten-plate"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "big-mining-drill"
+  }
+}

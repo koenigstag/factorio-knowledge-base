@@ -1,0 +1,41 @@
+{
+  "type": "technology",
+  "name": "laser-weapons-damage-6",
+  "prerequisites": [
+    "laser-weapons-damage-5"
+  ],
+  "unit": {
+    "count": 600,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "ammo_category": "laser",
+      "modifier": 0.7,
+      "type": "ammo-damage"
+    }
+  ],
+  "upgrade": true
+}

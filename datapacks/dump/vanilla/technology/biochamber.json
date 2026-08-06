@@ -1,0 +1,31 @@
+{
+  "type": "technology",
+  "name": "biochamber",
+  "prerequisites": [
+    "yumako",
+    "jellynut"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "biochamber"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nutrients-from-yumako-mash"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "burnt-spoilage"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "pentapod-egg"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "nutrients",
+    "count": 10
+  }
+}

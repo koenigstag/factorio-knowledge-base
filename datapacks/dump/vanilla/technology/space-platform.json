@@ -1,0 +1,36 @@
+{
+  "type": "technology",
+  "name": "space-platform",
+  "prerequisites": [
+    "rocket-silo"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "asteroid-collector"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "crusher"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "metallic-asteroid-crushing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "carbonic-asteroid-crushing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "oxide-asteroid-crushing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "cargo-bay"
+    }
+  ],
+  "research_trigger": {
+    "type": "create-space-platform"
+  }
+}

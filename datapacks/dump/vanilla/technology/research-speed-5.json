@@ -1,0 +1,37 @@
+{
+  "type": "technology",
+  "name": "research-speed-5",
+  "prerequisites": [
+    "research-speed-4",
+    "production-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "laboratory-speed",
+      "modifier": 0.5
+    }
+  ],
+  "upgrade": true
+}

@@ -1,0 +1,44 @@
+{
+  "type": "technology",
+  "name": "military-3",
+  "prerequisites": [
+    "chemical-science-pack",
+    "military-science-pack"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "poison-capsule"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "slowdown-capsule"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "combat-shotgun"
+    }
+  ]
+}

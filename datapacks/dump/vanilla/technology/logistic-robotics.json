@@ -1,0 +1,51 @@
+{
+  "type": "technology",
+  "name": "logistic-robotics",
+  "prerequisites": [
+    "robotics"
+  ],
+  "unit": {
+    "count": 250,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "roboport"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "passive-provider-chest"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "storage-chest"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "logistic-robot"
+    },
+    {
+      "type": "character-logistic-requests",
+      "modifier": true
+    },
+    {
+      "type": "character-logistic-trash-slots",
+      "modifier": 30
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "type": "technology",
+  "name": "kovarex-enrichment-process",
+  "prerequisites": [
+    "uranium-processing",
+    "space-science-pack"
+  ],
+  "unit": {
+    "count": 1000,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "kovarex-enrichment-process"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nuclear-fuel"
+    }
+  ]
+}

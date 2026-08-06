@@ -1,0 +1,36 @@
+{
+  "type": "technology",
+  "name": "nuclear-fuel-reprocessing",
+  "prerequisites": [
+    "nuclear-power",
+    "production-science-pack"
+  ],
+  "unit": {
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 30,
+    "count": 50
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "nuclear-fuel-reprocessing"
+    }
+  ]
+}

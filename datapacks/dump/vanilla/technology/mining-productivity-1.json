@@ -1,0 +1,28 @@
+{
+  "type": "technology",
+  "name": "mining-productivity-1",
+  "prerequisites": [
+    "advanced-circuit"
+  ],
+  "unit": {
+    "count": 250,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "mining-drill-productivity-bonus",
+      "modifier": 0.1
+    }
+  ],
+  "upgrade": true
+}

@@ -1,0 +1,29 @@
+{
+  "type": "technology",
+  "name": "automation-2",
+  "prerequisites": [
+    "automation",
+    "steel-processing",
+    "logistic-science-pack"
+  ],
+  "unit": {
+    "count": 40,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "assembling-machine-2"
+    }
+  ]
+}

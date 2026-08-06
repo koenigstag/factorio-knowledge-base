@@ -1,0 +1,47 @@
+{
+  "type": "technology",
+  "name": "asteroid-reprocessing",
+  "prerequisites": [
+    "metallurgic-science-pack"
+  ],
+  "unit": {
+    "count": 500,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "metallurgic-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "metallic-asteroid-reprocessing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "oxide-asteroid-reprocessing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "carbonic-asteroid-reprocessing"
+    }
+  ]
+}

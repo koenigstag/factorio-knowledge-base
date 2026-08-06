@@ -1,0 +1,33 @@
+{
+  "type": "technology",
+  "name": "military-2",
+  "prerequisites": [
+    "military",
+    "steel-processing",
+    "logistic-science-pack"
+  ],
+  "unit": {
+    "count": 20,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "piercing-rounds-magazine"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "grenade"
+    }
+  ]
+}

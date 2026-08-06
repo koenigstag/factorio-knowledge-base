@@ -1,0 +1,49 @@
+{
+  "type": "technology",
+  "name": "artillery-shell-damage-1",
+  "prerequisites": [
+    "artillery"
+  ],
+  "unit": {
+    "count_formula": "2^(L-1)*1000",
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ],
+      [
+        "utility-science-pack",
+        1
+      ],
+      [
+        "space-science-pack",
+        1
+      ],
+      [
+        "metallurgic-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "artillery-shell",
+      "modifier": 0.1
+    }
+  ],
+  "max_level": "infinite"
+}

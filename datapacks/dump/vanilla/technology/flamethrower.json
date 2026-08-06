@@ -1,0 +1,40 @@
+{
+  "type": "technology",
+  "name": "flamethrower",
+  "prerequisites": [
+    "flammables",
+    "military-science-pack"
+  ],
+  "unit": {
+    "count": 50,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "flamethrower"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "flamethrower-ammo"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "flamethrower-turret"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "technology",
+  "name": "weapon-shooting-speed-1",
+  "prerequisites": [
+    "military"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "gun-speed",
+      "ammo_category": "bullet",
+      "modifier": 0.1
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.1
+    }
+  ],
+  "upgrade": true
+}

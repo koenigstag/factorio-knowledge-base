@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "bioflux",
+  "prerequisites": [
+    "biochamber"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "bioflux"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nutrients-from-bioflux"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "biochamber"
+  }
+}

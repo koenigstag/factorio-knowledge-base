@@ -1,0 +1,35 @@
+{
+  "type": "technology",
+  "name": "defender",
+  "prerequisites": [
+    "military-science-pack"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "defender-capsule"
+    },
+    {
+      "type": "maximum-following-robots-count",
+      "modifier": 4
+    }
+  ]
+}

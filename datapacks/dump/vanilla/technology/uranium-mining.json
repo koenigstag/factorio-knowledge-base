@@ -1,0 +1,32 @@
+{
+  "type": "technology",
+  "name": "uranium-mining",
+  "prerequisites": [
+    "chemical-science-pack",
+    "concrete"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "mining-with-fluid",
+      "modifier": true
+    }
+  ]
+}

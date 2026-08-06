@@ -1,0 +1,36 @@
+{
+  "type": "technology",
+  "name": "braking-force-5",
+  "prerequisites": [
+    "braking-force-4"
+  ],
+  "unit": {
+    "count": 450,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "chemical-science-pack",
+        1
+      ],
+      [
+        "production-science-pack",
+        1
+      ]
+    ],
+    "time": 35
+  },
+  "effects": [
+    {
+      "type": "train-braking-force-bonus",
+      "modifier": 0.15
+    }
+  ],
+  "upgrade": true
+}

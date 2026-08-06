@@ -1,0 +1,23 @@
+{
+  "type": "technology",
+  "name": "gun-turret",
+  "prerequisites": [
+    "automation-science-pack"
+  ],
+  "unit": {
+    "count": 10,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 10
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "gun-turret"
+    }
+  ]
+}

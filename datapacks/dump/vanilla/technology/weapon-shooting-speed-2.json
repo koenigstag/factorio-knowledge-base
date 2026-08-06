@@ -1,0 +1,35 @@
+{
+  "type": "technology",
+  "name": "weapon-shooting-speed-2",
+  "prerequisites": [
+    "weapon-shooting-speed-1",
+    "logistic-science-pack"
+  ],
+  "unit": {
+    "count": 200,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "gun-speed",
+      "ammo_category": "bullet",
+      "modifier": 0.2
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.2
+    }
+  ],
+  "upgrade": true
+}

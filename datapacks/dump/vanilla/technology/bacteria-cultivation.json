@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "bacteria-cultivation",
+  "prerequisites": [
+    "bioflux"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "copper-bacteria-cultivation"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "iron-bacteria-cultivation"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "bioflux"
+  }
+}

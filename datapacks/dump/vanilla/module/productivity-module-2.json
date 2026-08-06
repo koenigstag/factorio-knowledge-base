@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "name": "productivity-module-2",
+  "category": "productivity",
+  "tier": 2,
+  "effect": {
+    "productivity": 0.06,
+    "consumption": 0.6,
+    "pollution": 0.07,
+    "speed": -0.1
+  },
+  "stack_size": 50,
+  "weight": 20000
+}

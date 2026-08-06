@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "agriculture",
+  "prerequisites": [
+    "planet-discovery-gleba"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "agricultural-tower"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "nutrients-from-spoilage"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "iron-stromatolite"
+  }
+}

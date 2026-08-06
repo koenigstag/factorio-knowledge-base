@@ -1,0 +1,18 @@
+{
+  "type": "technology",
+  "name": "big-mining-drill",
+  "prerequisites": [
+    "foundry",
+    "electric-mining-drill"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "big-mining-drill"
+    }
+  ],
+  "research_trigger": {
+    "type": "craft-item",
+    "item": "foundry"
+  }
+}

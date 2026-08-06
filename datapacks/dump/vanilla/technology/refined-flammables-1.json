@@ -1,0 +1,38 @@
+{
+  "type": "technology",
+  "name": "refined-flammables-1",
+  "prerequisites": [
+    "flamethrower"
+  ],
+  "unit": {
+    "count": 100,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 30
+  },
+  "effects": [
+    {
+      "type": "ammo-damage",
+      "ammo_category": "flamethrower",
+      "modifier": 0.2
+    },
+    {
+      "type": "turret-attack",
+      "turret_id": "flamethrower-turret",
+      "modifier": 0.2
+    }
+  ],
+  "upgrade": true
+}

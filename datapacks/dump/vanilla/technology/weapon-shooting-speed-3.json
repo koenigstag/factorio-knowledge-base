@@ -1,0 +1,44 @@
+{
+  "type": "technology",
+  "name": "weapon-shooting-speed-3",
+  "prerequisites": [
+    "weapon-shooting-speed-2",
+    "military-science-pack"
+  ],
+  "unit": {
+    "count": 300,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ],
+      [
+        "military-science-pack",
+        1
+      ]
+    ],
+    "time": 60
+  },
+  "effects": [
+    {
+      "type": "gun-speed",
+      "ammo_category": "bullet",
+      "modifier": 0.2
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "shotgun-shell",
+      "modifier": 0.2
+    },
+    {
+      "type": "gun-speed",
+      "ammo_category": "rocket",
+      "modifier": 0.5
+    }
+  ],
+  "upgrade": true
+}

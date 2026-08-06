@@ -1,0 +1,27 @@
+{
+  "type": "technology",
+  "name": "night-vision-equipment",
+  "prerequisites": [
+    "solar-panel-equipment"
+  ],
+  "unit": {
+    "count": 50,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ],
+      [
+        "logistic-science-pack",
+        1
+      ]
+    ],
+    "time": 15
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "night-vision-equipment"
+    }
+  ]
+}

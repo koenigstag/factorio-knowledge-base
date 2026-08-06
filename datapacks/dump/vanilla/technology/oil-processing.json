@@ -1,0 +1,29 @@
+{
+  "type": "technology",
+  "name": "oil-processing",
+  "prerequisites": [
+    "oil-gathering"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "oil-refinery"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "chemical-plant"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "basic-oil-processing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "solid-fuel-from-petroleum-gas"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "crude-oil"
+  }
+}

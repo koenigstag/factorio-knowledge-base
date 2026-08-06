@@ -1,0 +1,27 @@
+{
+  "type": "technology",
+  "name": "steel-processing",
+  "prerequisites": [
+    "automation-science-pack"
+  ],
+  "unit": {
+    "count": 50,
+    "ingredients": [
+      [
+        "automation-science-pack",
+        1
+      ]
+    ],
+    "time": 5
+  },
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "steel-plate"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "steel-chest"
+    }
+  ]
+}

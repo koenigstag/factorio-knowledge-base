@@ -1,0 +1,25 @@
+{
+  "type": "technology",
+  "name": "calcite-processing",
+  "prerequisites": [
+    "planet-discovery-vulcanus"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "acid-neutralisation"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "steam-condensation"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "simple-coal-liquefaction"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "calcite"
+  }
+}

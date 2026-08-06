@@ -1,0 +1,21 @@
+{
+  "type": "technology",
+  "name": "jellynut",
+  "prerequisites": [
+    "agriculture"
+  ],
+  "effects": [
+    {
+      "type": "unlock-recipe",
+      "recipe": "jellynut-processing"
+    },
+    {
+      "type": "unlock-recipe",
+      "recipe": "iron-bacteria"
+    }
+  ],
+  "research_trigger": {
+    "type": "mine-entity",
+    "entity": "jellystem"
+  }
+}
