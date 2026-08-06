@@ -1,0 +1,4 @@
+{
+  "kovarex_net_per_cycle": { "uranium-235": 1, "uranium-238": -3 },
+  "uranium_processing_expected_crafts_per_uranium_235": 142.86
+}
