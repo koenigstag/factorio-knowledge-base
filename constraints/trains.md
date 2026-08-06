@@ -57,9 +57,17 @@ than the usual dump-derived computation — see the exception note in
 `datapacks/dump/vanilla/UNITS.md`.
 
 6 tiles of length × 2 sides = 12, matching the base inserter cap
-exactly — a suggestive coincidence, but the wiki doesn't state this as
-the actual cause of the 12-inserter limit, so it isn't treated as a
-confirmed derivation here.
+exactly. This has a physical explanation, not just numeric
+coincidence: a wagon's two long sides (6 tiles each) are the only
+sides an inserter can reach along, because the two short (2-tile)
+ends are where the wagon couples to whatever's next in the train —
+another wagon or a locomotive — so there's no free side there to
+place an inserter against regardless of reach. That's a reasoned
+account of *why* 12 specifically (not some other number) rather than
+proof of a documented engine rule — no source found in this session
+states it as the official cause, so it's still not promoted to a
+confirmed derivation, just a considerably less arbitrary-looking
+coincidence than before.
 
 Source: https://wiki.factorio.com/Cargo_wagon
 Verified: 2026-08-06
