@@ -8,7 +8,9 @@ accumulation — all excess converges to petroleum-gas.
 Formula: `formulas/cracking_ratio.py:cracking_ratio`, built on
 `formulas/production_rate.py:production_rate`.
 
-## advanced_oil_processing_heavy_oil_cracking_light_oil_cracking.ratio = [20, 5, 17]
+## advanced_oil_processing_heavy_oil_cracking_light_oil_cracking.ratio
+
+`{"advanced-oil-processing": 20, "heavy-oil-cracking": 5, "light-oil-cracking": 17}`
 
 Recipe rates (`crafting_speed`=1 for both `oil-refinery` and
 `chemical-plant` — `datapacks/dump/vanilla/assembling-machine/`),
