@@ -1,0 +1,16 @@
+{
+  "domain": "datapacks",
+  "topic": "transport belt throughput",
+  "entries": [
+    {
+      "name": "transport_belt.basic",
+      "speed_tiles_per_second": 1.875,
+      "density_items_per_tile_per_lane": 4,
+      "throughput_items_per_second_per_lane": 7.5,
+      "throughput_items_per_second_total": 15,
+      "description": "Basic (yellow) transport belt. Total throughput = 2 lanes x per-lane throughput.",
+      "source_url": "https://wiki.factorio.com/Transport_belts/Physics",
+      "verified_date": "2026-08-06"
+    }
+  ]
+}

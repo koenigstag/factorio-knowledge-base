@@ -1,0 +1,22 @@
+{
+  "domain": "datapacks",
+  "topic": "furnace crafting speed",
+  "entries": [
+    {
+      "name": "stone_furnace.crafting_speed",
+      "value": 1,
+      "unit": "crafting speed multiplier",
+      "description": "Baseline furnace crafting speed (Normal quality). Derived from cross-checking sources reporting stone furnace iron-plate output at 0.3125 plates/sec, which equals 1 / 3.2s recipe time.",
+      "source_url": "https://wiki.factorio.com/Steel_furnace",
+      "verified_date": "2026-08-06"
+    },
+    {
+      "name": "steel_furnace.crafting_speed",
+      "value": 2,
+      "unit": "crafting speed multiplier",
+      "description": "Steel furnace crafting speed at Normal quality (doubles stone furnace speed). Higher quality tiers also exist (Uncommon 2.6, Rare 3.2, Epic 3.8, Legendary 5) but are not covered by this entry.",
+      "source_url": "https://wiki.factorio.com/Steel_furnace",
+      "verified_date": "2026-08-06"
+    }
+  ]
+}
