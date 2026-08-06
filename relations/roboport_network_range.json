@@ -1,0 +1,6 @@
+{
+  "max_connection_distance_tiles": {
+    "logistic": 50,
+    "construction": 110
+  }
+}
