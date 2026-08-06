@@ -9,4 +9,4 @@ direction differs) — not yet implemented as an actual pattern or
 blueprint.
 
 Coined during initial architecture discussion, alongside the
-[[gap-block]] concept.
+`gap-block` concept.
