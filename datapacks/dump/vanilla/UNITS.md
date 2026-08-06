@@ -101,6 +101,24 @@ Per FFF #382, absence doesn't mean zero weight — the game derives a
 weight for those automatically from their recipe chain, which this
 static dump does not capture.
 
+## fluid_box.volume — Factorio's own "fluid units"
+
+**Confirmed** (wiki.factorio.com/Fluid_system + forums): not liters,
+not any real-world volume unit — the game's own internal scale. A pipe
+segment holds 100 units, a storage tank holds 25,000. Connected
+pipes/tanks equalize by *percentage* of their own capacity, not
+absolute amount. `mining-drill.input_fluid_box.volume=200` and
+`pumpjack.output_fluid_box.volume=1000` are on this same scale.
+
+## pipe_connections.direction — 16-direction enum, cardinals spaced 4 apart
+
+**Confirmed**: Factorio 2.0 expanded from the old 8-direction system to
+a 16-direction enum (to support diagonal/elevated rail, see FFF #377),
+where `0`=north, `4`=east, `8`=south, `12`=west (each step = 22.5°; odd
+values are the diagonals in between). All `pipe_connections.direction`
+values actually present in `datapacks/dump/vanilla/mining-drill/` are
+pure cardinals (0/4/8/12) — no diagonal fluid connections in this set.
+
 ## Dimensionless multipliers / fractions — not a unit at all
 
 `module.effect.*` (e.g. `productivity: 0.04` = +4% to the base stat),
