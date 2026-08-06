@@ -1,0 +1,7 @@
+{
+  "petroleum_gas_per_refinery_per_sec": 9,
+  "refineries_to_saturate_one_fluid_connection": {
+    "at_theoretical_cap_6000_per_sec": 666.67,
+    "at_practical_cap_4200_per_sec": 466.67
+  }
+}
