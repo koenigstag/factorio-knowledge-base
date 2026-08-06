@@ -1,22 +1,71 @@
 {
-  "iron_plate": {
-    "stone-furnace": {
-      "transport-belt": 48,
-      "fast-transport-belt": 96,
-      "express-transport-belt": 144,
-      "turbo-transport-belt": 192
-    },
-    "steel-furnace": {
-      "transport-belt": 24,
-      "fast-transport-belt": 48,
-      "express-transport-belt": 72,
-      "turbo-transport-belt": 96
-    },
-    "electric-furnace": {
-      "transport-belt": 24,
-      "fast-transport-belt": 48,
-      "express-transport-belt": 72,
-      "turbo-transport-belt": 96
+  "energy_required_3.2": {
+    "recipes": ["copper-plate", "iron-plate", "stone-brick"],
+    "furnaces_per_belt": {
+      "stone-furnace": {
+        "transport-belt": 48,
+        "fast-transport-belt": 96,
+        "express-transport-belt": 144,
+        "turbo-transport-belt": 192
+      },
+      "steel-furnace": {
+        "transport-belt": 24,
+        "fast-transport-belt": 48,
+        "express-transport-belt": 72,
+        "turbo-transport-belt": 96
+      },
+      "electric-furnace": {
+        "transport-belt": 24,
+        "fast-transport-belt": 48,
+        "express-transport-belt": 72,
+        "turbo-transport-belt": 96
+      }
+    }
+  },
+  "energy_required_6.4": {
+    "recipes": ["lithium-plate"],
+    "furnaces_per_belt": {
+      "stone-furnace": {
+        "transport-belt": 96,
+        "fast-transport-belt": 192,
+        "express-transport-belt": 288,
+        "turbo-transport-belt": 384
+      },
+      "steel-furnace": {
+        "transport-belt": 48,
+        "fast-transport-belt": 96,
+        "express-transport-belt": 144,
+        "turbo-transport-belt": 192
+      },
+      "electric-furnace": {
+        "transport-belt": 48,
+        "fast-transport-belt": 96,
+        "express-transport-belt": 144,
+        "turbo-transport-belt": 192
+      }
+    }
+  },
+  "energy_required_16": {
+    "recipes": ["steel-plate"],
+    "furnaces_per_belt": {
+      "stone-furnace": {
+        "transport-belt": 240,
+        "fast-transport-belt": 480,
+        "express-transport-belt": 720,
+        "turbo-transport-belt": 960
+      },
+      "steel-furnace": {
+        "transport-belt": 120,
+        "fast-transport-belt": 240,
+        "express-transport-belt": 360,
+        "turbo-transport-belt": 480
+      },
+      "electric-furnace": {
+        "transport-belt": 120,
+        "fast-transport-belt": 240,
+        "express-transport-belt": 360,
+        "turbo-transport-belt": 480
+      }
     }
   }
 }
