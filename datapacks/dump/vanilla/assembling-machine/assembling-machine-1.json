@@ -15,5 +15,19 @@
     "emissions_per_minute": {
       "pollution": 4
     }
-  }
+  },
+  "collision_box": [
+    [
+      -1.2,
+      -1.2
+    ],
+    [
+      1.2,
+      1.2
+    ]
+  ],
+  "tile_box": [
+    3,
+    3
+  ]
 }

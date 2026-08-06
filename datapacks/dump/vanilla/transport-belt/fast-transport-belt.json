@@ -1,5 +1,19 @@
 {
   "type": "transport-belt",
   "name": "fast-transport-belt",
-  "speed": 0.0625
+  "speed": 0.0625,
+  "collision_box": [
+    [
+      -0.4,
+      -0.4
+    ],
+    [
+      0.4,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }

@@ -2,5 +2,19 @@
   "type": "underground-belt",
   "name": "express-underground-belt",
   "speed": 0.09375,
-  "max_distance": 9
+  "max_distance": 9,
+  "collision_box": [
+    [
+      -0.4,
+      -0.4
+    ],
+    [
+      0.4,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }

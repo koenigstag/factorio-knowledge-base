@@ -47,5 +47,19 @@
         "flow_direction": "output"
       }
     ]
-  }
+  },
+  "collision_box": [
+    [
+      -1.2,
+      -1.2
+    ],
+    [
+      1.2,
+      1.2
+    ]
+  ],
+  "tile_box": [
+    3,
+    3
+  ]
 }

@@ -40,5 +40,19 @@
     0,
     1.2
   ],
-  "filter_count": 5
+  "filter_count": 5,
+  "collision_box": [
+    [
+      -0.15,
+      -0.15
+    ],
+    [
+      0.15,
+      0.15
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }

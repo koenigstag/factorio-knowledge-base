@@ -1,5 +1,19 @@
 {
   "type": "splitter",
   "name": "splitter",
-  "speed": 0.03125
+  "speed": 0.03125,
+  "collision_box": [
+    [
+      -0.9,
+      -0.4
+    ],
+    [
+      0.9,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    2,
+    1
+  ]
 }

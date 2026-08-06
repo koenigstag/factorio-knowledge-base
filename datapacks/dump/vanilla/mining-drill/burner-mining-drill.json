@@ -35,5 +35,19 @@
     "basic-solid"
   ],
   "resource_searching_radius": 0.99,
-  "allowed_effects": {}
+  "allowed_effects": {},
+  "collision_box": [
+    [
+      -0.7,
+      -0.7
+    ],
+    [
+      0.7,
+      0.7
+    ]
+  ],
+  "tile_box": [
+    2,
+    2
+  ]
 }

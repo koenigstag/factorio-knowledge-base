@@ -15,5 +15,19 @@
       "pollution": 4
     }
   },
-  "module_slots": 5
+  "module_slots": 5,
+  "collision_box": [
+    [
+      -1.7,
+      -1.7
+    ],
+    [
+      1.7,
+      1.7
+    ]
+  ],
+  "tile_box": [
+    4,
+    4
+  ]
 }

@@ -32,5 +32,19 @@
       ]
     }
   },
-  "module_slots": 0
+  "module_slots": 0,
+  "collision_box": [
+    [
+      -2.2,
+      -2.2
+    ],
+    [
+      2.2,
+      2.2
+    ]
+  ],
+  "tile_box": [
+    5,
+    5
+  ]
 }

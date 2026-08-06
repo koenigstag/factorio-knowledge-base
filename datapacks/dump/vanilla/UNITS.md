@@ -73,6 +73,22 @@ universal spatial unit for all entity geometry — same unit as
 `cargo-wagon.collision_box = [[-0.6,-2.4],[0.6,2.4]]` → 1.2×4.8 tiles,
 matches the commonly-cited cargo wagon footprint.
 
+Note `selection_box` is a UI click-target box, not a reliable footprint
+— e.g. `stone-furnace.selection_box` is `[[-0.8,-1],[0.8,1]]` (1.6×2.0,
+not square) even though the building occupies a square 2×2 grid. Use
+`collision_box` for footprint, not `selection_box`.
+
+**`tile_box`** — `[width, height]` in whole tiles, added alongside
+`collision_box` on grid-placed buildings (`furnace`,
+`assembling-machine`, `mining-drill`, belt family, `inserter`).
+Computed as `ceil(collision_box width)` × `ceil(collision_box height)`
+— cross-checked against 8 independently-known footprints (stone-furnace
+2×2, electric-furnace/assembling-machine-*/pumpjack 3×3,
+electric-mining-drill 3×3, foundry 5×5, transport-belt/inserter 1×1),
+all matched exactly. Not added to rail-bound vehicles (`cargo-wagon`)
+— those sit on rail track, not the building grid, so the same rounding
+isn't meaningful there.
+
 ## item.weight — grams
 
 **Confirmed**: `iron-ore`/`copper-ore`/`coal`/`stone`/`wood` all have

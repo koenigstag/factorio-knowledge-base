@@ -1,5 +1,19 @@
 {
   "type": "splitter",
   "name": "turbo-splitter",
-  "speed": 0.125
+  "speed": 0.125,
+  "collision_box": [
+    [
+      -0.9,
+      -0.4
+    ],
+    [
+      0.9,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    2,
+    1
+  ]
 }

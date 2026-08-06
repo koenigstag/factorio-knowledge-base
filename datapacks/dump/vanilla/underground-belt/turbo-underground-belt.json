@@ -2,5 +2,19 @@
   "type": "underground-belt",
   "name": "turbo-underground-belt",
   "speed": 0.125,
-  "max_distance": 11
+  "max_distance": 11,
+  "collision_box": [
+    [
+      -0.4,
+      -0.4
+    ],
+    [
+      0.4,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }

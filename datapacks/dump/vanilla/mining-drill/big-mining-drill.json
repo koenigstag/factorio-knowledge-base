@@ -49,5 +49,19 @@
       }
     ]
   },
-  "resource_drain_rate_percent": 50
+  "resource_drain_rate_percent": 50,
+  "collision_box": [
+    [
+      -2.3,
+      -2.3
+    ],
+    [
+      2.3,
+      2.3
+    ]
+  ],
+  "tile_box": [
+    5,
+    5
+  ]
 }

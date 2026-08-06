@@ -1,5 +1,19 @@
 {
   "type": "transport-belt",
   "name": "turbo-transport-belt",
-  "speed": 0.125
+  "speed": 0.125,
+  "collision_box": [
+    [
+      -0.4,
+      -0.4
+    ],
+    [
+      0.4,
+      0.4
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }

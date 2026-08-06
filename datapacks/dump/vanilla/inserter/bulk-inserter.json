@@ -20,5 +20,19 @@
   ],
   "starting_distance": 0.85,
   "filter_count": 5,
-  "bulk": true
+  "bulk": true,
+  "collision_box": [
+    [
+      -0.15,
+      -0.15
+    ],
+    [
+      0.15,
+      0.15
+    ]
+  ],
+  "tile_box": [
+    1,
+    1
+  ]
 }
