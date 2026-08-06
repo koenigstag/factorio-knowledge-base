@@ -1,0 +1,19 @@
+{
+  "type": "assembling-machine",
+  "name": "electromagnetic-plant",
+  "crafting_speed": 2,
+  "crafting_categories": [
+    "electromagnetics",
+    "electronics",
+    "electronics-with-fluid",
+    "electronics-or-assembling"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 4
+    }
+  },
+  "module_slots": 5
+}

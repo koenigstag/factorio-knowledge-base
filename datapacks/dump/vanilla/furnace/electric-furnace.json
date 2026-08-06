@@ -1,0 +1,25 @@
+{
+  "type": "furnace",
+  "name": "electric-furnace",
+  "crafting_speed": 2,
+  "crafting_categories": [
+    "smelting"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 1
+    }
+  },
+  "energy_usage": "180kW",
+  "source_inventory_size": 1,
+  "result_inventory_size": 1,
+  "allowed_effects": [
+    "consumption",
+    "speed",
+    "productivity",
+    "pollution",
+    "quality"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "furnace",
+  "name": "recycler",
+  "crafting_speed": 0.5,
+  "crafting_categories": [
+    "recycling",
+    "recycling-or-hand-crafting"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 2
+    }
+  },
+  "energy_usage": "180kW",
+  "source_inventory_size": 1,
+  "result_inventory_size": 12,
+  "allowed_effects": [
+    "consumption",
+    "speed",
+    "pollution",
+    "quality"
+  ]
+}

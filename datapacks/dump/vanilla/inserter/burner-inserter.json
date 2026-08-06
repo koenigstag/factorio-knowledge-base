@@ -1,0 +1,44 @@
+{
+  "type": "inserter",
+  "name": "burner-inserter",
+  "extension_speed": 0.035,
+  "rotation_speed": 0.013000000000000001,
+  "energy_source": {
+    "type": "burner",
+    "fuel_categories": [
+      "chemical"
+    ],
+    "initial_fuel": "wood",
+    "initial_fuel_percent": 0.25,
+    "effectivity": 1,
+    "fuel_inventory_size": 1,
+    "light_flicker": {
+      "color": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smoke": [
+      {
+        "name": "smoke",
+        "deviation": [
+          0.1,
+          0.1
+        ],
+        "frequency": 9
+      }
+    ]
+  },
+  "energy_per_movement": "50kJ",
+  "energy_per_rotation": "50kJ",
+  "pickup_position": [
+    0,
+    -1
+  ],
+  "insert_position": [
+    0,
+    1.2
+  ],
+  "filter_count": 5
+}

@@ -1,0 +1,19 @@
+{
+  "type": "assembling-machine",
+  "name": "foundry",
+  "crafting_speed": 4,
+  "crafting_categories": [
+    "metallurgy",
+    "pressing",
+    "crafting-with-fluid-or-metallurgy",
+    "metallurgy-or-assembling"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 6
+    }
+  },
+  "module_slots": 4
+}

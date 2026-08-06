@@ -1,0 +1,19 @@
+{
+  "type": "assembling-machine",
+  "name": "assembling-machine-1",
+  "crafting_speed": 0.5,
+  "crafting_categories": [
+    "crafting",
+    "basic-crafting",
+    "advanced-crafting",
+    "electronics",
+    "pressing"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 4
+    }
+  }
+}

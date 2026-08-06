@@ -1,0 +1,21 @@
+{
+  "type": "recipe",
+  "name": "iron-plate",
+  "category": "smelting",
+  "energy_required": 3.2,
+  "ingredients": [
+    {
+      "type": "item",
+      "name": "iron-ore",
+      "amount": 1
+    }
+  ],
+  "results": [
+    {
+      "type": "item",
+      "name": "iron-plate",
+      "amount": 1
+    }
+  ],
+  "allow_productivity": true
+}

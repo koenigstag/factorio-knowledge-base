@@ -1,0 +1,16 @@
+{
+  "method": "factorio --dump-data",
+  "game_version": "2.0.77",
+  "official_mods": [
+    "base",
+    "elevated-rails",
+    "quality",
+    "space-age"
+  ],
+  "other_mods": [
+    "squeak-through-2 0.1.5"
+  ],
+  "other_mods_notes": "squeak-through-2 only shrinks player-passable collision boxes on certain entities; it does not modify recipes, crafting_speed, energy values, or belt/inserter throughput fields captured in this dump.",
+  "extracted_date": "2026-08-06",
+  "dump_command_output_summary": "Prototype list checksum: 3295867752; checksums per mod logged at dump time."
+}

@@ -1,0 +1,28 @@
+{
+  "type": "assembling-machine",
+  "name": "assembling-machine-3",
+  "crafting_speed": 1.25,
+  "crafting_categories": [
+    "basic-crafting",
+    "crafting",
+    "advanced-crafting",
+    "crafting-with-fluid",
+    "electronics",
+    "electronics-with-fluid",
+    "pressing",
+    "metallurgy-or-assembling",
+    "organic-or-hand-crafting",
+    "organic-or-assembling",
+    "electronics-or-assembling",
+    "cryogenics-or-assembling",
+    "crafting-with-fluid-or-metallurgy"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 2
+    }
+  },
+  "module_slots": 4
+}

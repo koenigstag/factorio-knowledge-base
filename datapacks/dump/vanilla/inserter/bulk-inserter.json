@@ -1,0 +1,24 @@
+{
+  "type": "inserter",
+  "name": "bulk-inserter",
+  "extension_speed": 0.1,
+  "rotation_speed": 0.04,
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "drain": "1kW"
+  },
+  "energy_per_movement": "20kJ",
+  "energy_per_rotation": "20kJ",
+  "pickup_position": [
+    0,
+    -1
+  ],
+  "insert_position": [
+    0,
+    1.2
+  ],
+  "starting_distance": 0.85,
+  "filter_count": 5,
+  "bulk": true
+}

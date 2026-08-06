@@ -1,0 +1,26 @@
+{
+  "type": "inserter",
+  "name": "stack-inserter",
+  "extension_speed": 0.1,
+  "rotation_speed": 0.04,
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "drain": "1kW"
+  },
+  "energy_per_movement": "40kJ",
+  "energy_per_rotation": "40kJ",
+  "pickup_position": [
+    0,
+    -1
+  ],
+  "insert_position": [
+    0,
+    1.2
+  ],
+  "starting_distance": 0.85,
+  "filter_count": 5,
+  "bulk": true,
+  "stack_size_bonus": 4,
+  "max_belt_stack_size": 4
+}

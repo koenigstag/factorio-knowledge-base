@@ -1,0 +1,6 @@
+{
+  "type": "underground-belt",
+  "name": "underground-belt",
+  "speed": 0.03125,
+  "max_distance": 5
+}

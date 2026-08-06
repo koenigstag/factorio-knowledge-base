@@ -1,0 +1,18 @@
+{
+  "type": "assembling-machine",
+  "name": "chemical-plant",
+  "crafting_speed": 1,
+  "crafting_categories": [
+    "chemistry",
+    "chemistry-or-cryogenics",
+    "organic-or-chemistry"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 4
+    }
+  },
+  "module_slots": 3
+}

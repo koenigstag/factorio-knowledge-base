@@ -1,0 +1,18 @@
+{
+  "type": "assembling-machine",
+  "name": "cryogenic-plant",
+  "crafting_speed": 2,
+  "crafting_categories": [
+    "cryogenics",
+    "chemistry-or-cryogenics",
+    "cryogenics-or-assembling"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 6
+    }
+  },
+  "module_slots": 8
+}

@@ -1,0 +1,39 @@
+{
+  "type": "assembling-machine",
+  "name": "biochamber",
+  "crafting_speed": 2,
+  "crafting_categories": [
+    "organic",
+    "organic-or-hand-crafting",
+    "organic-or-assembling",
+    "organic-or-chemistry"
+  ],
+  "energy_source": {
+    "type": "burner",
+    "fuel_categories": [
+      "nutrients"
+    ],
+    "effectivity": 1,
+    "burner_usage": "nutrients",
+    "fuel_inventory_size": 1,
+    "emissions_per_minute": {
+      "pollution": -1
+    },
+    "light_flicker": {
+      "minimum_intensity": 0,
+      "maximum_intensity": 0,
+      "derivation_change_frequency": 0,
+      "derivation_change_deviation": 0,
+      "border_fix_speed": 0,
+      "minimum_light_size": 0,
+      "light_intensity_to_size_coefficient": 0,
+      "color": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "module_slots": 4
+}

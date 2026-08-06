@@ -1,0 +1,16 @@
+{
+  "type": "assembling-machine",
+  "name": "centrifuge",
+  "crafting_speed": 1,
+  "crafting_categories": [
+    "centrifuging"
+  ],
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "emissions_per_minute": {
+      "pollution": 4
+    }
+  },
+  "module_slots": 2
+}

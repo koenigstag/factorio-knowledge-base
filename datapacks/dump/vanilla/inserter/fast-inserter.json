@@ -1,0 +1,22 @@
+{
+  "type": "inserter",
+  "name": "fast-inserter",
+  "extension_speed": 0.1,
+  "rotation_speed": 0.04,
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "drain": "0.5kW"
+  },
+  "energy_per_movement": "7kJ",
+  "energy_per_rotation": "7kJ",
+  "pickup_position": [
+    0,
+    -1
+  ],
+  "insert_position": [
+    0,
+    1.2
+  ],
+  "filter_count": 5
+}

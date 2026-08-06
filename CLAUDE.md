@@ -15,8 +15,11 @@ factories.
 ## Hard rules
 
 1. **Never add a numeric fact without a source.** Every entry in
-   `datapacks/` or `constraints/` must include `source_url` and
-   `verified_date`. A bare remembered number is rejected — this
+   `constraints/` must include `source_url` and `verified_date`.
+   Entries under `datapacks/dump/<mod-set>/` get their provenance from
+   the shared `datapacks/dump/<mod-set>/source.json` manifest instead
+   of a per-file field — see rule 5. A bare remembered number is
+   rejected — this
    project already caught an error this way once: an early pass cited
    rail turn radius as 10 tiles from an unreliable search snippet; the
    actual sourced value (Friday Facts #377) is 11 tiles pre-2.0 / 13
@@ -39,12 +42,27 @@ factories.
    file per term, plain English definition, a note on where/why it was
    coined.
 
+5. **`datapacks/` has sub-sources, not one format.**
+   `datapacks/dump/<mod-set>/<type>/<name>.json` mirrors
+   `data.raw[type][name]` from a `factorio --dump-data` run made with
+   a specific set of mods enabled (e.g. `vanilla` = base + official
+   DLCs only, no data-affecting third-party mods). Provenance (game
+   version, mod set, extraction date) lives once in
+   `datapacks/dump/<mod-set>/source.json`, not repeated per file — a
+   modded playthrough gets its own `<mod-set>` folder alongside
+   `vanilla`, never mixed into it, since a mod can change recipes,
+   crafting speeds, or add/remove prototypes entirely. Other datapack
+   sources that aren't dump-derived at all (manually sourced,
+   community-curated, etc.) get their own sibling folder directly
+   under `datapacks/` with their own provenance convention (per-entry
+   `source_url`/`verified_date`, per rule 1).
+
 ## Current structure
 
 ```
-datapacks/    raw game data (recipes, machine/belt throughput) — sourced, cited
-constraints/  hard engine limits — sourced, cited
-glossary/     canonical/ (established terms) vs invented/ (ours)
+datapacks/dump/vanilla/   data.raw extract, base+DLC, one file per prototype — provenance in source.json
+constraints/               hard engine limits — sourced, cited per entry
+glossary/                  canonical/ (established terms) vs invented/ (ours)
 ```
 
 Not created yet (planned, not to be scaffolded speculatively):

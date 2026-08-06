@@ -1,0 +1,21 @@
+{
+  "type": "recipe",
+  "name": "copper-plate",
+  "category": "smelting",
+  "energy_required": 3.2,
+  "ingredients": [
+    {
+      "type": "item",
+      "name": "copper-ore",
+      "amount": 1
+    }
+  ],
+  "results": [
+    {
+      "type": "item",
+      "name": "copper-plate",
+      "amount": 1
+    }
+  ],
+  "allow_productivity": true
+}

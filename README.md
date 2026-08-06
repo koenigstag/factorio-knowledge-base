@@ -12,7 +12,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 ## Repository layout
 
-- `datapacks/` — raw game data (recipes, machine/belt throughput): a formula input, not a result.
+- `datapacks/` — raw game data (recipes, machine/belt throughput): a formula input, not a result. `datapacks/dump/<mod-set>/` (e.g. `vanilla`) is extracted directly from the game via `factorio --dump-data` — one file per prototype, provenance in that mod-set's own `source.json` — rather than transcribed by hand.
 - `constraints/` — hard engine limits that can't be recalculated differently (e.g. rail turn radius, chunk size, max inserters per wagon).
 - `glossary/` — `canonical/` for established Factorio/community terms, `invented/` for terms coined in this project.
 
