@@ -18,7 +18,7 @@ Direct wiki quotes:
 > "In order to maintain throughput, balancing the lanes may be
 > necessary."
 
-This project's `glossary/invented/gap-block.md` already referenced
+This project's `glossary/invented/gap-chunk.md` already referenced
 "balancers" needing space in the gap zone.
 
 Source: https://wiki.factorio.com/Belt_transport_system

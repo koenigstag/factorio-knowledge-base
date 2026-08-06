@@ -1,4 +1,4 @@
-# gap-block (gap zone)
+# gap-chunk (gap zone)
 
 Empty space between two neighboring city-block modules along the main
 bus, reserved for: (1) tap-in/tap-out infrastructure, (2) `lane

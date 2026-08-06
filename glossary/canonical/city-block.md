@@ -16,7 +16,7 @@ supports the modularity/pathfinding tradeoff described above:
 > ease of expansion, fun, symmetry" ... "best avoided [by some] because
 > they complicate a lot the pathfinding for trains"
 
-This project's `export-block`/`gap-block` (see `glossary/invented/`)
+This project's `export-block`/`gap-chunk` (see `glossary/invented/`)
 describe city-block variants and the space between blocks.
 
 Source: https://forums.factorio.com/viewtopic.php?t=126785 (community usage, not a formal definition)
