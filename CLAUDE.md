@@ -89,7 +89,15 @@ formulas/                  .py functions, pure — parameters in, number out, no
 relations/                 derived numeric relations — <topic>.json (bare values) + <topic>.md (formula + inputs used)
 glossary/                  canonical/ (established terms) vs invented/ (ours)
 decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
+examples/                  walkthroughs: question → which files to read → formula call → result
 ```
+
+`examples/` vs `relations/`: `relations/` is the cached answer,
+`examples/` is the method that produced it — a plain-English question,
+the primitives it needs, the actual `formulas/` call, and (where one
+exists) a cross-check against the matching `relations/` entry. Write
+one when the *pattern* of using a formula is worth showing, not one
+per `relations/` entry.
 
 Not created yet (planned, not to be scaffolded speculatively):
 `patterns/`, `contracts/`, `modules/`, `blueprints/`, `layouts/`,
