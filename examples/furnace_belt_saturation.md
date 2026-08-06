@@ -4,15 +4,6 @@
 yellow (basic) transport belt. How many furnaces do I need before the
 belt is fully saturated?
 
-## Why not just remember "24"?
-
-This project's own CLAUDE.md rule 1 exists because of this exact
-number: an early pass in this project's history misremembered it as
-"12". The right approach isn't to recall a number, it's to read the
-three primitives that determine it and combine them with a formula —
-so the answer stays correct even if the recipe, the furnace tier, or
-the belt tier changes.
-
 ## Step 1 — find the three primitives
 
 | what | file | field | value |
