@@ -15,5 +15,6 @@ not yet re-derived as a formula — see open questions below.
   reuses the standard tap gap is unresolved.
 
 Coined during initial architecture discussion (not yet backed by a
-written decision record in this repo). See `layouts/city_block_grid.md`
-for how this composes with `city-block`/`main-bus`/`export-block`.
+written decision record in this repo). See
+[layouts/city_block_grid.md](../../layouts/city_block_grid.md) for how
+this composes with `city-block`/`main-bus`/`export-block`.

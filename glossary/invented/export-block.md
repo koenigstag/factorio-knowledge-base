@@ -7,5 +7,5 @@ need different port geometry: the lower gap reserved for export
 infrastructure instead of the next block in the same column.
 
 Coined during initial architecture discussion; not yet implemented.
-See `layouts/city_block_grid.md` for how this composes with
-`city-block`/`main-bus`/`gap-chunk`.
+See [layouts/city_block_grid.md](../../layouts/city_block_grid.md) for
+how this composes with `city-block`/`main-bus`/`gap-chunk`.

@@ -12,8 +12,8 @@ Official Wube tutorial, not just a community term:
 
 This project's `gap-chunk`/`tap-module` (see `glossary/invented/`)
 describe infrastructure that plugs into a main bus at a city-block
-boundary. See `layouts/city_block_grid.md` for how they all compose
-into one grid.
+boundary. See [layouts/city_block_grid.md](../../layouts/city_block_grid.md)
+for how they all compose into one grid.
 
 Source: https://wiki.factorio.com/tutorial:main_bus
 Verified: 2026-08-06
