@@ -1,0 +1,14 @@
+{
+  "type": "heat-pipe",
+  "name": "heat-pipe",
+  "heat_buffer": {
+    "max_temperature": 1000,
+    "specific_heat": "1MJ",
+    "max_transfer": "1GW"
+  },
+  "collision_box": [
+    [-0.3, -0.3],
+    [0.3, 0.3]
+  ],
+  "tile_box": [1, 1]
+}

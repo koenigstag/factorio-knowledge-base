@@ -1,0 +1,13 @@
+{
+  "heat_exchangers_per_reactor": 4,
+  "heat_exchanger_steam_output_per_sec": 103.09,
+  "steam_turbine_power_output_mw": 5.82,
+  "turbines_per_heat_exchanger": 1.7182,
+  "turbines_per_reactor": 6.87,
+  "min_heat_pipe_paths_by_reactor_grid": {
+    "1_reactor": 1,
+    "2x2": 1,
+    "2x4": 2,
+    "2x6": 2
+  }
+}

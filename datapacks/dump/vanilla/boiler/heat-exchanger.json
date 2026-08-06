@@ -1,0 +1,26 @@
+{
+  "type": "boiler",
+  "name": "heat-exchanger",
+  "energy_source": {
+    "type": "heat",
+    "max_temperature": 1000,
+    "min_working_temperature": 500
+  },
+  "energy_consumption": "10MW",
+  "target_temperature": 500,
+  "fluid_box": {
+    "volume": 200,
+    "filter": "water",
+    "production_type": "input"
+  },
+  "output_fluid_box": {
+    "volume": 200,
+    "filter": "steam",
+    "production_type": "output"
+  },
+  "collision_box": [
+    [-1.29, -0.79],
+    [1.29, 0.79]
+  ],
+  "tile_box": [3, 2]
+}
