@@ -3,21 +3,35 @@
 ## max_inserters_per_wagon = 12
 
 Maximum number of inserters that can access a single cargo wagon,
-both sides combined, using regular (or any single-row) inserters — one
-row per side.
+both sides combined — applies to the whole shared-geometry class of
+inserters, not just "regular": `inserter`, `fast-inserter`,
+`burner-inserter`, `bulk-inserter`, and `stack-inserter` all have the
+identical `pickup_position=[0,-1]`/`insert_position=[0,1.2]` in
+`datapacks/dump/vanilla/inserter/`, so this count is the same 12 for
+any of them. What differs *within* that shared count is throughput per
+inserter (`extension_speed`/`rotation_speed`, plus items-per-cycle via
+`bulk`/`stack_size_bonus` for the last two) — that's a rate, not a
+count, and needs the geometry-aware cycle-time formula noted in
+`datapacks/dump/vanilla/UNITS.md` (not built yet). Total wagon loading
+throughput = this count × that per-inserter rate — a `relations/`
+question combining this constraint with a `formulas/` result, not a
+constraint by itself.
 
 Source: https://wiki.factorio.com/Cargo_wagon
 Verified: 2026-08-06
 
 ## max_inserters_per_wagon_long_handed_double_row = 24
 
-Using long-handed inserters specifically (longer reach), two staggered
-rows fit on each side instead of one, doubling the total to 24 (12 per
-side × 2 sides). Mechanism, per multiple independent community
-sources: the wagon is 2 tiles wide, so a long-handed inserter's
-extended pickup/drop reach lands inside the wagon from either of the
-two staggered rows without the rows colliding — something a single
-regular-inserter row can't exploit.
+Only `long-handed-inserter` reaches this — it's the one tier with
+different geometry (`pickup_position=[0,-2]`, `insert_position=[0,2.2]`,
+`starting_distance=1.7`, `hand_size=1.5`, all distinct from the
+shared-geometry class above). Two staggered rows fit on each side
+instead of one, doubling the total to 24 (12 per side × 2 sides).
+Mechanism, per multiple independent community sources: the wagon is 2
+tiles wide, so a long-handed inserter's extended pickup/drop reach
+lands inside the wagon from either of the two staggered rows without
+the rows colliding — something the shared-geometry class's shorter
+reach can't exploit.
 
 Unlike the base 12 figure, this isn't stated on the official wiki page
 itself — it's a community technique, sourced here from consistent
