@@ -45,6 +45,16 @@ Sources (community, not official wiki):
 - https://steamcommunity.com/app/427520/discussions/0/143388380482475488/
 Verified: 2026-08-06
 
+## Related: no cargo weight limit
+
+`cargo-wagon` has no cargo weight cap — checked its full `data.raw`
+field list directly: it does have a `weight` field, but that's the
+wagon's *own* mass (used for train physics — braking/acceleration),
+not a limit on what it carries. A wagon's cargo capacity is purely
+`inventory_size × item.stack_size`, unlike a rocket, which is capped
+by both slots *and* `utility-constants.rocket_lift_weight` — see
+`relations/cargo_capacity.md`.
+
 ## Related: wagon dimensions
 
 The wiki's cargo wagon infobox states `Dimensions: 2×6` (tiles) — note
