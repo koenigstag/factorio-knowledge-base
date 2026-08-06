@@ -11,7 +11,7 @@ answers into a bigger one.
 ## Step 1 — furnaces needed (from `relations/smelting_ratios.json`)
 
 `energy_required_3.2.furnaces_per_belt.steel-furnace.transport-belt`
-= **24**. (See `examples/furnace_belt_saturation.md` for how this
+= **24**. (See `examples/iron_plate_belt_saturation.md` for how this
 number itself was produced.)
 
 ## Step 2 — drills needed to feed those 24 furnaces (from `relations/mining_furnace_ratios.json`)
