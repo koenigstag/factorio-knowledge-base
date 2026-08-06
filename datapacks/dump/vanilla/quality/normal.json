@@ -1,0 +1,7 @@
+{
+  "type": "quality",
+  "name": "normal",
+  "level": 0,
+  "next": "uncommon",
+  "next_probability": 0.1
+}

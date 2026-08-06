@@ -1,0 +1,7 @@
+{
+  "type": "quality",
+  "name": "rare",
+  "level": 2,
+  "next": "epic",
+  "next_probability": 0.1
+}

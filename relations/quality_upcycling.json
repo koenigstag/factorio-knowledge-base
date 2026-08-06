@@ -1,0 +1,14 @@
+{
+  "module_quality_chance_fraction": {
+    "quality-module": 0.01,
+    "quality-module-2": 0.02,
+    "quality-module-3": 0.025
+  },
+  "tier_jump_distribution_fraction_given_upgrade": {
+    "+1": 0.9,
+    "+2": 0.09,
+    "+3": 0.009,
+    "+4_legendary": 0.001
+  },
+  "recycler_ingredient_return_fraction": 0.25
+}

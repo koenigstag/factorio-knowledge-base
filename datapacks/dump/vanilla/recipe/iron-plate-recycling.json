@@ -1,0 +1,12 @@
+{
+  "type": "recipe",
+  "name": "iron-plate-recycling",
+  "category": "recycling",
+  "ingredients": [
+    { "type": "item", "name": "iron-plate", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "iron-plate", "amount": 1, "probability": 0.25 }
+  ],
+  "energy_required": 0.2
+}

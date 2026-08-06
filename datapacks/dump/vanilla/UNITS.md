@@ -175,6 +175,14 @@ fast", matching the field exactly). These scale a base value
 multiplicatively; there's nothing to convert, just don't mistake them
 for absolute quantities.
 
+**Exception: `module.effect.quality` is ×10 its displayed percentage**
+— unlike every other `effect.*` field above. `quality-module`'s
+`effect.quality=0.1` is +1% in-game, not +10%. Not assumed: derived by
+cross-checking all 3 quality-module tiers (`0.1`/`0.2`/`0.25`) against
+the wiki's stated `+1%`/`+2%`/`+2.5%` — all three divide out to
+exactly ×10, see `relations/quality_upcycling.md`. `formulas/
+quality_upgrade_chance.py:module_quality_chance` applies this.
+
 ## Plain counts / already unambiguous
 
 `stack_size`, `module_slots`, `filter_count`, `inventory_size` (item
