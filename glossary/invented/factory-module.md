@@ -16,8 +16,10 @@ entirely new module with its own port — rather than overloading what's
 already there. Like adding a RAM stick to an empty slot instead of
 overclocking the one you have: the `port` (see
 `glossary/invented/port.md`) is the slot, the module is what plugs
-into it. A `city-block` can hold several factory modules side by side,
-same function or different ones.
+into it. A `city-block` can hold several factory modules, same
+function or different ones — how they're arranged inside the block
+isn't fixed by this term, since bus orientation itself isn't fixed
+(see `layouts/city_block_grid.md`).
 
 Implements one `contract` (see `glossary/invented/contract.md`): the
 function stays fixed (e.g. "produces steel-plate from iron-plate"),
