@@ -37,10 +37,21 @@ factories.
    inputs, it's not a constraint.
 
 3. **Never state a derived number without its derivation.** A number
-   obtained by combining two or more sourced facts (e.g. "26 tiles
-   between rail centers" from radius × 2) belongs in `relations/` with
-   a reference to the `formulas/` function that produces it — not as a
-   flat value in `datapacks/`, `constraints/`, or prose.
+   obtained by combining two or more sourced facts (e.g. "24 steel
+   furnaces saturate a yellow belt", from `recipe.energy_required` ÷
+   `furnace.crafting_speed` ÷ `belt.speed`) belongs in `relations/`
+   with a reference to the `formulas/` function that produces it — not
+   as a flat value in `datapacks/`, `constraints/`, or prose. The test
+   isn't "has anyone else published this number" (they probably have)
+   — it's "do we already have the primitives to derive it ourselves":
+   if yes, derive it via `formulas/`, don't cite someone else's
+   pre-computed answer. Same `<topic>.json` (bare values) +
+   `<topic>.md` (formula reference, inputs, computation) split as
+   `constraints/` — see `relations/smelting_ratios.*` for the pattern.
+   Contrast with a `constraints/` fact like max inserters per wagon:
+   even though it's also a number, it isn't the output of any known
+   formula over primitives we hold — it was discovered by empirical
+   in-game testing, not computed, so it stays a constraint.
 
 4. **New term while describing something → `glossary/invented/`.** One
    file per term, plain English definition, a note on where/why it was
@@ -66,15 +77,17 @@ factories.
 ```
 datapacks/dump/vanilla/   data.raw extract, base+DLC, one file per prototype — provenance in source.json
 constraints/               hard engine limits — <topic>.json (bare values) + <topic>.md (sourcing/history)
+formulas/                  .py functions, pure — parameters in, number out, nothing hardcoded
+relations/                 derived numeric relations — <topic>.json (bare values) + <topic>.md (formula + inputs used)
 glossary/                  canonical/ (established terms) vs invented/ (ours)
 ```
 
 Not created yet (planned, not to be scaffolded speculatively):
-`formulas/`, `relations/`, `patterns/`, `contracts/`, `modules/`,
-`blueprints/`, `layouts/`, `generators/`, `benchmarks/`, `decisions/`,
-`changelog/`. `contracts/`/`modules/` specifically should only be
-created once a second interchangeable implementation of the same slot
-exists — not upfront.
+`patterns/`, `contracts/`, `modules/`, `blueprints/`, `layouts/`,
+`generators/`, `benchmarks/`, `decisions/`, `changelog/`.
+`contracts/`/`modules/` specifically should only be created once a
+second interchangeable implementation of the same slot exists — not
+upfront.
 
 ## Versioning
 

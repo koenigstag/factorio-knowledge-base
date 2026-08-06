@@ -4,7 +4,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 ## Status
 
-🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `constraints/`) and terminology (`glossary/`). Formulas, patterns and blueprint generation are not built yet.
+🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `constraints/`), the first derived relation (`relations/smelting_ratios.*`, via `formulas/production_rate.py`), and terminology (`glossary/`). Patterns and blueprint generation are not built yet.
 
 ## Key principle
 
@@ -14,9 +14,11 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 - `datapacks/` — raw game data (recipes, machine/belt throughput): a formula input, not a result. `datapacks/dump/<mod-set>/` (e.g. `vanilla`) is extracted directly from the game via `factorio --dump-data` — one file per prototype, provenance in that mod-set's own `source.json` — rather than transcribed by hand.
 - `constraints/` — hard engine limits that can't be recalculated differently (e.g. rail turn radius, chunk size, max inserters per wagon).
+- `formulas/` — pure Python functions (e.g. machine ratio from crafting speed, recipe time, consumer throughput). No hardcoded values.
+- `relations/` — derived numbers that come from applying a `formulas/` function to specific `datapacks/` values (e.g. "24 steel furnaces saturate a yellow belt") — never stored as a bare constant, always with the formula + inputs that produced it.
 - `glossary/` — `canonical/` for established Factorio/community terms, `invented/` for terms coined in this project.
 
-More domains (`formulas/`, `relations/`, `patterns/`, `blueprints/`, ...) are planned but not created yet — see [CLAUDE.md](CLAUDE.md).
+More domains (`patterns/`, `blueprints/`, ...) are planned but not created yet — see [CLAUDE.md](CLAUDE.md).
 
 ## Versioning
 
