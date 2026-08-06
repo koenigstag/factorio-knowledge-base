@@ -1,0 +1,6 @@
+{
+  "dawn_ticks": 5000,
+  "day_ticks": 12500,
+  "dusk_ticks": 5000,
+  "night_ticks": 2500
+}

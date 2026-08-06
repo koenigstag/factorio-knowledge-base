@@ -1,0 +1,11 @@
+{
+  "type": "accumulator",
+  "name": "accumulator",
+  "energy_source": {
+    "type": "electric",
+    "buffer_capacity": "5MJ",
+    "usage_priority": "tertiary",
+    "input_flow_limit": "300kW",
+    "output_flow_limit": "300kW"
+  }
+}
