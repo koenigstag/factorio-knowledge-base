@@ -90,6 +90,7 @@ relations/                 derived numeric relations — <topic>.json (bare valu
 glossary/                  canonical/ (established terms) vs invented/ (ours)
 decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
 examples/                  walkthroughs: question → which files to read → formula call → result
+layouts/                   spatial composition of glossary/invented terms into one repeatable pattern — <name>.md; numeric params cite formulas/relations or stay flagged open, never guessed
 ```
 
 `examples/` vs `relations/`: `relations/` is the cached answer,
@@ -100,10 +101,13 @@ one when the *pattern* of using a formula is worth showing, not one
 per `relations/` entry.
 
 Not created yet (planned, not to be scaffolded speculatively):
-`patterns/`, `contracts/`, `modules/`, `blueprints/`, `layouts/`,
+`patterns/`, `contracts/`, `modules/`, `blueprints/`,
 `generators/`, `benchmarks/`, `changelog/`. `contracts/`/`modules/`
 specifically should only be created once a second interchangeable
-implementation of the same slot exists — not upfront.
+implementation of the same slot exists — not upfront. (`layouts/` was
+in this list too until the concepts it composes — `city-block`,
+`main-bus`, `gap-chunk`, `export-block` — had enough cross-references
+between them to be worth tying together explicitly.)
 
 ## Versioning
 

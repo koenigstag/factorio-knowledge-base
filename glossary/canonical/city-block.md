@@ -17,7 +17,8 @@ supports the modularity/pathfinding tradeoff described above:
 > they complicate a lot the pathfinding for trains"
 
 This project's `export-block`/`gap-chunk` (see `glossary/invented/`)
-describe city-block variants and the space between blocks.
+describe city-block variants and the space between blocks. See
+`layouts/city_block_grid.md` for how they all compose into one grid.
 
 Source: https://forums.factorio.com/viewtopic.php?t=126785 (community usage, not a formal definition)
 Verified: 2026-08-06
