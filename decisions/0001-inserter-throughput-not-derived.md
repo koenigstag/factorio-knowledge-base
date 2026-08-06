@@ -87,26 +87,35 @@ Written as `formulas/inserter_throughput.py`, combined with
 = 12 × 0.86 = **10.32 items/sec**, matching this project's own
 founding architecture discussion exactly (see that relation's `.md`).
 
-`bulk-inserter`/`stack-inserter` stay excluded from both the rate
-table and the wagon-loading relation: their `items_per_cycle` depends
-on researched `inserter-capacity-bonus` technology level, not a fixed
-`data.raw` field (checked: `bulk-inserter` has no `stack_size_bonus`
-at all; `stack-inserter`'s `stack_size_bonus=4` doesn't reproduce the
-wiki's cited "stack size 6" chest-to-chest figure either) — a third
-input this project doesn't source yet.
+**Update**: `bulk-inserter`/`stack-inserter`'s *base* (unresearched)
+`items_per_cycle` was later resolved via
+`wiki.factorio.com/Inserter_capacity_bonus_(research)`'s stated base
+grab sizes (regular=1, bulk-inserter=2, stack-inserter=6) — this also
+explained why `bulk-inserter` has no `stack_size_bonus` field at all
+(its base of 2 is an implicit engine default for `bulk: true`
+inserters, not a stored value) and why `stack-inserter`'s
+`stack_size_bonus=4` didn't match the wiki's "6" alone (`4` is added
+*to* the same implicit base of 2). Both tiers are now in
+`constraints/inserters-throughput.md` and
+`relations/wagon_loading_throughput.*` at the unresearched baseline.
+What's still unresolved is the *researched* value: `inserter-capacity-bonus-1..7`
+add two separate effects (`bulk-inserter-capacity-bonus` summing to
++10, `inserter-stack-size-bonus` summing to +2) whose combination
+with the base grab size isn't documented anywhere found — the
+dedicated wiki page for this exact topic states the formula isn't
+described.
 
 ## Consequences
 
-- The wagon-loading-throughput relation is now complete for 4 of 6
-  inserter tiers (`relations/wagon_loading_throughput.*`) — not the
-  "stays incomplete" outcome originally expected when this decision
-  was first drafted; only revise this file's title/scope if a cleaner
-  split between "cited-not-derived" and "derived-once-cited" feels
-  warranted later.
-- Still open: `bulk-inserter`/`stack-inserter` throughput needs a
-  sourced relationship between `inserter-capacity-bonus` research
-  level and actual grab size before their rate (and therefore their
-  wagon-loading total) can be computed at all.
+- The wagon-loading-throughput relation is now complete for all 6
+  inserter tiers at the unresearched baseline
+  (`relations/wagon_loading_throughput.*`) — not the "stays
+  incomplete" outcome originally expected when this decision was
+  first drafted.
+- Still open: the *researched* (post-`inserter-capacity-bonus`) grab
+  size for `bulk-inserter`/`stack-inserter` — the two research effect
+  types' combination formula isn't documented anywhere found this
+  session, only their individual per-tech modifiers.
 - Revisiting the *cycles/sec-from-geometry* question (not the
   multiplication) still needs one of: (a) access to a live Factorio
   instance to calibrate a formula the way `inserter-throughput-lib`

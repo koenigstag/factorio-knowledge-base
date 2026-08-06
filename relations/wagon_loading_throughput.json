@@ -3,6 +3,8 @@
     "burner-inserter": 9.48,
     "inserter": 10.32,
     "fast-inserter": 30.0,
-    "long-handed-inserter": 30.0
+    "bulk-inserter": 60.0,
+    "long-handed-inserter": 30.0,
+    "stack-inserter": 180.0
   }
 }
