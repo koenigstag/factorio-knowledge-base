@@ -1,17 +1,17 @@
 # Factorio Knowledge Base
 
-Личная база знаний по игре [Factorio](https://factorio.com/): заметки, гайды, рецепты, схемы производства и прочие полезные материалы.
+A personal knowledge base for the game [Factorio](https://factorio.com/): notes, guides, recipes, production blueprints and other useful material.
 
-## Статус
+## Status
 
-🚧 Проект только начат, структура и контент в разработке.
+🚧 Just getting started — structure and content are still in progress.
 
-## Цели проекта
+## Goals
 
-- Собрать в одном месте заметки по механикам игры
-- Хранить и версионировать схемы производственных цепочек
-- Каталогизировать полезные ссылки, моды и билд-порядки
+- Collect notes on game mechanics in one place
+- Store and version production chain blueprints
+- Catalog useful links, mods and build orders
 
-## Лицензия
+## License
 
-Не определена.
+Not defined yet.

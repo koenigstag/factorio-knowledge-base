@@ -1,19 +1,20 @@
 # CLAUDE.md
 
-Инструкции для Claude Code при работе в этом репозитории.
+Guidance for Claude Code when working in this repository.
 
-## О проекте
+## About the project
 
-Factorio Knowledge Base — личная база знаний по игре Factorio (заметки, гайды,
-схемы производства, полезные ссылки). Проект находится на самом старте,
-структура контента и стек ещё не определены.
+Factorio Knowledge Base is a personal knowledge base for the game Factorio
+(notes, guides, production blueprints, useful links). The project is at a
+very early stage — content structure and stack are not yet defined.
 
-## Статус
+## Status
 
-Репозиторий пока пустой (только служебные файлы). Конкретных соглашений по
-структуре папок, формату заметок или технологиям пока нет — при добавлении
-первого контента стоит зафиксировать выбранный подход здесь.
+The repository is still mostly empty (only scaffolding files). There are no
+concrete conventions for folder structure, note format, or technologies yet —
+once real content starts getting added, the chosen approach should be
+documented here.
 
-## Язык
+## Language
 
-Основной язык контента и коммуникации — русский.
+Primary language for project content is English.
