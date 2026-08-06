@@ -26,6 +26,7 @@ speed multiplier on the *machine* side.
 |---|---|---|---|
 | `recipe.energy_required` | `furnace.crafting_speed` / `assembling-machine.crafting_speed` | `energy_required / crafting_speed` = seconds per craft | **Confirmed**: iron-plate `energy_required=3.2` ÷ steel-furnace `crafting_speed=2` = 1.6s, matches the wiki's "~1.6s/plate" for steel furnace. |
 | `resource.minable.mining_time` | `mining-drill.mining_speed` | `mining_time / mining_speed` = seconds per mining cycle | **Inferred, not independently re-verified**: same field-naming/schema convention as recipes (`iron-ore.mining_time=1` ÷ `electric-mining-drill.mining_speed=0.5` = 2s/ore = 0.5 ore/s, plausible against commonly-cited electric-drill baseline) — but this pair hasn't had its own dedicated wiki cross-check the way belt speed and furnace crafting time did. Re-verify before relying on it for a `formulas/` derivation. |
+| `technology.unit.time` | `lab.crafting_speed` (not yet extracted as a datapack) | `time / lab_crafting_speed` = seconds per research unit, × `unit.count` for total | **Inferred by the same schema convention**, not independently re-verified — `lab` isn't in `datapacks/dump/vanilla/` yet, so this can't be cross-checked against a real lab speed value until it is. |
 
 Note: despite the field name, `energy_required` is not an energy unit in
 the everyday sense — numerically it behaves as seconds-at-reference-speed.
@@ -46,17 +47,53 @@ that reference, not standalone rates.
 
 ## Self-documented (unit embedded in the string, no ambiguity)
 
-`energy_usage`, `energy_per_movement`, `energy_per_rotation`, `drain` —
-e.g. `"90kW"`, `"5kJ"`. Parse the suffix, no external lookup needed.
+`energy_usage`, `energy_per_movement`, `energy_per_rotation`, `drain`,
+`fluid.heat_capacity`, `item.fuel_value` — e.g. `"90kW"`, `"5kJ"`,
+`"100MJ"`. Parse the suffix, no external lookup needed. Note:
+`heat_capacity`'s kJ figure is energy *per degree* (thermodynamic heat
+capacity) — the "/°C" is implied by the field's meaning and the
+adjacent temperature fields, not spelled out in the string itself;
+this part is inferred, not quoted verbatim from a source.
+
+## Temperature — degrees Celsius
+
+`fluid.default_temperature`, `max_temperature`, `gas_temperature`.
+**Confirmed by internal consistency**: `water.default_temperature=15`,
+`max_temperature=100` — matches water's real-world boiling point at
+100, the value the game is clearly keyed to. `steam.max_temperature=5000`
+is a gameplay figure (turbine mechanics), not physically real, but
+still on the same °C scale.
+
+## Spatial fields — tiles
+
+`collision_box`, `selection_box` (pairs of [x,y] corners relative to
+entity center), `resource_searching_radius`. This is Factorio's
+universal spatial unit for all entity geometry — same unit as
+`constraints/rails.json`'s tile-based facts. Cross-checked:
+`cargo-wagon.collision_box = [[-0.6,-2.4],[0.6,2.4]]` → 1.2×4.8 tiles,
+matches the commonly-cited cargo wagon footprint.
+
+## item.weight — grams
+
+**Confirmed**: `iron-ore`/`copper-ore`/`coal`/`stone`/`wood` all have
+`weight=2000`, matching Friday Facts #382's "base ore weight is set to
+2kg per item" exactly (2000 g = 2 kg). Rocket cargo capacity is 1000 kg
+= 1,000,000 in this unit. Important gap: `weight` is only set explicitly
+on some items (raw materials, fuel, space-relevant items) — it's
+`None`/absent on manufactured items like `iron-plate`/`copper-plate`.
+Per FFF #382, absence doesn't mean zero weight — the game derives a
+weight for those automatically from their recipe chain, which this
+static dump does not capture.
+
+## Dimensionless multipliers / fractions — not a unit at all
+
+`module.effect.*` (e.g. `productivity: 0.04` = +4% to the base stat),
+`item.fuel_acceleration_multiplier`/`fuel_top_speed_multiplier` (e.g.
+`1.8` = 80% bonus). These scale a base value multiplicatively; there's
+nothing to convert, just don't mistake them for absolute quantities.
 
 ## Plain counts / already unambiguous
 
 `stack_size`, `module_slots`, `filter_count`, `inventory_size` (item
 count), `max_distance` (tiles), `tier` (ordinal) — no time component,
 nothing to convert.
-
-## Not yet checked
-
-`item.weight` — commonly assumed to be grams, but that assumption
-hasn't been verified against a primary source in this project; treat
-as unconfirmed until it is.
