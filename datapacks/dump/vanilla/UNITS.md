@@ -32,6 +32,12 @@ the everyday sense — numerically it behaves as seconds-at-reference-speed.
 `crafting_speed` and `mining_speed` are dimensionless multipliers against
 that reference, not standalone rates.
 
+## Already per-minute — do NOT multiply by 60
+
+| Field | Prototype types | Unit | Verification |
+|---|---|---|---|
+| `energy_source.emissions_per_minute.pollution` | `furnace`, `mining-drill`, `assembling-machine`, ... (any `energy_source`) | pollution units per minute, at full power | **Confirmed via wiki.factorio.com/Pollution + dev history**: this field literally means what its name says — no tick conversion. It replaced an older `emissions_per_second_per_watt` field specifically because that one was "fundamentally flawed"; `emissions_per_minute` was added as the direct, self-sufficient replacement. "Pollution" itself has no official named unit and no tie to a real physical quantity — the wiki describes it only as an abstract "cloud". Opposite direction from `speed`: don't ×60 this one. |
+
 ## Not a flat unit conversion — needs a formula (`formulas/`, not a datapack fact)
 
 | Field | Prototype type | Why it's not a simple conversion |
