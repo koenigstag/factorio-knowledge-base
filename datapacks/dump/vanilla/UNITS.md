@@ -106,13 +106,19 @@ is otherwise entirely the dump manifest, not a wiki citation.
 
 **Confirmed**: `iron-ore`/`copper-ore`/`coal`/`stone`/`wood` all have
 `weight=2000`, matching Friday Facts #382's "base ore weight is set to
-2kg per item" exactly (2000 g = 2 kg). Rocket cargo capacity is 1000 kg
-= 1,000,000 in this unit. Important gap: `weight` is only set explicitly
-on some items (raw materials, fuel, space-relevant items) — it's
-`None`/absent on manufactured items like `iron-plate`/`copper-plate`.
-Per FFF #382, absence doesn't mean zero weight — the game derives a
-weight for those automatically from their recipe chain, which this
-static dump does not capture.
+2kg per item" exactly (2000 g = 2 kg). Important gap: `weight` is only
+set explicitly on some items (raw materials, fuel, space-relevant
+items) — it's `None`/absent on manufactured items like
+`iron-plate`/`copper-plate`. Per FFF #382, absence doesn't mean zero
+weight — the game derives a weight for those automatically from their
+recipe chain, which this static dump does not capture. `utility-constants/default.json`'s
+`default_item_weight=100` is a separate, flat fallback value — not
+confirmed to be the same thing as that recipe-chain derivation, don't
+conflate the two without checking further.
+
+Same scale: `utility-constants/default.json`'s `rocket_lift_weight=1000000`
+= 1000 kg, confirming FFF #382's "rocket cargo capacity 1000 kg"
+figure directly against `data.raw` rather than the FFF post alone.
 
 ## fluid_box.volume — Factorio's own "fluid units"
 

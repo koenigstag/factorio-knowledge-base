@@ -2,5 +2,7 @@
   "type": "utility-constants",
   "name": "default",
   "max_fluid_flow": 100,
-  "default_pipeline_extent": 320
+  "default_pipeline_extent": 320,
+  "rocket_lift_weight": 1000000,
+  "default_item_weight": 100
 }

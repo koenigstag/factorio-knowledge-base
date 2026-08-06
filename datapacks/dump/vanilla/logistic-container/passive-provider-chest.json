@@ -1,0 +1,6 @@
+{
+  "type": "logistic-container",
+  "name": "passive-provider-chest",
+  "inventory_size": 48,
+  "logistic_mode": "passive-provider"
+}

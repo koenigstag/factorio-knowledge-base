@@ -1,0 +1,5 @@
+{
+  "type": "container",
+  "name": "wooden-chest",
+  "inventory_size": 16
+}

@@ -1,0 +1,6 @@
+{
+  "type": "logistic-container",
+  "name": "buffer-chest",
+  "inventory_size": 48,
+  "logistic_mode": "buffer"
+}

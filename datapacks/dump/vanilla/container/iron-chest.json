@@ -1,0 +1,5 @@
+{
+  "type": "container",
+  "name": "iron-chest",
+  "inventory_size": 32
+}

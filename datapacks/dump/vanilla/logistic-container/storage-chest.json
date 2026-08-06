@@ -1,0 +1,6 @@
+{
+  "type": "logistic-container",
+  "name": "storage-chest",
+  "inventory_size": 48,
+  "logistic_mode": "storage"
+}
