@@ -90,7 +90,7 @@ relations/                 derived numeric relations — <topic>.json (bare valu
 glossary/                  canonical/ (established terms) vs invented/ (ours)
 decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
 examples/                  walkthroughs: question → which files to read → formula call → result
-layouts/                   spatial composition of glossary/invented terms into one repeatable pattern — <name>.md; numeric params cite formulas/relations or stay flagged open, never guessed
+layouts/                   spatial arrangement patterns for base-building (drills/furnaces/main-bus/labs/...) — one <name>.md per pattern; numeric params cite formulas/relations or stay flagged open, never guessed
 ```
 
 `examples/` vs `relations/`: `relations/` is the cached answer,
@@ -105,9 +105,12 @@ Not created yet (planned, not to be scaffolded speculatively):
 `generators/`, `benchmarks/`, `changelog/`. `contracts/`/`modules/`
 specifically should only be created once a second interchangeable
 implementation of the same slot exists — not upfront. (`layouts/` was
-in this list too until the concepts it composes — `city-block`,
-`main-bus`, `gap-chunk`, `export-block` — had enough cross-references
-between them to be worth tying together explicitly.)
+in this list too until there was a first concrete pattern —
+`city_block_grid.md` — worth writing up: how `city-block`, `main-bus`,
+`gap-chunk`, `export-block` position relative to each other. Other
+approaches — plain main-bus, drill-to-furnace arrays, lab layout —
+still belong in `layouts/` once written, not scaffolded ahead of
+content.)
 
 ## Versioning
 
