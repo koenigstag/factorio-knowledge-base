@@ -1,0 +1,20 @@
+{
+  "type": "electric-pole",
+  "name": "big-electric-pole",
+  "maximum_wire_distance": 32,
+  "supply_area_distance": 2,
+  "collision_box": [
+    [
+      -0.65,
+      -0.65
+    ],
+    [
+      0.65,
+      0.65
+    ]
+  ],
+  "tile_box": [
+    2,
+    2
+  ]
+}

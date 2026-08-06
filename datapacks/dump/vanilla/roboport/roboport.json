@@ -1,0 +1,30 @@
+{
+  "type": "roboport",
+  "name": "roboport",
+  "logistics_radius": 25,
+  "construction_radius": 55,
+  "material_slots_count": 7,
+  "robot_slots_count": 7,
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-input",
+    "input_flow_limit": "5MW",
+    "buffer_capacity": "100MJ"
+  },
+  "energy_usage": "50kW",
+  "charging_energy": "500kW",
+  "collision_box": [
+    [
+      -1.7,
+      -1.7
+    ],
+    [
+      1.7,
+      1.7
+    ]
+  ],
+  "tile_box": [
+    4,
+    4
+  ]
+}

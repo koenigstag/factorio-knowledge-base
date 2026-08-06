@@ -1,0 +1,20 @@
+{
+  "type": "electric-pole",
+  "name": "substation",
+  "maximum_wire_distance": 18,
+  "supply_area_distance": 9,
+  "collision_box": [
+    [
+      -0.7,
+      -0.7
+    ],
+    [
+      0.7,
+      0.7
+    ]
+  ],
+  "tile_box": [
+    2,
+    2
+  ]
+}
