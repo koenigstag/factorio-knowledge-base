@@ -6,9 +6,11 @@ by Wube (not community-coined) — this is the same fact already used
 as the source for `constraints/world.json`'s `chunk_size_tiles`.
 
 No community alias or alternative name found for this term — checked
-against wiki.factorio.com/Glossary (no separate or conflicting entry
+against the official Wube glossary (no separate or conflicting entry
 there) and general search; "chunk" is used consistently by both Wube
 and players, no variant naming in circulation.
 
-Source: https://wiki.factorio.com/Map_structure
+Sources:
+- Definition: https://wiki.factorio.com/Map_structure
+- Alias check (found none): https://wiki.factorio.com/Glossary
 Verified: 2026-08-06
