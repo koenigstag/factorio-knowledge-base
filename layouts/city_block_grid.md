@@ -1,4 +1,4 @@
-# City-block grid: how city-block / main-bus / gap-chunk / export-block compose
+# City-block grid: how city-block / main-bus / city-block gap / export-block compose
 
 Ties together 4 terms that so far only existed as separate
 `glossary/invented/`+`glossary/canonical/` entries cross-referencing
@@ -9,12 +9,12 @@ each other in prose. This file is the composition itself.
 - The base is a grid of [city-block](../glossary/canonical/city-block.md)
   modules — repeatable, similarly-sized processing units.
 - Adjacent blocks along the bus axis are separated by a
-  [gap-chunk](../glossary/invented/gap-chunk.md), not placed
+  [city-block gap](../glossary/invented/city-block-gap.md), not placed
   edge-to-edge. The [main-bus](../glossary/canonical/main-bus.md)
-  itself runs through the gap-chunks, not through the blocks — a
-  block never touches the bus directly, it only reaches it via a
+  itself runs through the gaps, not through the blocks — a block never
+  touches the bus directly, it only reaches it via a
   [tap-module](../glossary/invented/tap-module.md) sitting in the
-  adjacent gap-chunk.
+  adjacent gap.
 - Most blocks are regular: `tap-module` pulls bus items in on one
   side, pushes the block's output back onto the bus on the other.
 - An [export-block](../glossary/invented/export-block.md) is a grid
@@ -23,26 +23,25 @@ each other in prose. This file is the composition itself.
   output leaves the grid rather than re-joining the main bus.
 - Bus orientation (which axis it runs along) and grid size (rows ×
   columns) are choices for a specific base, not fixed by this pattern.
+- **Gap width**: 1-3 chunks by practical convention (see
+  [city-block gap](../glossary/invented/city-block-gap.md)) — 1 chunk
+  most common, 2 less common, 3 when the gap needs export storage + a
+  single-track railway + the next block's import belts, one chunk
+  each.
 
 ## What's still open (not resolved by writing this file)
 
-- **gap-chunk width** — [gap-chunk.md](../glossary/invented/gap-chunk.md)
-  already flags this unresolved ("2-3 chunk estimate... not yet
-  re-derived as a formula"). This file doesn't change that. Whatever
-  eventually derives it will need to size 3 independent things that
-  share the gap: the `tap-module` belt/pipe run, a
-  [lane balancer](../glossary/canonical/lane-balancer.md) if one is
-  used, and an optional rail siding. The rail siding component
-  specifically is the one piece with real sourced numbers already
-  sitting in this repo ready to use —
+- **city-block gap width, formally** — the 1/2/3-chunk figures above
+  are practical convention, not a `formulas/`-derived figure (see
+  [city-block gap](../glossary/invented/city-block-gap.md)'s own open
+  questions). A formal derivation would still need to check them
+  against real component sizes — e.g.
   [constraints/rails.json](../constraints/rails.json)'s
   `curve_radius_tiles` (turnout clearance) and
   [constraints/trains.json](../constraints/trains.json)'s
-  wagon/locomotive `tile_box` (siding length needs to fit a full
-  train) — but combining them into one gap-chunk width figure hasn't
-  been done here.
+  wagon/locomotive `tile_box` for the railway chunk specifically.
 - **export-block port geometry** — which side becomes the export port,
-  and whether it needs a dedicated additional gap-chunk or reuses the
+  and whether it needs a dedicated additional gap or reuses the
   standard tap gap, is unresolved (also flagged in
   [export-block.md](../glossary/invented/export-block.md)).
 - **city-block size itself** — intentionally left undefined, not an
@@ -59,5 +58,5 @@ each other in prose. This file is the composition itself.
 
 Coined by connecting existing glossary entries; not yet backed by a
 `decisions/` ADR recording why this particular composition (bus
-through gap-chunks, tap-module as the only bus contact point) was
-chosen over alternatives.
+through gaps, tap-module as the only bus contact point) was chosen
+over alternatives.

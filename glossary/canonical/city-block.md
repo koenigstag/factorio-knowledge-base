@@ -16,7 +16,7 @@ supports the modularity/pathfinding tradeoff described above:
 > ease of expansion, fun, symmetry" ... "best avoided [by some] because
 > they complicate a lot the pathfinding for trains"
 
-This project's `export-block`/`gap-chunk` (see `glossary/invented/`)
+This project's `export-block`/`city-block gap` (see `glossary/invented/`)
 describe city-block variants and the space between blocks. See
 [layouts/city_block_grid.md](../../layouts/city_block_grid.md) for how
 they all compose into one grid.

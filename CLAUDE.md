@@ -107,7 +107,7 @@ specifically should only be created once a second interchangeable
 implementation of the same slot exists — not upfront. (`layouts/` was
 in this list too until there was a first concrete pattern —
 `city_block_grid.md` — worth writing up: how `city-block`, `main-bus`,
-`gap-chunk`, `export-block` position relative to each other. Other
+`city-block gap`, `export-block` position relative to each other. Other
 approaches — plain main-bus, drill-to-furnace arrays, lab layout —
 still belong in `layouts/` once written, not scaffolded ahead of
 content.)

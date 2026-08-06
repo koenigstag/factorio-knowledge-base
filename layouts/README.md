@@ -6,7 +6,7 @@ machines, labs, main bus, ...) are positioned relative to each other —
 side by side as different named approaches, not one "correct" answer.
 
 `glossary/invented/`+`glossary/canonical/` define individual terms
-(`city-block`, `main-bus`, `gap-chunk`, `export-block`, ...) in
+(`city-block`, `main-bus`, `city-block gap`, `export-block`, ...) in
 isolation; a file here composes specific terms/building types into one
 concrete, named pattern. One file per pattern —
 [city_block_grid.md](city_block_grid.md) is the city-block approach

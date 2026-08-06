@@ -10,7 +10,7 @@ Official Wube tutorial, not just a community term:
 > "The concept of a Main Bus is to put the most used and useful
 > ingredients in a central spot to use for assembling machines."
 
-This project's `gap-chunk`/`tap-module` (see `glossary/invented/`)
+This project's `city-block gap`/`tap-module` (see `glossary/invented/`)
 describe infrastructure that plugs into a main bus at a city-block
 boundary. See [layouts/city_block_grid.md](../../layouts/city_block_grid.md)
 for how they all compose into one grid.
