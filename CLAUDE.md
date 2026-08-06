@@ -88,14 +88,14 @@ constraints/               hard engine limits — <topic>.json (bare values) + <
 formulas/                  .py functions, pure — parameters in, number out, nothing hardcoded
 relations/                 derived numeric relations — <topic>.json (bare values) + <topic>.md (formula + inputs used)
 glossary/                  canonical/ (established terms) vs invented/ (ours)
+decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
 ```
 
 Not created yet (planned, not to be scaffolded speculatively):
 `patterns/`, `contracts/`, `modules/`, `blueprints/`, `layouts/`,
-`generators/`, `benchmarks/`, `decisions/`, `changelog/`.
-`contracts/`/`modules/` specifically should only be created once a
-second interchangeable implementation of the same slot exists — not
-upfront.
+`generators/`, `benchmarks/`, `changelog/`. `contracts/`/`modules/`
+specifically should only be created once a second interchangeable
+implementation of the same slot exists — not upfront.
 
 ## Versioning
 
