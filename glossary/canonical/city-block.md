@@ -19,7 +19,10 @@ supports the modularity/pathfinding tradeoff described above:
 This project's `export-block`/`city-block gap` (see `glossary/invented/`)
 describe city-block variants and the space between blocks. See
 [layouts/city_block_grid.md](../../layouts/city_block_grid.md) for how
-they all compose into one grid.
+they all compose into one grid. Opposite approach: [monolith](monolith.md)
+(one site, no repeatable unit). Easy to confuse with, but distinct
+from: [micro-factory](micro-factory.md) (self-contained, not
+necessarily adjacent, usually train-fed rather than bus-fed).
 
 Source: https://forums.factorio.com/viewtopic.php?t=126785 (community usage, not a formal definition)
 Verified: 2026-08-06

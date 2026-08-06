@@ -23,8 +23,8 @@ an external grid.
 **Why this matters more for a micro-factory architecture**: in a
 single large centralized base, a blackout is recoverable by hand —
 walk over, drop fuel in, restart manually. A remote, physically
-distant micro-factory (see `glossary/canonical/city-block.md`) doesn't
-have that option — nobody is standing next to it to intervene, and
+distant [micro-factory](../canonical/micro-factory.md) doesn't have
+that option — nobody is standing next to it to intervene, and
 depending on distance/logistics, reaching it to fix a dead plant by
 hand could take a long time or not be practical at all. For an
 isolated module, self-recovery isn't a convenience, it's closer to a
