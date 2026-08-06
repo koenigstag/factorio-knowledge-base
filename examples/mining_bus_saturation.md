@@ -1,8 +1,13 @@
 # Example: how many mining drills fill an N-lane ore bus?
 
 **Question**: I'm running a raw iron-ore bus with N parallel yellow
-(basic) transport belt lanes. How many mining drills do I need to
-keep all N lanes saturated?
+(basic) transport belts. How many mining drills do I need to keep all
+N belts saturated?
+
+Note the terminology: "N belts" (separate belt entities side by side,
+the bus width) is different from a single belt's two internal
+**lanes** (left/right side of one belt) — see the caveat at the end,
+they interact with this calculation differently.
 
 ## Step 1 — get the single-belt answer from the cache
 
@@ -35,6 +40,19 @@ drills_for_bus = drills_per_belt * N
 
 Verified by running the ×N scaling in code against
 `relations/mining_belt_ratios.json`'s actual values, not by hand.
+
+## Caveat: this assumes each belt actually reaches 15 items/sec
+
+`drills_per_belt=30` was computed against the belt's full rated
+throughput (15 items/sec = both lanes combined). That's only real
+throughput if both of that belt's lanes are evenly loaded — a plain
+`splitter` **preserves** lanes rather than mixing them (an item on
+the right lane never crosses to the left going through one), so if
+several drills' outputs get merged onto one belt naively, the lanes
+can end up unbalanced and the belt runs below 15/sec even with 30
+drills feeding it. A `lane balancer` (see `glossary/canonical/lane-balancer.md`)
+is the fix — this example's math is the target the layout needs to
+hit, not a guarantee that any given merge arrangement hits it.
 
 ## This is not a new relation
 

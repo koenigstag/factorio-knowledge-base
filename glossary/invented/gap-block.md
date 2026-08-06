@@ -1,8 +1,9 @@
 # gap-block (gap zone)
 
 Empty space between two neighboring city-block modules along the main
-bus, reserved for: (1) tap-in/tap-out infrastructure, (2) balancers,
-(3) an optional rail siding.
+bus, reserved for: (1) tap-in/tap-out infrastructure, (2) `lane
+balancer`s (see `glossary/canonical/lane-balancer.md`), (3) an
+optional rail siding.
 
 Width: not finalized. An initial 2-3 chunk estimate was proposed but
 not yet re-derived as a formula — see open questions below.
