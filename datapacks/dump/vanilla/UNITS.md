@@ -49,11 +49,14 @@ that reference, not standalone rates.
 
 `energy_usage`, `energy_per_movement`, `energy_per_rotation`, `drain`,
 `fluid.heat_capacity`, `item.fuel_value` — e.g. `"90kW"`, `"5kJ"`,
-`"100MJ"`. Parse the suffix, no external lookup needed. Note:
-`heat_capacity`'s kJ figure is energy *per degree* (thermodynamic heat
-capacity) — the "/°C" is implied by the field's meaning and the
-adjacent temperature fields, not spelled out in the string itself;
-this part is inferred, not quoted verbatim from a source.
+`"100MJ"`. Parse the suffix, no external lookup needed.
+`heat_capacity` **confirmed** via the official `FluidPrototype` docs
+(lua-api.factorio.com/latest/prototypes/FluidPrototype.html), quoted
+verbatim: *"Joule needed to heat 1 Unit by 1 °C"* — energy per degree
+per fluid unit, default `"1kJ"` if unspecified. (The docs' own example
+value, `"0.2kJ"`, is just generic syntax illustration, not tied to any
+real fluid — our `water.heat_capacity=2kJ`/`steam.heat_capacity=0.2kJ`
+are the actual in-game values, unrelated to that example.)
 
 ## Temperature — degrees Celsius
 
