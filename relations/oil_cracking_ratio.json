@@ -1,0 +1,6 @@
+{
+  "advanced_oil_processing_heavy_oil_cracking_light_oil_cracking": {
+    "ratio": [20, 5, 17],
+    "total_petroleum_gas_per_sec_at_ratio": 390
+  }
+}
