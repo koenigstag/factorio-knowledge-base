@@ -1,4 +1,16 @@
 {
-  "steel_furnace_iron_plate_per_yellow_belt": 24,
-  "stone_furnace_iron_plate_per_yellow_belt": 48
+  "iron_plate": {
+    "stone-furnace": {
+      "transport-belt": 48,
+      "fast-transport-belt": 96,
+      "express-transport-belt": 144,
+      "turbo-transport-belt": 192
+    },
+    "steel-furnace": {
+      "transport-belt": 24,
+      "fast-transport-belt": 48,
+      "express-transport-belt": 72,
+      "turbo-transport-belt": 96
+    }
+  }
 }

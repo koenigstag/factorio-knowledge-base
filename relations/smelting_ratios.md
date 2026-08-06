@@ -1,26 +1,29 @@
 # Smelting → belt ratios
 
-How many furnaces (of a given tier) running iron-plate smelting are
-needed to saturate one yellow (basic) transport belt.
-
-## steel_furnace_iron_plate_per_yellow_belt = 24
-
-## stone_furnace_iron_plate_per_yellow_belt = 48
+How many furnaces (of a given tier) running a given smelting recipe
+are needed to saturate one belt (of a given tier), keyed as
+`[recipe][furnace][belt]`.
 
 Formula: `formulas/production_rate.py:machines_to_saturate`
 
+## iron_plate
+
 Inputs:
-- `consumer_rate` = 15 items/sec — `datapacks/dump/vanilla/transport-belt/transport-belt.json` (`speed=0.03125` tiles/tick, see `datapacks/dump/vanilla/UNITS.md` for the ×60 + density conversion to 15 items/sec)
-- `crafting_speed` = 2 (steel) / 1 (stone) — `datapacks/dump/vanilla/furnace/steel-furnace.json` / `stone-furnace.json`
 - `energy_required` = 3.2 — `datapacks/dump/vanilla/recipe/iron-plate.json`
+- `crafting_speed` = 1 (stone-furnace) / 2 (steel-furnace) — `datapacks/dump/vanilla/furnace/*.json`
+- `consumer_rate` (belt throughput, items/sec) — `datapacks/dump/vanilla/transport-belt/*.json` `speed`, converted per `datapacks/dump/vanilla/UNITS.md`: transport-belt=15, fast-transport-belt=30, express-transport-belt=45, turbo-transport-belt=60
 
-Computation:
-- steel: `machines_to_saturate(15, 2, 3.2)` = (2/3.2=0.625 items/s/furnace) → 15/0.625 = **24**
-- stone: `machines_to_saturate(15, 1, 3.2)` = (1/3.2=0.3125 items/s/furnace) → 15/0.3125 = **48**
+| furnace | transport-belt (15/s) | fast-transport-belt (30/s) | express-transport-belt (45/s) | turbo-transport-belt (60/s) |
+|---|---|---|---|---|
+| stone-furnace (speed 1) | 48 | 96 | 144 | 192 |
+| steel-furnace (speed 2) | 24 | 48 | 72 | 96 |
 
-Verified by actually running the formula against these datapack values
-(not just arithmetic by hand) — see project history: this project's
-CLAUDE.md rule 1 exists specifically because an early pass in this
-project's history misremembered this exact ratio as "12" instead of
-the correct 24/48. This is the first time these numbers have been
-computed from sourced datapacks rather than recalled from memory.
+All 8 values verified by actually running `machines_to_saturate()`
+against the real datapack values (not hand arithmetic) — see project
+history: `steel-furnace`/`transport-belt` = 24 and `stone-furnace`/
+`transport-belt` = 48 are this project's founding cautionary example
+(once misremembered as "12" — see CLAUDE.md rule 1); the other six are
+the same formula applied to the other three belt tiers, following
+directly once the pattern held for the first pair.
+
+Verified: 2026-08-06
