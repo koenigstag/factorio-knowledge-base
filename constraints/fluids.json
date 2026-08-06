@@ -1,5 +1,0 @@
-{
-  "max_flow_per_connection_tick": 100,
-  "max_flow_per_connection_sec_theoretical": 6000,
-  "max_flow_per_connection_sec_practical": 4200
-}

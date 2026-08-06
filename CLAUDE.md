@@ -29,12 +29,20 @@ factories.
    as 10 tiles from an unreliable search snippet; the actual sourced
    value (Friday Facts #377) is 11 tiles pre-2.0 / 13 tiles in 2.0.
 
-2. **Distinguish `constraints/` from `datapacks/`.** A constraint is a
-   hard engine limit that cannot be recalculated differently (e.g.
-   rail turn radius, chunk size, max inserters per wagon). A datapack
-   is raw input data that feeds a formula (recipe times, crafting
-   speeds, belt throughput). If a fact changes under different formula
-   inputs, it's not a constraint.
+2. **Distinguish `constraints/` from `datapacks/`.** The test is
+   simple and has no exceptions: **if it's in `data.raw`, it's
+   `datapacks/`, never `constraints/`.** `constraints/` is only for
+   game conventions that have no `data.raw` representation at all —
+   things you can't extract with `factorio --dump-data` no matter how
+   you look, because they live in engine code, not data (rail turn
+   radius, chunk size, map coordinate bounds, max inserters per
+   wagon). This project first got this wrong for `quality`/`roboport`/
+   `electric-pole` (all `data.raw` prototypes, moved to `datapacks/`),
+   then again for `utility-constants.max_fluid_flow` (looked like a
+   bare engine constant, turned out to be a real `data.raw` entry too
+   — also moved to `datapacks/`). Before adding anything to
+   `constraints/`, check the dump first — don't assume something is
+   engine-only just because it isn't obviously per-entity data.
 
 3. **Never state a derived number without its derivation.** A number
    obtained by combining two or more sourced facts (e.g. "24 steel

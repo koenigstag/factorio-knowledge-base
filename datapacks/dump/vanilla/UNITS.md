@@ -123,6 +123,25 @@ pipes/tanks equalize by *percentage* of their own capacity, not
 absolute amount. `mining-drill.input_fluid_box.volume=200` and
 `pumpjack.output_fluid_box.volume=1000` are on this same scale.
 
+## utility-constants.max_fluid_flow / pump.pumping_speed — per tick (× 60 → per second)
+
+Same fluid-unit scale as `fluid_box.volume`, same tick convention as
+`speed`. **Confirmed**: `utility-constants/default.json`'s
+`max_fluid_flow=100` × 60 = 6000/s, matching the wiki's *"theoretical
+maximum throughput limit of 6000 fluid per second (100 fluid per
+tick)"* exactly — this is the per-*connection* cap (each unique
+input/output connection point, not per pipe or per distance; Factorio
+2.0's "Fluids 2.0" rework removed the old distance-dependent pipe
+throughput entirely, see FFF #416). `pump/pump.json`'s
+`pumping_speed=20` × 60 = 1200/s, also wiki-confirmed.
+
+**Softer, not data.raw-backed**: the wiki separately states *actual*
+practical throughput is "usually around" 4200/s, below the 6000/s
+theoretical cap — this comes from the segment's fill-level-dependent
+flow dynamics (an emptier segment fills faster than a fuller one), not
+a stored constant. Treat 6000 as the hard, sourced ceiling and ~4200
+as a hedged planning estimate, not a fact of the same weight.
+
 ## pipe_connections.direction — 16-direction enum, cardinals spaced 4 apart
 
 **Confirmed**: Factorio 2.0 expanded from the old 8-direction system to
