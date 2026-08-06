@@ -1,0 +1,21 @@
+{
+  "type": "resource",
+  "name": "fluorine-vent",
+  "minable": {
+    "mining_time": 1,
+    "results": [
+      {
+        "type": "fluid",
+        "name": "fluorine",
+        "amount_min": 1,
+        "amount_max": 1,
+        "probability": 1
+      }
+    ]
+  },
+  "category": "basic-fluid",
+  "infinite": true,
+  "infinite_depletion_amount": 10,
+  "minimum": 20000,
+  "normal": 100000
+}

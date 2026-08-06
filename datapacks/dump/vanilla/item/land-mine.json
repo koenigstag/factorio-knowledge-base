@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "land-mine",
+  "stack_size": 100,
+  "place_result": "land-mine",
+  "subgroup": "defensive-structure"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "landfill",
+  "stack_size": 100,
+  "subgroup": "terrain"
+}

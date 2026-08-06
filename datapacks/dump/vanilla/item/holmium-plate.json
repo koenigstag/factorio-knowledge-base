@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "holmium-plate",
+  "stack_size": 100,
+  "weight": 1000,
+  "subgroup": "fulgora-processes"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "rocket-part",
+  "stack_size": 5,
+  "weight": 20000,
+  "subgroup": "space-interactors"
+}

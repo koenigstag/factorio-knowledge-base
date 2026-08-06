@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "burner-inserter",
+  "stack_size": 50,
+  "place_result": "burner-inserter",
+  "subgroup": "inserter"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "coal",
+  "stack_size": 50,
+  "weight": 2000,
+  "fuel_category": "chemical",
+  "fuel_value": "4MJ",
+  "subgroup": "raw-resource"
+}

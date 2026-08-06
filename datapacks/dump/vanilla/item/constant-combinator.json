@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "constant-combinator",
+  "stack_size": 50,
+  "place_result": "constant-combinator",
+  "subgroup": "circuit-network"
+}

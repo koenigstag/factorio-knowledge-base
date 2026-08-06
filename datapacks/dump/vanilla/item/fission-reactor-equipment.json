@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "fission-reactor-equipment",
+  "stack_size": 20,
+  "weight": 250000,
+  "subgroup": "equipment"
+}

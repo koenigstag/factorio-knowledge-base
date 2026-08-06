@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "explosives",
+  "stack_size": 50,
+  "weight": 2000,
+  "subgroup": "raw-material"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "storage-tank",
+  "stack_size": 50,
+  "place_result": "storage-tank",
+  "subgroup": "storage"
+}

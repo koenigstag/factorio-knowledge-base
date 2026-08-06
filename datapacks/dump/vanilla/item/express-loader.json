@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "express-loader",
+  "stack_size": 50,
+  "place_result": "express-loader",
+  "subgroup": "belt"
+}

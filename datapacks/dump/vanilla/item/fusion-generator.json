@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "fusion-generator",
+  "stack_size": 5,
+  "weight": 200000,
+  "place_result": "fusion-generator",
+  "subgroup": "energy"
+}

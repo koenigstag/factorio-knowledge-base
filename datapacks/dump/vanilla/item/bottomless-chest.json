@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "bottomless-chest",
+  "stack_size": 10,
+  "place_result": "bottomless-chest",
+  "subgroup": "other"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "fluid",
+  "name": "lithium-brine",
+  "default_temperature": 15,
+  "heat_capacity": "0.1kJ",
+  "auto_barrel": false
+}

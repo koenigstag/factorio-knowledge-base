@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "solar-panel-equipment",
+  "stack_size": 20,
+  "subgroup": "equipment"
+}

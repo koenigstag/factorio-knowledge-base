@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "offshore-pump",
+  "stack_size": 20,
+  "place_result": "offshore-pump",
+  "subgroup": "extraction-machine"
+}

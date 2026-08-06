@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "copper-cable",
+  "stack_size": 200,
+  "weight": 250,
+  "subgroup": "intermediate-product"
+}

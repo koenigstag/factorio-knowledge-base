@@ -1,0 +1,6 @@
+{
+  "type": "fluid",
+  "name": "fluoroketone-hot",
+  "default_temperature": 180,
+  "heat_capacity": "1kJ"
+}

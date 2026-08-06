@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "biolab",
+  "stack_size": 5,
+  "weight": 1000000,
+  "place_result": "biolab",
+  "subgroup": "production-machine"
+}

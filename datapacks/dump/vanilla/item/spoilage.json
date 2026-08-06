@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "spoilage",
+  "stack_size": 200,
+  "weight": 500,
+  "fuel_category": "chemical",
+  "fuel_value": "250kJ",
+  "fuel_acceleration_multiplier": 0.5,
+  "fuel_top_speed_multiplier": 0.5,
+  "subgroup": "agriculture-processes"
+}

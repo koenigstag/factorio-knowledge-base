@@ -1,0 +1,8 @@
+{
+  "type": "fluid",
+  "name": "fusion-plasma",
+  "default_temperature": 1000000,
+  "max_temperature": 10000000,
+  "heat_capacity": "25J",
+  "auto_barrel": false
+}

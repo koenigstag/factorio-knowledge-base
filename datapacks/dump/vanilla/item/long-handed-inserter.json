@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "long-handed-inserter",
+  "stack_size": 50,
+  "place_result": "long-handed-inserter",
+  "subgroup": "inserter"
+}

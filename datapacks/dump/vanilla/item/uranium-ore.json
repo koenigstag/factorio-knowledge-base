@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "uranium-ore",
+  "stack_size": 50,
+  "weight": 5000,
+  "subgroup": "raw-resource"
+}

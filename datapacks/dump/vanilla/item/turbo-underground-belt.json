@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "turbo-underground-belt",
+  "stack_size": 50,
+  "weight": 40000,
+  "place_result": "turbo-underground-belt",
+  "subgroup": "belt"
+}

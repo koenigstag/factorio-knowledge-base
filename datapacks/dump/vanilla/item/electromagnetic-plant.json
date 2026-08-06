@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "electromagnetic-plant",
+  "stack_size": 20,
+  "weight": 200000,
+  "place_result": "electromagnetic-plant",
+  "subgroup": "production-machine"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "resource",
+  "name": "tungsten-ore",
+  "minable": {
+    "mining_particle": "tungsten-ore-particle",
+    "mining_time": 5,
+    "result": "tungsten-ore"
+  },
+  "category": "hard-solid"
+}

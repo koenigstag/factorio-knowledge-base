@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "beacon",
+  "stack_size": 20,
+  "place_result": "beacon",
+  "subgroup": "module"
+}

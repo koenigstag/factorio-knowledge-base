@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "crusher",
+  "stack_size": 10,
+  "weight": 100000,
+  "place_result": "crusher",
+  "subgroup": "space-platform"
+}

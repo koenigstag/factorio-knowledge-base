@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "superconductor",
+  "stack_size": 200,
+  "subgroup": "fulgora-processes"
+}

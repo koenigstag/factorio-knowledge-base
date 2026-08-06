@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "space-platform-hub",
+  "stack_size": 1,
+  "weight": 1000000,
+  "place_result": "space-platform-hub",
+  "subgroup": "space-related"
+}

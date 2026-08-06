@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "science",
+  "stack_size": 1,
+  "subgroup": "science-pack"
+}

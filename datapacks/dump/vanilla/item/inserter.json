@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "inserter",
+  "stack_size": 50,
+  "place_result": "inserter",
+  "subgroup": "inserter"
+}

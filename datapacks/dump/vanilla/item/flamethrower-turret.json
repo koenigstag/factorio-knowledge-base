@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "flamethrower-turret",
+  "stack_size": 50,
+  "weight": 50000,
+  "place_result": "flamethrower-turret",
+  "subgroup": "turret"
+}

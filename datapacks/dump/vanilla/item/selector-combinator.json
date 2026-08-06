@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "selector-combinator",
+  "stack_size": 50,
+  "weight": 20000,
+  "place_result": "selector-combinator",
+  "subgroup": "circuit-network"
+}

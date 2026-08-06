@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "electric-energy-interface",
+  "stack_size": 50,
+  "place_result": "electric-energy-interface",
+  "subgroup": "other"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "uranium-238",
+  "stack_size": 100,
+  "weight": 50000,
+  "subgroup": "uranium-processing"
+}

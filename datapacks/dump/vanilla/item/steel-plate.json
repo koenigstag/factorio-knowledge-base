@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "steel-plate",
+  "stack_size": 100,
+  "subgroup": "raw-material"
+}

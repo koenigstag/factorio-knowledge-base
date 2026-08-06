@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "lane-splitter",
+  "stack_size": 50,
+  "weight": 10000,
+  "place_result": "lane-splitter",
+  "subgroup": "other"
+}

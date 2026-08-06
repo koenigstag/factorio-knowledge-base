@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "gun-turret",
+  "stack_size": 50,
+  "place_result": "gun-turret",
+  "subgroup": "turret"
+}

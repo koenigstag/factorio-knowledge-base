@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "rocket-turret",
+  "stack_size": 10,
+  "weight": 100000,
+  "place_result": "rocket-turret",
+  "subgroup": "turret"
+}

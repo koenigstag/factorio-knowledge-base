@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "gate",
+  "stack_size": 50,
+  "place_result": "gate",
+  "subgroup": "defensive-structure"
+}

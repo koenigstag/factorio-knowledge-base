@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "small-electric-pole",
+  "stack_size": 50,
+  "place_result": "small-electric-pole",
+  "subgroup": "energy-pipe-distribution"
+}

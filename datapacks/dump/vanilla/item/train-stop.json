@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "train-stop",
+  "stack_size": 10,
+  "place_result": "train-stop",
+  "subgroup": "train-transport"
+}

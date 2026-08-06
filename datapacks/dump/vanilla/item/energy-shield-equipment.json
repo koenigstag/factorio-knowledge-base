@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "energy-shield-equipment",
+  "stack_size": 20,
+  "subgroup": "military-equipment"
+}

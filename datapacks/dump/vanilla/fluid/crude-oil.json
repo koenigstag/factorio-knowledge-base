@@ -1,0 +1,5 @@
+{
+  "type": "fluid",
+  "name": "crude-oil",
+  "default_temperature": 25
+}

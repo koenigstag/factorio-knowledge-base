@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "biochamber",
+  "stack_size": 20,
+  "place_result": "biochamber",
+  "subgroup": "agriculture"
+}

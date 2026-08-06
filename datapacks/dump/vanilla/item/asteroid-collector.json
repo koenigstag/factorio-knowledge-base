@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "asteroid-collector",
+  "stack_size": 10,
+  "weight": 100000,
+  "place_result": "asteroid-collector",
+  "subgroup": "space-platform"
+}

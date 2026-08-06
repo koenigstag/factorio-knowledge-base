@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "buffer-chest",
+  "stack_size": 50,
+  "place_result": "buffer-chest",
+  "subgroup": "logistic-network"
+}

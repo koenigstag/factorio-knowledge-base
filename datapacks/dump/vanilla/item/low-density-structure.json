@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "low-density-structure",
+  "stack_size": 50,
+  "weight": 5000,
+  "subgroup": "intermediate-product"
+}

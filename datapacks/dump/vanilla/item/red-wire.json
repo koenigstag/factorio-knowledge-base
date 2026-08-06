@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "red-wire",
+  "stack_size": 1,
+  "subgroup": "spawnables"
+}

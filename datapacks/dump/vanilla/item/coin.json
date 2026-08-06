@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "coin",
+  "stack_size": 100000,
+  "subgroup": "science-pack"
+}

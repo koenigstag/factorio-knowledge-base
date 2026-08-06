@@ -1,0 +1,5 @@
+{
+  "type": "fluid",
+  "name": "petroleum-gas",
+  "default_temperature": 25
+}

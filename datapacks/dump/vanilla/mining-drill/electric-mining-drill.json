@@ -1,0 +1,44 @@
+{
+  "type": "mining-drill",
+  "name": "electric-mining-drill",
+  "mining_speed": 0.5,
+  "energy_source": {
+    "type": "electric",
+    "emissions_per_minute": {
+      "pollution": 10
+    },
+    "usage_priority": "secondary-input"
+  },
+  "energy_usage": "90kW",
+  "module_slots": 3,
+  "resource_categories": [
+    "basic-solid"
+  ],
+  "resource_searching_radius": 2.49,
+  "input_fluid_box": {
+    "volume": 200,
+    "pipe_connections": [
+      {
+        "direction": 12,
+        "position": [
+          -1,
+          0
+        ]
+      },
+      {
+        "direction": 4,
+        "position": [
+          1,
+          0
+        ]
+      },
+      {
+        "direction": 8,
+        "position": [
+          0,
+          1
+        ]
+      }
+    ]
+  }
+}

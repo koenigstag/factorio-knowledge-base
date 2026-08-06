@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "steam-engine",
+  "stack_size": 10,
+  "place_result": "steam-engine",
+  "subgroup": "energy"
+}

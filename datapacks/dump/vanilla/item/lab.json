@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "lab",
+  "stack_size": 10,
+  "place_result": "lab",
+  "subgroup": "production-machine"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "steel-furnace",
+  "stack_size": 50,
+  "place_result": "steel-furnace",
+  "subgroup": "smelting-machine"
+}

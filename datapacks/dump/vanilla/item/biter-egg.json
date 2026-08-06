@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "biter-egg",
+  "stack_size": 100,
+  "weight": 2000,
+  "fuel_category": "chemical",
+  "fuel_value": "6MJ",
+  "subgroup": "agriculture-products"
+}

@@ -1,0 +1,39 @@
+{
+  "type": "mining-drill",
+  "name": "burner-mining-drill",
+  "mining_speed": 0.25,
+  "energy_source": {
+    "type": "burner",
+    "fuel_categories": [
+      "chemical"
+    ],
+    "effectivity": 1,
+    "fuel_inventory_size": 1,
+    "emissions_per_minute": {
+      "pollution": 12
+    },
+    "light_flicker": {
+      "color": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smoke": [
+      {
+        "name": "smoke",
+        "deviation": [
+          0.1,
+          0.1
+        ],
+        "frequency": 3
+      }
+    ]
+  },
+  "energy_usage": "150kW",
+  "resource_categories": [
+    "basic-solid"
+  ],
+  "resource_searching_radius": 0.99,
+  "allowed_effects": {}
+}

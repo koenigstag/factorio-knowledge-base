@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "nuclear-fuel",
+  "stack_size": 1,
+  "weight": 100000,
+  "fuel_category": "chemical",
+  "fuel_value": "1.21GJ",
+  "fuel_acceleration_multiplier": 2.5,
+  "fuel_top_speed_multiplier": 1.15,
+  "subgroup": "uranium-processing"
+}

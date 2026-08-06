@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "toolbelt-equipment",
+  "stack_size": 20,
+  "weight": 50000,
+  "subgroup": "utility-equipment"
+}

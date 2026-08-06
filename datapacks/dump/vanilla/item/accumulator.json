@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "accumulator",
+  "stack_size": 50,
+  "place_result": "accumulator",
+  "subgroup": "energy"
+}

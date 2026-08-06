@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "wood",
+  "stack_size": 100,
+  "weight": 2000,
+  "fuel_category": "chemical",
+  "fuel_value": "2MJ",
+  "subgroup": "raw-resource"
+}

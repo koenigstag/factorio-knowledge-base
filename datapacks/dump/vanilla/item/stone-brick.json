@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "stone-brick",
+  "stack_size": 100,
+  "subgroup": "terrain"
+}

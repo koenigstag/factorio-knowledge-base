@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "depleted-uranium-fuel-cell",
+  "stack_size": 50,
+  "weight": 100000,
+  "subgroup": "uranium-processing"
+}

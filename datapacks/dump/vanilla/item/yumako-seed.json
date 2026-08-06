@@ -1,0 +1,10 @@
+{
+  "type": "item",
+  "name": "yumako-seed",
+  "stack_size": 10,
+  "weight": 10000,
+  "fuel_category": "chemical",
+  "fuel_value": "4MJ",
+  "place_result": "yumako-tree",
+  "subgroup": "agriculture-processes"
+}

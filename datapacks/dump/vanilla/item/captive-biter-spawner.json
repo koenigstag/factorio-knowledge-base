@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "captive-biter-spawner",
+  "stack_size": 1,
+  "place_result": "captive-biter-spawner",
+  "subgroup": "agriculture"
+}

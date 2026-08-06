@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "rail-signal",
+  "stack_size": 50,
+  "place_result": "rail-signal",
+  "subgroup": "train-transport"
+}

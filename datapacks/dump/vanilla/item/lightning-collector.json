@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "lightning-collector",
+  "stack_size": 20,
+  "place_result": "lightning-collector",
+  "subgroup": "environmental-protection"
+}

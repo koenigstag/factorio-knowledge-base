@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "supercapacitor",
+  "stack_size": 100,
+  "weight": 2000,
+  "subgroup": "fulgora-processes"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "express-splitter",
+  "stack_size": 50,
+  "weight": 20000,
+  "place_result": "express-splitter",
+  "subgroup": "belt"
+}

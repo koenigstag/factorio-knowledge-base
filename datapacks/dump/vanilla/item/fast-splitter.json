@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "fast-splitter",
+  "stack_size": 50,
+  "place_result": "fast-splitter",
+  "subgroup": "belt"
+}

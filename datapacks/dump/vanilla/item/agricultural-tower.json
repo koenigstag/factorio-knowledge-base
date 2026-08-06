@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "agricultural-tower",
+  "stack_size": 20,
+  "place_result": "agricultural-tower",
+  "subgroup": "agriculture"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "belt-immunity-equipment",
+  "stack_size": 20,
+  "subgroup": "utility-equipment"
+}

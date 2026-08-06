@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "foundation",
+  "stack_size": 50,
+  "weight": 20000,
+  "subgroup": "terrain"
+}

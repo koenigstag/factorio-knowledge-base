@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "thruster",
+  "stack_size": 10,
+  "weight": 200000,
+  "place_result": "thruster",
+  "subgroup": "space-platform"
+}

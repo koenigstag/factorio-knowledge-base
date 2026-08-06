@@ -1,0 +1,9 @@
+{
+  "type": "fluid",
+  "name": "steam",
+  "default_temperature": 15,
+  "max_temperature": 5000,
+  "heat_capacity": "0.2kJ",
+  "gas_temperature": 15,
+  "auto_barrel": false
+}

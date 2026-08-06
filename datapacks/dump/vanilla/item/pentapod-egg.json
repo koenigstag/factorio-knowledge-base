@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "pentapod-egg",
+  "stack_size": 20,
+  "weight": 5000,
+  "fuel_category": "chemical",
+  "fuel_value": "5MJ",
+  "subgroup": "agriculture-products"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "fluid",
+  "name": "electrolyte",
+  "default_temperature": 15,
+  "max_temperature": 500,
+  "heat_capacity": "0.01kJ",
+  "auto_barrel": false
+}

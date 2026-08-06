@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "night-vision-equipment",
+  "stack_size": 20,
+  "subgroup": "utility-equipment"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "decider-combinator",
+  "stack_size": 50,
+  "place_result": "decider-combinator",
+  "subgroup": "circuit-network"
+}

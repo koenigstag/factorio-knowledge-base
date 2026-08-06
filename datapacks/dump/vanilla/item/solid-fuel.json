@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "solid-fuel",
+  "stack_size": 50,
+  "weight": 1000,
+  "fuel_category": "chemical",
+  "fuel_value": "12MJ",
+  "fuel_acceleration_multiplier": 1.2,
+  "fuel_top_speed_multiplier": 1.05,
+  "subgroup": "raw-material"
+}

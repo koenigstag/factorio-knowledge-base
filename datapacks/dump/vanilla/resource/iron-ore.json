@@ -1,0 +1,9 @@
+{
+  "type": "resource",
+  "name": "iron-ore",
+  "minable": {
+    "mining_particle": "iron-ore-particle",
+    "mining_time": 1,
+    "result": "iron-ore"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "burner-generator",
+  "stack_size": 10,
+  "place_result": "burner-generator",
+  "subgroup": "other"
+}

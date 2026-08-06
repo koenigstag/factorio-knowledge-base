@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "scrap",
+  "stack_size": 50,
+  "weight": 2000,
+  "subgroup": "fulgora-processes"
+}

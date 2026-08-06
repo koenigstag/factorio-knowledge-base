@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "processing-unit",
+  "stack_size": 100,
+  "subgroup": "intermediate-product"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "programmable-speaker",
+  "stack_size": 10,
+  "place_result": "programmable-speaker",
+  "subgroup": "circuit-network"
+}

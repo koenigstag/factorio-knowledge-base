@@ -1,0 +1,9 @@
+{
+  "type": "resource",
+  "name": "calcite",
+  "minable": {
+    "mining_particle": "calcite-particle",
+    "mining_time": 1,
+    "result": "calcite"
+  }
+}

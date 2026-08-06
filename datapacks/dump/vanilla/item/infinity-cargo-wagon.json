@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "infinity-cargo-wagon",
+  "stack_size": 5,
+  "place_result": "infinity-cargo-wagon",
+  "subgroup": "other"
+}

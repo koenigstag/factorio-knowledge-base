@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "fast-inserter",
+  "stack_size": 50,
+  "place_result": "fast-inserter",
+  "subgroup": "inserter"
+}

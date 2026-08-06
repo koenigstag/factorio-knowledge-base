@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "turbo-loader",
+  "stack_size": 50,
+  "place_result": "turbo-loader",
+  "subgroup": "belt"
+}

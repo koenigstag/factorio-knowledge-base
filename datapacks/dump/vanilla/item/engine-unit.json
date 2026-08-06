@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "engine-unit",
+  "stack_size": 50,
+  "weight": 2500,
+  "subgroup": "intermediate-product"
+}

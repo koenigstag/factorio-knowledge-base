@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "nuclear-reactor",
+  "stack_size": 10,
+  "weight": 1000000,
+  "place_result": "nuclear-reactor",
+  "subgroup": "energy"
+}

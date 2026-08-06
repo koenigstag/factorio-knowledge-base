@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "sulfur",
+  "stack_size": 50,
+  "weight": 1000,
+  "subgroup": "raw-material"
+}

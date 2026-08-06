@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "lithium-plate",
+  "stack_size": 100,
+  "weight": 2000,
+  "subgroup": "aquilo-processes"
+}

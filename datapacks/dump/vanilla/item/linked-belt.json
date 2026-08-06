@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "linked-belt",
+  "stack_size": 10,
+  "place_result": "linked-belt",
+  "subgroup": "other"
+}

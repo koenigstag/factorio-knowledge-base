@@ -1,0 +1,8 @@
+{
+  "type": "fluid",
+  "name": "holmium-solution",
+  "default_temperature": 15,
+  "max_temperature": 2000,
+  "heat_capacity": "0.01kJ",
+  "auto_barrel": false
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "heat-interface",
+  "stack_size": 20,
+  "place_result": "heat-interface",
+  "subgroup": "other"
+}

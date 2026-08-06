@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "battery-mk3-equipment",
+  "stack_size": 20,
+  "weight": 200000,
+  "subgroup": "equipment"
+}

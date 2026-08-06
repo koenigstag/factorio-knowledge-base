@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "substation",
+  "stack_size": 50,
+  "place_result": "substation",
+  "subgroup": "energy-pipe-distribution"
+}

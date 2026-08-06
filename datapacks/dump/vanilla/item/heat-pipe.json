@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "heat-pipe",
+  "stack_size": 50,
+  "weight": 20000,
+  "place_result": "heat-pipe",
+  "subgroup": "energy"
+}

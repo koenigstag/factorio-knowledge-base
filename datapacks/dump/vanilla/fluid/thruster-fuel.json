@@ -1,0 +1,6 @@
+{
+  "type": "fluid",
+  "name": "thruster-fuel",
+  "default_temperature": 25,
+  "auto_barrel": false
+}

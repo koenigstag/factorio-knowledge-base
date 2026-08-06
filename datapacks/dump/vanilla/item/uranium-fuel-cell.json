@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "uranium-fuel-cell",
+  "stack_size": 50,
+  "weight": 100000,
+  "fuel_category": "nuclear",
+  "fuel_value": "8GJ",
+  "subgroup": "uranium-processing"
+}

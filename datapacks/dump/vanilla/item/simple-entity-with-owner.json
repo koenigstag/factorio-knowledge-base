@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "simple-entity-with-owner",
+  "stack_size": 50,
+  "place_result": "simple-entity-with-owner",
+  "subgroup": "other"
+}

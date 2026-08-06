@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "laser-turret",
+  "stack_size": 50,
+  "weight": 40000,
+  "place_result": "laser-turret",
+  "subgroup": "turret"
+}

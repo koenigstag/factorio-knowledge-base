@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "tungsten-carbide",
+  "stack_size": 50,
+  "weight": 2000,
+  "subgroup": "vulcanus-processes"
+}

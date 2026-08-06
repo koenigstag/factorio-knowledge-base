@@ -1,0 +1,53 @@
+{
+  "type": "mining-drill",
+  "name": "big-mining-drill",
+  "mining_speed": 2.5,
+  "energy_source": {
+    "type": "electric",
+    "emissions_per_minute": {
+      "pollution": 40
+    },
+    "usage_priority": "secondary-input"
+  },
+  "energy_usage": "300kW",
+  "module_slots": 4,
+  "resource_categories": [
+    "basic-solid",
+    "hard-solid"
+  ],
+  "resource_searching_radius": 6.49,
+  "input_fluid_box": {
+    "volume": 200,
+    "pipe_connections": [
+      {
+        "direction": 12,
+        "position": [
+          -2,
+          -1
+        ]
+      },
+      {
+        "direction": 4,
+        "position": [
+          2,
+          -1
+        ]
+      },
+      {
+        "direction": 8,
+        "position": [
+          1,
+          2
+        ]
+      },
+      {
+        "direction": 8,
+        "position": [
+          -1,
+          2
+        ]
+      }
+    ]
+  },
+  "resource_drain_rate_percent": 50
+}

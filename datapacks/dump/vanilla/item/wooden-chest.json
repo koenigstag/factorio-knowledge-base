@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "wooden-chest",
+  "stack_size": 50,
+  "place_result": "wooden-chest",
+  "subgroup": "storage"
+}

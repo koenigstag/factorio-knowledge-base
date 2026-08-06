@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "carbon-fiber",
+  "stack_size": 100,
+  "weight": 2000,
+  "subgroup": "agriculture-products"
+}

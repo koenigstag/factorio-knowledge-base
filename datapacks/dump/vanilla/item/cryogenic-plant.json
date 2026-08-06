@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "cryogenic-plant",
+  "stack_size": 20,
+  "weight": 200000,
+  "place_result": "cryogenic-plant",
+  "subgroup": "production-machine"
+}

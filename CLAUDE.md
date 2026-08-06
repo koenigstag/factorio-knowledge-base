@@ -74,7 +74,13 @@ exists — not upfront.
 
 ## Versioning
 
-Content currently targets Factorio **2.0**. When a second game version
-is actually needed, use one git branch per major version (not per
-patch/minor release, not a folder inside the tree) — the repository is
-meant to be checked out wholesale for one version at a time.
+`main` always holds the latest supported game version directly (**2.0**
+right now) — not an empty scaffold branch pointing at something else.
+A version branch is cut **retroactively**, only at the moment a newer
+version's data would actually diverge from what's recorded here: branch
+off the last commit still valid for the old version (e.g. `2.0`),
+freezing it, then keep evolving `main` forward as the new latest.
+Branches are per major version (not per patch/minor release, not a
+folder inside the tree), created reactively like `contracts/`/
+`modules/` — never pre-provisioned for a version that doesn't need to
+diverge yet.

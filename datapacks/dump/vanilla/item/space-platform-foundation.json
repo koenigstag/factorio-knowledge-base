@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "space-platform-foundation",
+  "stack_size": 100,
+  "weight": 20000,
+  "subgroup": "space-platform"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "petroleum-gas-barrel",
+  "stack_size": 10,
+  "weight": 10000,
+  "subgroup": "barrel"
+}

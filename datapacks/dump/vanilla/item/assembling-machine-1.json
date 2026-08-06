@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "assembling-machine-1",
+  "stack_size": 50,
+  "place_result": "assembling-machine-1",
+  "subgroup": "production-machine"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "railgun-turret",
+  "stack_size": 10,
+  "weight": 1000000,
+  "place_result": "railgun-turret",
+  "subgroup": "turret"
+}

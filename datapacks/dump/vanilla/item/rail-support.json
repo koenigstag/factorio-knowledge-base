@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "rail-support",
+  "stack_size": 20,
+  "weight": 200000,
+  "place_result": "rail-support",
+  "subgroup": "train-transport"
+}

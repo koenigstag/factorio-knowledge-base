@@ -1,0 +1,7 @@
+{
+  "type": "fluid",
+  "name": "fluoroketone-cold",
+  "default_temperature": -150,
+  "max_temperature": 180,
+  "heat_capacity": "1kJ"
+}

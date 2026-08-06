@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "pipe-to-ground",
+  "stack_size": 50,
+  "place_result": "pipe-to-ground",
+  "subgroup": "energy-pipe-distribution"
+}

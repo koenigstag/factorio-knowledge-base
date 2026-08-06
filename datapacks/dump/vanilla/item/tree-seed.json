@@ -1,0 +1,10 @@
+{
+  "type": "item",
+  "name": "tree-seed",
+  "stack_size": 10,
+  "weight": 10000,
+  "fuel_category": "chemical",
+  "fuel_value": "100kJ",
+  "place_result": "tree-plant",
+  "subgroup": "nauvis-agriculture"
+}

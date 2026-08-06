@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "copper-bacteria",
+  "stack_size": 50,
+  "weight": 1000,
+  "subgroup": "agriculture-processes"
+}

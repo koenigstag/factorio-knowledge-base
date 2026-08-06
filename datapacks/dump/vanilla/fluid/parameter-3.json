@@ -1,0 +1,6 @@
+{
+  "type": "fluid",
+  "name": "parameter-3",
+  "default_temperature": 25,
+  "auto_barrel": false
+}

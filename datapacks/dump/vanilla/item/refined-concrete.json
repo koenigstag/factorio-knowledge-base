@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "refined-concrete",
+  "stack_size": 100,
+  "weight": 10000,
+  "subgroup": "terrain"
+}

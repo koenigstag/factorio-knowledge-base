@@ -1,0 +1,11 @@
+{
+  "type": "resource",
+  "name": "uranium-ore",
+  "minable": {
+    "mining_particle": "stone-particle",
+    "mining_time": 2,
+    "result": "uranium-ore",
+    "fluid_amount": 10,
+    "required_fluid": "sulfuric-acid"
+  }
+}

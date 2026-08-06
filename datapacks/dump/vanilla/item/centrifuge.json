@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "centrifuge",
+  "stack_size": 50,
+  "place_result": "centrifuge",
+  "subgroup": "production-machine"
+}

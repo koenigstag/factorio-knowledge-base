@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "burner-mining-drill",
+  "stack_size": 50,
+  "place_result": "burner-mining-drill",
+  "subgroup": "extraction-machine"
+}

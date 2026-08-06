@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "small-lamp",
+  "stack_size": 50,
+  "place_result": "small-lamp",
+  "subgroup": "circuit-network"
+}

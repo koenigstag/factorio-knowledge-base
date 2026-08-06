@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "roboport",
+  "stack_size": 10,
+  "weight": 100000,
+  "place_result": "roboport",
+  "subgroup": "logistic-network"
+}

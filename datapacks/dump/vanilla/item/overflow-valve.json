@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "overflow-valve",
+  "stack_size": 10,
+  "place_result": "overflow-valve",
+  "subgroup": "other"
+}

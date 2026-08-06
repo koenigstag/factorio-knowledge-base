@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "heating-tower",
+  "stack_size": 20,
+  "weight": 100000,
+  "place_result": "heating-tower",
+  "subgroup": "environmental-protection"
+}

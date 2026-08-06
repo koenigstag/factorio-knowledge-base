@@ -1,0 +1,7 @@
+{
+  "type": "fluid",
+  "name": "fluid-unknown",
+  "default_temperature": 0,
+  "max_temperature": 0,
+  "auto_barrel": false
+}

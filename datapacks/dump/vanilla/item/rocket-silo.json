@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "rocket-silo",
+  "stack_size": 1,
+  "weight": 10000000,
+  "place_result": "rocket-silo",
+  "subgroup": "space-interactors"
+}

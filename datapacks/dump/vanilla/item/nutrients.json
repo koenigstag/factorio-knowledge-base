@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "nutrients",
+  "stack_size": 100,
+  "weight": 500,
+  "fuel_category": "nutrients",
+  "fuel_value": "2MJ",
+  "subgroup": "agriculture-processes"
+}

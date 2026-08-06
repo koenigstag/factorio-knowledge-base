@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "infinity-pipe",
+  "stack_size": 10,
+  "place_result": "infinity-pipe",
+  "subgroup": "other"
+}

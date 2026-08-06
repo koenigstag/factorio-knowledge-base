@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "personal-roboport-equipment",
+  "stack_size": 20,
+  "subgroup": "utility-equipment"
+}

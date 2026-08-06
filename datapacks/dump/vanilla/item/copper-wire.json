@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "copper-wire",
+  "stack_size": 1,
+  "subgroup": "spawnables"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "quantum-processor",
+  "stack_size": 100,
+  "weight": 5000,
+  "subgroup": "aquilo-processes"
+}

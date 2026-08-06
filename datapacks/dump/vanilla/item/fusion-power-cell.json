@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "fusion-power-cell",
+  "stack_size": 50,
+  "weight": 20000,
+  "fuel_category": "fusion",
+  "fuel_value": "40GJ",
+  "subgroup": "aquilo-processes"
+}

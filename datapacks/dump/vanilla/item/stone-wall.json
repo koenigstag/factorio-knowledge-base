@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "stone-wall",
+  "stack_size": 100,
+  "place_result": "stone-wall",
+  "subgroup": "defensive-structure"
+}

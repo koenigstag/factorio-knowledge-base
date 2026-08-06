@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "tungsten-plate",
+  "stack_size": 50,
+  "weight": 4000,
+  "subgroup": "vulcanus-processes"
+}

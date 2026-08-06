@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "electric-mining-drill",
+  "stack_size": 50,
+  "place_result": "electric-mining-drill",
+  "subgroup": "extraction-machine"
+}

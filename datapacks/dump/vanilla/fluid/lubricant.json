@@ -1,0 +1,5 @@
+{
+  "type": "fluid",
+  "name": "lubricant",
+  "default_temperature": 25
+}

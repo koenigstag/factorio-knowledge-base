@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "big-electric-pole",
+  "stack_size": 50,
+  "place_result": "big-electric-pole",
+  "subgroup": "energy-pipe-distribution"
+}

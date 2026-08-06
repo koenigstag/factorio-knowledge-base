@@ -1,0 +1,51 @@
+{
+  "type": "mining-drill",
+  "name": "pumpjack",
+  "mining_speed": 1,
+  "energy_source": {
+    "type": "electric",
+    "emissions_per_minute": {
+      "pollution": 10
+    },
+    "usage_priority": "secondary-input"
+  },
+  "energy_usage": "90kW",
+  "module_slots": 2,
+  "resource_categories": [
+    "basic-fluid"
+  ],
+  "resource_searching_radius": 0.49000000000000005,
+  "allowed_effects": [
+    "consumption",
+    "speed",
+    "productivity",
+    "pollution"
+  ],
+  "output_fluid_box": {
+    "volume": 1000,
+    "pipe_connections": [
+      {
+        "direction": 0,
+        "positions": [
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "flow_direction": "output"
+      }
+    ]
+  }
+}

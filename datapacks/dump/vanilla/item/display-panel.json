@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "display-panel",
+  "stack_size": 10,
+  "place_result": "display-panel",
+  "subgroup": "circuit-network"
+}

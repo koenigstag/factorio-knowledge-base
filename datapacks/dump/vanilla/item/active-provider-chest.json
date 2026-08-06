@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "active-provider-chest",
+  "stack_size": 50,
+  "place_result": "active-provider-chest",
+  "subgroup": "logistic-network"
+}

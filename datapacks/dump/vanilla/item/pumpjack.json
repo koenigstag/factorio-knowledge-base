@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "pumpjack",
+  "stack_size": 20,
+  "place_result": "pumpjack",
+  "subgroup": "extraction-machine"
+}

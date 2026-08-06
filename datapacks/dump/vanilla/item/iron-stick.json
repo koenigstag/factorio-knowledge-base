@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "iron-stick",
+  "stack_size": 100,
+  "weight": 500,
+  "subgroup": "intermediate-product"
+}

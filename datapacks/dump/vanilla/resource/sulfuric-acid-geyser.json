@@ -1,0 +1,21 @@
+{
+  "type": "resource",
+  "name": "sulfuric-acid-geyser",
+  "minable": {
+    "mining_time": 1,
+    "results": [
+      {
+        "type": "fluid",
+        "name": "sulfuric-acid",
+        "amount_min": 10,
+        "amount_max": 10,
+        "probability": 1
+      }
+    ]
+  },
+  "category": "basic-fluid",
+  "infinite": true,
+  "infinite_depletion_amount": 10,
+  "minimum": 60000,
+  "normal": 300000
+}

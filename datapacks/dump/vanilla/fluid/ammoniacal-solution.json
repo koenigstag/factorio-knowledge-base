@@ -1,0 +1,8 @@
+{
+  "type": "fluid",
+  "name": "ammoniacal-solution",
+  "default_temperature": -50,
+  "max_temperature": 100,
+  "heat_capacity": "0.2kJ",
+  "auto_barrel": false
+}

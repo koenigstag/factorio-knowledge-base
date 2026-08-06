@@ -1,0 +1,9 @@
+{
+  "type": "resource",
+  "name": "copper-ore",
+  "minable": {
+    "mining_particle": "copper-ore-particle",
+    "mining_time": 1,
+    "result": "copper-ore"
+  }
+}

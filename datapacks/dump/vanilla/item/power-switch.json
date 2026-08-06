@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "power-switch",
+  "stack_size": 10,
+  "place_result": "power-switch",
+  "subgroup": "circuit-network"
+}

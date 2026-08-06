@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "logistic-robot",
+  "stack_size": 50,
+  "place_result": "logistic-robot",
+  "subgroup": "logistic-network"
+}

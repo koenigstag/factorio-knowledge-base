@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "fusion-reactor-equipment",
+  "stack_size": 20,
+  "weight": 1000000,
+  "subgroup": "equipment"
+}

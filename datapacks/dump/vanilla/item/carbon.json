@@ -1,0 +1,9 @@
+{
+  "type": "item",
+  "name": "carbon",
+  "stack_size": 50,
+  "weight": 1000,
+  "fuel_category": "chemical",
+  "fuel_value": "2MJ",
+  "subgroup": "raw-material"
+}

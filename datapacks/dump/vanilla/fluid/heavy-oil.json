@@ -1,0 +1,5 @@
+{
+  "type": "fluid",
+  "name": "heavy-oil",
+  "default_temperature": 25
+}

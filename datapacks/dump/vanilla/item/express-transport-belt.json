@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "express-transport-belt",
+  "stack_size": 100,
+  "weight": 10000,
+  "place_result": "express-transport-belt",
+  "subgroup": "belt"
+}

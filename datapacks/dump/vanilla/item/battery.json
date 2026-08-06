@@ -1,0 +1,6 @@
+{
+  "type": "item",
+  "name": "battery",
+  "stack_size": 200,
+  "subgroup": "raw-material"
+}

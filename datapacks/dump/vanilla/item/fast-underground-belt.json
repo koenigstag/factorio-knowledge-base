@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "fast-underground-belt",
+  "stack_size": 50,
+  "place_result": "fast-underground-belt",
+  "subgroup": "belt"
+}

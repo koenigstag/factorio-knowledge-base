@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "requester-chest",
+  "stack_size": 50,
+  "place_result": "requester-chest",
+  "subgroup": "logistic-network"
+}

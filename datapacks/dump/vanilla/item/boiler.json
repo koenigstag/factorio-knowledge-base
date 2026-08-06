@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "boiler",
+  "stack_size": 50,
+  "place_result": "boiler",
+  "subgroup": "energy"
+}

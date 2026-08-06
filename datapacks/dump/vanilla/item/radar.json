@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "radar",
+  "stack_size": 50,
+  "place_result": "radar",
+  "subgroup": "defensive-structure"
+}

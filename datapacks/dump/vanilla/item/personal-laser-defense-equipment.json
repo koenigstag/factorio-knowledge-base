@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "personal-laser-defense-equipment",
+  "stack_size": 20,
+  "weight": 200000,
+  "subgroup": "military-equipment"
+}

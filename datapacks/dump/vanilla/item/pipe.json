@@ -1,0 +1,8 @@
+{
+  "type": "item",
+  "name": "pipe",
+  "stack_size": 100,
+  "weight": 5000,
+  "place_result": "pipe",
+  "subgroup": "energy-pipe-distribution"
+}

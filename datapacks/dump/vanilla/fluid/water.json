@@ -1,0 +1,7 @@
+{
+  "type": "fluid",
+  "name": "water",
+  "default_temperature": 15,
+  "max_temperature": 100,
+  "heat_capacity": "2kJ"
+}

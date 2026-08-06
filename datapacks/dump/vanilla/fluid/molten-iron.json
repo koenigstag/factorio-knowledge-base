@@ -1,0 +1,8 @@
+{
+  "type": "fluid",
+  "name": "molten-iron",
+  "default_temperature": 1500,
+  "max_temperature": 2000,
+  "heat_capacity": "0.01kJ",
+  "auto_barrel": false
+}

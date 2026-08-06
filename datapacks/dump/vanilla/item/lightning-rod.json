@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "lightning-rod",
+  "stack_size": 50,
+  "place_result": "lightning-rod",
+  "subgroup": "environmental-protection"
+}

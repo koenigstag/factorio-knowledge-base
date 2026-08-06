@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "name": "linked-chest",
+  "stack_size": 10,
+  "place_result": "linked-chest",
+  "subgroup": "other"
+}
