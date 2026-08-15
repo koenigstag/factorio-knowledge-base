@@ -91,6 +91,7 @@ glossary/                  canonical/ (established terms) vs invented/ (ours)
 decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
 examples/                  walkthroughs: question → which files to read → formula call → result
 layouts/                   spatial arrangement patterns for base-building (drills/furnaces/main-bus/labs/...) — one <name>.md per pattern; numeric params cite formulas/relations or stay flagged open, never guessed
+blueprints/curated/<phase>/ raw importable Factorio blueprint strings (.txt), one per concrete design — <phase> is a game-stage folder (earlygame/init-game/midgame/...)
 ```
 
 `examples/` vs `relations/`: `relations/` is the cached answer,
@@ -101,7 +102,7 @@ one when the *pattern* of using a formula is worth showing, not one
 per `relations/` entry.
 
 Not created yet (planned, not to be scaffolded speculatively):
-`patterns/`, `contracts/`, `factory-modules/`, `blueprints/`,
+`patterns/`, `contracts/`, `factory-modules/`,
 `generators/`, `benchmarks/`, `changelog/`. `contracts/`/`factory-modules/`
 specifically should only be created once a second interchangeable
 implementation of the same slot exists — not upfront. (`layouts/` was
@@ -110,7 +111,10 @@ in this list too until there was a first concrete pattern —
 `city-block gap`, `export-block` position relative to each other. Other
 approaches — plain main-bus, drill-to-furnace arrays, lab layout —
 still belong in `layouts/` once written, not scaffolded ahead of
-content.)
+content. `blueprints/` left this list the same way, once
+`blueprints/curated/{earlygame,init-game,midgame}/` held real
+importable designs — miner/furnace arrays, a 100×100 city-block —
+rather than an empty folder.)
 
 ## Versioning
 

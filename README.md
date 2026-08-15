@@ -4,7 +4,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 ## Status
 
-🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `constraints/`), the first derived relation (`relations/smelting_ratios.*`, via `formulas/production_rate.py`), and terminology (`glossary/`). Patterns and blueprint generation are not built yet.
+🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `constraints/`), derived relations (`relations/`), terminology (`glossary/`), base-layout patterns (`layouts/`), and curated importable blueprints (`blueprints/curated/`). Automated blueprint generation and `patterns/` are not built yet.
 
 ## Key principle
 
@@ -18,7 +18,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 - `relations/` — derived numbers that come from applying a `formulas/` function to specific `datapacks/` values (e.g. "24 steel furnaces saturate a yellow belt") — never stored as a bare constant, always with the formula + inputs that produced it.
 - `glossary/` — `canonical/` for established Factorio/community terms, `invented/` for terms coined in this project.
 
-More domains (`patterns/`, `blueprints/`, ...) are planned but not created yet — see [CLAUDE.md](CLAUDE.md).
+More domains (`patterns/`, `generators/`, ...) are planned but not created yet — see [CLAUDE.md](CLAUDE.md).
 
 ## Versioning
 
