@@ -1,0 +1,33 @@
+{
+  "type": "recipe",
+  "name": "uranium-processing",
+  "energy_required": 12,
+  "enabled": false,
+  "auto_recycle": false,
+  "category": "centrifuging",
+  "ingredients": [
+    {
+      "type": "item",
+      "name": "uranium-ore",
+      "amount": 10
+    }
+  ],
+  "icon": "__base__/graphics/icons/uranium-processing.png",
+  "subgroup": "uranium-processing",
+  "order": "a[uranium-processing]-a[uranium-processing]",
+  "results": [
+    {
+      "type": "item",
+      "name": "uranium-235",
+      "probability": 0.007000000000000001,
+      "amount": 1
+    },
+    {
+      "type": "item",
+      "name": "uranium-238",
+      "probability": 0.993,
+      "amount": 1
+    }
+  ],
+  "allow_productivity": true
+}
