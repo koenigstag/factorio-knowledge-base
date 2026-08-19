@@ -1,0 +1,9 @@
+{
+  "common_tree_absorption_per_second": 0.001,
+  "dry_dead_tree_absorption_per_second": 0.0001,
+  "lichen_tree_absorption_per_second": 0,
+  "common_tree_count": 25,
+  "dry_dead_tree_count": 5,
+  "lichen_tree_count": 2,
+  "total_tree_types_surveyed": 32
+}

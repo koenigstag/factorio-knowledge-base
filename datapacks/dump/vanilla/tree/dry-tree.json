@@ -1,0 +1,144 @@
+{
+  "type": "tree",
+  "name": "dry-tree",
+  "icon": "__base__/graphics/icons/dry-tree.png",
+  "flags": [
+    "placeable-neutral",
+    "placeable-off-grid",
+    "breaths-air"
+  ],
+  "minable": {
+    "count": 4,
+    "mining_particle": "wooden-particle",
+    "mining_time": 0.5,
+    "result": "wood"
+  },
+  "deconstruction_alternative": "tree-01",
+  "factoriopedia_alternative": "tree-01",
+  "emissions_per_second": {
+    "pollution": -0.0001
+  },
+  "max_health": 20,
+  "collision_box": [
+    [
+      -0.4,
+      -0.8
+    ],
+    [
+      0.4,
+      0.2
+    ]
+  ],
+  "selection_box": [
+    [
+      -0.6,
+      -1.5
+    ],
+    [
+      0.6,
+      0.3
+    ]
+  ],
+  "drawing_box_vertical_extension": 0.3,
+  "subgroup": "trees",
+  "order": "a[tree]-a[nauvis]-c[dry-tree]",
+  "impact_category": "tree",
+  "autoplace": {
+    "control": "trees",
+    "order": "a[tree]-d[dead]-e[dry-tree]",
+    "probability_expression": "tree_dry",
+    "richness_expression": "clamp(random_penalty_at(6, 1), 0, 1)"
+  },
+  "pictures": [
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-00.png",
+      "width": 184,
+      "height": 122,
+      "shift": [
+        0.40625,
+        -0.46875
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-01.png",
+      "width": 142,
+      "height": 122,
+      "shift": [
+        0.734375,
+        -0.46875
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-02.png",
+      "width": 140,
+      "height": 115,
+      "shift": [
+        0.75,
+        -0.4140625
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-03.png",
+      "width": 151,
+      "height": 101,
+      "shift": [
+        0.6640625,
+        -0.3046875
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-04.png",
+      "width": 149,
+      "height": 109,
+      "shift": [
+        0.6796875,
+        -0.3671875
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-05.png",
+      "width": 146,
+      "height": 116,
+      "shift": [
+        0.703125,
+        -0.421875
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-06.png",
+      "width": 141,
+      "height": 135,
+      "shift": [
+        0.7421875,
+        -0.5703125
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-07.png",
+      "width": 166,
+      "height": 107,
+      "shift": [
+        0.546875,
+        -0.3515625
+      ],
+      "scale": 0.5
+    },
+    {
+      "filename": "__base__/graphics/entity/tree/dry-tree/dry-tree-08.png",
+      "width": 138,
+      "height": 106,
+      "shift": [
+        0.765625,
+        -0.3125
+      ],
+      "scale": 0.5
+    }
+  ]
+}
