@@ -14,6 +14,19 @@
   "exceptions": [
     {
       "files": [
+        "boiler/boiler.json",
+        "generator/steam-engine.json"
+      ],
+      "method": "collision_box field added to otherwise-native factorio --dump-data files (same situation as the mining-drill entry below) - collision_box sourced from wube/factorio-data; tile_box is this project's own derivation (ceil(collision_box) per axis), not a value pulled from that source directly - same ceiling methodology already validated against roboport, where this project's own dump has both fields and they're mutually consistent under it",
+      "game_version": "not applicable - source is base-mod Lua prototype source, not a versioned data dump",
+      "mods_active": "not applicable",
+      "source_url": "https://github.com/wube/factorio-data/blob/master/base/prototypes/entity/entities.lua",
+      "author": "Wube Software (official, first-party)",
+      "extracted_date": "2026-08-22",
+      "note": "boiler: collision_box [[-1.29,-0.79],[1.29,0.79]] -> tile_box [3,2]. steam-engine: collision_box [[-1.25,-2.35],[1.25,2.35]] -> tile_box [3,5]. Both had NEITHER tile_box nor collision_box in this project's own dump despite already being native files (added via the Bilka2-gist exception below, which only pulled energy/temperature fields, not geometry) - docs/index.html's base-entity footprint was falling back to the generic single-tile default for both. Same wube/factorio-data source and reasoning as the mining-drill exceptions entry - see datapacks/dump/README.md."
+    },
+    {
+      "files": [
         "mining-drill/burner-mining-drill.json",
         "mining-drill/electric-mining-drill.json",
         "mining-drill/big-mining-drill.json",

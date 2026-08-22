@@ -7,5 +7,19 @@
   "energy_source": {
     "type": "electric",
     "usage_priority": "secondary-output"
-  }
+  },
+  "collision_box": [
+    [
+      -1.25,
+      -2.35
+    ],
+    [
+      1.25,
+      2.35
+    ]
+  ],
+  "tile_box": [
+    3,
+    5
+  ]
 }

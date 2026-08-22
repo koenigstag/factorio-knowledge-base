@@ -19,6 +19,7 @@
     --belt-dim: #7a5a2a;
     --inserter: #4fc3e0;
     --inserter-basic: #e0b84a;
+    --inserter-burner: #6e7580;
     --inserter-dim: #2c5a67;
     --underground: #7a5a2a; /* muted variant of --belt (same tier hue, dimmer) */
     --underground-dim: #564a7a;
@@ -442,6 +443,9 @@
         <marker id="arrow-inserter-basic" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-basic)"></path>
         </marker>
+        <marker id="arrow-inserter-burner" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-burner)"></path>
+        </marker>
         <marker id="arrow-inserter-long" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--splitter)"></path>
         </marker>
@@ -727,12 +731,13 @@
   // visually fight it rather than read as context.
   //
   // Real, sourced gap (not a bug in this table): a lot of very common
-  // entities - chests, accumulator, boiler itself, offshore-pump,
-  // solar-panel, pump, radar, walls/gates, most turrets - have neither
-  // tile_box nor collision_box in this repo's dump (it's a curated field
-  // subset per file, not a full data.raw capture), so they can't be sized
-  // from what's here; they fall back to the generic default below rather
-  // than a guessed number.
+  // entities - chests, accumulator, offshore-pump, solar-panel, pump,
+  // radar, walls/gates, most turrets - have neither tile_box nor
+  // collision_box in this repo's dump (it's a curated field subset per
+  // file, not a full data.raw capture), so they can't be sized from what's
+  // here; they fall back to the generic default below rather than a
+  // guessed number. boiler/steam-engine used to be on this list too -
+  // fixed 2026-08-22, see datapacks/dump/vanilla/source.json's exceptions.
   var FOOTPRINT = {
     "small-electric-pole": 0.35, "medium-electric-pole": 0.5,
     "small-lamp": 0.3,
@@ -742,14 +747,15 @@
 
     "assembling-machine-1": 3, "assembling-machine-2": 3, "assembling-machine-3": 3,
     "beacon": 3, "big-electric-pole": 2, "big-mining-drill": 5, "biochamber": 3,
-    "biolab": 5, "burner-mining-drill": 2, "captive-biter-spawner": 5,
+    "biolab": 5, "boiler": 3, "burner-mining-drill": 2, "captive-biter-spawner": 5,
     "cargo-wagon": 6, "centrifuge": 3, "chemical-plant": 3, "crusher": 3,
     "cryogenic-plant": 5, "electric-furnace": 3, "electric-mining-drill": 3,
     "electromagnetic-plant": 4, "fluid-wagon": 6, "foundry": 5,
     "gun-turret": 2, "heat-exchanger": 3, "heat-pipe": 1, "lab": 3,
     "locomotive": 6, "nuclear-reactor": 5, "oil-refinery": 5, "pipe": 1,
     "pipe-to-ground": 1, "pumpjack": 3, "recycler": 4, "roboport": 4,
-    "steam-turbine": 5, "steel-furnace": 2, "stone-furnace": 2, "substation": 2
+    "steam-engine": 5, "steam-turbine": 5, "steel-furnace": 2,
+    "stone-furnace": 2, "substation": 2
   };
   function footprint(name) { return FOOTPRINT[name] || 0.85; }
 
@@ -1046,7 +1052,7 @@
   var insLayer = document.getElementById("insLayer");
   var INSERTER_STYLE = {
     "inserter": { color: "var(--inserter-basic)", marker: "arrow-inserter-basic" },
-    "burner-inserter": { color: "var(--inserter-basic)", marker: "arrow-inserter-basic" },
+    "burner-inserter": { color: "var(--inserter-burner)", marker: "arrow-inserter-burner" },
     "fast-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
     "bulk-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
     "stack-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
