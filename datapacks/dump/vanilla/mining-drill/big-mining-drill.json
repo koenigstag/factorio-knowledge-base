@@ -63,5 +63,9 @@
   "tile_box": [
     5,
     5
+  ],
+  "vector_to_place_result": [
+    0,
+    -2.85
   ]
 }

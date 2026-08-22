@@ -827,17 +827,21 @@
   var SPLITTER_NAMES = { "splitter": 1, "fast-splitter": 1, "express-splitter": 1, "turbo-splitter": 1 };
   var BELT_NAMES = { "transport-belt": 1, "fast-transport-belt": 1, "express-transport-belt": 1, "turbo-transport-belt": 1 };
   var UNDERGROUND_NAMES = { "underground-belt": 1, "fast-underground-belt": 1, "express-underground-belt": 1, "turbo-underground-belt": 1 };
-  // Mining drills output in a fixed direction relative to their own facing -
-  // confirmed via the modding API docs (vector_to_place_result: "the
-  // position where any item results are placed, when the mining drill is
-  // facing north" - explicitly rotation-relative, same convention as
-  // everything else in this project) and, for pumpjack specifically, this
-  // repo's own dump (mining-drill/pumpjack.json's output_fluid_box has a
-  // direction-carrying pipe_connections entry). The exact vanilla offset
-  // isn't sourced anywhere available here, so this draws a qualitative
-  // "output is this way" arrow at the entity's own edge - same idea as the
-  // splitter's flow arrow - not a precisely-positioned connector.
-  var MINING_DRILL_NAMES = { "burner-mining-drill": 1, "electric-mining-drill": 1, "big-mining-drill": 1, "pumpjack": 1 };
+  // Mining drills place mined items at vector_to_place_result (defined
+  // facing north, rotates with the entity's own direction - same convention
+  // as inserter pickup_position/insert_position). Real values, not a
+  // footprint-edge approximation: datapacks/dump/vanilla/mining-drill/
+  // *.json (added there 2026-08-22 from wube/factorio-data, this project's
+  // own dump didn't originally capture this field - see
+  // datapacks/dump/README.md and vanilla/source.json's exceptions entry).
+  // pumpjack's is [0,0] - it has no item output at all, only fluid via
+  // output_fluid_box, so it's deliberately excluded from this arrow rather
+  // than drawing a misleading "no output" one.
+  var MINING_DRILL_OUTPUT = {
+    "burner-mining-drill": [-0.35, -1.3],
+    "electric-mining-drill": [0, -1.85],
+    "big-mining-drill": [0, -2.85]
+  };
   var baseLayer = document.getElementById("baseLayer");
   ENTS.forEach(function (e) {
     if (SPLITTER_NAMES[e.n]) {
@@ -855,10 +859,12 @@
       x: e.x - s / 2, y: e.y - s / 2, width: s, height: s,
       class: "base-entity", rx: 0.06
     }));
-    if (MINING_DRILL_NAMES[e.n]) {
+    var dropVec = MINING_DRILL_OUTPUT[e.n];
+    if (dropVec) {
       var du = rotateCardinal(0, -1, e.d);
-      var edgePt = [e.x + du[0] * (s / 2), e.y + du[1] * (s / 2)];
-      baseLayer.appendChild(arrowHead(edgePt, du[0], du[1], "var(--faint)"));
+      var dropPt = rotateCardinal(dropVec[0], dropVec[1], e.d);
+      var outputPt = [e.x + dropPt[0], e.y + dropPt[1]];
+      baseLayer.appendChild(arrowHead(outputPt, du[0], du[1], "var(--faint)"));
     }
   });
   // One rectangle per underground tunnel, spanning entrance tile through exit

@@ -14,6 +14,22 @@
   "exceptions": [
     {
       "files": [
+        "mining-drill/burner-mining-drill.json",
+        "mining-drill/electric-mining-drill.json",
+        "mining-drill/big-mining-drill.json",
+        "mining-drill/pumpjack.json"
+      ],
+      "method": "single field added to an otherwise-native factorio --dump-data file, not a whole-file replacement like the other entries here - this project's own dump JSON is a curated field subset per file, and vector_to_place_result was never captured in the original extraction",
+      "game_version": "not applicable - source is base-mod Lua prototype source, not a versioned data dump; matches this manifest's own 2.0.77 closely enough that no discrepancy is expected (the field's value hasn't changed across recent 2.0.x releases per changelog review)",
+      "mods_active": "not applicable",
+      "source_url": "https://github.com/wube/factorio-data/blob/master/base/prototypes/entity/mining-drill.lua (burner-mining-drill, electric-mining-drill, pumpjack) and https://github.com/wube/factorio-data/blob/master/space-age/prototypes/entity/big-mining-drill.lua (big-mining-drill)",
+      "linked_from": "https://lua-api.factorio.com/latest/prototypes/MiningDrillPrototype.html (documents the field's semantics - rotation-relative to the entity's own direction - but not vanilla's specific per-prototype values)",
+      "author": "Wube Software (official, first-party - this is Wube's own published mirror of the base/DLC Lua prototype source, not a third-party re-serialization like the other entries in this list)",
+      "extracted_date": "2026-08-22",
+      "note": "burner-mining-drill: [-0.35,-1.3], electric-mining-drill: [0,-1.85], big-mining-drill: [0,-2.85], pumpjack: [0,0] (pumpjack outputs fluid via output_fluid_box instead - the lua-api docs note {0,0} specifically disables the item-placement arrow). All defined facing north (direction=0); rotates the same way as inserter pickup_position/insert_position. Pulled to fix docs/index.html's mining-drill output-direction arrow, which had been approximating the position at the entity's own footprint edge midpoint - visibly wrong for the 2x2 (even-width) burner-mining-drill, which put the arrow straddling two tiles instead of one specific tile. See datapacks/dump/README.md for why this source is treated as authoritative for filling this kind of gap."
+    },
+    {
+      "files": [
         "construction-robot/construction-robot.json",
         "logistic-robot/logistic-robot.json"
       ],
