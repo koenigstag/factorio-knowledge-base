@@ -1,0 +1,15 @@
+{
+  "type": "recipe",
+  "name": "electronic-circuit",
+  "category": "crafting",
+  "energy_required": 0.5,
+  "ingredients": [
+    { "type": "item", "name": "copper-cable", "amount": 3 },
+    { "type": "item", "name": "iron-plate", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "electronic-circuit", "amount": 1 }
+  ],
+  "source_url": "https://wiki.factorio.com/Electronic_circuit",
+  "verified_date": "2026-08-22"
+}

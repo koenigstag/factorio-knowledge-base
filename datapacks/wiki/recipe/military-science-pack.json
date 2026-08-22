@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "military-science-pack",
+  "category": "crafting",
+  "energy_required": 10,
+  "ingredients": [
+    { "type": "item", "name": "piercing-rounds-magazine", "amount": 1 },
+    { "type": "item", "name": "grenade", "amount": 1 },
+    { "type": "item", "name": "wall", "amount": 2 }
+  ],
+  "results": [
+    { "type": "item", "name": "military-science-pack", "amount": 2 }
+  ],
+  "source_url": "https://wiki.factorio.com/Military_science_pack",
+  "verified_date": "2026-08-22"
+}

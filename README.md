@@ -24,6 +24,12 @@ More domains (`patterns/`, `generators/`, ...) are planned but not created yet �
 
 Targets Factorio **2.0** for now. The plan is one git branch per major game version when a second version is actually needed, rather than versioning every file — see [CLAUDE.md](CLAUDE.md).
 
+## Useful links
+
+- [FactorioLab](https://factoriolab.github.io/2x1?v=11) — web-based production planner: pick target items/rates and it computes the full recipe tree, machine counts, modules/beacons, and power draw. Supports modded data sets (mod-specific ratios), not just vanilla — check the mod-set matches before cross-checking a `constraints/`/`datapacks/` `vanilla` fact against it.
+- [Factory Blueprint Editor (FBE)](https://fbe.factorygamefan.com/) — decodes/encodes Factorio blueprint strings and renders them as an editable grid (entities, recipes, filters). Useful for inspecting or hand-tweaking blueprints, including the ones under `blueprints/curated/`.
+- [Kirk McDonald's Factorio Calculator](https://kirkmcdonald.github.io/calc.html#data=2-0-55&items=advanced-circuit:f:1) — another web-based production ratio calculator: set a target item and rate, get the full ingredient tree with machine counts per tier. Vanilla only, no modded data sets — a second independent tool (alongside FactorioLab) for cross-checking `relations/` entries against the `vanilla` mod-set specifically.
+
 ## License
 
 Not defined yet.

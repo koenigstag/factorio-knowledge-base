@@ -1,0 +1,19 @@
+{
+  "type": "generator",
+  "name": "steam-engine",
+  "effectivity": 1,
+  "fluid_usage_per_tick": 0.5,
+  "maximum_temperature": 165,
+  "fluid_box": {
+    "volume": 200,
+    "filter": "steam",
+    "minimum_temperature": 100,
+    "production_type": "input"
+  },
+  "energy_source": {
+    "type": "electric",
+    "usage_priority": "secondary-output"
+  },
+  "source_url": "https://wiki.factorio.com/Steam_engine",
+  "verified_date": "2026-08-22"
+}

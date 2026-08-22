@@ -1,0 +1,7 @@
+{
+  "type": "offshore-pump",
+  "name": "offshore-pump",
+  "pumping_speed": 20,
+  "source_url": "https://wiki.factorio.com/Offshore_pump",
+  "verified_date": "2026-08-22"
+}

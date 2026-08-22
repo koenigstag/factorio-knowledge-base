@@ -1,0 +1,15 @@
+{
+  "type": "recipe",
+  "name": "logistic-science-pack",
+  "category": "crafting",
+  "energy_required": 6,
+  "ingredients": [
+    { "type": "item", "name": "inserter", "amount": 1 },
+    { "type": "item", "name": "transport-belt", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "logistic-science-pack", "amount": 1 }
+  ],
+  "source_url": "https://wiki.factorio.com/Logistic_science_pack",
+  "verified_date": "2026-08-22"
+}

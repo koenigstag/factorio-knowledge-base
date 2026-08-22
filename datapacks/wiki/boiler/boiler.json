@@ -1,0 +1,21 @@
+{
+  "type": "boiler",
+  "name": "boiler",
+  "energy_source": {
+    "type": "burner"
+  },
+  "energy_consumption": "1.8MW",
+  "target_temperature": 165,
+  "fluid_box": {
+    "volume": 200,
+    "filter": "water",
+    "production_type": "input"
+  },
+  "output_fluid_box": {
+    "volume": 200,
+    "filter": "steam",
+    "production_type": "output"
+  },
+  "source_url": "https://wiki.factorio.com/Boiler",
+  "verified_date": "2026-08-22"
+}
