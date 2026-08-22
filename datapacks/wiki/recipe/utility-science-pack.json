@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "utility-science-pack",
+  "category": "crafting",
+  "energy_required": 21,
+  "ingredients": [
+    { "type": "item", "name": "processing-unit", "amount": 2 },
+    { "type": "item", "name": "flying-robot-frame", "amount": 1 },
+    { "type": "item", "name": "low-density-structure", "amount": 3 }
+  ],
+  "results": [
+    { "type": "item", "name": "utility-science-pack", "amount": 3 }
+  ],
+  "source_url": "https://wiki.factorio.com/Utility_science_pack",
+  "verified_date": "2026-08-22"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "recipe",
+  "name": "copper-cable",
+  "category": "crafting",
+  "energy_required": 0.5,
+  "ingredients": [
+    { "type": "item", "name": "copper-plate", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "copper-cable", "amount": 2 }
+  ],
+  "source_url": "https://wiki.factorio.com/Copper_cable",
+  "verified_date": "2026-08-22"
+}

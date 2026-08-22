@@ -1,0 +1,9 @@
+{
+  "copper_cable_electronic_circuit_ratio": {
+    "ratio": {
+      "copper-cable": 3,
+      "electronic-circuit": 2
+    },
+    "tier_independent": true
+  }
+}

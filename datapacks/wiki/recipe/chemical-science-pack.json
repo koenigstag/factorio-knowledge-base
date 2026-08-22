@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "chemical-science-pack",
+  "category": "crafting",
+  "energy_required": 24,
+  "ingredients": [
+    { "type": "item", "name": "advanced-circuit", "amount": 3 },
+    { "type": "item", "name": "engine-unit", "amount": 2 },
+    { "type": "item", "name": "sulfur", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "chemical-science-pack", "amount": 2 }
+  ],
+  "source_url": "https://wiki.factorio.com/Chemical_science_pack",
+  "verified_date": "2026-08-22"
+}

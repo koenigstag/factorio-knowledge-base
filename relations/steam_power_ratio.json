@@ -1,0 +1,14 @@
+{
+  "offshore_pump_boiler_steam_engine_ratio_2.0": {
+    "ratio": {
+      "offshore-pump": 1,
+      "boiler": 200,
+      "steam-engine": 400
+    },
+    "offshore_pump_water_output_per_sec": 1200,
+    "boiler_water_consumption_per_sec": 6,
+    "boiler_steam_output_per_sec": 60,
+    "steam_engine_steam_consumption_per_sec": 30,
+    "steam_engine_power_output_kw": 900
+  }
+}
