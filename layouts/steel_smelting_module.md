@@ -23,6 +23,18 @@ side needs **5x** the belt throughput of the output side — unlike
 "one input side, one output side" single-flow shape doesn't carry over
 as a single-lane-in/single-lane-out design here.
 
+Corroborated independently by the official wiki
+(https://wiki.factorio.com/Steel_plate): "16 + 5 [Iron plate] -> 1
+[Steel plate]", produced by stone/steel/electric furnace — same
+`energy_required`, ingredient, and furnace-tier facts as the dump, and
+the wiki adds the *why*: "Because the recipe for steel contains a
+ratio of 5 iron : 1 steel, it requires less space to transport once
+processed." (Space Age's Vulcanus alternative, "Casting steel" — 3.2
+`energy_required`, 30 molten-iron -> 1 steel-plate, made in a
+`foundry` — is a different recipe/machine entirely, not covered by
+this module or by `relations/smelting_ratios.md`; `datapacks/dump/
+vanilla/recipe/` doesn't have it dumped yet.)
+
 ## Derivation
 
 Using `formulas/production_rate.py` (`production_rate`,
