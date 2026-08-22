@@ -113,10 +113,14 @@ and `from`/`to`. Built to check the vector geometry visually against
 the real blueprint layout while `build_vectors.py`'s rules were being
 worked out, rather than trusting the JSON by eye.
 
-Served via GitHub Pages from this repo's `docs/` folder — once Pages
-is enabled (Settings → Pages → Source: Deploy from a branch → Branch:
-`main`, folder `/docs`), it's live at the repo's Pages URL. Two ways
-to load a blueprint:
+Served via GitHub Pages, deployed by `.github/workflows/pages.yml` on
+every push to `main` that touches `docs/` (`actions/upload-pages-artifact`
++ `actions/deploy-pages`, not a branch/folder Pages source) — `docs/`
+is just where this one page happens to live today, not a platform
+requirement; a second page wouldn't need to share that folder. One
+manual step is still required once, outside git: Settings → Pages →
+Source: **GitHub Actions**. After that it's live at the repo's Pages
+URL and stays in sync automatically. Two ways to load a blueprint:
 
 - **Default (no query string)** — shows a pre-baked demo dataset
   embedded in the page (`24x2-stone-furnaces-module`).
