@@ -137,9 +137,15 @@ a blueprint:
   response body used as the blueprint string instead (subject to the
   target host allowing CORS for this page's origin).
 - **Import blueprint… button** — a modal for pasting a string (or a
-  `https://` link to one) without hand-building the URL; it just builds
-  the `?source=` link above and reloads onto it, reusing the exact same
-  path rather than a separate one.
+  `https://` link to one) without hand-building the URL. Stages the text
+  in `sessionStorage` and reloads onto a fixed `?source=local` marker
+  rather than `?source=<the string itself>`, then reuses the exact same
+  decode/vectorize path as a hand-built link. Putting the string directly
+  in the URL (the original approach) broke on exactly the designs this
+  modal is most useful for: an entity-dense blueprint (solar field, city
+  block) easily produces a base64 string tens of KB long, well past what
+  browsers/servers/proxies reliably accept in a URL, where a short
+  blueprint pasted as a `?source=` link works fine.
 - **Download vectors.json button** — saves the currently-loaded `VEC`
   object as a `.json` file, named from the blueprint's own label.
 

@@ -406,7 +406,7 @@
 <div class="modal-overlay" id="importOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="importTitle">
     <h2 id="importTitle">Import blueprint string</h2>
-    <p>Paste a Factorio blueprint (or blueprint book) string, or a <code>https://</code> link to one. It's decoded and vectorized entirely in your browser, then reloads this page with it as the <code>?source=</code> parameter.</p>
+    <p>Paste a Factorio blueprint (or blueprint book) string, or a <code>https://</code> link to one. It's decoded and vectorized entirely in your browser.</p>
     <textarea id="importText" spellcheck="false" placeholder="0eNqU..."></textarea>
     <div class="modal-error" id="importError"></div>
     <div class="modal-buttons">
@@ -1422,9 +1422,19 @@
   } // end boot()
 
   // ---- import-blueprint modal ----
-  // Just a UI for building a ?source= URL and reloading onto it, rather than
-  // a separate code path - reuses the exact same decode/vectorize/error
-  // handling boot() already goes through for the query-param case.
+  // Stages the pasted text in sessionStorage and reloads onto a fixed
+  // "?source=local" marker, rather than putting the (potentially huge)
+  // blueprint string directly in the URL - reuses the exact same
+  // decode/vectorize/error handling boot() already goes through for the
+  // query-param case, just with the string recovered from sessionStorage
+  // instead of the URL when the marker is "local". This used to build
+  // "?source=" + encodeURIComponent(text) directly: fine for a short
+  // blueprint pasted as a link, but a real-world entity-dense design
+  // (solar fields, city blocks) easily produces a base64 string tens of
+  // KB long, well past what browsers/servers/proxies reliably accept in a
+  // URL - the single most useful case for this modal was exactly the one
+  // it broke on. sessionStorage's ~5-10MB quota has no such ceiling.
+  var IMPORT_STORAGE_KEY = "vfi_import_source";
   var importOverlay = document.getElementById("importOverlay");
   var importText = document.getElementById("importText");
   var importError = document.getElementById("importError");
@@ -1453,7 +1463,14 @@
       importError.style.display = "block";
       return;
     }
-    location.search = "?source=" + encodeURIComponent(text);
+    try {
+      sessionStorage.setItem(IMPORT_STORAGE_KEY, text);
+    } catch (e) {
+      importError.textContent = "Could not stage the import (" + (e && e.message ? e.message : e) + ") - this browser may be blocking storage (e.g. private browsing).";
+      importError.style.display = "block";
+      return;
+    }
+    location.search = "?source=local";
   });
 
   function bootFromEmbedded() {
@@ -1477,6 +1494,22 @@
   }
 
   var sourceParam = new URLSearchParams(location.search).get("source");
+  // "local" is the marker the import modal reloads onto (see
+  // IMPORT_STORAGE_KEY above) instead of putting the blueprint string
+  // itself in the URL - recover it from sessionStorage here. Missing on a
+  // plain page load with "?source=local" still in the address bar (tab
+  // was closed and reopened, sessionStorage blocked, etc.) shows the same
+  // error banner a bad blueprint string would, rather than silently
+  // falling back to demo data as a bare page load (no ?source= at all)
+  // does.
+  if (sourceParam === "local") {
+    try {
+      sourceParam = sessionStorage.getItem(IMPORT_STORAGE_KEY);
+    } catch (e) {
+      sourceParam = null;
+    }
+    if (!sourceParam) showLoadError("no staged import found in sessionStorage");
+  }
   if (!sourceParam) {
     bootFromEmbedded();
   } else if (typeof DecompressionStream === "undefined") {
