@@ -481,7 +481,16 @@
   // DecompressionStream("deflate") speaks zlib framing directly (as opposed
   // to "deflate-raw"), so no bundled inflate library is needed.
   function decodeBlueprintString(bpStr) {
-    var payload = bpStr.trim().replace(/ /g, "+"); // literal "+" in a query value is read back as space
+    var payload = bpStr.trim();
+    // Some sources hand out the string already percent-encoded (e.g. copied
+    // out of a URL/query string, where the base64 alphabet's "/" and "+"
+    // show up as %2F/%2B) - undo that first, before the space<->+ repair
+    // below (which instead handles a literal "+" that was read back as a
+    // space by query-string parsing on an otherwise-unencoded string).
+    if (/%[0-9A-Fa-f]{2}/.test(payload)) {
+      try { payload = decodeURIComponent(payload); } catch (e) { /* not actually percent-encoded - leave as-is */ }
+    }
+    payload = payload.replace(/ /g, "+");
     var binStr = atob(payload.slice(1));
     var bytes = new Uint8Array(binStr.length);
     for (var i = 0; i < binStr.length; i++) bytes[i] = binStr.charCodeAt(i);
