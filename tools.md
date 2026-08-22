@@ -49,6 +49,13 @@ relationships, open-source status).
   project uses Python's `fractions.Fraction` when verifying derived
   ratios (see `relations/oil_cracking_ratio.md`'s discrepancy-closing
   work) rather than decimals.
+- **[FactorioLab](https://factoriolab.github.io/)** — another
+  web-based production planner: pick target items/rates and it
+  computes the full recipe tree, machine counts, modules/beacons, and
+  power draw. Unlike the Kirk McDonald calculator above, it also
+  supports modded data sets (mod-specific ratios), not just vanilla —
+  check the mod-set matches before cross-checking a `relations/`/
+  `datapacks/` `vanilla` fact against it.
 
 ## factorioprints.com vs. factorio.school: same project, official rename
 
