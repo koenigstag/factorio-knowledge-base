@@ -106,6 +106,53 @@ this size: 240 stone-furnaces need 5.4 coal/sec, still just over a
 third of one `transport-belt` — see
 [relations/furnace_fuel_consumption.md](../relations/furnace_fuel_consumption.md).
 
+## Simpler framing: 1 iron-furnace per 1 steel-furnace, same tier
+
+A community thread raised the natural first guess — "steel needs 5
+iron-plate per craft, so I need a 5:1 ratio of iron-smelting to
+steel-smelting furnaces" — and corrected it: that's wrong, because
+`steel-plate` also takes 5x longer to craft (`energy_required=16` vs
+`iron-plate`'s `3.2` — exactly 5x), which exactly cancels the 5:1
+ingredient ratio. The corrected rule: **build exactly 1 iron-smelting
+furnace per 1 steel-smelting furnace, as long as both stages use the
+same furnace tier** — no belt-throughput math required at all if the
+goal is just "keep the steel furnaces fed," rather than "saturate a
+specific belt tier."
+
+Verified directly against this project's own formulas, tier by tier
+(`production_rate(speed, 3.2)` vs `production_rate(speed, 16) x
+ingredient_ratio(5, 1)`):
+
+| furnace tier | iron-plate/sec per iron-furnace | iron-plate/sec consumed per same-tier steel-furnace |
+|---|---|---|
+| stone-furnace | 0.3125 | 0.3125 |
+| steel-furnace | 0.625 | 0.625 |
+| electric-furnace | 0.625 | 0.625 |
+
+Exactly equal in every row — confirming the 1:1 rule holds regardless
+of tier, since it falls out of `steel-plate.energy_required` being
+exactly 5x `iron-plate.energy_required` (a property of this specific
+recipe pair, not a general law).
+
+This is consistent with, not a contradiction of, the belt-saturation
+design above: the stone-furnace alternative's upstream module (5
+belts of iron-plate via stone-furnace = 5 x 48 = 240 furnaces) matches
+this module's own 240 stone-furnaces exactly 1:1, because both stages
+use the same tier there. The steel-furnace-tier primary design above
+only comes out to a *different* ratio (2 stone-furnace : 1
+steel-furnace) because it deliberately mixes tiers — a stone-furnace
+upstream module feeding a steel-furnace downstream module. Building
+the upstream module in steel-furnace too would restore the 1:1 ratio
+(120 iron-smelting steel-furnaces : 120 steel-plate-smelting
+steel-furnaces) at half the footprint of the stone-furnace upstream
+option.
+
+Source: https://steamcommunity.com/app/427520/discussions/0/3112519113936187296/
+(community Q&A thread; the 5:1-ingredient-ratio misconception and its
+correction, re-verified here against this project's own recipe data
+rather than taken on the thread's word).
+Verified: 2026-08-22
+
 ## Open items
 
 - Not yet built/exported as an actual blueprint; numbers here are
