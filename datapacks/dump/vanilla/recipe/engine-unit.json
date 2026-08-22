@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "engine-unit",
+  "category": "advanced-crafting",
+  "energy_required": 10,
+  "ingredients": [
+    { "type": "item", "name": "steel-plate", "amount": 1 },
+    { "type": "item", "name": "iron-gear-wheel", "amount": 1 },
+    { "type": "item", "name": "pipe", "amount": 2 }
+  ],
+  "results": [
+    { "type": "item", "name": "engine-unit", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

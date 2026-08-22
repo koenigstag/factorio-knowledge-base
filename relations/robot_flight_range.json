@@ -1,0 +1,10 @@
+{
+  "energy_per_tile_kj": {
+    "construction-robot": 5.833333333333333,
+    "logistic-robot": 6.0
+  },
+  "flight_range_tiles": {
+    "construction-robot": { "full_charge": 514.2857142857143, "usable_band": 385.7142857142857 },
+    "logistic-robot": { "full_charge": 250.0, "usable_band": 187.5 }
+  }
+}

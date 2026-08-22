@@ -21,6 +21,16 @@ Inputs:
 |---|---|
 | iron-plate | 4000 (40 × 100) |
 | iron-ore | 2000 (40 × 50) |
+| automation-science-pack | 8000 (40 × 200) |
+| logistic-science-pack | 8000 (40 × 200) |
+
+Science packs (`datapacks/dump/vanilla/tool/{automation,logistic}-science-pack.json`)
+are `tool`-type prototypes, not plain `item` — `stack_size=200,
+weight=1000` is an explicit `data.raw` field for both, not computed via
+`formulas/item_weight.py`. Same no-weight-limit rule as the rest of
+this section: 40 slots × 200 stack = 8000, unconstrained by weight.
+Used in `layouts/scalable_main_base.md`'s remote-labs
+train-delivery option.
 
 ## rocket (min of slot and weight limits)
 

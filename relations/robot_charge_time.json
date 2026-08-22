@@ -1,0 +1,6 @@
+{
+  "charge_time_seconds": {
+    "construction-robot": { "full_charge_0_to_100pct": 6.0, "usable_band_20_to_95pct": 4.5 },
+    "logistic-robot": { "full_charge_0_to_100pct": 3.0, "usable_band_20_to_95pct": 2.25 }
+  }
+}

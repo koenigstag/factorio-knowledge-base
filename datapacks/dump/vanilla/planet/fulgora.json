@@ -1,0 +1,13 @@
+{
+  "type": "planet",
+  "name": "fulgora",
+  "resources": ["scrap"],
+  "offshore_resources": ["heavy-oil"],
+  "surface_properties": {
+    "day-night-cycle": 10800,
+    "gravity": 8,
+    "magnetic-field": 99,
+    "pressure": 800,
+    "solar-power": 20
+  }
+}

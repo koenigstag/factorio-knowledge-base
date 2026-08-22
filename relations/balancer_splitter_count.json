@@ -1,0 +1,9 @@
+{
+  "power_of_two_balancer_splitter_count": {
+    "2": 1,
+    "4": 6,
+    "8": 20,
+    "16": 56,
+    "32": 144
+  }
+}

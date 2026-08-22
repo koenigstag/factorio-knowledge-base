@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "heavy-oil-cracking",
+  "category": "organic-or-chemistry",
+  "energy_required": 2,
+  "ingredients": [
+    { "type": "fluid", "name": "water", "amount": 30 },
+    { "type": "fluid", "name": "heavy-oil", "amount": 40 }
+  ],
+  "results": [
+    { "type": "fluid", "name": "light-oil", "amount": 30 }
+  ],
+  "allow_productivity": true,
+  "allow_quality": false,
+  "enabled": false
+}

@@ -1,0 +1,14 @@
+{
+  "type": "recipe",
+  "name": "steam-condensation",
+  "category": "chemistry-or-cryogenics",
+  "energy_required": 1,
+  "ingredients": [
+    { "type": "fluid", "name": "steam", "amount": 1000 }
+  ],
+  "results": [
+    { "type": "fluid", "name": "water", "amount": 90 }
+  ],
+  "allow_productivity": false,
+  "enabled": false
+}

@@ -18,8 +18,24 @@ Direct wiki quotes:
 > "In order to maintain throughput, balancing the lanes may be
 > necessary."
 
-This project's [city-block gap](../invented/city-block-gap.md) already
-referenced "balancers" needing space in the gap zone.
+This project's [main_bus_consumer_layout.md](../../layouts/main_bus_consumer_layout.md)
+already referenced "balancers" needing space in the belt-tap gap
+between blocks.
+
+Lane preservation is a separate axis of splitter behavior from
+priority/filter routing between outputs — see
+[mechanics/splitter-priority.md](../../mechanics/splitter-priority.md).
+
+How items land unevenly on a belt's lanes in the first place is itself
+a fixed inserter rule, not randomness — see
+[mechanics/inserter-belt-lane-placement.md](../../mechanics/inserter-belt-lane-placement.md)
+(inserters always place onto the far lane from their own side, never
+the near lane).
+
+Not the same scope as [belt balancer](belt-balancer.md) — that term
+covers distributing items across multiple *separate belts*, not the
+two lanes of one belt. A base often needs both, built from the same
+splitter primitives but solving different imbalance problems.
 
 Source: https://wiki.factorio.com/Belt_transport_system
 Verified: 2026-08-06

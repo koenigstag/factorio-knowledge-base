@@ -1,0 +1,12 @@
+{
+  "type": "planet",
+  "name": "space-platform",
+  "resources": [],
+  "offshore_resources": [],
+  "surface_properties": {
+    "day-night-cycle": 0,
+    "gravity": 0,
+    "magnetic-field": 0,
+    "pressure": 0
+  }
+}

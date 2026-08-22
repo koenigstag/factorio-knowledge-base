@@ -22,7 +22,7 @@ data (not yet an individual datapack file, checked directly against
 ## refineries_to_saturate_one_fluid_connection
 
 - `at_theoretical_cap_6000_per_sec` = 666.67 — `machines_to_saturate(6000, 1, 5, 45)`. 6000 = `datapacks/dump/vanilla/utility-constants/default.json`'s `max_fluid_flow` (100/tick × 60).
-- `at_practical_cap_4200_per_sec` = 466.67 — same formula, consumer_rate = `constraints/fluids.json`'s `max_flow_per_connection_sec_practical`.
+- `at_practical_cap_4200_per_sec` = 466.67 — same formula, consumer_rate = `mechanics/fluids.json`'s `max_flow_per_connection_sec_practical`.
 
 Unlike the smelting ratios, these aren't whole numbers (6000/9 and
 4200/9 don't divide evenly) — no rounding applied, this is the exact

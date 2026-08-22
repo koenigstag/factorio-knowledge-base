@@ -1,0 +1,16 @@
+{
+  "direct_ingredient_ratio": {
+    "automation-science-pack": { "copper-plate": 1.0, "iron-gear-wheel": 1.0 },
+    "logistic-science-pack": { "inserter": 1.0, "transport-belt": 1.0 },
+    "military-science-pack": { "piercing-rounds-magazine": 0.5, "grenade": 0.5, "stone-wall": 1.0 },
+    "chemical-science-pack": { "engine-unit": 1.0, "advanced-circuit": 1.5, "sulfur": 0.5 },
+    "production-science-pack": { "electric-furnace": 0.3333333333333333, "productivity-module": 0.3333333333333333, "rail": 10.0 },
+    "utility-science-pack": { "low-density-structure": 1.0, "processing-unit": 0.6666666666666666, "flying-robot-frame": 0.3333333333333333 }
+  },
+  "fully_decomposed_bus_lane_equivalent": {
+    "automation-science-pack": { "iron-plate": 2.0, "copper-plate": 1.0 },
+    "logistic-science-pack": { "iron-plate": 5.5, "copper-plate": 1.5 },
+    "chemical-science-pack": { "iron-plate": 3.0, "copper-plate": 7.5, "plastic-bar": 3.0 },
+    "utility-science-pack": { "iron-plate": 26.0, "copper-plate": 46.666666666666664, "plastic-bar": 7.666666666666666, "sulfuric-acid_fluid": 3.333333333333333 }
+  }
+}

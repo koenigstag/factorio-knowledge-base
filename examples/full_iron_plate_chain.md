@@ -16,8 +16,11 @@ number itself was produced.)
 
 ## Step 2 — drills needed to feed those 24 furnaces (from `relations/mining_furnace_ratios.json`)
 
-`energy_required_3.2.drills_per_furnace.steel-furnace.electric-mining-drill`
-= 1.25 drills per furnace.
+`energy_required_3.2_ingredient_amount_1.drills_per_furnace.steel-furnace.electric-mining-drill`
+= 1.25 drills per furnace (iron-plate is 1 ore → 1 plate, the
+`ingredient_amount=1` table — `stone-brick`'s 2:1 recipe uses a
+different, doubled table, see `relations/mining_furnace_ratios.md`'s
+2026-08-08 correction).
 
 ```python
 furnaces = 24
@@ -60,6 +63,9 @@ researched mining-productivity technology or speed/productivity
 modules change the effective rate — this example (like all of
 `relations/`) is the unmodified, un-researched baseline, not a claim
 that a real base stays at exactly 24:30 forever.
+
+See `examples/full_steel_plate_chain.md` for the same method one stage
+further upstream — a full belt of steel-plate instead of iron-plate.
 
 Verified: 2026-08-06 — both paths computed by reading the actual
 `relations/*.json` files and multiplying/comparing in code, not by

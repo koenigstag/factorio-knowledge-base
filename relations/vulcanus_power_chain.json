@@ -1,0 +1,15 @@
+{
+  "acid_neutralisation_steam_produced_per_sec": 2000,
+  "acid_neutralisation_steam_output_temperature_c": 500,
+  "steam_condensation_steam_consumed_per_sec": 1000,
+  "steam_condensation_water_produced_per_sec": 90,
+  "acid_neutralisation_per_steam_condensation": 0.5,
+  "steam_turbine_power_output_mw": 5.82,
+  "steam_turbine_steam_consumed_per_sec": 60,
+  "turbines_per_acid_neutralisation_at_full_flow": 33.33,
+  "cited_build_ratio_acid_neutralisation_steam_condensation_steam_turbine": [1, 2, 100],
+  "cited_power_target_mw": 580,
+  "turbines_needed_for_cited_power_target": 100,
+  "acid_neutralisation_needed_to_fully_feed_cited_turbine_count": 3,
+  "steam_condensation_needed_to_match_at_1_to_2_ratio": 6
+}

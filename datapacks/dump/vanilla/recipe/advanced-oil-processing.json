@@ -1,0 +1,17 @@
+{
+  "type": "recipe",
+  "name": "advanced-oil-processing",
+  "category": "oil-processing",
+  "energy_required": 5,
+  "ingredients": [
+    { "type": "fluid", "name": "water", "amount": 50 },
+    { "type": "fluid", "name": "crude-oil", "amount": 100 }
+  ],
+  "results": [
+    { "type": "fluid", "name": "heavy-oil", "amount": 25 },
+    { "type": "fluid", "name": "light-oil", "amount": 45 },
+    { "type": "fluid", "name": "petroleum-gas", "amount": 55 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

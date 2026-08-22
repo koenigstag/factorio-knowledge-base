@@ -1,0 +1,8 @@
+{
+  "type": "tool",
+  "name": "automation-science-pack",
+  "subgroup": "science-pack",
+  "stack_size": 200,
+  "weight": 1000,
+  "durability": 1
+}

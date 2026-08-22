@@ -1,0 +1,9 @@
+{
+ "bbox": {"x_min": -33.5, "x_max": 33.5, "y_min": -7.5, "y_max": 6.5},
+ "ports": [
+  {"tile": [-33.5, -1.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "coal", "notes": "continues into underground-belt one tile in: (-32.5,-1.5) type input -> (-29.5,-1.5) type output"},
+  {"tile": [-33.5, -0.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "ore", "notes": "feeds splitter at (-32.5, 0), direction 4/East"},
+  {"tile": [-33.5, 0.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "ore", "notes": "feeds the same splitter's other lane"},
+  {"tile": [33.5, -0.5], "edge": "x_max", "direction": 4, "role": "export", "resource": "plates", "notes": null}
+ ]
+}

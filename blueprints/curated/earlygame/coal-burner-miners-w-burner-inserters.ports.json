@@ -1,0 +1,9 @@
+{
+ "bbox": {"x_min": -3.5, "x_max": 3.5, "y_min": -1, "y_max": 1.5},
+ "ports": [
+  {"tile": [3.5, 1.5], "edge": "x_max", "direction": 12, "role": "import", "resource": "coal", "notes": "single lane, all direction 12/West, x=3.5 down to x=-3.5"},
+  {"tile": [-3.5, 1.5], "edge": "x_min", "direction": 12, "role": "export", "resource": "coal", "notes": "same lane's other end"}
+ ],
+ "tileable": true,
+ "tiling_notes": "Author-confirmed: a self-fueling 'burner miner chain' variant, not a separate ore+coal design. The 4 burner-mining-drills mine coal specifically; the 4 burner-inserters (direction 8/South) are oriented to feed coal from the passing lane back into their own drill's fuel slot, so each module fuels its own miners out of the same coal stream it's moving. The single lane carries coal both ways: what enters this module (import) is whatever the chain upstream is still carrying, and what leaves (export) is that plus this module's own mined coal minus what its own drills consumed as fuel."
+}

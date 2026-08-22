@@ -1,0 +1,13 @@
+{
+  "crude_oil_cycles_to_floor": 24000,
+  "crude_oil_time_to_floor_sec": 24000,
+  "crude_oil_time_to_floor_hours": 6.6666666666666667,
+  "output_rate_crude_oil_per_sec_by_time_sec": {
+    "0": 10.0,
+    "6000": 8.0,
+    "12000": 6.0,
+    "18000": 4.0,
+    "24000": 2.0,
+    "30000": 2.0
+  }
+}

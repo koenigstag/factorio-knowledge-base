@@ -1,7 +1,9 @@
 {
   "wagon": {
     "iron-plate": 4000,
-    "iron-ore": 2000
+    "iron-ore": 2000,
+    "automation-science-pack": 8000,
+    "logistic-science-pack": 8000
   },
   "rocket": {
     "iron-plate": 1000,

@@ -1,0 +1,13 @@
+{
+  "direct_ingredient_ratio": {
+    "processing-unit": 1.0,
+    "low-density-structure": 1.0,
+    "rocket-fuel": 1.0
+  },
+  "assembling_machine_3_per_rocket_silo": {
+    "processing-unit": 2.6666666666666665,
+    "low-density-structure": 4.0,
+    "rocket-fuel": 4.0,
+    "simplified_ratio": "2:3:3"
+  }
+}

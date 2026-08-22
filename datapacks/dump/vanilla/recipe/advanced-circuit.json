@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "advanced-circuit",
+  "category": "electronics",
+  "energy_required": 6,
+  "ingredients": [
+    { "type": "item", "name": "electronic-circuit", "amount": 2 },
+    { "type": "item", "name": "plastic-bar", "amount": 2 },
+    { "type": "item", "name": "copper-cable", "amount": 4 }
+  ],
+  "results": [
+    { "type": "item", "name": "advanced-circuit", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

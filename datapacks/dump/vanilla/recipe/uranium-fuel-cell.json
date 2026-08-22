@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "uranium-fuel-cell",
+  "energy_required": 10,
+  "ingredients": [
+    { "type": "item", "name": "iron-plate", "amount": 10 },
+    { "type": "item", "name": "uranium-235", "amount": 1 },
+    { "type": "item", "name": "uranium-238", "amount": 19 }
+  ],
+  "results": [
+    { "type": "item", "name": "uranium-fuel-cell", "amount": 10 }
+  ],
+  "allow_productivity": true,
+  "auto_recycle": false,
+  "enabled": false
+}

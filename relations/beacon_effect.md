@@ -40,6 +40,8 @@ confidence as the multiplier table itself.
 **no `productivity` and no `quality`**. Productivity and quality
 modules cannot be placed in a beacon at all (only directly in a
 crafting machine) — checked directly against the datapack, not cited
-from prose.
+from prose. See `mechanics/module-types-overview.md` for the other
+module-type tradeoffs (speed/productivity/efficiency/quality) side by
+side.
 
 Verified: 2026-08-06

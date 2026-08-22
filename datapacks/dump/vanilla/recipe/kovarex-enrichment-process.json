@@ -1,45 +1,19 @@
 {
   "type": "recipe",
   "name": "kovarex-enrichment-process",
-  "energy_required": 60,
-  "enabled": false,
-  "auto_recycle": false,
   "category": "centrifuging",
-  "icon": "__base__/graphics/icons/kovarex-enrichment-process.png",
-  "subgroup": "uranium-processing",
-  "order": "b[uranium-products]-c[kovarex-enrichment-process]",
+  "energy_required": 60,
   "ingredients": [
-    {
-      "type": "item",
-      "name": "uranium-235",
-      "amount": 40,
-      "ignored_by_stats": 40
-    },
-    {
-      "type": "item",
-      "name": "uranium-238",
-      "amount": 5,
-      "ignored_by_stats": 2
-    }
+    { "type": "item", "name": "uranium-235", "amount": 40, "ignored_by_stats": 40 },
+    { "type": "item", "name": "uranium-238", "amount": 5, "ignored_by_stats": 2 }
   ],
   "results": [
-    {
-      "type": "item",
-      "name": "uranium-235",
-      "amount": 41,
-      "ignored_by_stats": 40,
-      "ignored_by_productivity": 40
-    },
-    {
-      "type": "item",
-      "name": "uranium-238",
-      "amount": 2,
-      "ignored_by_stats": 2,
-      "ignored_by_productivity": 2
-    }
+    { "type": "item", "name": "uranium-235", "amount": 41, "ignored_by_productivity": 40, "ignored_by_stats": 40 },
+    { "type": "item", "name": "uranium-238", "amount": 2, "ignored_by_productivity": 2, "ignored_by_stats": 2 }
   ],
-  "main_product": "",
-  "allow_decomposition": false,
   "allow_productivity": true,
-  "allow_quality": false
+  "allow_quality": false,
+  "allow_decomposition": false,
+  "auto_recycle": false,
+  "enabled": false
 }

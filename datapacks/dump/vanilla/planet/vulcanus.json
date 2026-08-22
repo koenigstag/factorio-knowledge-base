@@ -1,0 +1,13 @@
+{
+  "type": "planet",
+  "name": "vulcanus",
+  "resources": ["calcite", "coal", "sulfuric-acid-geyser", "tungsten-ore"],
+  "offshore_resources": ["lava"],
+  "surface_properties": {
+    "day-night-cycle": 5400,
+    "gravity": 40,
+    "magnetic-field": 25,
+    "pressure": 4000,
+    "solar-power": 400
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "type": "surface-property",
+  "name": "magnetic-field",
+  "default_value": 90
+}

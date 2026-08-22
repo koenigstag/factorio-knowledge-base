@@ -1,0 +1,15 @@
+{
+  "type": "recipe",
+  "name": "production-science-pack",
+  "energy_required": 21,
+  "ingredients": [
+    { "type": "item", "name": "electric-furnace", "amount": 1 },
+    { "type": "item", "name": "productivity-module", "amount": 1 },
+    { "type": "item", "name": "rail", "amount": 30 }
+  ],
+  "results": [
+    { "type": "item", "name": "production-science-pack", "amount": 3 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

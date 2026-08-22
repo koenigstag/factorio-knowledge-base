@@ -1,0 +1,27 @@
+{
+  "default_stat_bonus_percent": {
+    "applies_to": "health, and any entity stat without its own override multiplier field",
+    "normal": 0,
+    "uncommon": 30,
+    "rare": 60,
+    "epic": 90,
+    "legendary": 150
+  },
+  "linear_stat_bonus_percent": {
+    "applies_to": ["tool_durability_multiplier", "accumulator_capacity_multiplier", "flying_robot_max_energy_multiplier"],
+    "normal": 0,
+    "uncommon": 100,
+    "rare": 200,
+    "epic": 300,
+    "legendary": 500
+  },
+  "range_stat_bonus_percent": {
+    "applies_to": "range_multiplier (e.g. electric-pole wire reach)",
+    "cap_percent": 200,
+    "normal": 0,
+    "uncommon": 10,
+    "rare": 20,
+    "epic": 30,
+    "legendary": 50
+  }
+}

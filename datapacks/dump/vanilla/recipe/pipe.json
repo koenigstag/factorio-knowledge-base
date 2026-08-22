@@ -1,0 +1,11 @@
+{
+  "type": "recipe",
+  "name": "pipe",
+  "ingredients": [
+    { "type": "item", "name": "iron-plate", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "pipe", "amount": 1 }
+  ],
+  "enabled": false
+}

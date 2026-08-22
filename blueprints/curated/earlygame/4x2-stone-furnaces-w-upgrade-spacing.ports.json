@@ -1,0 +1,18 @@
+{
+ "bbox": {"x_min": -6.5, "x_max": 5.5, "y_min": -5.5, "y_max": 4.5},
+ "ports": [
+  {"tile": [-6.5, -5.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "ore", "notes": "outer/external lane; pass-through to (-6.5,4.5)"},
+  {"tile": [-6.5, 4.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "ore", "notes": "same lane as (-6.5,-5.5)"},
+  {"tile": [-5.5, -5.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "coal", "notes": "inner/internal lane; pass-through to (-5.5,4.5)"},
+  {"tile": [-5.5, 4.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "coal", "notes": "same lane as (-5.5,-5.5)"},
+  {"tile": [-0.5, -5.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "result", "notes": "shared central lane, combines output from both furnace rows; pass-through to (-0.5,4.5)"},
+  {"tile": [-0.5, 4.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "result", "notes": "same lane as (-0.5,-5.5)"},
+  {"tile": [4.5, -5.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "coal", "notes": "inner/internal lane; pass-through to (4.5,4.5)"},
+  {"tile": [4.5, 4.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "coal", "notes": "same lane as (4.5,-5.5)"},
+  {"tile": [5.5, -5.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "ore", "notes": "outer/external lane; pass-through to (5.5,4.5)"},
+  {"tile": [5.5, 4.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "ore", "notes": "same lane as (5.5,-5.5)"}
+ ],
+ "tileable": true,
+ "tiling_notes": "Each of the 5 lanes is an unbroken 11-tile pass-through from y_min to y_max; stacking copies vertically extends every lane, export row feeds the next copy's import row directly.",
+ "layout_pattern": "layouts/smelter_module_ports.md (\"Plate on the inside\") - furnaces sit in two rows, each between an outer ore lane and the shared central result lane, coal on the inside of each row."
+}

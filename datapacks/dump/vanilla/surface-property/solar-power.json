@@ -1,0 +1,5 @@
+{
+  "type": "surface-property",
+  "name": "solar-power",
+  "default_value": 100
+}

@@ -6,5 +6,13 @@
     "bulk-inserter": 60.0,
     "long-handed-inserter": 30.0,
     "stack-inserter": 180.0
+  },
+  "items_per_sec_at_max_inserters_per_wagon_max_research": {
+    "burner-inserter": 28.44,
+    "inserter": 30.96,
+    "fast-inserter": 90.0,
+    "bulk-inserter": 360.0,
+    "long-handed-inserter": 90.0,
+    "stack-inserter": 480.0
   }
 }

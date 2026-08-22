@@ -1,0 +1,7 @@
+{
+  "min_roboports_for_gapless_coverage": {
+    "96x96": { "logistic": 4, "construction": 1 },
+    "100x100": { "logistic": 4, "construction": 1 },
+    "128x128": { "logistic": 9, "construction": 4 }
+  }
+}

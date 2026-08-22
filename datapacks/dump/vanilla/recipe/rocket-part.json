@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "rocket-part",
+  "category": "rocket-building",
+  "energy_required": 3,
+  "ingredients": [
+    { "type": "item", "name": "processing-unit", "amount": 1 },
+    { "type": "item", "name": "low-density-structure", "amount": 1 },
+    { "type": "item", "name": "rocket-fuel", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "rocket-part", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

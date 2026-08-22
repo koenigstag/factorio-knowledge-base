@@ -1,0 +1,5 @@
+{
+  "type": "surface-property",
+  "name": "day-night-cycle",
+  "default_value": 300
+}

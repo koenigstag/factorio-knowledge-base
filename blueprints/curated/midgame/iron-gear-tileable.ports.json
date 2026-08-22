@@ -1,0 +1,14 @@
+{
+ "bbox": {"x_min": -6.5, "x_max": 5.5, "y_min": -2.5, "y_max": 2.5},
+ "ports": [
+  {"tile": [-6.5, -2.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-plate", "notes": "outer/west lane; pass-through to (-6.5,2.5)"},
+  {"tile": [-6.5, 2.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "iron-plate", "notes": "same lane as (-6.5,-2.5)"},
+  {"tile": [5.5, -2.5], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-plate", "notes": "outer/east lane; pass-through to (5.5,2.5)"},
+  {"tile": [5.5, 2.5], "edge": "y_max", "direction": 8, "role": "export", "resource": "iron-plate", "notes": "same lane as (5.5,-2.5)"},
+  {"tile": [-0.5, 2.5], "edge": "y_max", "direction": 0, "role": "import", "resource": "iron-gear-wheel", "notes": "shared central lane, collects output from both assembler pairs; flows opposite to the outer lanes (south to north); pass-through to (-0.5,-2.5)"},
+  {"tile": [-0.5, -2.5], "edge": "y_min", "direction": 0, "role": "export", "resource": "iron-gear-wheel", "notes": "same lane as (-0.5,2.5)"}
+ ],
+ "tileable": true,
+ "tiling_notes": "Same 6-tile pass-through shape as earlygame/iron-gear-tileable.ports.json: 2 outer lanes carry iron-plate south (import top, export bottom), the center lane carries iron-gear-wheel north (import bottom, export top), opposite flow direction from the outer lanes. Stacking copies vertically extends every lane; each copy's export row feeds the next copy's import row on the matching lane.",
+ "layout_pattern": "Same 'raw material outside, product inside' shape as layouts/smelter_module_ports.md's 'Plate on the inside' furnace pattern, generalized past furnaces to an assembling-machine module: iron-plate (the sole iron-gear-wheel ingredient) arrives via the 2 outer lanes, iron-gear-wheel (the product) leaves via the shared center lane."
+}

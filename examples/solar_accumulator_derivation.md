@@ -11,7 +11,7 @@ including a bug that a cross-check caught.
 |---|---|---|---|
 | solar panel output | `datapacks/dump/vanilla/solar-panel/solar-panel.json` | `production` | 60kW |
 | accumulator capacity | `datapacks/dump/vanilla/accumulator/accumulator.json` | `energy_source.buffer_capacity` | 5MJ |
-| day/night timing | `constraints/day-night-cycle.json` | `dawn_ticks`/`day_ticks`/`dusk_ticks`/`night_ticks` | 5000/12500/5000/2500 |
+| day/night timing | `mechanics/day-night-cycle.json` | `dawn_ticks`/`day_ticks`/`dusk_ticks`/`night_ticks` | 5000/12500/5000/2500 |
 
 Day/night timing isn't in `data.raw` (checked `planet`/`surface`
 directly, nothing there) — it's a default map-generation setting,

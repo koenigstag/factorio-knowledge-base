@@ -4,6 +4,11 @@
     "quality-module-2": 0.02,
     "quality-module-3": 0.025
   },
+  "module_quality_chance_fraction_by_module_quality": {
+    "quality-module": { "normal": 0.01, "uncommon": 0.013, "rare": 0.016, "epic": 0.019, "legendary": 0.025 },
+    "quality-module-2": { "normal": 0.02, "uncommon": 0.026, "rare": 0.032, "epic": 0.038, "legendary": 0.05 },
+    "quality-module-3": { "normal": 0.025, "uncommon": 0.032, "rare": 0.04, "epic": 0.047, "legendary": 0.062 }
+  },
   "tier_jump_distribution_fraction_given_upgrade": {
     "+1": 0.9,
     "+2": 0.09,

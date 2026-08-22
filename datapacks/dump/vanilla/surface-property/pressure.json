@@ -1,0 +1,5 @@
+{
+  "type": "surface-property",
+  "name": "pressure",
+  "default_value": 1000
+}

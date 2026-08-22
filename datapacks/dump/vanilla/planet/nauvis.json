@@ -1,0 +1,9 @@
+{
+  "type": "planet",
+  "name": "nauvis",
+  "resources": ["coal", "copper-ore", "crude-oil", "iron-ore", "stone", "uranium-ore"],
+  "offshore_resources": ["water"],
+  "surface_properties": {
+    "day-night-cycle": 25200
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "construction-robot",
+  "name": "construction-robot",
+  "speed": 0.06,
+  "max_payload_size": 1,
+  "energy_per_move": "5kJ",
+  "energy_per_tick": "0.05kJ",
+  "max_energy": "3MJ",
+  "min_to_charge": 0.2,
+  "max_to_charge": 0.95,
+  "collision_box": [
+    [0, 0],
+    [0, 0]
+  ]
+}

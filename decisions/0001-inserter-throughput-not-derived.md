@@ -13,7 +13,7 @@ matched wiki-published values exactly. This was picked up as a
 candidate for `formulas/`, following the same pattern as
 `formulas/production_rate.py` and `formulas/cracking_ratio.py`. It
 would also complete the wagon-loading-throughput picture: the count in
-`constraints/trains.json` (12 / 24 inserters per wagon) needs a
+`mechanics/trains.json` (12 / 24 inserters per wagon) needs a
 matching per-inserter rate to produce a total throughput number.
 
 ## Alternatives considered
@@ -45,7 +45,7 @@ matching per-inserter rate to produce a total throughput number.
   belt, 20:5:17 cracking ratio) with no such caveat.
 
 **Skip inserter throughput entirely for now**, revisit later.
-- Con: leaves `constraints/trains.json`'s inserter counts without a
+- Con: leaves `mechanics/trains.json`'s inserter counts without a
   matching rate, silently. Someone hitting this gap later would have
   to redo the same research to find out why nothing exists.
 
@@ -65,7 +65,7 @@ don't derive.**
 
 ## Decision
 
-Third alternative, refined after the initial pass. `constraints/inserters-throughput.md`
+Third alternative, refined after the initial pass. `mechanics/inserters-throughput.md`
 cites the wiki's chest-to-chest cycles/sec figures, explicitly flagged
 as **not independently re-verified to exact precision**, and notes
 chest-to-belt throughput is scenario-dependent, not a fixed constant.
@@ -82,7 +82,7 @@ unambiguous (checked directly against `datapacks/dump/vanilla/inserter/*.json` �
 none of the four have a `stack_size_bonus` field), so citing
 cycles/sec *is* citing items/sec for those tiers specifically.
 Written as `formulas/inserter_throughput.py`, combined with
-`constraints/trains.json`'s per-tier count into
+`mechanics/trains.json`'s per-tier count into
 `relations/wagon_loading_throughput.*` — `inserter`/`transport-belt`
 = 12 × 0.86 = **10.32 items/sec**, matching this project's own
 founding architecture discussion exactly (see that relation's `.md`).
@@ -96,7 +96,7 @@ explained why `bulk-inserter` has no `stack_size_bonus` field at all
 inserters, not a stored value) and why `stack-inserter`'s
 `stack_size_bonus=4` didn't match the wiki's "6" alone (`4` is added
 *to* the same implicit base of 2). Both tiers are now in
-`constraints/inserters-throughput.md` and
+`mechanics/inserters-throughput.md` and
 `relations/wagon_loading_throughput.*` at the unresearched baseline.
 What's still unresolved is the *researched* value: `inserter-capacity-bonus-1..7`
 add two separate effects (`bulk-inserter-capacity-bonus` summing to
@@ -112,10 +112,16 @@ described.
   (`relations/wagon_loading_throughput.*`) — not the "stays
   incomplete" outcome originally expected when this decision was
   first drafted.
-- Still open: the *researched* (post-`inserter-capacity-bonus`) grab
-  size for `bulk-inserter`/`stack-inserter` — the two research effect
-  types' combination formula isn't documented anywhere found this
-  session, only their individual per-tech modifiers.
+- **Resolved 2026-08-08**: the researched grab-size combination
+  formula was found in `factoriocheatsheet.com`'s source
+  (community-maintained, wiki-derived) and independently cross-checked
+  by summing this project's own already-held
+  `datapacks/dump/vanilla/technology/inserter-capacity-bonus-*.json`
+  modifiers — both agree exactly at every tech level. See
+  `mechanics/inserters-throughput.md`'s "Researched grab size" section
+  and `formulas/inserter_capacity_bonus.py`. The wiki's own
+  "formula not described" statement stands for the wiki itself; this
+  project no longer depends on the wiki for this specific gap.
 - Revisiting the *cycles/sec-from-geometry* question (not the
   multiplication) still needs one of: (a) access to a live Factorio
   instance to calibrate a formula the way `inserter-throughput-lib`

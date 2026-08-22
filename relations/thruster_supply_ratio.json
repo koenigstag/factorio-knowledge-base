@@ -1,0 +1,21 @@
+{
+  "thruster_fuel_production_rate_per_plant": 37.5,
+  "thruster_oxidizer_production_rate_per_plant": 37.5,
+  "thruster_max_throttle_fuel_consumed_per_sec": 120,
+  "thruster_max_throttle_oxidizer_consumed_per_sec": 120,
+  "thruster_max_throttle_effectivity": 0.51,
+  "thruster_min_throttle_fuel_consumed_per_sec": 6.0,
+  "thruster_min_throttle_oxidizer_consumed_per_sec": 6.0,
+  "thruster_min_throttle_effectivity": 1.0,
+  "fuel_plants_per_thruster_at_max_throttle": 3.2,
+  "oxidizer_plants_per_thruster_at_max_throttle": 3.2,
+  "cited_ratio_normalized_per_thruster": {
+    "storage_tank": 3.2,
+    "fuel_plant": 3.2,
+    "oxidizer_plant": 3.2,
+    "water_plant": 1.6,
+    "crusher_metallic_asteroid": 0.24,
+    "crusher_carbonic_asteroid": 0.48,
+    "crusher_oxide_asteroid": 0.48
+  }
+}

@@ -1,0 +1,170 @@
+{
+ "blueprint": {
+  "icons": [
+   {
+    "signal": {
+     "type": "recipe",
+     "name": "burner-mining-drill"
+    },
+    "index": 1
+   },
+   {
+    "signal": {
+     "type": "recipe",
+     "name": "stone-furnace"
+    },
+    "index": 2
+   }
+  ],
+  "entities": [
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -2,
+     "y": -3
+    },
+    "direction": 4,
+    "entity_number": 1
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -2,
+     "y": 3
+    },
+    "direction": 4,
+    "entity_number": 4
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -2,
+     "y": -1
+    },
+    "direction": 4,
+    "entity_number": 13
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -2,
+     "y": 1
+    },
+    "direction": 4,
+    "entity_number": 14
+   },
+   {
+    "name": "stone-furnace",
+    "position": {
+     "x": 0,
+     "y": -3
+    },
+    "direction": 0,
+    "entity_number": 15
+   },
+   {
+    "name": "stone-furnace",
+    "position": {
+     "x": 0,
+     "y": -1
+    },
+    "direction": 0,
+    "entity_number": 16
+   },
+   {
+    "name": "stone-furnace",
+    "position": {
+     "x": 0,
+     "y": 1
+    },
+    "direction": 0,
+    "entity_number": 17
+   },
+   {
+    "name": "stone-furnace",
+    "position": {
+     "x": 0,
+     "y": 3
+    },
+    "direction": 0,
+    "entity_number": 18
+   },
+   {
+    "name": "burner-inserter",
+    "position": {
+     "x": 1.5,
+     "y": 3.5
+    },
+    "direction": 12,
+    "entity_number": 19
+   },
+   {
+    "name": "burner-inserter",
+    "position": {
+     "x": 1.5,
+     "y": 1.5
+    },
+    "direction": 12,
+    "entity_number": 20
+   },
+   {
+    "name": "burner-inserter",
+    "position": {
+     "x": 1.5,
+     "y": -0.5
+    },
+    "direction": 12,
+    "entity_number": 21
+   },
+   {
+    "name": "burner-inserter",
+    "position": {
+     "x": 1.5,
+     "y": -2.5
+    },
+    "direction": 12,
+    "entity_number": 22
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 2.5,
+     "y": -2.5
+    },
+    "direction": 0,
+    "entity_number": 23
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 2.5,
+     "y": -0.5
+    },
+    "direction": 0,
+    "entity_number": 24
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 2.5,
+     "y": 1.5
+    },
+    "direction": 0,
+    "entity_number": 25
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 2.5,
+     "y": 3.5
+    },
+    "direction": 0,
+    "entity_number": 26
+   }
+  ],
+  "item": "blueprint",
+  "version": 562949956239360,
+  "label": "Blueprint",
+  "wires": []
+ }
+}

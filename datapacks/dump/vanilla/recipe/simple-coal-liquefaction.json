@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "simple-coal-liquefaction",
+  "category": "oil-processing",
+  "energy_required": 5,
+  "ingredients": [
+    { "type": "item", "name": "coal", "amount": 10 },
+    { "type": "item", "name": "calcite", "amount": 2 },
+    { "type": "fluid", "name": "sulfuric-acid", "amount": 25 }
+  ],
+  "results": [
+    { "type": "fluid", "name": "heavy-oil", "amount": 50 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

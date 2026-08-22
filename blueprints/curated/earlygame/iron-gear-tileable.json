@@ -1,0 +1,369 @@
+{
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "type": "recipe",
+          "name": "iron-gear-wheel"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "name": "small-electric-pole",
+        "position": {
+          "x": -1.5,
+          "y": -0.5
+        },
+        "direction": 0,
+        "entity_number": 39
+      },
+      {
+        "name": "small-electric-pole",
+        "position": {
+          "x": -5.5,
+          "y": -0.5
+        },
+        "direction": 0,
+        "entity_number": 40
+      },
+      {
+        "name": "small-electric-pole",
+        "position": {
+          "x": 4.5,
+          "y": -0.5
+        },
+        "direction": 8,
+        "entity_number": 43
+      },
+      {
+        "name": "assembling-machine-1",
+        "direction": 0,
+        "position": {
+          "x": 2.5,
+          "y": 1.5
+        },
+        "entity_number": 21,
+        "recipe": "iron-gear-wheel"
+      },
+      {
+        "name": "assembling-machine-1",
+        "direction": 0,
+        "position": {
+          "x": 2.5,
+          "y": -1.5
+        },
+        "entity_number": 9,
+        "recipe": "iron-gear-wheel"
+      },
+      {
+        "name": "assembling-machine-1",
+        "direction": 0,
+        "position": {
+          "x": -3.5,
+          "y": 1.5
+        },
+        "entity_number": 17,
+        "recipe": "iron-gear-wheel"
+      },
+      {
+        "name": "assembling-machine-1",
+        "direction": 0,
+        "position": {
+          "x": -3.5,
+          "y": -1.5
+        },
+        "entity_number": 4,
+        "recipe": "iron-gear-wheel"
+      },
+      {
+        "name": "inserter",
+        "direction": 4,
+        "position": {
+          "x": 4.5,
+          "y": 1.5
+        },
+        "entity_number": 32
+      },
+      {
+        "name": "inserter",
+        "direction": 4,
+        "position": {
+          "x": 4.5,
+          "y": 0.5
+        },
+        "entity_number": 22
+      },
+      {
+        "name": "inserter",
+        "direction": 4,
+        "position": {
+          "x": 4.5,
+          "y": -1.5
+        },
+        "entity_number": 10
+      },
+      {
+        "name": "inserter",
+        "position": {
+          "x": 4.5,
+          "y": -2.5
+        },
+        "direction": 4,
+        "entity_number": 42
+      },
+      {
+        "name": "inserter",
+        "direction": 4,
+        "position": {
+          "x": 0.5,
+          "y": -1.5
+        },
+        "entity_number": 6
+      },
+      {
+        "name": "inserter",
+        "direction": 4,
+        "position": {
+          "x": 0.5,
+          "y": 1.5
+        },
+        "entity_number": 29
+      },
+      {
+        "name": "inserter",
+        "direction": 12,
+        "position": {
+          "x": -5.5,
+          "y": 1.5
+        },
+        "entity_number": 25
+      },
+      {
+        "name": "inserter",
+        "direction": 12,
+        "position": {
+          "x": -5.5,
+          "y": 0.5
+        },
+        "entity_number": 14
+      },
+      {
+        "name": "inserter",
+        "direction": 12,
+        "position": {
+          "x": -5.5,
+          "y": -1.5
+        },
+        "entity_number": 1
+      },
+      {
+        "name": "inserter",
+        "position": {
+          "x": -5.5,
+          "y": -2.5
+        },
+        "direction": 12,
+        "entity_number": 41
+      },
+      {
+        "name": "inserter",
+        "direction": 12,
+        "position": {
+          "x": -1.5,
+          "y": -1.5
+        },
+        "entity_number": 5
+      },
+      {
+        "name": "inserter",
+        "direction": 12,
+        "position": {
+          "x": -1.5,
+          "y": 1.5
+        },
+        "entity_number": 28
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": 2.5
+        },
+        "entity_number": 27
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": 1.5
+        },
+        "entity_number": 26
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": 0.5
+        },
+        "entity_number": 16
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": -0.5
+        },
+        "entity_number": 15
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": -1.5
+        },
+        "entity_number": 3
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": -6.5,
+          "y": -2.5
+        },
+        "entity_number": 2
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": -2.5
+        },
+        "entity_number": 11
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": -1.5
+        },
+        "entity_number": 12
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": -0.5
+        },
+        "entity_number": 23
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": 0.5
+        },
+        "entity_number": 24
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": 1.5
+        },
+        "entity_number": 34
+      },
+      {
+        "name": "transport-belt",
+        "direction": 8,
+        "position": {
+          "x": 5.5,
+          "y": 2.5
+        },
+        "entity_number": 35
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": 2.5
+        },
+        "entity_number": 31
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": 1.5
+        },
+        "entity_number": 30
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": 0.5
+        },
+        "entity_number": 20
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": -0.5
+        },
+        "entity_number": 19
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": -1.5
+        },
+        "entity_number": 8
+      },
+      {
+        "name": "transport-belt",
+        "direction": 0,
+        "position": {
+          "x": -0.5,
+          "y": -2.5
+        },
+        "entity_number": 7
+      }
+    ],
+    "item": "blueprint",
+    "version": 562949956239360,
+    "label": "Iron Gear Maker",
+    "wires": [
+      [
+        39,
+        5,
+        40,
+        5
+      ],
+      [
+        39,
+        5,
+        43,
+        5
+      ]
+    ]
+  }
+}

@@ -5,5 +5,13 @@
     "solid-fuel": 1.26,
     "rocket-fuel": 1.38,
     "nuclear-fuel": 1.38
-  }
+  },
+  "max_speed_km_per_hour": {
+    "coal": 259.2,
+    "wood": 259.2,
+    "solid-fuel": 272.16,
+    "rocket-fuel": 298.08,
+    "nuclear-fuel": 298.08
+  },
+  "tiles_per_tick_to_km_per_hour_factor": 216
 }

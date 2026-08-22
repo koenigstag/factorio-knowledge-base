@@ -1,0 +1,31 @@
+{
+  "scrap_recycling_energy_required": 0.2,
+  "expected_yield_per_100_scrap": {
+    "iron-gear-wheel": 20,
+    "solid-fuel": 7,
+    "concrete": 6,
+    "ice": 5,
+    "steel-plate": 4,
+    "battery": 4,
+    "stone": 4,
+    "advanced-circuit": 3,
+    "copper-cable": 3,
+    "processing-unit": 2,
+    "low-density-structure": 1,
+    "holmium-ore": 1
+  },
+  "avg_scrap_needed_per_item": {
+    "iron-gear-wheel": 5.0,
+    "solid-fuel": 14.3,
+    "concrete": 16.7,
+    "ice": 20.0,
+    "steel-plate": 25.0,
+    "battery": 25.0,
+    "stone": 25.0,
+    "advanced-circuit": 33.3,
+    "copper-cable": 33.3,
+    "processing-unit": 50.0,
+    "low-density-structure": 100.0,
+    "holmium-ore": 100.0
+  }
+}

@@ -13,7 +13,10 @@ Direct forum quote, describing a base where production modules
 ("squares") have no belt connections between them at all:
 > "The squares are only connected via 1-8 trains."
 
-Community-coined, not an official Wube term.
+Community-coined, not an official Wube term. See
+[train-configuration-notation.md](train-configuration-notation.md)
+for the shorthand (`2-4-2`, etc.) used to describe individual trains'
+locomotive/wagon makeup within a train-base.
 
 Source: https://forums.factorio.com/viewtopic.php?t=90233 (community usage)
 Verified: 2026-08-07

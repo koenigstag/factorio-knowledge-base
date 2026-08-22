@@ -1,0 +1,14 @@
+{
+  "lab_base_researching_speed": 1,
+  "packs_per_sec_per_lab": {
+    "automation": 0.1,
+    "logistic-science-pack": 0.2,
+    "automation-2": 0.06666666666666667
+  },
+  "labs_to_saturate_reference_cell_2_per_sec": {
+    "automation": 20,
+    "logistic-science-pack": 10,
+    "automation-2": 30
+  },
+  "observed_unit_time_range_seconds": [5, 10, 15, 30, 35, 45, 60, 120]
+}

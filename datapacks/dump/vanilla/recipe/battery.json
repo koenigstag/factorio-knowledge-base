@@ -1,0 +1,16 @@
+{
+  "type": "recipe",
+  "name": "battery",
+  "category": "chemistry-or-cryogenics",
+  "energy_required": 4,
+  "ingredients": [
+    { "type": "fluid", "name": "sulfuric-acid", "amount": 20 },
+    { "type": "item", "name": "iron-plate", "amount": 1 },
+    { "type": "item", "name": "copper-plate", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "battery", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

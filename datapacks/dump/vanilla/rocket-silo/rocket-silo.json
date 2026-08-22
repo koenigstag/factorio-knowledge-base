@@ -1,0 +1,9 @@
+{
+  "type": "rocket-silo",
+  "name": "rocket-silo",
+  "crafting_speed": 1,
+  "crafting_categories": ["rocket-building"],
+  "allowed_effects": ["consumption", "speed", "productivity", "pollution"],
+  "module_slots": 4,
+  "energy_usage": "250kW"
+}

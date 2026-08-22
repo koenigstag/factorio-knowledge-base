@@ -1,0 +1,18 @@
+{
+  "type": "recipe",
+  "name": "acid-neutralisation",
+  "category": "chemistry-or-cryogenics",
+  "energy_required": 5,
+  "ingredients": [
+    { "type": "item", "name": "calcite", "amount": 1 },
+    { "type": "fluid", "name": "sulfuric-acid", "amount": 1000 }
+  ],
+  "results": [
+    { "type": "fluid", "name": "steam", "amount": 10000, "temperature": 500 }
+  ],
+  "surface_conditions": [
+    { "property": "pressure", "min": 4000, "max": 4000 }
+  ],
+  "allow_productivity": false,
+  "enabled": false
+}

@@ -10,5 +10,236 @@
   "other_mods": [],
   "other_mods_notes": "",
   "extracted_date": "2026-08-06",
-  "dump_command_output_summary": "Prototype list checksum: 3295867752; checksums per mod logged at dump time."
+  "dump_command_output_summary": "Prototype list checksum: 3295867752; checksums per mod logged at dump time.",
+  "exceptions": [
+    {
+      "files": [
+        "construction-robot/construction-robot.json",
+        "logistic-robot/logistic-robot.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Version 2.0.65, not this manifest's own 2.0.77 - close but not identical. Used because construction-robot/logistic-robot were never extracted in this project's own dump run. Flagged here per Hard rule 5 instead of silently folding into the main provenance above."
+    },
+    {
+      "files": [
+        "recipe/copper-cable.json",
+        "recipe/electronic-circuit.json",
+        "recipe/advanced-circuit.json",
+        "recipe/processing-unit.json",
+        "recipe/iron-gear-wheel.json",
+        "recipe/stone-brick.json",
+        "recipe/plastic-bar.json",
+        "recipe/sulfuric-acid.json",
+        "recipe/battery.json",
+        "recipe/pipe.json",
+        "recipe/low-density-structure.json",
+        "recipe/rocket-part.json",
+        "recipe/rocket-fuel.json",
+        "recipe/automation-science-pack.json",
+        "recipe/logistic-science-pack.json",
+        "recipe/military-science-pack.json",
+        "recipe/chemical-science-pack.json",
+        "recipe/production-science-pack.json",
+        "recipe/utility-science-pack.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as the construction-robot/logistic-robot entry above. Pulled to derive relations/bus_lane_ratios.md from recipe ingredient/result amounts rather than citing community-published ratios uncrossed. Correction 2026-08-09: recipe/sulfuric-acid.json was missing its category field (chemistry-or-cryogenics) when originally transcribed from this batch - fixed directly against this same source, not re-pulled."
+    },
+    {
+      "files": [
+        "boiler/boiler.json",
+        "generator/steam-engine.json",
+        "offshore-pump/offshore-pump.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Pulled to derive relations/steam_power_chain.md (basic boiler/steam-engine power, previously entirely uncovered - only nuclear steam-turbine/heat-exchanger were dumped before this)."
+    },
+    {
+      "files": [
+        "rocket-silo/rocket-silo.json"
+      ],
+      "method": "third-party structured game-data JSON (not a raw data.raw serialization, and not this project's own factorio --dump-data run) - the data file behind the kirkmcdonald.github.io Factorio Calculator",
+      "game_version": "2.0.55",
+      "mods_active": "Space Age (file is data/space-age-2.0.55.json in that project's repo)",
+      "source_url": "https://github.com/KirkMcDonald/kirkmcdonald.github.io/blob/master/data/space-age-2.0.55.json",
+      "author": "Kirk McDonald (kirkmcdonald.github.io Factorio Calculator maintainer)",
+      "extracted_date": "2026-08-08",
+      "note": "Different third party than the Bilka2 gist used elsewhere in this manifest - resolves relations/rocket_part_ratio.md's rocket-silo.crafting_speed gap. Cross-used this same file to independently verify (not just cite) all 6 non-space science-pack recipes and rocket-part/rocket-fuel already pulled from the Bilka2 2.0.65 gist - exact match on every field, despite this file being an older 2.0.55 snapshot."
+    },
+    {
+      "files": [
+        "planet/nauvis.json",
+        "planet/vulcanus.json",
+        "planet/fulgora.json",
+        "planet/gleba.json",
+        "planet/aquilo.json",
+        "planet/space-platform.json",
+        "surface-property/day-night-cycle.json",
+        "surface-property/gravity.json",
+        "surface-property/magnetic-field.json",
+        "surface-property/pressure.json",
+        "surface-property/solar-power.json"
+      ],
+      "method": "third-party structured game-data JSON (not a raw data.raw serialization, and not this project's own factorio --dump-data run) - the data file behind the kirkmcdonald.github.io Factorio Calculator",
+      "game_version": "2.0.55",
+      "mods_active": "Space Age (file is data/space-age-2.0.55.json in that project's repo)",
+      "source_url": "https://github.com/KirkMcDonald/kirkmcdonald.github.io/blob/master/data/space-age-2.0.55.json",
+      "author": "Kirk McDonald (kirkmcdonald.github.io Factorio Calculator maintainer)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as the rocket-silo.json entry above. Foundational data for this project's first surface/planet coverage - each planet's surface_properties (day-night-cycle, gravity, magnetic-field, pressure, solar-power) and resource list, plus the 5 surface-property prototypes' default_value. space-platform is grouped with the planets in this source file for convenience even though it isn't a fixed `planet` prototype in the game itself (platforms are player-built, dynamically created surfaces) - flagged in mechanics/surface-conditions.md, not silently treated as equivalent."
+    },
+    {
+      "files": [
+        "recipe/acid-neutralisation.json",
+        "recipe/steam-condensation.json",
+        "recipe/simple-coal-liquefaction.json",
+        "recipe/lubricant.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Pulled to derive relations/vulcanus_power_chain.md and relations/vulcanus_coal_liquefaction_ratio.md - Vulcanus-specific recipes (acid-neutralisation carries a surface_conditions pressure=4000 gate matching Vulcanus's own pressure value exactly, confirming it as Vulcanus-exclusive) plus lubricant, which isn't surface-locked but was needed to check the cheat-sheet's Vulcanus coal-liquefaction-to-lubricant ratio."
+    },
+    {
+      "files": [
+        "recipe/scrap-recycling.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Pulled to derive relations/scrap_recycling_yield.md (Fulgora's primary resource-acquisition recipe - the recipe's own per-result probability field cross-checked exactly against factoriocheatsheet.com's Fulgora recyclerScrapRatio, confirming that figure is simply probability x 100)."
+    },
+    {
+      "files": [
+        "recipe/thruster.json",
+        "recipe/thruster-fuel.json",
+        "recipe/thruster-oxidizer.json",
+        "thruster/thruster.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Pulled to derive relations/thruster_supply_ratio.md (space-platform propulsion) - thruster.json's max_performance/min_performance fluid_usage fields were independently cross-checked against a direct wiki.factorio.com/Thruster fetch (not just cited), confirming the 6-120 units/sec throttle range exactly."
+    },
+    {
+      "files": [
+        "recipe/advanced-oil-processing.json",
+        "recipe/heavy-oil-cracking.json",
+        "recipe/light-oil-cracking.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. relations/oil_cracking_ratio.md's base 20:5:17 ratio was originally computed from these same recipe amounts by hand, without saving backing files at the time - added now as proper datapack files while extending that relation to cover the previously-flagged 'moduled' 15:6:22 ratio gap."
+    },
+    {
+      "files": [
+        "recipe/inserter.json",
+        "recipe/transport-belt.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Resolves relations/science_pack_ratios.md's previously-flagged logistic-science-pack decomposition gap ('inserter, transport-belt... recipes aren't in datapacks/dump/vanilla/recipe/ yet') and grounds layouts/scalable_main_base.md's green-science module port sizing."
+    },
+    {
+      "files": [
+        "tool/automation-science-pack.json",
+        "tool/logistic-science-pack.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Science packs are `tool`-type prototypes (they carry a `durability` field for the research-consumption visual), not plain `item`, hence the separate tool/ folder rather than item/. stack_size and weight are explicit data.raw fields here, not computed via formulas/item_weight.py the way item_weight.md's iron-plate figure was. Pulled to extend relations/cargo_capacity.md with wagon capacity for science-pack train delivery, per layouts/scalable_main_base.md's remote-labs option."
+    },
+    {
+      "files": [
+        "recipe/sulfur.json",
+        "recipe/explosives.json",
+        "recipe/engine-unit.json",
+        "recipe/electric-engine-unit.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Pulled to complete the chem-base ingredient chain for layouts/scalable_chem_base.md - electric-engine-unit's category (crafting-with-fluid) confirms it needs assembling-machine-2 minimum, while engine-unit's own category (advanced-crafting) is assembling-machine-1-capable, motivating the main-base/chem-base split for that module (engine-unit assembled at main base, finished into electric-engine-unit at the chem-base where lubricant already is)."
+    },
+    {
+      "files": [
+        "recipe/uranium-processing.json",
+        "recipe/kovarex-enrichment-process.json",
+        "recipe/uranium-fuel-cell.json",
+        "recipe/atomic-bomb.json",
+        "recipe/uranium-rounds-magazine.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-08",
+      "note": "Same exception source as above. Completes the uranium refining/enrichment/fuel chain for layouts/nuclear_base.md - relations/uranium_enrichment.md already cited uranium-processing.json and kovarex-enrichment-process.json's field values by hand without saving backing files at the time; added now as proper datapack files, unchanged from what that relation already used. uranium-fuel-cell.json (the recipe, distinct from item/uranium-fuel-cell.json) and the two named sub-product recipes (atomic-bomb, uranium-rounds-magazine) are new to this project."
+    },
+    {
+      "files": [
+        "pipe/pipe.json",
+        "pipe-to-ground/pipe-to-ground.json"
+      ],
+      "method": "third-party data.raw serialization (DataRawSerpent mod), not this project's own factorio --dump-data run",
+      "game_version": "2.0.65",
+      "mods_active": "Space Age active (base + space-age; elevated-rails/quality bundled-in status not separately confirmed)",
+      "source_url": "https://gist.githubusercontent.com/Bilka2/6b8a6a9e4a4ec779573ad703d03c1ae7/raw",
+      "linked_from": "https://wiki.factorio.com/Data.raw (official wiki page links this gist as its full data.raw serialization reference)",
+      "author": "Bilka2 (Factorio wiki contributor)",
+      "extracted_date": "2026-08-09",
+      "note": "Same exception source as above, re-pulled fresh from the gist on this date (entity prototypes, not recipes - first entity-type pull from this source). Fills glossary/invented/chem-bus.md's previously-flagged pipe-throughput/max-distance gap: pipe-to-ground.fluid_box.pipe_connections' max_underground_distance=10 is the direct analog to underground-belt.max_distance, feeding relations/pipe_underground_crossing_gap.md. Both entities' fluid_box.volume=100 confirmed identical."
+    }
+  ]
 }

@@ -1,0 +1,11 @@
+{
+  "boiler_water_consumed_per_sec": 6,
+  "boiler_steam_produced_per_sec": 60,
+  "steam_engine_power_output_kw": 900,
+  "steam_engine_steam_consumed_per_sec": 30,
+  "boilers_per_steam_engine": 0.5,
+  "steam_engines_per_boiler": 2,
+  "offshore_pump_water_per_sec": 1200,
+  "boilers_per_offshore_pump": 200,
+  "steam_engines_per_offshore_pump": 400
+}

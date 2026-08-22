@@ -1,0 +1,15 @@
+{
+  "type": "recipe",
+  "name": "rocket-fuel",
+  "category": "organic-or-assembling",
+  "energy_required": 15,
+  "ingredients": [
+    { "type": "item", "name": "solid-fuel", "amount": 10 },
+    { "type": "fluid", "name": "light-oil", "amount": 10 }
+  ],
+  "results": [
+    { "type": "item", "name": "rocket-fuel", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

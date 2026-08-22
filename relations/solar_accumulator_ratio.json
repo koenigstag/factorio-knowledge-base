@@ -1,5 +1,11 @@
 {
   "panels_per_mw": 23.81,
   "accumulators_per_mw": 20.0,
-  "accumulators_per_solar_panel": 0.84
+  "accumulators_per_solar_panel": 0.84,
+  "per_planet_assumption_uniform_phase_scaling": {
+    "vulcanus": { "panels_per_mw": 5.952, "accumulators_per_mw": 4.32, "accum_per_panel": 0.726 },
+    "fulgora": { "panels_per_mw": 119.048, "accumulators_per_mw": 8.64, "accum_per_panel": 0.073 },
+    "gleba": { "panels_per_mw": 47.619, "accumulators_per_mw": 28.8, "accum_per_panel": 0.605 },
+    "aquilo": { "panels_per_mw": 2380.952, "accumulators_per_mw": 57.6, "accum_per_panel": 0.024 }
+  }
 }

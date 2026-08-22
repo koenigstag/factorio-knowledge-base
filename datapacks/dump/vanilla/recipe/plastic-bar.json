@@ -1,0 +1,15 @@
+{
+  "type": "recipe",
+  "name": "plastic-bar",
+  "category": "chemistry-or-cryogenics",
+  "energy_required": 1,
+  "ingredients": [
+    { "type": "fluid", "name": "petroleum-gas", "amount": 20 },
+    { "type": "item", "name": "coal", "amount": 1 }
+  ],
+  "results": [
+    { "type": "item", "name": "plastic-bar", "amount": 2 }
+  ],
+  "allow_productivity": true,
+  "enabled": false
+}

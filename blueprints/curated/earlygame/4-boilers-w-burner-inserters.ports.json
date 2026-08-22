@@ -1,0 +1,9 @@
+{
+ "bbox": {"x_min": -6.5, "x_max": 5.5, "y_min": -5.5, "y_max": 7.5},
+ "ports": [
+  {"tile": [5.5, 6.5], "edge": "x_max", "direction": 12, "role": "import", "resource": "coal", "notes": "one end of a single unbroken 13-tile transport-belt lane at y=6.5, x=5.5 down to x=-6.5, all facing West"},
+  {"tile": [-6.5, 6.5], "edge": "x_min", "direction": 12, "role": "export", "resource": "coal", "notes": "the same lane's other end - pass-through, not a second distinct resource; feeds the next tiled copy's import when placed edge-to-edge"}
+ ],
+ "tileable": true,
+ "tiling_notes": "Designed to be placed edge-to-edge with identical copies of itself; export butted against the next copy's import so the coal lane continues unbroken across an arbitrary run."
+}

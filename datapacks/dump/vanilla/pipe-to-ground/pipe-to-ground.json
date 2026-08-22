@@ -1,0 +1,26 @@
+{
+  "type": "pipe-to-ground",
+  "name": "pipe-to-ground",
+  "fluid_box": {
+    "volume": 100,
+    "pipe_connections": [
+      { "direction": 0, "position": [0, 0] },
+      {
+        "connection_type": "underground",
+        "direction": 8,
+        "max_underground_distance": 10,
+        "position": [0, 0]
+      }
+    ]
+  },
+  "collision_box": [
+    [
+      -0.29,
+      -0.29
+    ],
+    [
+      0.29,
+      0.2
+    ]
+  ]
+}

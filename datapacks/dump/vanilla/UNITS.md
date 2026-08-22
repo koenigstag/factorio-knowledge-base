@@ -14,7 +14,15 @@ Factorio's simulation runs at a fixed 60 UPS (updates per second). Any
 
 | Field | Prototype types | Unit | Verification |
 |---|---|---|---|
-| `speed` | `transport-belt`, `underground-belt`, `splitter` | tiles/tick | **Confirmed**: `transport-belt.speed = 0.03125` × 60 = 1.875 tiles/s, matches the independently wiki-sourced figure exactly (see `constraints/`-adjacent research in project history). |
+| `speed` | `transport-belt`, `underground-belt`, `splitter` | tiles/tick | **Confirmed**: `transport-belt.speed = 0.03125` × 60 = 1.875 tiles/s, matches the independently wiki-sourced figure exactly (see `mechanics/`-adjacent research in project history). |
+| `speed` | `construction-robot`, `logistic-robot` | tiles/tick | **Confirmed** via `lua-api.factorio.com/latest/prototypes/FlyingRobotPrototype.html`: "The flying speed of the robot, in tiles/tick" — same unit and ×60 conversion as the belt-family `speed` field above, despite being an unrelated prototype type. `construction-robot.speed=0.06` × 60 = 3.6 tiles/s, `logistic-robot.speed=0.05` × 60 = 3.0 tiles/s. |
+
+Two related facts that build on `speed` above now live elsewhere,
+since they're not themselves unit-conversion guidance for a `data.raw`
+field: `mechanics/belt-item-density.md` (the 8-items/tile constant
+that turns belt `speed` into items/sec) and
+`relations/underground_belt_crossing_gap.md` (`max_distance − 1`, the
+usable gap for crossing traffic).
 
 ## "Base time at speed=1" ÷ speed = actual seconds
 
@@ -49,7 +57,16 @@ that reference, not standalone rates.
 
 `energy_usage`, `energy_per_movement`, `energy_per_rotation`, `drain`,
 `fluid.heat_capacity`, `item.fuel_value` — e.g. `"90kW"`, `"5kJ"`,
-`"100MJ"`. Parse the suffix, no external lookup needed.
+`"100MJ"`. Parse the suffix, no external lookup needed. Same for the
+robot-prototype fields `energy_per_move` (energy per tile flown),
+`energy_per_tick` (energy per tick flown, independent of distance),
+and `max_energy` (battery capacity) — confirmed against
+`lua-api.factorio.com/latest/prototypes/FlyingRobotPrototype.html`.
+Note the field name differs from the inserter pair above
+(`energy_per_move`/`energy_per_tick`, not
+`energy_per_movement`/`energy_per_rotation`) despite the similar
+naming — don't assume they're the same fields under different
+prototype types.
 `heat_capacity` **confirmed** via the official `FluidPrototype` docs
 (lua-api.factorio.com/latest/prototypes/FluidPrototype.html), quoted
 verbatim: *"Joule needed to heat 1 Unit by 1 °C"* — energy per degree
@@ -72,7 +89,7 @@ still on the same °C scale.
 `collision_box`, `selection_box` (pairs of [x,y] corners relative to
 entity center), `resource_searching_radius`. This is Factorio's
 universal spatial unit for all entity geometry — same unit as
-`constraints/rails.json`'s tile-based facts. Cross-checked:
+`mechanics/rails.json`'s tile-based facts. Cross-checked:
 `cargo-wagon.collision_box = [[-0.6,-2.4],[0.6,2.4]]` → 1.2×4.8 tiles,
 matches the commonly-cited cargo wagon footprint.
 
@@ -96,7 +113,7 @@ all matched exactly.
 share the same `collision_box`). Rail vehicles don't follow the
 building grid-snap rule the other entities use. `[2, 6]` instead comes
 from the wiki's own `Dimensions: 2×6` infobox value on each entity's
-page — see the derivation note in `constraints/trains.md` (it lines up
+page — see the derivation note in `mechanics/trains.md` (it lines up
 with the 12-inserters-per-wagon cap: 6 tiles × 2 sides, though the
 wiki doesn't confirm that's the actual cause — and that reasoning is
 cargo-wagon-specific anyway, since fluid wagons load via pipes, not
@@ -153,7 +170,7 @@ throughput entirely, see FFF #416). `pump/pump.json`'s
 
 (The softer "~4200/s practical" figure the wiki also mentions isn't a
 `data.raw` value at all — not a unit-conversion question for this
-file, see `constraints/fluids.md` instead.)
+file, see `mechanics/fluids.md` instead.)
 
 ## pipe_connections.direction — 16-direction enum, cardinals spaced 4 apart
 
@@ -174,6 +191,17 @@ cycle — confirmed via wiki.factorio.com/lab: "consumes packs half as
 fast", matching the field exactly). These scale a base value
 multiplicatively; there's nothing to convert, just don't mistake them
 for absolute quantities.
+
+`construction-robot`/`logistic-robot`'s `min_to_charge`/`max_to_charge`
+(both `0.2`/`0.95` in the vanilla dump) are a different kind of
+fraction — battery-fill-ratio thresholds, not multipliers. Confirmed
+via `lua-api.factorio.com/latest/prototypes/FlyingRobotPrototype.html`:
+`min_to_charge` = "the robot will go to charge when its battery fill
+ratio is less than this," `max_to_charge` = "if the robot's battery
+fill ratio is more than this, it does not need to charge before
+stationing." Together they're a hysteresis band, not a single charge
+target — a bot recharges up to 95%, then flies until it drops below
+20%, not "charge to 100%, use until empty."
 
 **Exception: `module.effect.quality` is ×10 its displayed percentage**
 — unlike every other `effect.*` field above. `quality-module`'s

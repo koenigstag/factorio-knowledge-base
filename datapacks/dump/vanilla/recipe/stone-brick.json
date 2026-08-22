@@ -1,0 +1,14 @@
+{
+  "type": "recipe",
+  "name": "stone-brick",
+  "category": "smelting",
+  "energy_required": 3.2,
+  "ingredients": [
+    { "type": "item", "name": "stone", "amount": 2 }
+  ],
+  "results": [
+    { "type": "item", "name": "stone-brick", "amount": 1 }
+  ],
+  "allow_productivity": true,
+  "enabled": true
+}

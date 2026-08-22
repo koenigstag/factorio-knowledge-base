@@ -1,0 +1,14 @@
+{
+  "type": "recipe",
+  "name": "atomic-bomb",
+  "energy_required": 50,
+  "ingredients": [
+    { "type": "item", "name": "processing-unit", "amount": 10 },
+    { "type": "item", "name": "explosives", "amount": 10 },
+    { "type": "item", "name": "uranium-235", "amount": 100 }
+  ],
+  "results": [
+    { "type": "item", "name": "atomic-bomb", "amount": 1 }
+  ],
+  "enabled": false
+}

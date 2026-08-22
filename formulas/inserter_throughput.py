@@ -2,7 +2,7 @@ def inserter_throughput(cycles_per_sec, items_per_cycle=1):
     """items/sec = cycles/sec x items grabbed per cycle.
 
     cycles_per_sec: chest-to-chest cycle rate, cited (not derived) from
-        constraints/inserters-throughput.md - see decisions/0001-inserter-throughput-not-derived.md
+        mechanics/inserters-throughput.md - see decisions/0001-inserter-throughput-not-derived.md
         for why this input isn't computed from rotation_speed/extension_speed.
     items_per_cycle: items moved per cycle. Unambiguously 1 for inserter,
         burner-inserter, long-handed-inserter, fast-inserter. For

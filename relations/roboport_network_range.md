@@ -15,26 +15,17 @@ Input: `datapacks/dump/vanilla/roboport/roboport.json` —
 | construction | 55 | 110 |
 
 Confirmed against wiki.factorio.com/Roboport: the logistic area is a
-50×50 square ("orange"), and *"two or more roboports can connect to
-form a logistic network, if the borders of the orange logistic areas
-touch"* — border-touching is a `≤` condition, not strict overlap, so
-50 tiles center-to-center is the actual maximum, not merely close to
-it. Same rule for the 110×110 construction area ("green"), independent
-of the logistic one.
+50×50 square ("orange"), the construction area is 110×110 ("green").
+For *why* 50/110 tiles center-to-center is the actual maximum (not
+merely close to it) and why logistic/construction connectivity are
+judged independently, see
+[mechanics/roboport-network-connection.md](../mechanics/roboport-network-connection.md)
+— that's the qualitative engine-behavior rule this relation's numbers
+plug into.
 
-## Two separate connection rules, not one
-
-The wiki explicitly distinguishes them: construction robots cooperate
-across the green (110-tile) area even when the orange (50-tile)
-logistic areas don't touch — roboports were specifically designed so
-they *"can build each other without interconnecting their logistic
-areas."* Practical consequence: a roboport placed up to 110 tiles from
-the nearest existing one will still get built/repaired by that
-network's construction bots (useful for bootstrapping an outpost
-expansion one hop at a time), but its *logistic* network (shared
-item/robot inventory) only merges with the existing one if placed
-within 50 tiles. Placing them believing 110 tiles keeps one shared
-logistic network is a common beginner mistake this distinction
-explains.
+This distance also happens to be the exact grid spacing for gap-free
+*area* coverage (not just network connectivity) — see
+[relations/roboport_area_coverage.md](roboport_area_coverage.md) for
+why, and for roboport-count-per-city-block figures built on top of it.
 
 Verified: 2026-08-07

@@ -1,0 +1,9 @@
+{
+  "crossing_gap_tiles": {
+    "pipe-to-ground": 9
+  },
+  "fluid_box_volume": {
+    "pipe": 100,
+    "pipe-to-ground": 100
+  }
+}

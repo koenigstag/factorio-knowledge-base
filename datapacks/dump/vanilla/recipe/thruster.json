@@ -1,0 +1,14 @@
+{
+  "type": "recipe",
+  "name": "thruster",
+  "energy_required": 10,
+  "ingredients": [
+    { "type": "item", "name": "steel-plate", "amount": 10 },
+    { "type": "item", "name": "processing-unit", "amount": 10 },
+    { "type": "item", "name": "electric-engine-unit", "amount": 5 }
+  ],
+  "results": [
+    { "type": "item", "name": "thruster", "amount": 1 }
+  ],
+  "enabled": false
+}

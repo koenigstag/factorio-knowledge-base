@@ -1,0 +1,18 @@
+{
+  "iron_furnaces_per_steel_furnace": {
+    "same_tier_both_stages": 1.0,
+    "iron_stage_faster_furnace": 0.5,
+    "iron_stage_slower_furnace": 2.0
+  },
+  "by_tier_pair": {
+    "stone-furnace_to_stone-furnace": 1.0,
+    "steel-furnace_to_stone-furnace": 0.5,
+    "electric-furnace_to_stone-furnace": 0.5,
+    "stone-furnace_to_steel-furnace": 2.0,
+    "steel-furnace_to_steel-furnace": 1.0,
+    "electric-furnace_to_steel-furnace": 1.0,
+    "stone-furnace_to_electric-furnace": 2.0,
+    "steel-furnace_to_electric-furnace": 1.0,
+    "electric-furnace_to_electric-furnace": 1.0
+  }
+}

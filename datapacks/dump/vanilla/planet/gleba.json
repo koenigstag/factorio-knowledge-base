@@ -1,0 +1,14 @@
+{
+  "type": "planet",
+  "name": "gleba",
+  "resources": ["stone"],
+  "offshore_resources": ["water"],
+  "plants": ["jellystem", "yumako-tree"],
+  "surface_properties": {
+    "day-night-cycle": 36000,
+    "gravity": 20,
+    "magnetic-field": 25,
+    "pressure": 2000,
+    "solar-power": 50
+  }
+}

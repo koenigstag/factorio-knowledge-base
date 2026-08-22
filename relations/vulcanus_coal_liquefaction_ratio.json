@@ -1,0 +1,12 @@
+{
+  "simple_coal_liquefaction_heavy_oil_produced_per_sec": 10,
+  "lubricant_heavy_oil_consumed_per_sec": 10,
+  "simple_coal_liquefaction_per_lubricant": 1,
+  "heavy_oil_cracking_heavy_oil_consumed_per_sec": 20,
+  "simple_coal_liquefaction_per_heavy_oil_cracking": 2,
+  "heavy_oil_cracking_light_oil_produced_per_sec": 15,
+  "light_oil_cracking_light_oil_consumed_per_sec": 15,
+  "heavy_oil_cracking_per_light_oil_cracking": 1,
+  "ratio_simple_coal_liquefaction_lubricant": [1, 1],
+  "ratio_simple_coal_liquefaction_heavy_oil_cracking_light_oil_cracking": [2, 1, 1]
+}

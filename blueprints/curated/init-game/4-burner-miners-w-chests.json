@@ -1,0 +1,98 @@
+{
+ "blueprint": {
+  "icons": [
+   {
+    "signal": {
+     "type": "recipe",
+     "name": "burner-mining-drill"
+    },
+    "index": 1
+   },
+   {
+    "signal": {
+     "type": "recipe",
+     "name": "stone-furnace"
+    },
+    "index": 2
+   }
+  ],
+  "entities": [
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -1,
+     "y": -3
+    },
+    "direction": 4,
+    "entity_number": 1
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -1,
+     "y": 3
+    },
+    "direction": 4,
+    "entity_number": 4
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -1,
+     "y": -1
+    },
+    "direction": 4,
+    "entity_number": 13
+   },
+   {
+    "name": "burner-mining-drill",
+    "position": {
+     "x": -1,
+     "y": 1
+    },
+    "direction": 4,
+    "entity_number": 14
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 0.5,
+     "y": -3.5
+    },
+    "direction": 0,
+    "entity_number": 27
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 0.5,
+     "y": -1.5
+    },
+    "direction": 0,
+    "entity_number": 28
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 0.5,
+     "y": 0.5
+    },
+    "direction": 0,
+    "entity_number": 29
+   },
+   {
+    "name": "wooden-chest",
+    "position": {
+     "x": 0.5,
+     "y": 2.5
+    },
+    "direction": 0,
+    "entity_number": 30
+   }
+  ],
+  "item": "blueprint",
+  "version": 562949956239360,
+  "label": "Blueprint",
+  "wires": []
+ }
+}

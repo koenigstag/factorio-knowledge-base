@@ -1,0 +1,17 @@
+{
+  "type": "pipe",
+  "name": "pipe",
+  "fluid_box": {
+    "volume": 100
+  },
+  "collision_box": [
+    [
+      -0.29,
+      -0.29
+    ],
+    [
+      0.29,
+      0.29
+    ]
+  ]
+}

@@ -19,12 +19,31 @@ against wiki-stated real percentages, not assumed from one data point:
 | quality-module-3 | 0.25 | +2.5% | 0.025 ✓ |
 
 All three divide out exactly, confirming the ×10 convention rather
-than assuming it. Not covered: a module's own *quality* (e.g. a
-legendary quality-module) further increases this effect — the wiki
-confirms the behavior (+2.5%/+5%/+6.2% for legendary-quality
-tier-1/2/3 modules) but the module-quality → effect-multiplier
-formula isn't stated here, since it wasn't found directly in
-`data.raw`.
+than assuming it.
+
+**Module-quality effect on chance (resolved 2026-08-08)**: a
+quality-module's own *quality* (e.g. a Legendary-quality
+quality-module) further increases its upgrade-chance percentage.
+Previously only the Legendary-tier endpoints were confirmed (via the
+wiki: +2.5%/+5%/+6.2% for tier-1/2/3). `factoriocheatsheet.com`'s
+source (`github.com/deniszholob/factorio-cheat-sheet`,
+`quality-quality-table.data.ts`, uncited in-repo but matching this
+project's wiki-confirmed Legendary values exactly) gives the full
+table:
+
+| module quality → | Normal | Uncommon | Rare | Epic | Legendary |
+|---|---|---|---|---|---|
+| quality-module (tier 1) | 1% | 1.3% | 1.6% | 1.9% | 2.5% |
+| quality-module-2 (tier 2) | 2% | 2.6% | 3.2% | 3.8% | 5% |
+| quality-module-3 (tier 3) | 2.5% | 3.2% | 4% | 4.7% | 6.2% |
+
+Normal-quality and Legendary-quality columns match this project's own
+`module_quality_chance` table above and the wiki's cited endpoints
+exactly — no clean multiplicative pattern connects the columns
+(Uncommon isn't a fixed ×N of Normal across rows, e.g. tier-1 is
+1×1.3=1.3 but tier-3 is 2.5×1.3=3.25≠3.2), so this is recorded as an
+empirical table, not a formula — no `formulas/` function added since
+there's no clean closed form found to encode.
 
 ## tier_jump_distribution_fraction_given_upgrade
 
@@ -36,9 +55,10 @@ above — a separate, prior roll), how far it cascades:
 Inputs: `quality.<tier>.next_probability=0.1`, present on
 `normal`/`uncommon`/`rare`/`epic` (`datapacks/dump/vanilla/quality/`)
 — `legendary` has none, being the terminal tier the leftover 0.1%
-collapses onto (its `level=5`, not `4`, skipping a number — cosmetic,
-not a computed field, noted here since it's the kind of thing that
-looks like a bug on first read). This is a real 4-gate Markov chain,
+collapses onto (its `level=5`, not `4`, skipping a number — **not just
+cosmetic**, see `relations/quality_stat_bonus.md`: `level` drives the
+stat-bonus formula too, and `5` is what lands legendary's bonus on a
+round `+150%` instead of `+120%`). This is a real 4-gate Markov chain,
 not a single lookup: at each tier, 90% chance the cascade stops there,
 10% chance it continues to check the next tier's own
 `next_probability`.
@@ -70,6 +90,11 @@ Confirmed against 3 concrete recipes in
 `recycler_ingredient_amount(3, 0.25)=0.75` — all three reproduce the
 actual recipe result amounts exactly, not just the wiki quote.
 
+Second, independent corroboration: FFF #375 ("Quality") states the
+design intent directly — recycling returns *"25% of the original
+ingredients back"* — matching the recipe-derived figure above from a
+primary source, not just the wiki.
+
 The `recycler` entity itself (`datapacks/dump/vanilla/furnace/
 recycler.json` — it's a `furnace`-type prototype, not its own type)
 has `allowed_effects` including `quality` but not `productivity`,
@@ -92,6 +117,26 @@ full loop-convergence number (expected passes to legendary, steady-
 state legendary fraction). That depends on which modules are installed
 where and isn't a single derivable constant the way the rest of this
 file is — a genuine absorbing Markov chain over the full loop, not
-scoped here.
+scoped here. FFF #375 states its own rough estimate for context (not
+independently derived by this project, so not adopted as a project
+fact): producing a legendary item through this loop is *"about 56
+times more expensive"* than a normal one.
 
-Verified: 2026-08-07
+**Why the loop doesn't run away to infinite productivity**: quality
+modules stack with productivity modules, and productivity compounds
+across upcycling passes the same way quality chance does — so nothing
+here structurally stops a factory from stacking arbitrarily many
+productivity sources. The actual limiter is `RecipePrototype.
+maximum_productivity` (`lua-api.factorio.com/latest/prototypes/
+RecipePrototype.html`), a real `data.raw` field defaulting to `3.0`
+(+300%) per recipe — confirmed by FFF #375's plain-English statement of
+*"a machine limit on productivity to be +300%."* Not independently
+cross-checked against this project's own dump: none of the 47 recipes
+in `datapacks/dump/vanilla/recipe/` show an explicit
+`maximum_productivity` override, consistent with all of them relying
+on the schema default rather than proof the default is actually 3.0 in
+this game version — recorded here from the official docs + FFF, the
+same confidence tier as `mechanics/rails.md`'s elevated-rail
+tall-entity note.
+
+Verified: 2026-08-07 (original), 2026-08-09 (FFF #375 corroboration + productivity-cap note)

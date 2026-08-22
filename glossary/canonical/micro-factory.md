@@ -11,9 +11,12 @@ than belts are the natural way to connect them.
 
 **Not the same as [city-block](city-block.md)**, despite both being
 "repeatable modular units" — easy to conflate, so the distinction is
-worth stating explicitly. A city-block sits in a contiguous grid and
-reaches a shared main-bus running through the gaps between blocks (see
-[layouts/city_block_grid.md](../../layouts/city_block_grid.md)); a
+worth stating explicitly. A city-block sits in a contiguous, packed
+grid and connects to its neighbors either by a shared main-bus running
+through the gaps between blocks
+([layouts/main_bus_consumer_layout.md](../../layouts/main_bus_consumer_layout.md))
+or, more commonly per community sourcing, its own rail station
+([layouts/city_block_grid.md](../../layouts/city_block_grid.md)); a
 micro-factory/island doesn't need adjacency to its neighbors at all
 and typically isn't tapping a shared intermediate-item bus — it's
 closer to a standalone factory in miniature, wired to the rest of the

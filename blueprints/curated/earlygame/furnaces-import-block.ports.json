@@ -1,0 +1,13 @@
+{
+ "bbox": {"x_min": -2.5, "x_max": 2.5, "y_min": -7.5, "y_max": 6.5},
+ "ports": [
+  {"tile": [-2.5, -1.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "coal", "notes": "continues into underground-belt: (-1.5,-1.5) type input -> (1.5,-1.5) type output"},
+  {"tile": [-2.5, -0.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "ore", "notes": "feeds splitter at (-1.5, 0), direction 4/East"},
+  {"tile": [-2.5, 0.5], "edge": "x_min", "direction": 4, "role": "import", "resource": "ore", "notes": "feeds the same splitter's other lane"},
+  {"tile": [2.5, 6.5], "edge": "x_max", "direction": 4, "role": "export", "resource": "ore", "notes": "outer (upward feed); fed by second splitter at (1.5,0) direction 12/West, which re-splits the combined ore stream"},
+  {"tile": [2.5, 5.5], "edge": "x_max", "direction": 4, "role": "export", "resource": "coal", "notes": "inner (upward feed)"},
+  {"tile": [2.5, -7.5], "edge": "x_max", "direction": 4, "role": "export", "resource": "ore", "notes": "outer (downward feed)"},
+  {"tile": [2.5, -6.5], "edge": "x_max", "direction": 4, "role": "export", "resource": "coal", "notes": "inner (downward feed)"}
+ ],
+ "role": "distribution/junction block, not a smelter - no furnaces/inserters. Combines ore+coal on the left into a single supply, then re-splits it out to two ore+coal pairs on the right feeding a furnace module above and one below. This block's exports are a 4x2-stone-furnaces-w-upgrade-spacing module's imports."
+}

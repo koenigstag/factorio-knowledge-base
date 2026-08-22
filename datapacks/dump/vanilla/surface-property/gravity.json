@@ -1,0 +1,5 @@
+{
+  "type": "surface-property",
+  "name": "gravity",
+  "default_value": 10
+}

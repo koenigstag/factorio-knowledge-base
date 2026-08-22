@@ -1,0 +1,26 @@
+{
+  "type": "thruster",
+  "name": "thruster",
+  "fuel_fluid_box": {
+    "filter": "thruster-fuel",
+    "production_type": "input",
+    "volume": 1000
+  },
+  "oxidizer_fluid_box": {
+    "filter": "thruster-oxidizer",
+    "production_type": "input"
+  },
+  "max_performance": {
+    "effectivity": 0.51,
+    "fluid_usage": 2,
+    "fluid_volume": 0.8
+  },
+  "min_performance": {
+    "effectivity": 1,
+    "fluid_usage": 0.1,
+    "fluid_volume": 0.1
+  },
+  "surface_conditions": [
+    { "property": "pressure", "min": 0, "max": 0 }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "lanes_per_output_lane": {
+    "steel-plate": { "iron-plate": 5.0 },
+    "copper-cable": { "copper-plate": 0.5 },
+    "electronic-circuit": { "iron-plate": 1.0, "copper-plate": 1.5 },
+    "advanced-circuit": { "iron-plate": 2.0, "copper-plate": 5.0, "plastic-bar": 2.0 },
+    "processing-unit": { "iron-plate": 24.0, "copper-plate": 40.0, "plastic-bar": 4.0, "sulfuric-acid_fluid": 5.0 },
+    "iron-gear-wheel": { "iron-plate": 2.0 },
+    "stone-brick": { "stone": 2.0 },
+    "plastic-bar": { "petroleum-gas_fluid": 10.0, "coal": 0.5 },
+    "sulfuric-acid": { "sulfur": 0.1, "iron-plate": 0.02, "water_fluid": 2.0 },
+    "battery": { "iron-plate": 1.0, "copper-plate": 1.0, "sulfuric-acid_fluid": 20.0 },
+    "pipe": { "iron-plate": 1.0 },
+    "low-density-structure": { "iron-plate_via_steel": 10.0, "copper-plate": 20.0, "plastic-bar": 5.0 }
+  }
+}

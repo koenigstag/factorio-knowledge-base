@@ -1,0 +1,8 @@
+{
+  "crossing_gap_tiles": {
+    "underground-belt": 4,
+    "fast-underground-belt": 6,
+    "express-underground-belt": 8,
+    "turbo-underground-belt": 10
+  }
+}
