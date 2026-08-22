@@ -24,6 +24,10 @@ More domains (`patterns/`, `generators/`, ...) are planned but not created yet �
 
 Targets Factorio **2.0** for now. The plan is one git branch per major game version when a second version is actually needed, rather than versioning every file — see [CLAUDE.md](CLAUDE.md).
 
+## Useful links
+
+- [FactorioLab](https://factoriolab.github.io/2x1?v=11) — production ratio/matrix calculator.
+
 ## License
 
 Not defined yet.
