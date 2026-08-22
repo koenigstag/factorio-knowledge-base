@@ -40,6 +40,28 @@ shared center lane; this module is a single-direction-flow design
 (one input side, one output side), a different shape of module the
 inside/outside question doesn't apply to.
 
+## Ratio cross-check against relations/smelting_ratios.md
+
+The single `plates` export port carries the combined output of all 48
+`stone-furnace` entities on exactly **one** `transport-belt` lane —
+confirmed directly from the entities at the `x_max` edge (`x=33.5`):
+of the 4 belt tiles there, only `(33.5,-0.5)` (direction 4/East) faces
+outward; the rest either run parallel to the edge or are the
+already-documented false-positive candidate at `(33.5,-3.5)`.
+
+This matches
+[relations/smelting_ratios.md](../../../relations/smelting_ratios.md)
+exactly: for `energy_required=3.2` recipes (`iron-plate`,
+`copper-plate`, `stone-brick`), `machines_to_saturate()` puts
+`stone-furnace`/`transport-belt` at **48** — precisely the furnace
+count this module uses (2 rows × 24 = 48). The `24×2` layout isn't an
+arbitrary size; it's exactly the number of stone furnaces needed to
+fully saturate one transport-belt of output, no more and no less. The
+furnaces also have no `recipe` field set in the blueprint (smelts
+whatever ore is fed in), consistent with the confirmed generic-`ore`
+import and with the ratio being identical for both `iron-plate` and
+`copper-plate` (same `energy_required`).
+
 ## Provenance
 
 - Author: project owner (self-authored, not sourced from a third-party
