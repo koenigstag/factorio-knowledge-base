@@ -97,14 +97,14 @@ geometry sources):
 entry (see "curated/" below) — regenerate it whenever the source
 `.txt` changes, don't hand-edit it.
 
-**Mirrored client-side in `docs/index.html`'s inline JS** (same
+**Mirrored client-side in `pages/index.html`'s inline JS** (same
 geometry, same merge rules) so the visualizer (see below) can
 vectorize a blueprint string pasted into its `?source=` query
 parameter without a server round-trip. Keep the two in sync if the
 rules here change — there's no shared module between them (Python for
 the batch/repo path, JS for the in-browser path).
 
-## Visualizer (`docs/index.html`, GitHub Pages)
+## Visualizer (`pages/index.html`, GitHub Pages)
 
 An interactive SVG viewer for `build_vectors.py`'s output — pan/zoom,
 per-layer toggles (base entities, belts, inserters, underground,
@@ -114,13 +114,14 @@ the real blueprint layout while `build_vectors.py`'s rules were being
 worked out, rather than trusting the JSON by eye.
 
 Served via GitHub Pages, deployed by `.github/workflows/pages.yml` on
-every push to `main` that touches `docs/` (`actions/upload-pages-artifact`
-+ `actions/deploy-pages`, not a branch/folder Pages source) — `docs/`
-is just where this one page happens to live today, not a platform
-requirement; a second page wouldn't need to share that folder. One
-manual step is still required once, outside git: Settings → Pages →
-Source: **GitHub Actions**. After that it's live at the repo's Pages
-URL and stays in sync automatically. Two ways to load a blueprint:
+every push to `main` that touches `pages/` (`actions/upload-pages-artifact`
++ `actions/deploy-pages`, not a branch/folder Pages source, which is why
+this could be renamed from the original `docs/` without touching the
+platform-side config at all — Actions-based Pages was never tied to that
+folder name). One manual step is still required once, outside git:
+Settings → Pages → Source: **GitHub Actions**. After that it's live at
+the repo's Pages URL and stays in sync automatically. Two ways to load
+a blueprint:
 
 - **Default (no query string)** — shows a pre-baked demo dataset
   embedded in the page (`24x2-stone-furnaces-module`).

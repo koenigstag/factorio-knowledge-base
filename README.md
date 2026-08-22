@@ -4,7 +4,7 @@ Knowledge base for the game [Factorio](https://factorio.com/): stores values, fo
 
 ## Status
 
-🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `mechanics/`), derived relations (`relations/`), terminology (`glossary/`), base-layout patterns (`layouts/`), and curated importable blueprints (`blueprints/curated/`, parsed via `blueprints/codec.py`). Blueprints can also be reduced to a flat vector list (`blueprints/build_vectors.py`) and inspected in an interactive viewer served via GitHub Pages (`docs/index.html`, see `blueprints/README.md`). Automated blueprint generation and `patterns/` are not built yet.
+🚧 Early stage. Currently populated: sourced game facts (`datapacks/`, `mechanics/`), derived relations (`relations/`), terminology (`glossary/`), base-layout patterns (`layouts/`), and curated importable blueprints (`blueprints/curated/`, parsed via `blueprints/codec.py`). Blueprints can also be reduced to a flat vector list (`blueprints/build_vectors.py`) and inspected in an interactive viewer served via GitHub Pages (`pages/index.html`, see `blueprints/README.md`). Automated blueprint generation and `patterns/` are not built yet.
 
 ## Key principle
 

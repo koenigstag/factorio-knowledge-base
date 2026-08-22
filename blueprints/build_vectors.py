@@ -6,7 +6,7 @@ directionality history for why that manual tracing is error-prone).
 
 Usage: python blueprints/build_vectors.py <blueprint.txt> <out.vectors.json>
 
-Mirrored in docs/index.html's inline JS (a client-side port used for the
+Mirrored in pages/index.html's inline JS (a client-side port used for the
 `?source=` query-string path, so a blueprint string can be vectorized
 in-browser without a server round-trip) - keep the two in sync if the
 geometry or merge rules here change.
