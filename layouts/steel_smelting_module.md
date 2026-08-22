@@ -104,6 +104,35 @@ would need scaling to 8 rows (192 furnaces, well past what the ratio
 actually calls for) purely to fit the formula — not worth it just to
 combine 5 already-equal sources.
 
+**Belt fill isn't lopsided across the cascade** — a real question
+worth walking through explicitly rather than asserting. Each row
+contributes 3 steel-plate/sec; merging via ordinary splitters (each a
+plain 2-input/1-output merge, no priority set — per
+[mechanics/splitter-priority.md](../mechanics/splitter-priority.md),
+a splitter with no priority just draws evenly from both inputs and
+never backs up below the belt's own max) builds up linearly:
+
+| after merging row | cumulative steel-plate/sec | % of belt (15/sec) |
+|---|---|---|
+| 1 | 3 | 20% |
+| 2 | 6 | 40% |
+| 3 | 9 | 60% |
+| 4 | 12 | 80% |
+| 5 | 15 | 100% |
+
+Full compression is only reached at the very last merge (row 5), never
+earlier, and no row's contribution is ever throttled or halved — the
+running total never exceeds 15/sec at any point, so there's no
+backpressure anywhere in the cascade. This "smooth ramp, no row
+shortchanged" outcome is specific to merging via **splitters**; it
+would *not* hold the same way if the rows were combined via
+[belt side-loading](../glossary/canonical/belt-side-loading.md)
+instead — side-loading onto an already-flowing belt only reliably
+tops up both lanes if the feeding lane is itself already fully
+compressed, which none of these rows are on their own (each is only
+20% of belt capacity). That's a real risk for a *different* merge
+technique, not the plain-splitter cascade actually specified here.
+
 ## Stone-furnace alternative (matching the 24×2 module's own tier)
 
 Same shape, doubled: **5 rows of 48 stone-furnaces** (240 total), each
