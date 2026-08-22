@@ -131,7 +131,16 @@ URL and stays in sync automatically. Two ways to load a blueprint:
   `encodeURIComponent` the string when building the link — a literal
   `+` in an un-encoded value is read back as a space by query-string
   parsing, though the page also repairs that specific case defensively
-  since blueprint strings are base64 and never contain real spaces.
+  since blueprint strings are base64 and never contain real spaces. If
+  the value starts with `https://`, it's fetched as a URL first and the
+  response body used as the blueprint string instead (subject to the
+  target host allowing CORS for this page's origin).
+- **Import blueprint… button** — a modal for pasting a string (or a
+  `https://` link to one) without hand-building the URL; it just builds
+  the `?source=` link above and reloads onto it, reusing the exact same
+  path rather than a separate one.
+- **Download vectors.json button** — saves the currently-loaded `VEC`
+  object as a `.json` file, named from the blueprint's own label.
 
 ## Import/export port heuristic (and its limits)
 

@@ -403,7 +403,7 @@
 <div class="modal-overlay" id="importOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="importTitle">
     <h2 id="importTitle">Import blueprint string</h2>
-    <p>Paste a Factorio blueprint (or blueprint book) string. It's decoded and vectorized entirely in your browser, then reloads this page with it as the <code>?source=</code> parameter.</p>
+    <p>Paste a Factorio blueprint (or blueprint book) string, or a <code>https://</code> link to one. It's decoded and vectorized entirely in your browser, then reloads this page with it as the <code>?source=</code> parameter.</p>
     <textarea id="importText" spellcheck="false" placeholder="0eNqU..."></textarea>
     <div class="modal-error" id="importError"></div>
     <div class="modal-buttons">
@@ -716,26 +716,40 @@
   document.getElementById("nSpl").textContent = VEC.splitters.length;
 
   // ---- footprint size lookup (tiles), used only for base-entity context boxes ----
+  // Sizes below are the larger of the two tile_box (or, failing that,
+  // ceil(collision_box)) dimensions for every prototype in
+  // datapacks/dump/vanilla/ that has one - generated once by walking the
+  // whole dump rather than adding entries reactively as each missing
+  // category got reported. A handful of entities are deliberately kept
+  // smaller than their real tile size (poles, lamp, inserters): they read
+  // as thin/small in-game, and they also get their own dedicated vector
+  // glyph drawn on top elsewhere, so a full-tile background square would
+  // visually fight it rather than read as context.
+  //
+  // Real, sourced gap (not a bug in this table): a lot of very common
+  // entities - chests, accumulator, boiler itself, offshore-pump,
+  // solar-panel, pump, radar, walls/gates, most turrets - have neither
+  // tile_box nor collision_box in this repo's dump (it's a curated field
+  // subset per file, not a full data.raw capture), so they can't be sized
+  // from what's here; they fall back to the generic default below rather
+  // than a guessed number.
   var FOOTPRINT = {
-    "stone-furnace": 2, "steel-furnace": 2, "electric-furnace": 2,
-    "splitter": 1, "fast-splitter": 1, "express-splitter": 1,
-    "underground-belt": 1, "fast-underground-belt": 1, "express-underground-belt": 1,
     "small-electric-pole": 0.35, "medium-electric-pole": 0.5,
     "small-lamp": 0.3,
-    "inserter": 0.5, "long-handed-inserter": 0.5,
+    "inserter": 0.5, "long-handed-inserter": 0.5, "fast-inserter": 0.5,
+    "bulk-inserter": 0.5, "burner-inserter": 0.5, "stack-inserter": 0.5,
     "iron-chest": 1,
-    // data.raw type "assembling-machine" - every one of these was falling
-    // back to the generic 0.85 single-tile default (datapacks/dump/vanilla/
-    // assembling-machine/*.json's own tile_box values). "crusher" is the one
-    // non-square footprint in the category ([2,3]) - approximated here as
-    // its larger dimension rather than adding a dedicated asymmetric-rect
-    // branch (like the splitter one below) for a single entity.
+
     "assembling-machine-1": 3, "assembling-machine-2": 3, "assembling-machine-3": 3,
-    "biochamber": 3, "centrifuge": 3, "chemical-plant": 3, "crusher": 3,
-    "cryogenic-plant": 5, "electromagnetic-plant": 4, "foundry": 5, "oil-refinery": 5,
-    // data.raw type "mining-drill" - same missing-footprint bug.
-    "burner-mining-drill": 2, "electric-mining-drill": 3, "big-mining-drill": 5,
-    "pumpjack": 3
+    "beacon": 3, "big-electric-pole": 2, "big-mining-drill": 5, "biochamber": 3,
+    "biolab": 5, "burner-mining-drill": 2, "captive-biter-spawner": 5,
+    "cargo-wagon": 6, "centrifuge": 3, "chemical-plant": 3, "crusher": 3,
+    "cryogenic-plant": 5, "electric-furnace": 3, "electric-mining-drill": 3,
+    "electromagnetic-plant": 4, "fluid-wagon": 6, "foundry": 5,
+    "gun-turret": 2, "heat-exchanger": 3, "heat-pipe": 1, "lab": 3,
+    "locomotive": 6, "nuclear-reactor": 5, "oil-refinery": 5, "pipe": 1,
+    "pipe-to-ground": 1, "pumpjack": 3, "recycler": 4, "roboport": 4,
+    "steam-turbine": 5, "steel-furnace": 2, "stone-furnace": 2, "substation": 2
   };
   function footprint(name) { return FOOTPRINT[name] || 0.85; }
 
@@ -1337,6 +1351,20 @@
     boot(vec0, ents0);
   }
 
+  // ?source= is either the blueprint string itself, or - if it starts with
+  // "https://" - a URL to fetch the blueprint string's raw text from (e.g.
+  // a raw.githubusercontent.com link, a pastebin raw link). Cross-origin
+  // fetches only succeed if the target host allows CORS for this page's
+  // origin; a blocked or failing fetch surfaces through the same
+  // showLoadError + demo-data fallback as a bad blueprint string.
+  function resolveSourceString(param) {
+    if (param.indexOf("https://") !== 0) return Promise.resolve(param);
+    return fetch(param).then(function (resp) {
+      if (!resp.ok) throw new Error("fetch failed: HTTP " + resp.status + " for " + param);
+      return resp.text();
+    }).then(function (text) { return text.trim(); });
+  }
+
   var sourceParam = new URLSearchParams(location.search).get("source");
   if (!sourceParam) {
     bootFromEmbedded();
@@ -1344,7 +1372,9 @@
     showLoadError("this browser has no DecompressionStream support");
     bootFromEmbedded();
   } else {
-    decodeBlueprintString(sourceParam).then(function (decoded) {
+    resolveSourceString(sourceParam).then(function (bpStr) {
+      return decodeBlueprintString(bpStr);
+    }).then(function (decoded) {
       var bp = findFirstBlueprint(decoded);
       if (!bp) throw new Error("decoded data has no blueprint (empty book, or unrecognized shape)");
       var vec = vectorizeBlueprint(bp);
