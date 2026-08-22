@@ -21,5 +21,23 @@
   "tile_box": [
     3,
     5
-  ]
+  ],
+  "fluid_box": {
+    "volume": 200,
+    "production_type": "input",
+    "filter": "steam",
+    "minimum_temperature": 100.0,
+    "pipe_connections": [
+      {
+        "flow_direction": "input-output",
+        "direction": 8,
+        "position": [0, 2]
+      },
+      {
+        "flow_direction": "input-output",
+        "direction": 0,
+        "position": [0, -2]
+      }
+    ]
+  }
 }
