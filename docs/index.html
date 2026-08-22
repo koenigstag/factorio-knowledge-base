@@ -226,6 +226,7 @@
   .tunnel-cap:hover, .tunnel-cap.hot { filter: brightness(1.6); }
   .arrow-mark { cursor: pointer; }
   .arrow-mark.hot { filter: brightness(1.6); }
+  .ins-mark.hot { filter: brightness(1.6); }
 
   .load-error {
     display: none;
@@ -909,28 +910,39 @@
     var inputTick = el("line", {
       x1: fx - px * crossHalf, y1: fy - py * crossHalf,
       x2: fx + px * crossHalf, y2: fy + py * crossHalf,
-      stroke: style.color, "stroke-width": 0.09, "stroke-linecap": "round"
+      stroke: style.color, "stroke-width": 0.09, "stroke-linecap": "round",
+      class: "ins-mark"
     });
+
+    // Base-tile marker, same color as the arrow - belts and basic inserters are
+    // both shades of yellow, so the inserter's own tile needs its own anchor to
+    // stay legible against a belt run running right through the same area.
+    var base = ENT_BY_NUMBER[v.entity_numbers[0]];
+    var dot = base
+      ? el("circle", { cx: base.x, cy: base.y, r: 0.22, fill: "none", stroke: style.color, "stroke-width": 0.09, opacity: 0.9, class: "ins-mark" })
+      : null;
+
+    // The tick and base-dot belong to the same inserter as the arrow line, so
+    // hovering the line highlights all three together, not just the line.
     line.addEventListener("mouseenter", function (evt) {
       line.classList.add("hot");
+      inputTick.classList.add("hot");
+      if (dot) dot.classList.add("hot");
       showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
         '<div class="t-row">pickup <b>[' + v.from + ']</b></div>' +
         '<div class="t-row">drop &nbsp;<b>[' + v.to + ']</b></div>' +
         '<div class="t-row">entity_number <b>' + v.entity_numbers[0] + '</b></div>');
     });
     line.addEventListener("mousemove", positionTip);
-    line.addEventListener("mouseleave", function () { line.classList.remove("hot"); hideTip(); });
+    line.addEventListener("mouseleave", function () {
+      line.classList.remove("hot");
+      inputTick.classList.remove("hot");
+      if (dot) dot.classList.remove("hot");
+      hideTip();
+    });
     insLayer.appendChild(line);
     insLayer.appendChild(inputTick);
-
-    // Base-tile marker, same color as the arrow - belts and basic inserters are
-    // both shades of yellow, so the inserter's own tile needs its own anchor to
-    // stay legible against a belt run running right through the same area.
-    var base = ENT_BY_NUMBER[v.entity_numbers[0]];
-    if (base) {
-      var dot = el("circle", { cx: base.x, cy: base.y, r: 0.22, fill: "none", stroke: style.color, "stroke-width": 0.09, opacity: 0.9 });
-      insLayer.appendChild(dot);
-    }
+    if (dot) insLayer.appendChild(dot);
   });
 
   // ---- underground tunnels ----
