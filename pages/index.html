@@ -868,21 +868,23 @@
   // output_fluid_box, mirrored here from datapacks/dump/vanilla/boiler/
   // boiler.json and .../generator/steam-engine.json (added there
   // 2026-08-22 from wube/factorio-data - see source.json's exceptions and
-  // datapacks/dump/README.md). "role" comes from the owning fluid_box's
-  // own production_type ("input"/"output"), not the individual
-  // pipe_connection's generic flow_direction (both of boiler's water
-  // connections and both of steam-engine's steam connections are marked
-  // "input-output" at the connector level - the fluid_box as a whole is
-  // what's actually input- or output-only).
+  // datapacks/dump/README.md). "bidi" is the connector's own
+  // flow_direction field: both of boiler's water connections and both of
+  // steam-engine's steam connections are "input-output" at the connector
+  // level, not just "input" - a pipe can pass fluid THROUGH that point to
+  // feed the next boiler/engine in a chain, not only draw it in for this
+  // one entity's own fluid_box. Drawn as a back-to-back >|< pair. Boiler's
+  // steam output is a genuine one-way connector ("output" only, matching
+  // its output_fluid_box), so it stays a single outward arrow.
   var FLUID_PORTS = {
     "boiler": [
-      { pos: [-1, 0.5], dir: 12, role: "in" },
-      { pos: [1, 0.5], dir: 4, role: "in" },
-      { pos: [0, -0.5], dir: 0, role: "out" }
+      { pos: [-1, 0.5], dir: 12, bidi: true },
+      { pos: [1, 0.5], dir: 4, bidi: true },
+      { pos: [0, -0.5], dir: 0, bidi: false }
     ],
     "steam-engine": [
-      { pos: [0, 2], dir: 8, role: "in" },
-      { pos: [0, -2], dir: 0, role: "in" }
+      { pos: [0, 2], dir: 8, bidi: true },
+      { pos: [0, -2], dir: 0, bidi: true }
     ]
   };
   var baseLayer = document.getElementById("baseLayer");
@@ -908,9 +910,19 @@
           var baseUnit = rotateCardinal(0, -1, port.dir);
           var portDu = rotateCardinal(baseUnit[0], baseUnit[1], e.d);
           var portPt = rotateCardinal(port.pos[0], port.pos[1], e.d);
-          var arrowPt = [e.x + portPt[0], e.y + portPt[1]];
-          var au = port.role === "out" ? portDu : [-portDu[0], -portDu[1]];
-          infoArrows.push(arrowHead(arrowPt, au[0], au[1], "var(--faint)"));
+          var center = [e.x + portPt[0], e.y + portPt[1]];
+          if (port.bidi) {
+            // back-to-back >|< pair, a small offset apart along the
+            // connector's own axis, so they read as two distinct chevrons
+            // rather than overlapping into a diamond.
+            var off = 0.15;
+            var outPt = [center[0] + portDu[0] * off, center[1] + portDu[1] * off];
+            var inPt = [center[0] - portDu[0] * off, center[1] - portDu[1] * off];
+            infoArrows.push(arrowHead(outPt, portDu[0], portDu[1], "var(--faint)"));
+            infoArrows.push(arrowHead(inPt, -portDu[0], -portDu[1], "var(--faint)"));
+          } else {
+            infoArrows.push(arrowHead(center, portDu[0], portDu[1], "var(--faint)"));
+          }
         });
       }
       return;
