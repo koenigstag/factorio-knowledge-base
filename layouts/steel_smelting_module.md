@@ -57,14 +57,16 @@ steel-furnaces**, not one combined block:
   `transport-belt` of iron-plate — see table above) — this is a
   deliberate echo of the 24×2 module's own "24" count, just applied to
   the input side instead of the output side.
-  belt.
-- Each row also needs its own coal (fuel) lane — `steel-furnace` is a
-  burner machine (`datapacks/dump/vanilla/furnace/steel-furnace.json`:
-  `energy_source.type: "burner"`). **Left open, not guessed**: this
-  project doesn't yet hold a sourced coal-consumption-rate formula for
-  burner furnaces, so the coal lane's exact throughput requirement
-  isn't stated here — needs `mechanics/`-level sourcing before it can
-  be sized the same rigorous way as the plate/ore lanes.
+- Coal (fuel) is **not** a per-row concern here, unlike the iron-plate
+  lane. Per
+  [relations/furnace_fuel_consumption.md](../relations/furnace_fuel_consumption.md),
+  a `steel-furnace` burns only 0.0225 coal/sec at 100% uptime; all 120
+  furnaces across all 5 rows together need just 2.7 coal/sec — **under
+  a fifth of one `transport-belt`'s throughput**. A single shared coal
+  lane (e.g. routed once across all 5 rows, or split off a main-bus
+  coal lane) comfortably fuels the entire module; there's no need to
+  size or duplicate it per row the way the iron-plate lane needs to
+  be.
 - Each row's 24 furnaces produce exactly 3 steel-plate/sec
   (`24 x 0.125`), i.e. 1/5 of a saturated output belt.
 - All 5 rows' output merges onto **one shared central steel-plate
@@ -99,12 +101,13 @@ stone-furnaces per input belt, per the table). Bootstrap cost is real
 good, so a stone-furnace version of it can't be the very first thing
 built; it needs an upstream iron-plate-producing module (e.g.
 [blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md](../blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md))
-already running at 5-belt scale to feed it.
+already running at 5-belt scale to feed it. Coal is still trivial at
+this size: 240 stone-furnaces need 5.4 coal/sec, still just over a
+third of one `transport-belt` — see
+[relations/furnace_fuel_consumption.md](../relations/furnace_fuel_consumption.md).
 
 ## Open items
 
-- Coal lane sizing (see above) — needs a sourced fuel-consumption
-  formula before it can join this derivation.
 - Not yet built/exported as an actual blueprint; numbers here are
   derived, not blueprint-verified. If someone builds this in-game, it
   belongs in `blueprints/curated/{earlygame,midgame}/` per that

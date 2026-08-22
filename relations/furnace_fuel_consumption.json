@@ -1,0 +1,20 @@
+{
+  "coal_consumption_items_per_sec_per_furnace": {
+    "stone-furnace": 0.0225,
+    "steel-furnace": 0.0225
+  },
+  "furnaces_sustained_per_full_coal_belt": {
+    "stone-furnace": {
+      "transport-belt": 666.67,
+      "fast-transport-belt": 1333.33,
+      "express-transport-belt": 2000,
+      "turbo-transport-belt": 2666.67
+    },
+    "steel-furnace": {
+      "transport-belt": 666.67,
+      "fast-transport-belt": 1333.33,
+      "express-transport-belt": 2000,
+      "turbo-transport-belt": 2666.67
+    }
+  }
+}
