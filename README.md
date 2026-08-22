@@ -26,8 +26,8 @@ Targets Factorio **2.0** for now. The plan is one git branch per major game vers
 
 ## Useful links
 
-- [FactorioLab](https://factoriolab.github.io/2x1?v=11) — production ratio/matrix calculator.
-- [Factory Blueprint Editor (FBE)](https://fbe.factorygamefan.com/) — blueprint viewer/editor.
+- [FactorioLab](https://factoriolab.github.io/2x1?v=11) — web-based production planner: pick target items/rates and it computes the full recipe tree, machine counts, modules/beacons, and power draw. Handy for cross-checking `relations/` entries against an independent calculator.
+- [Factory Blueprint Editor (FBE)](https://fbe.factorygamefan.com/) — decodes/encodes Factorio blueprint strings and renders them as an editable grid (entities, recipes, filters). Useful for inspecting or hand-tweaking blueprints, including the ones under `blueprints/curated/`.
 
 ## License
 
