@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vector Flow Inspector</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -238,6 +243,88 @@
     font-size: 0.78rem;
   }
 
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn {
+    padding: 0.3rem 0.65rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 0.78rem;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--faint-fill); border-color: var(--faint); }
+  .btn:active { background: var(--panel-2); }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 15, 20, 0.72);
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    width: min(640px, 92vw);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+    padding: 1.1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .modal h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .modal p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .modal textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--ink);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 0.6rem;
+  }
+  .modal textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .modal-error {
+    display: none;
+    color: var(--splitter);
+    font-size: 0.74rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .btn-primary {
+    background: var(--belt);
+    border-color: var(--belt);
+    color: #17120a;
+    font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--belt); filter: brightness(1.1); }
+
   .coord-readout {
     position: absolute;
     left: 0.8rem;
@@ -293,6 +380,8 @@
   .tooltip .t-row { color: var(--muted); }
   .tooltip .t-row b { color: var(--ink); font-weight: 500; }
 </style>
+</head>
+<body>
 
 <header>
   <h1>Vector Flow Inspector</h1>
@@ -303,9 +392,26 @@
     <div class="stat underground">underground <b id="cUnd"></b></div>
     <div class="stat splitter">splitters <b id="cSpl"></b></div>
   </div>
+  <div class="actions">
+    <button class="btn" id="btnDownload" type="button">Download vectors.json</button>
+    <button class="btn" id="btnImport" type="button">Import blueprint…</button>
+  </div>
 </header>
 
 <div class="load-error" id="loadError"></div>
+
+<div class="modal-overlay" id="importOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+    <h2 id="importTitle">Import blueprint string</h2>
+    <p>Paste a Factorio blueprint (or blueprint book) string. It's decoded and vectorized entirely in your browser, then reloads this page with it as the <code>?source=</code> parameter.</p>
+    <textarea id="importText" spellcheck="false" placeholder="0eNqU..."></textarea>
+    <div class="modal-error" id="importError"></div>
+    <div class="modal-buttons">
+      <button class="btn" id="btnImportCancel" type="button">Cancel</button>
+      <button class="btn btn-primary" id="btnImportGo" type="button">Import</button>
+    </div>
+  </div>
+</div>
 
 <main>
   <aside>
@@ -584,6 +690,19 @@
   function boot(VEC, ENTS) {
   var ENT_BY_NUMBER = {};
   ENTS.forEach(function (e) { ENT_BY_NUMBER[e.e] = e; });
+
+  document.getElementById("btnDownload").addEventListener("click", function () {
+    var slug = (VEC.label || "vectors").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "vectors";
+    var blob = new Blob([JSON.stringify(VEC, null, 1)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = slug + ".vectors.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 
   document.getElementById("bpLabel").textContent = VEC.label + "  ·  " + VEC.entity_count + " entities";
   document.getElementById("cBelt").textContent = VEC.belt_runs.length;
@@ -1165,6 +1284,41 @@
   });
   } // end boot()
 
+  // ---- import-blueprint modal ----
+  // Just a UI for building a ?source= URL and reloading onto it, rather than
+  // a separate code path - reuses the exact same decode/vectorize/error
+  // handling boot() already goes through for the query-param case.
+  var importOverlay = document.getElementById("importOverlay");
+  var importText = document.getElementById("importText");
+  var importError = document.getElementById("importError");
+
+  function openImportModal() {
+    importError.style.display = "none";
+    importText.value = "";
+    importOverlay.classList.add("open");
+    importText.focus();
+  }
+  function closeImportModal() {
+    importOverlay.classList.remove("open");
+  }
+  document.getElementById("btnImport").addEventListener("click", openImportModal);
+  document.getElementById("btnImportCancel").addEventListener("click", closeImportModal);
+  importOverlay.addEventListener("click", function (evt) {
+    if (evt.target === importOverlay) closeImportModal();
+  });
+  document.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape" && importOverlay.classList.contains("open")) closeImportModal();
+  });
+  document.getElementById("btnImportGo").addEventListener("click", function () {
+    var text = importText.value.trim();
+    if (!text) {
+      importError.textContent = "Paste a blueprint string first.";
+      importError.style.display = "block";
+      return;
+    }
+    location.search = "?source=" + encodeURIComponent(text);
+  });
+
   function bootFromEmbedded() {
     var vec0 = JSON.parse(document.getElementById("vec-data").textContent);
     var ents0 = JSON.parse(document.getElementById("ent-data").textContent);
@@ -1191,3 +1345,5 @@
   }
 })();
 </script>
+</body>
+</html>
