@@ -27,6 +27,7 @@ Targets Factorio **2.0** for now. The plan is one git branch per major game vers
 ## Useful links
 
 - [FactorioLab](https://factoriolab.github.io/2x1?v=11) — production ratio/matrix calculator.
+- [Factory Blueprint Editor (FBE)](https://fbe.factorygamefan.com/) — blueprint viewer/editor.
 
 ## License
 
