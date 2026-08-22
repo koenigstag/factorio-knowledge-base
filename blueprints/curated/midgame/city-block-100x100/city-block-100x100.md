@@ -2,7 +2,7 @@
 
 Personal blueprint, not a third-party design — the project owner's own
 build. Same base filename as
-[earlygame/city-block-100x100.md](../earlygame/city-block-100x100.md),
+[earlygame/city-block-100x100.md](../../earlygame/city-block-100x100/city-block-100x100.md),
 but genuinely different content (different byte size/hash, not a
 duplicate) — the two live in separate stage folders precisely because
 the same design recurs at different tiers as the game progresses (here:
@@ -19,7 +19,7 @@ entities in this specific save.
 ## Ports: not applicable (author-confirmed)
 
 Same reasoning as
-[earlygame/city-block-100x100.md](../earlygame/city-block-100x100.md):
+[earlygame/city-block-100x100.md](../../earlygame/city-block-100x100/city-block-100x100.md):
 no belt entities at all, and not a production module — a tileable
 layout template, not something that imports or exports items.
 
@@ -37,7 +37,7 @@ layout template, not something that imports or exports items.
 warnings**, all `UnknownKeywordWarning` on `ElectricPole`/`Lamp`/
 `Roboport` entities for an unrecognized `direction` key (same
 suspected schema-version gap as
-[earlygame/24x2-stone-furnaces-module.md](../earlygame/24x2-stone-furnaces-module.md)),
+[earlygame/24x2-stone-furnaces-module.md](../../earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.md)),
 not an entity/placement problem. `codec.py`'s own decode succeeds
 cleanly.
 

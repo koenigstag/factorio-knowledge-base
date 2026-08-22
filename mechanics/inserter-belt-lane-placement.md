@@ -34,7 +34,7 @@ back to the right lane if the left is empty.
 Two rows of machines flanking a shared center belt from opposite sides,
 perpendicular to it (e.g. the furnace modules in
 [layouts/smelter_module_ports.md](../layouts/smelter_module_ports.md)
-and [blueprints/curated/earlygame/iron-gear-tileable.md](../blueprints/curated/earlygame/iron-gear-tileable.md)),
+and [blueprints/curated/earlygame/iron-gear-tileable.md](../blueprints/curated/earlygame/iron-gear-tileable/iron-gear-tileable.md)),
 each drop onto the *far* lane from their own side — i.e. each row fills
 the lane closer to the *other* row, not its own. With equal machine
 counts on both rows, both lanes still end up evenly filled; which

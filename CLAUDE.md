@@ -104,7 +104,7 @@ bigger factories.
    `mechanics/` already has a sourced file for it *before* asserting an
    answer. This project already produced a confidently wrong analysis
    this way: an inserter-direction/resource-flow hypothesis for
-   `blueprints/curated/earlygame/iron-gear-tileable.md` was built from
+   `blueprints/curated/earlygame/iron-gear-tileable/iron-gear-tileable.md` was built from
    an assumed mirrored pattern instead of checking inserter direction
    against the actual recipe first, and had to be corrected by the
    project owner. If `mechanics/` doesn't cover it yet, source it (rule
@@ -134,7 +134,7 @@ glossary/                  canonical/ (established terms) vs invented/ (ours)
 decisions/                 ADRs — 000N-title.md, context/alternatives/decision/consequences
 examples/                  walkthroughs: question → which files to read → formula call → result
 layouts/                   spatial arrangement patterns for base-building (drills/furnaces/main-bus/labs/...) — one <name>.md per pattern; numeric params cite formulas/relations or stay flagged open, never guessed
-blueprints/                 blueprint-string parsing tooling (codec.py) + curated/ reference designs (<slug>.txt raw string + <slug>.json decoded + <slug>.md provenance) — third-party entries flat at curated/, personal collection grouped by game stage in curated/{earlygame,init-game,midgame}/ — see blueprints/README.md
+blueprints/                 blueprint-string parsing tooling (codec.py) + curated/ reference designs, one <slug>/ folder per entry (<slug>.txt raw string + <slug>.json decoded + <slug>.md provenance) — third-party entry folders directly at curated/, personal collection grouped by game stage in curated/{earlygame,init-game,midgame}/<slug>/ — see blueprints/README.md
 ```
 
 `examples/` vs `relations/`: `relations/` is the cached answer,

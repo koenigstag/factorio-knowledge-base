@@ -5,7 +5,7 @@ build.
 
 Blueprint's own label: *"Early-Game Universal Stone Furnace Smelter
 (Opposite-side Input and Output)"* — the same label text as
-[24x2-stone-furnaces-module.md](24x2-stone-furnaces-module.md), but
+[24x2-stone-furnaces-module.md](../24x2-stone-furnaces-module/24x2-stone-furnaces-module.md), but
 this is a distinct, much smaller piece: 47 entities (`transport-belt`
 43, `underground-belt` 2, `splitter` 2), **no furnaces or inserters at
 all**. This is purely the distribution/junction block that feeds
@@ -17,7 +17,7 @@ instead of feeding furnaces directly.
 **Role (author-confirmed)**: takes a single combined ore+coal supply
 in on the left, and distributes it back out to two separate lines on
 the right — the outputs of this block are the inputs of a
-[4x2-stone-furnaces-w-upgrade-spacing](4x2-stone-furnaces-w-upgrade-spacing.md)
+[4x2-stone-furnaces-w-upgrade-spacing](../4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md)
 module (or one furnace row's worth of import lanes), one feed going up
 and one going down.
 
@@ -26,7 +26,7 @@ and one going down.
 Structured, author-confirmed data:
 [furnaces-import-block.ports.json](furnaces-import-block.ports.json).
 Left side (import) is an identical pattern to
-[24x2-stone-furnaces-module.md](24x2-stone-furnaces-module.md)'s left
+[24x2-stone-furnaces-module.md](../24x2-stone-furnaces-module/24x2-stone-furnaces-module.md)'s left
 side (coal via `underground-belt`, ore via a shared `splitter`). Right
 side (export) is two ore+coal pairs — outer/inner split, same
 convention as `4x2-stone-furnaces-w-upgrade-spacing` (outer = ore,

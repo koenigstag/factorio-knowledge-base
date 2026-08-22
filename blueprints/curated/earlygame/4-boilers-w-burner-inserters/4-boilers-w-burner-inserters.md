@@ -8,7 +8,7 @@ No blueprint-internal label set (decodes to the generic `"Blueprint"`).
 `small-electric-pole` (5), `burner-inserter` (4), `pipe` (3) — a basic
 early-game power block, 4 boilers feeding 8 steam engines (the
 standard 1:2 ratio, see
-[relations/steam_power_chain.md](../../../relations/steam_power_chain.md)),
+[relations/steam_power_chain.md](../../../../relations/steam_power_chain.md)),
 fuelled by burner inserters rather than a belt-fed/electric setup.
 
 **Tileable for scaling** (author-confirmed): meant to be placed

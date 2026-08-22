@@ -43,7 +43,7 @@ checking than this project's own ~50-line codec ever aimed to provide.
 
 ```bash
 pip install -r requirements.txt
-python blueprints/validate.py blueprints/curated/*.txt blueprints/curated/*/*.txt
+python blueprints/validate.py blueprints/curated/*/*.txt blueprints/curated/*/*/*.txt
 ```
 
 Run this before adding a new `curated/` entry — confirms the string
@@ -71,8 +71,8 @@ vector list is meant to be read directly instead of re-derived by eye
 each time.
 
 ```bash
-python blueprints/build_vectors.py blueprints/curated/earlygame/24x2-stone-furnaces-module.txt \
-  blueprints/curated/earlygame/24x2-stone-furnaces-module.vectors.json
+python blueprints/build_vectors.py blueprints/curated/earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.txt \
+  blueprints/curated/earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.vectors.json
 ```
 
 Key rules (see the module docstring and inline comments for the
@@ -206,9 +206,13 @@ same treatment; the `.md` file is what distinguishes which kind an
 entry is and, for third-party ones, what claim elsewhere in this
 project it backs.
 
-One entry, three files sharing a basename (same `<topic>.json` +
-`<topic>.md` pairing convention used elsewhere in this project,
-extended with a third sibling here), plus two optional ones:
+One entry = one `<slug>/` folder, holding three files sharing that
+basename (same `<topic>.json` + `<topic>.md` pairing convention used
+elsewhere in this project, extended with a third sibling here), plus
+two optional ones. Moved from flat sibling files at the stage level to
+one folder per entry once a single entry routinely grew to 4-5 files —
+`ls`ing a stage folder was starting to show a wall of same-prefixed
+filenames rather than a list of blueprints.
 
 - `<slug>.txt` — the raw blueprint string, exactly as fetched/saved,
   directly pasteable back into the game.
@@ -233,26 +237,28 @@ extended with a third sibling here), plus two optional ones:
   representation was worth generating rather than tracing tile
   adjacency by hand.
 
-### Layout: flat for third-party, game-stage folders for personal
+### Layout: entry folder directly under `curated/` for third-party, under a game-stage folder for personal
 
-`nilaus_100x100_city_block.*` sits directly in `curated/`'s root — the
+`nilaus_100x100_city_block/` sits directly in `curated/`'s root — the
 third-party example, backing `layouts/city_block_grid.md`'s block-size
 and rail-spacing findings.
 
 The project owner's own personal collection lives one level deeper, in
-`curated/earlygame/`, `curated/init-game/`, and `curated/midgame/`.
-This isn't cosmetic: the same conceptual design recurs at different
-tiers as a game progresses — e.g. `city-block-100x100.*` exists in
-*both* `earlygame/` and `midgame/`, same name, genuinely different
-content (`earlygame/`'s uses many `small-electric-pole`,
-`midgame/`'s uses fewer, longer-reach `big-electric-pole`; belts,
-furnaces, and inserters follow the same pattern elsewhere in the
-collection — stone furnaces → electric furnaces, tier-1 → tier-2
-belts). Grouping by stage is how this project tells those variants
-apart without inventing a distinct name for what's conceptually the
-same block at a different point in the tech tree; a flat directory
-would force either name collisions or awkward suffixing for something
-that's genuinely just "this design, but upgraded."
+`curated/earlygame/`, `curated/init-game/`, and `curated/midgame/` —
+each entry's own `<slug>/` folder underneath that. This isn't
+cosmetic: the same conceptual design recurs at different tiers as a
+game progresses — e.g. `city-block-100x100/` exists in *both*
+`earlygame/` and `midgame/`, same slug, genuinely different content
+(`earlygame/`'s uses many `small-electric-pole`, `midgame/`'s uses
+fewer, longer-reach `big-electric-pole`; belts, furnaces, and
+inserters follow the same pattern elsewhere in the collection — stone
+furnaces → electric furnaces, tier-1 → tier-2 belts). Grouping by
+stage is how this project tells those variants apart without
+inventing a distinct name for what's conceptually the same block at a
+different point in the tech tree; the two `city-block-100x100/`
+folders sit at `earlygame/city-block-100x100/` and
+`midgame/city-block-100x100/` — same slug, no collision, since the
+stage folder disambiguates them.
 
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,

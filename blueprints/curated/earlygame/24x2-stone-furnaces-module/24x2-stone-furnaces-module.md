@@ -2,7 +2,7 @@
 
 Personal blueprint, not a third-party design — the project owner's own
 build, kept here with the same provenance rigor as
-[nilaus_100x100_city_block.md](../nilaus_100x100_city_block.md) rather
+[nilaus_100x100_city_block.md](../../nilaus_100x100_city_block/nilaus_100x100_city_block.md) rather
 than as a bare unlabeled `.txt`.
 
 Blueprint's own label: *"Early-Game Universal Stone Furnace Smelter
@@ -34,7 +34,7 @@ geometry.
 
 Not an instance of the ore/coal-outside, result-inside pattern
 documented in
-[layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md)
+[layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md)
 — that comparison is specifically about two furnace rows flanking a
 shared center lane; this module is a single-direction-flow design
 (one input side, one output side), a different shape of module the
@@ -50,7 +50,7 @@ outward; the rest either run parallel to the edge or are the
 already-documented false-positive candidate at `(33.5,-3.5)`.
 
 This matches
-[relations/smelting_ratios.md](../../../relations/smelting_ratios.md)
+[relations/smelting_ratios.md](../../../../relations/smelting_ratios.md)
 exactly: for `energy_required=3.2` recipes (`iron-plate`,
 `copper-plate`, `stone-brick`), `machines_to_saturate()` puts
 `stone-furnace`/`transport-belt` at **48** — precisely the furnace

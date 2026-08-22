@@ -2,7 +2,7 @@
 
 Personal blueprint, not a third-party design — the project owner's own
 build. Same base filename as
-[midgame/city-block-100x100.md](../midgame/city-block-100x100.md), but
+[midgame/city-block-100x100.md](../../midgame/city-block-100x100/city-block-100x100.md), but
 genuinely different content (different byte size/hash, not a
 duplicate) — the two live in separate stage folders precisely so a
 name like this one doesn't collide, since the actual difference is a
@@ -17,7 +17,7 @@ Blueprint's own label: `"poles"`. 116 entities: `small-electric-pole`
 skeleton of a 100×100 city-block cell, no rail or production entities
 included in this specific save — presumably meant to be combined with
 separate rail/production blueprints for the block's interior, the way
-[nilaus_100x100_city_block.md](../nilaus_100x100_city_block.md)'s book
+[nilaus_100x100_city_block.md](../../nilaus_100x100_city_block/nilaus_100x100_city_block.md)'s book
 splits the same concerns into separate named sub-blueprints.
 
 ## Ports: not applicable (author-confirmed)

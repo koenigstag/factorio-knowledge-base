@@ -6,7 +6,7 @@ build.
 No blueprint-internal label set (generic `"Blueprint"`). 66 entities:
 `fast-transport-belt` (36), `fast-inserter` (16), `electric-furnace`
 (8), `small-electric-pole` (6) — the midgame successor to
-[4x2-stone-furnaces-w-upgrade-spacing.md](../earlygame/4x2-stone-furnaces-w-upgrade-spacing.md):
+[4x2-stone-furnaces-w-upgrade-spacing.md](../../earlygame/4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md):
 same 4×2 furnace layout, upgraded to electric furnaces and tier-2
 (fast) belts/inserters throughout.
 
@@ -19,11 +19,11 @@ import row directly.
 Structured, author-confirmed data:
 [4x2-electrical-furnaces-w-tier2-belts.ports.json](4x2-electrical-furnaces-w-tier2-belts.ports.json).
 Same "Plate on the inside" pattern and port layout as
-[4x2-stone-furnaces-w-upgrade-spacing.md](../earlygame/4x2-stone-furnaces-w-upgrade-spacing.md)
+[4x2-stone-furnaces-w-upgrade-spacing.md](../../earlygame/4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md)
 (outer lanes = ore, shared center lane = result, all pass-through
 top-to-bottom) — just **no coal lanes**, since `electric-furnace` runs
 on electricity rather than burned fuel, so only 3 lanes instead of 5.
-See [layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md)
+See [layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md)
 for why this arrangement is the recommended pattern generally.
 
 ## Provenance

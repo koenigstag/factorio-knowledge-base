@@ -1,26 +1,22 @@
-# Starter Electrical Miners
+# High-Density Miners
 
 Personal blueprint, not a third-party design — the project owner's own
 build.
 
-No blueprint-internal label set (generic `"Blueprint"`). 24 entities:
-`transport-belt` (14), `electric-mining-drill` (8),
-`small-electric-pole` (2) — electric mining once power is available.
-Not the same design purpose as
-[coal-burner-miners-w-burner-inserters.md](coal-burner-miners-w-burner-inserters.md):
-that module is a coal-specific, self-fueling "burner miner chain";
-this one is a plain generic-ore collector (`electric-mining-drill`
-needs no fuel, so no self-fueling loop applies here) — 8 drills in two
-rows straddling a single shared central belt lane.
+No blueprint-internal label set (generic `"Blueprint"`). 20 entities:
+`electric-mining-drill` (8), `transport-belt` (6), `underground-belt`
+(4), `small-electric-pole` (2) — a tightly-packed electric mining tile
+using underground belts to route around drill footprints, higher
+drill density per tile than a naive layout.
 
 ## Ports
 
 Structured, author-confirmed data:
-[starter-electrical-miners.ports.json](starter-electrical-miners.ports.json).
+[high-density-miners.ports.json](high-density-miners.ports.json).
 Single pass-through lane (import right, export left), generic ore —
 same "drills straddling a shared central belt" shape as
-[high-density-miners.md](high-density-miners.md), just without the
-underground-belt segments that module uses for tighter packing.
+[starter-electrical-miners.md](../starter-electrical-miners/starter-electrical-miners.md), packed
+tighter via `underground-belt`.
 
 ## Provenance
 

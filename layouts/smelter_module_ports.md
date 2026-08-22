@@ -42,7 +42,7 @@ has to be solved by hand instead.
 
 ## Confirmed against two real curated blueprints
 
-[blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md](../blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md)
+[blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md](../blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md)
 follows this pattern exactly, verified tile-by-tile (not just visually
 similar): outer lanes `x=-6.5`/`x=5.5` carry ore, inner lanes
 `x=-5.5`/`x=4.5` carry coal, and the shared center lane `x=-0.5`
@@ -50,14 +50,14 @@ carries the combined result from both furnace rows — all 5 lanes pass
 straight through top-to-bottom so the module tiles vertically, each
 copy's export row feeding the next copy's import row.
 
-[blueprints/curated/midgame/4x2-electrical-furnaces-w-tier2-belts.md](../blueprints/curated/midgame/4x2-electrical-furnaces-w-tier2-belts.md)
+[blueprints/curated/midgame/4x2-electrical-furnaces-w-tier2-belts.md](../blueprints/curated/midgame/4x2-electrical-furnaces-w-tier2-belts/4x2-electrical-furnaces-w-tier2-belts.md)
 is the same author's midgame upgrade of the same module — same
 outer-ore/center-result arrangement, minus the coal lanes entirely
 (`electric-furnace` runs on electricity, not burned fuel), confirming
 the pattern holds independent of furnace tier and that "outer" isn't
 specifically "ore + coal" so much as "whatever the furnace consumes."
 
-Contrast: [24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module.md)
+Contrast: [24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.md)
 in the same `curated/` collection is a *different* shape of module
 entirely — one input side, one output side (not two rows flanking a
 center), ore combined via a `splitter` before the furnace rows rather

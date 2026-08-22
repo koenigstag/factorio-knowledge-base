@@ -30,7 +30,7 @@ just double reach).
 
 This mistake wasn't caught by re-deriving from primitives — it was
 caught twice, empirically, on real blueprints: the port-flow analysis
-for `blueprints/curated/earlygame/iron-gear-tileable.md` came out
+for `blueprints/curated/earlygame/iron-gear-tileable/iron-gear-tileable.md` came out
 backwards on the first pass and had to be corrected by the project
 owner, and a second, independent blueprint (a third-party "Basic
 steel smelting" find) produced the same wrong-direction reading again

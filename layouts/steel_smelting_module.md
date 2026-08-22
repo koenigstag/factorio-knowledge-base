@@ -4,7 +4,7 @@ A derived layout, not an imported blueprint — sized entirely from
 `relations/smelting_ratios.md`'s `steel-plate` row
 (`energy_required=16`) plus `formulas/recipe_ingredient_ratio.py`, in
 the spirit of
-[blueprints/curated/earlygame/24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module.md)
+[blueprints/curated/earlygame/24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.md)
 (same "N furnaces per row" framing) but for `steel-plate` instead of
 `iron-plate`/`copper-plate`. No real blueprint string backs this yet —
 it belongs here, not in `blueprints/curated/`, until someone actually
@@ -141,7 +141,7 @@ stone-furnaces per input belt, per the table). Bootstrap cost is real
 — unlike `iron-plate`, this module's *input* is already a processed
 good, so a stone-furnace version of it can't be the very first thing
 built; it needs an upstream iron-plate-producing module (e.g.
-[blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md](../blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md))
+[blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing.md](../blueprints/curated/earlygame/4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md))
 already running at 5-belt scale to feed it. Coal is still trivial at
 this size: 240 stone-furnaces need 5.4 coal/sec, still just over a
 third of one `transport-belt` — see
@@ -201,7 +201,7 @@ Verified: 2026-08-22
   belongs in `blueprints/curated/{earlygame,midgame}/` per that
   folder's convention (raw string + decode + provenance), cross-linked
   back to this file the way
-  [24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module.md)
+  [24x2-stone-furnaces-module.md](../blueprints/curated/earlygame/24x2-stone-furnaces-module/24x2-stone-furnaces-module.md)
   now cross-links to `relations/smelting_ratios.md`.
 
 Verified: 2026-08-22 (derivation re-run directly against

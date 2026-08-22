@@ -7,7 +7,7 @@ Blueprint's own label: `"Iron Gear Maker"`. 37 entities:
 `fast-transport-belt` (18), `fast-inserter` (12), `assembling-machine-2`
 (4, each with `recipe: "iron-gear-wheel"`), `medium-electric-pole` (2),
 `small-electric-pole` (1) — the midgame successor to
-[earlygame/iron-gear-tileable.md](../earlygame/iron-gear-tileable.md):
+[earlygame/iron-gear-tileable.md](../../earlygame/iron-gear-tileable/iron-gear-tileable.md):
 identical layout and bounding box (`x:[-6.5,5.5] y:[-2.5,2.5]`), same
 entity positions and directions throughout, upgraded to
 `assembling-machine-2`, tier-2 (fast) belts/inserters, and mostly
@@ -23,7 +23,7 @@ import row directly.
 Structured, author-confirmed data:
 [iron-gear-tileable.ports.json](iron-gear-tileable.ports.json). Same
 port layout as
-[earlygame/iron-gear-tileable.md](../earlygame/iron-gear-tileable.md)
+[earlygame/iron-gear-tileable.md](../../earlygame/iron-gear-tileable/iron-gear-tileable.md)
 — confirmed identical by re-running `classify_edge_ports`
 (`blueprints/codec.py`) against this blueprint's own entities, not
 assumed from the earlygame result:
@@ -36,9 +36,9 @@ assumed from the earlygame result:
   lanes. Import at `y=2.5`, export at `y=-2.5`.
 
 Same "raw material outside, product inside" shape as
-[layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md)'s
+[layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md)'s
 "Plate on the inside" furnace pattern — see
-[earlygame/iron-gear-tileable.md](../earlygame/iron-gear-tileable.md)
+[earlygame/iron-gear-tileable.md](../../earlygame/iron-gear-tileable/iron-gear-tileable.md)
 for the full reasoning; nothing about the port topology changes with
 the tier upgrade, only entity names.
 

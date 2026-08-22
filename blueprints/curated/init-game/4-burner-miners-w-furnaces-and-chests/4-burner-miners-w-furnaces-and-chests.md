@@ -6,7 +6,7 @@ build.
 No blueprint-internal label set (generic `"Blueprint"`). 16 entities:
 `burner-mining-drill` (4), `stone-furnace` (4), `burner-inserter` (4),
 `wooden-chest` (4) — one step up from
-[4-burner-miners-w-chests.md](4-burner-miners-w-chests.md): each
+[4-burner-miners-w-chests.md](../4-burner-miners-w-chests/4-burner-miners-w-chests.md): each
 drill's ore now feeds a furnace (via a burner inserter) instead of
 going straight to a chest, with the chest catching the smelted plates.
 
@@ -14,9 +14,9 @@ This is a real instance of the "early transitional automation" idea
 noted in `4-burner-miners-w-chests.md`: furnaces placed immediately
 after the drills, rather than as their own separate module downstream
 — not the "correct at scale" arrangement per
-[layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md),
+[layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md),
 but a deliberate init-game stopgap before a proper smelting module
-(like [4x2-stone-furnaces-w-upgrade-spacing.md](../earlygame/4x2-stone-furnaces-w-upgrade-spacing.md))
+(like [4x2-stone-furnaces-w-upgrade-spacing.md](../../earlygame/4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md))
 replaces it.
 
 ## Ports: none (author-confirmed, by design)

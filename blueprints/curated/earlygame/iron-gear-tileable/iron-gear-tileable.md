@@ -12,7 +12,7 @@ outer belt lanes, with their combined iron-gear-wheel output collected
 onto one shared central lane.
 
 **Tileable for scaling** (author-confirmed, same pattern as
-[4x2-stone-furnaces-w-upgrade-spacing.md](4x2-stone-furnaces-w-upgrade-spacing.md)):
+[4x2-stone-furnaces-w-upgrade-spacing.md](../4x2-stone-furnaces-w-upgrade-spacing/4x2-stone-furnaces-w-upgrade-spacing.md)):
 each copy's export row feeds the next copy's import row directly.
 
 ## Ports
@@ -45,7 +45,7 @@ inserter pickup/drop side backwards; the table above reflects the
 corrected, author-confirmed reading.
 
 This is the same "raw material outside, product inside" shape as
-[layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md)'s
+[layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md)'s
 "Plate on the inside" furnace pattern, generalized past furnaces to an
 assembling-machine module: iron-plate (the input) arrives via the 2
 outer lanes, iron-gear-wheel (the product) leaves via the shared center

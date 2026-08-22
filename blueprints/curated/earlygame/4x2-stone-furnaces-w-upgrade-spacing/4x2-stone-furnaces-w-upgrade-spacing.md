@@ -11,7 +11,7 @@ to allow upgrading `stone-furnace` → `steel-furnace`/`electric-furnace`
 in place later without needing to rebuild belt/inserter positions.
 
 **Tileable for scaling** (author-confirmed, same pattern as
-[4-boilers-w-burner-inserters.md](4-boilers-w-burner-inserters.md)):
+[4-boilers-w-burner-inserters.md](../4-boilers-w-burner-inserters/4-boilers-w-burner-inserters.md)):
 each copy's export row feeds the next copy's import row directly.
 
 ## Ports
@@ -35,7 +35,7 @@ came from the geometry; both are author-confirmed.
 
 This exact ore/coal-outside, result-inside arrangement is a named,
 sourced community best practice, not just this module's own choice —
-see [layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md)
+see [layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md)
 ("Plate on the inside") for why it's the recommended pattern over the
 alternative, and how this blueprint serves as this project's own
 confirmed real-world example of it.

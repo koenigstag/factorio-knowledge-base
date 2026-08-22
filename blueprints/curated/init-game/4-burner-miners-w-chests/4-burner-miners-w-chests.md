@@ -23,7 +23,7 @@ does: a `transport-belt` could replace the chests as an export port
 step toward automation — smelting furnaces placed immediately after
 the drills rather than as their own separate module downstream, which
 would be the "correct at scale" arrangement per
-[layouts/smelter_module_ports.md](../../../layouts/smelter_module_ports.md).
+[layouts/smelter_module_ports.md](../../../../layouts/smelter_module_ports.md).
 Recorded as a stated idea for a future revision, not a claim about
 what this specific blueprint currently has.
 
