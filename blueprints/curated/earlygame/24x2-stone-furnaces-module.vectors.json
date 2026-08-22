@@ -1,0 +1,4002 @@
+{
+ "label": "Early-Game Universal Stone Furnace Smelter (Opposite-side Input and Output)",
+ "entity_count": 680,
+ "inserters": [
+  {
+   "entity_numbers": [
+    70
+   ],
+   "entity": "inserter",
+   "from": [
+    -28.5,
+    -6.5
+   ],
+   "to": [
+    -28.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    71
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -27.5,
+    -7.5
+   ],
+   "to": [
+    -27.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    74
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -26.5,
+    -7.5
+   ],
+   "to": [
+    -26.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    75
+   ],
+   "entity": "inserter",
+   "from": [
+    -25.5,
+    -6.5
+   ],
+   "to": [
+    -25.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    79
+   ],
+   "entity": "inserter",
+   "from": [
+    -23.5,
+    -6.5
+   ],
+   "to": [
+    -23.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    82
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -22.5,
+    -7.5
+   ],
+   "to": [
+    -22.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    83
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -21.5,
+    -7.5
+   ],
+   "to": [
+    -21.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    86
+   ],
+   "entity": "inserter",
+   "from": [
+    -20.5,
+    -6.5
+   ],
+   "to": [
+    -20.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    90
+   ],
+   "entity": "inserter",
+   "from": [
+    -18.5,
+    -6.5
+   ],
+   "to": [
+    -18.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    91
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -17.5,
+    -7.5
+   ],
+   "to": [
+    -17.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    94
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -16.5,
+    -7.5
+   ],
+   "to": [
+    -16.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    95
+   ],
+   "entity": "inserter",
+   "from": [
+    -15.5,
+    -6.5
+   ],
+   "to": [
+    -15.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    99
+   ],
+   "entity": "inserter",
+   "from": [
+    -13.5,
+    -6.5
+   ],
+   "to": [
+    -13.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    102
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -12.5,
+    -7.5
+   ],
+   "to": [
+    -12.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    103
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -11.5,
+    -7.5
+   ],
+   "to": [
+    -11.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    106
+   ],
+   "entity": "inserter",
+   "from": [
+    -10.5,
+    -6.5
+   ],
+   "to": [
+    -10.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    110
+   ],
+   "entity": "inserter",
+   "from": [
+    -8.5,
+    -6.5
+   ],
+   "to": [
+    -8.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    111
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7.5,
+    -7.5
+   ],
+   "to": [
+    -7.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    114
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -6.5,
+    -7.5
+   ],
+   "to": [
+    -6.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    115
+   ],
+   "entity": "inserter",
+   "from": [
+    -5.5,
+    -6.5
+   ],
+   "to": [
+    -5.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    119
+   ],
+   "entity": "inserter",
+   "from": [
+    -3.5,
+    -6.5
+   ],
+   "to": [
+    -3.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    122
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -2.5,
+    -7.5
+   ],
+   "to": [
+    -2.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    123
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -1.5,
+    -7.5
+   ],
+   "to": [
+    -1.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    126
+   ],
+   "entity": "inserter",
+   "from": [
+    -0.5,
+    -6.5
+   ],
+   "to": [
+    -0.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    130
+   ],
+   "entity": "inserter",
+   "from": [
+    1.5,
+    -6.5
+   ],
+   "to": [
+    1.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    131
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    2.5,
+    -7.5
+   ],
+   "to": [
+    2.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    134
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3.5,
+    -7.5
+   ],
+   "to": [
+    3.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    135
+   ],
+   "entity": "inserter",
+   "from": [
+    4.5,
+    -6.5
+   ],
+   "to": [
+    4.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    139
+   ],
+   "entity": "inserter",
+   "from": [
+    6.5,
+    -6.5
+   ],
+   "to": [
+    6.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    142
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    7.5,
+    -7.5
+   ],
+   "to": [
+    7.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    143
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8.5,
+    -7.5
+   ],
+   "to": [
+    8.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    146
+   ],
+   "entity": "inserter",
+   "from": [
+    9.5,
+    -6.5
+   ],
+   "to": [
+    9.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    150
+   ],
+   "entity": "inserter",
+   "from": [
+    11.5,
+    -6.5
+   ],
+   "to": [
+    11.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    151
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    12.5,
+    -7.5
+   ],
+   "to": [
+    12.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    154
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    13.5,
+    -7.5
+   ],
+   "to": [
+    13.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    155
+   ],
+   "entity": "inserter",
+   "from": [
+    14.5,
+    -6.5
+   ],
+   "to": [
+    14.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    159
+   ],
+   "entity": "inserter",
+   "from": [
+    16.5,
+    -6.5
+   ],
+   "to": [
+    16.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    162
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    17.5,
+    -7.5
+   ],
+   "to": [
+    17.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    163
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    18.5,
+    -7.5
+   ],
+   "to": [
+    18.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    166
+   ],
+   "entity": "inserter",
+   "from": [
+    19.5,
+    -6.5
+   ],
+   "to": [
+    19.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    170
+   ],
+   "entity": "inserter",
+   "from": [
+    21.5,
+    -6.5
+   ],
+   "to": [
+    21.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    171
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    22.5,
+    -7.5
+   ],
+   "to": [
+    22.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    174
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    23.5,
+    -7.5
+   ],
+   "to": [
+    23.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    175
+   ],
+   "entity": "inserter",
+   "from": [
+    24.5,
+    -6.5
+   ],
+   "to": [
+    24.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    179
+   ],
+   "entity": "inserter",
+   "from": [
+    26.5,
+    -6.5
+   ],
+   "to": [
+    26.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    182
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    27.5,
+    -7.5
+   ],
+   "to": [
+    27.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    183
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    28.5,
+    -7.5
+   ],
+   "to": [
+    28.5,
+    -3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    185
+   ],
+   "entity": "inserter",
+   "from": [
+    29.5,
+    -6.5
+   ],
+   "to": [
+    29.5,
+    -4.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    241
+   ],
+   "entity": "inserter",
+   "from": [
+    -27.5,
+    -3.5
+   ],
+   "to": [
+    -27.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    243
+   ],
+   "entity": "inserter",
+   "from": [
+    -26.5,
+    -3.5
+   ],
+   "to": [
+    -26.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    245
+   ],
+   "entity": "inserter",
+   "from": [
+    -22.5,
+    -3.5
+   ],
+   "to": [
+    -22.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    246
+   ],
+   "entity": "inserter",
+   "from": [
+    -21.5,
+    -3.5
+   ],
+   "to": [
+    -21.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    249
+   ],
+   "entity": "inserter",
+   "from": [
+    -17.5,
+    -3.5
+   ],
+   "to": [
+    -17.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    251
+   ],
+   "entity": "inserter",
+   "from": [
+    -16.5,
+    -3.5
+   ],
+   "to": [
+    -16.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    253
+   ],
+   "entity": "inserter",
+   "from": [
+    -12.5,
+    -3.5
+   ],
+   "to": [
+    -12.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    254
+   ],
+   "entity": "inserter",
+   "from": [
+    -11.5,
+    -3.5
+   ],
+   "to": [
+    -11.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    258
+   ],
+   "entity": "inserter",
+   "from": [
+    -7.5,
+    -3.5
+   ],
+   "to": [
+    -7.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    261
+   ],
+   "entity": "inserter",
+   "from": [
+    -6.5,
+    -3.5
+   ],
+   "to": [
+    -6.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    266
+   ],
+   "entity": "inserter",
+   "from": [
+    -2.5,
+    -3.5
+   ],
+   "to": [
+    -2.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    267
+   ],
+   "entity": "inserter",
+   "from": [
+    -1.5,
+    -3.5
+   ],
+   "to": [
+    -1.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    272
+   ],
+   "entity": "inserter",
+   "from": [
+    2.5,
+    -3.5
+   ],
+   "to": [
+    2.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    275
+   ],
+   "entity": "inserter",
+   "from": [
+    3.5,
+    -3.5
+   ],
+   "to": [
+    3.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    280
+   ],
+   "entity": "inserter",
+   "from": [
+    7.5,
+    -3.5
+   ],
+   "to": [
+    7.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    281
+   ],
+   "entity": "inserter",
+   "from": [
+    8.5,
+    -3.5
+   ],
+   "to": [
+    8.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    286
+   ],
+   "entity": "inserter",
+   "from": [
+    12.5,
+    -3.5
+   ],
+   "to": [
+    12.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    289
+   ],
+   "entity": "inserter",
+   "from": [
+    13.5,
+    -3.5
+   ],
+   "to": [
+    13.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    294
+   ],
+   "entity": "inserter",
+   "from": [
+    17.5,
+    -3.5
+   ],
+   "to": [
+    17.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    295
+   ],
+   "entity": "inserter",
+   "from": [
+    18.5,
+    -3.5
+   ],
+   "to": [
+    18.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    300
+   ],
+   "entity": "inserter",
+   "from": [
+    22.5,
+    -3.5
+   ],
+   "to": [
+    22.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    303
+   ],
+   "entity": "inserter",
+   "from": [
+    23.5,
+    -3.5
+   ],
+   "to": [
+    23.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    308
+   ],
+   "entity": "inserter",
+   "from": [
+    27.5,
+    -3.5
+   ],
+   "to": [
+    27.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    309
+   ],
+   "entity": "inserter",
+   "from": [
+    28.5,
+    -3.5
+   ],
+   "to": [
+    28.5,
+    -1.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    433
+   ],
+   "entity": "inserter",
+   "from": [
+    -27.5,
+    2.5
+   ],
+   "to": [
+    -27.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    435
+   ],
+   "entity": "inserter",
+   "from": [
+    -26.5,
+    2.5
+   ],
+   "to": [
+    -26.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    440
+   ],
+   "entity": "inserter",
+   "from": [
+    -22.5,
+    2.5
+   ],
+   "to": [
+    -22.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    441
+   ],
+   "entity": "inserter",
+   "from": [
+    -21.5,
+    2.5
+   ],
+   "to": [
+    -21.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    443
+   ],
+   "entity": "inserter",
+   "from": [
+    -17.5,
+    2.5
+   ],
+   "to": [
+    -17.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    445
+   ],
+   "entity": "inserter",
+   "from": [
+    -16.5,
+    2.5
+   ],
+   "to": [
+    -16.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    450
+   ],
+   "entity": "inserter",
+   "from": [
+    -12.5,
+    2.5
+   ],
+   "to": [
+    -12.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    451
+   ],
+   "entity": "inserter",
+   "from": [
+    -11.5,
+    2.5
+   ],
+   "to": [
+    -11.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    453
+   ],
+   "entity": "inserter",
+   "from": [
+    -7.5,
+    2.5
+   ],
+   "to": [
+    -7.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    455
+   ],
+   "entity": "inserter",
+   "from": [
+    -6.5,
+    2.5
+   ],
+   "to": [
+    -6.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    460
+   ],
+   "entity": "inserter",
+   "from": [
+    -2.5,
+    2.5
+   ],
+   "to": [
+    -2.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    461
+   ],
+   "entity": "inserter",
+   "from": [
+    -1.5,
+    2.5
+   ],
+   "to": [
+    -1.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    463
+   ],
+   "entity": "inserter",
+   "from": [
+    2.5,
+    2.5
+   ],
+   "to": [
+    2.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    465
+   ],
+   "entity": "inserter",
+   "from": [
+    3.5,
+    2.5
+   ],
+   "to": [
+    3.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    470
+   ],
+   "entity": "inserter",
+   "from": [
+    7.5,
+    2.5
+   ],
+   "to": [
+    7.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    471
+   ],
+   "entity": "inserter",
+   "from": [
+    8.5,
+    2.5
+   ],
+   "to": [
+    8.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    473
+   ],
+   "entity": "inserter",
+   "from": [
+    12.5,
+    2.5
+   ],
+   "to": [
+    12.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    475
+   ],
+   "entity": "inserter",
+   "from": [
+    13.5,
+    2.5
+   ],
+   "to": [
+    13.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    480
+   ],
+   "entity": "inserter",
+   "from": [
+    17.5,
+    2.5
+   ],
+   "to": [
+    17.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    481
+   ],
+   "entity": "inserter",
+   "from": [
+    18.5,
+    2.5
+   ],
+   "to": [
+    18.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    483
+   ],
+   "entity": "inserter",
+   "from": [
+    22.5,
+    2.5
+   ],
+   "to": [
+    22.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    485
+   ],
+   "entity": "inserter",
+   "from": [
+    23.5,
+    2.5
+   ],
+   "to": [
+    23.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    490
+   ],
+   "entity": "inserter",
+   "from": [
+    27.5,
+    2.5
+   ],
+   "to": [
+    27.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    491
+   ],
+   "entity": "inserter",
+   "from": [
+    28.5,
+    2.5
+   ],
+   "to": [
+    28.5,
+    0.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    498
+   ],
+   "entity": "inserter",
+   "from": [
+    -28.5,
+    5.5
+   ],
+   "to": [
+    -28.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    499
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -27.5,
+    6.5
+   ],
+   "to": [
+    -27.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    500
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -26.5,
+    6.5
+   ],
+   "to": [
+    -26.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    501
+   ],
+   "entity": "inserter",
+   "from": [
+    -25.5,
+    5.5
+   ],
+   "to": [
+    -25.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    503
+   ],
+   "entity": "inserter",
+   "from": [
+    -23.5,
+    5.5
+   ],
+   "to": [
+    -23.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    504
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -22.5,
+    6.5
+   ],
+   "to": [
+    -22.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    505
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -21.5,
+    6.5
+   ],
+   "to": [
+    -21.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    506
+   ],
+   "entity": "inserter",
+   "from": [
+    -20.5,
+    5.5
+   ],
+   "to": [
+    -20.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    508
+   ],
+   "entity": "inserter",
+   "from": [
+    -18.5,
+    5.5
+   ],
+   "to": [
+    -18.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    509
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -17.5,
+    6.5
+   ],
+   "to": [
+    -17.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    510
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -16.5,
+    6.5
+   ],
+   "to": [
+    -16.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    511
+   ],
+   "entity": "inserter",
+   "from": [
+    -15.5,
+    5.5
+   ],
+   "to": [
+    -15.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    513
+   ],
+   "entity": "inserter",
+   "from": [
+    -13.5,
+    5.5
+   ],
+   "to": [
+    -13.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    514
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -12.5,
+    6.5
+   ],
+   "to": [
+    -12.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    515
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -11.5,
+    6.5
+   ],
+   "to": [
+    -11.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    516
+   ],
+   "entity": "inserter",
+   "from": [
+    -10.5,
+    5.5
+   ],
+   "to": [
+    -10.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    518
+   ],
+   "entity": "inserter",
+   "from": [
+    -8.5,
+    5.5
+   ],
+   "to": [
+    -8.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    519
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7.5,
+    6.5
+   ],
+   "to": [
+    -7.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    520
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -6.5,
+    6.5
+   ],
+   "to": [
+    -6.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    521
+   ],
+   "entity": "inserter",
+   "from": [
+    -5.5,
+    5.5
+   ],
+   "to": [
+    -5.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    523
+   ],
+   "entity": "inserter",
+   "from": [
+    -3.5,
+    5.5
+   ],
+   "to": [
+    -3.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    524
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -2.5,
+    6.5
+   ],
+   "to": [
+    -2.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    525
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -1.5,
+    6.5
+   ],
+   "to": [
+    -1.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    526
+   ],
+   "entity": "inserter",
+   "from": [
+    -0.5,
+    5.5
+   ],
+   "to": [
+    -0.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    528
+   ],
+   "entity": "inserter",
+   "from": [
+    1.5,
+    5.5
+   ],
+   "to": [
+    1.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    529
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    2.5,
+    6.5
+   ],
+   "to": [
+    2.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    530
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3.5,
+    6.5
+   ],
+   "to": [
+    3.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    531
+   ],
+   "entity": "inserter",
+   "from": [
+    4.5,
+    5.5
+   ],
+   "to": [
+    4.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    533
+   ],
+   "entity": "inserter",
+   "from": [
+    6.5,
+    5.5
+   ],
+   "to": [
+    6.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    534
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    7.5,
+    6.5
+   ],
+   "to": [
+    7.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    535
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8.5,
+    6.5
+   ],
+   "to": [
+    8.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    536
+   ],
+   "entity": "inserter",
+   "from": [
+    9.5,
+    5.5
+   ],
+   "to": [
+    9.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    538
+   ],
+   "entity": "inserter",
+   "from": [
+    11.5,
+    5.5
+   ],
+   "to": [
+    11.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    539
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    12.5,
+    6.5
+   ],
+   "to": [
+    12.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    540
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    13.5,
+    6.5
+   ],
+   "to": [
+    13.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    541
+   ],
+   "entity": "inserter",
+   "from": [
+    14.5,
+    5.5
+   ],
+   "to": [
+    14.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    543
+   ],
+   "entity": "inserter",
+   "from": [
+    16.5,
+    5.5
+   ],
+   "to": [
+    16.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    544
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    17.5,
+    6.5
+   ],
+   "to": [
+    17.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    545
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    18.5,
+    6.5
+   ],
+   "to": [
+    18.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    546
+   ],
+   "entity": "inserter",
+   "from": [
+    19.5,
+    5.5
+   ],
+   "to": [
+    19.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    548
+   ],
+   "entity": "inserter",
+   "from": [
+    21.5,
+    5.5
+   ],
+   "to": [
+    21.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    549
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    22.5,
+    6.5
+   ],
+   "to": [
+    22.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    550
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    23.5,
+    6.5
+   ],
+   "to": [
+    23.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    551
+   ],
+   "entity": "inserter",
+   "from": [
+    24.5,
+    5.5
+   ],
+   "to": [
+    24.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    553
+   ],
+   "entity": "inserter",
+   "from": [
+    26.5,
+    5.5
+   ],
+   "to": [
+    26.5,
+    3.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    554
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    27.5,
+    6.5
+   ],
+   "to": [
+    27.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    555
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    28.5,
+    6.5
+   ],
+   "to": [
+    28.5,
+    2.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    556
+   ],
+   "entity": "inserter",
+   "from": [
+    29.5,
+    5.5
+   ],
+   "to": [
+    29.5,
+    3.3
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -31.5,
+    -7.5
+   ],
+   "to": [
+    29.5,
+    -7.5
+   ],
+   "direction": 4,
+   "length": 61
+  },
+  {
+   "entity_numbers": [
+    65,
+    66,
+    68,
+    69,
+    72,
+    73,
+    76,
+    77,
+    80,
+    81,
+    84,
+    85,
+    88,
+    89,
+    92,
+    93,
+    96,
+    97,
+    100,
+    101,
+    104,
+    105,
+    108,
+    109,
+    112,
+    113,
+    116,
+    117,
+    120,
+    121,
+    124,
+    125,
+    128,
+    129,
+    132,
+    133,
+    136,
+    137,
+    140,
+    141,
+    144,
+    145,
+    148,
+    149,
+    152,
+    153,
+    156,
+    157,
+    160,
+    161,
+    164,
+    165,
+    168,
+    169,
+    172,
+    173,
+    176,
+    177,
+    180,
+    181
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -30.5,
+    -6.5
+   ],
+   "to": [
+    29.5,
+    -6.5
+   ],
+   "direction": 4,
+   "length": 60
+  },
+  {
+   "entity_numbers": [
+    184
+   ],
+   "entity": "transport-belt",
+   "from": [
+    29.5,
+    -6.5
+   ],
+   "to": [
+    29.5,
+    -5.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    228
+   ],
+   "entity": "transport-belt",
+   "from": [
+    30.5,
+    -3.5
+   ],
+   "to": [
+    30.5,
+    -2.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    231,
+    230,
+    229
+   ],
+   "entity": "transport-belt",
+   "from": [
+    33.5,
+    -3.5
+   ],
+   "to": [
+    30.5,
+    -3.5
+   ],
+   "direction": 12,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    232
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -33.5,
+    -1.5
+   ],
+   "to": [
+    -32.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    240,
+    329
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -28.5,
+    -1.5
+   ],
+   "to": [
+    -28.5,
+    0.5
+   ],
+   "direction": 8,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    242
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -27.5,
+    -1.5
+   ],
+   "to": [
+    -27.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    244
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -26.5,
+    -1.5
+   ],
+   "to": [
+    -26.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    247
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -22.5,
+    -1.5
+   ],
+   "to": [
+    -22.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    248
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -21.5,
+    -1.5
+   ],
+   "to": [
+    -21.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    250
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -17.5,
+    -1.5
+   ],
+   "to": [
+    -17.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    252
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -16.5,
+    -1.5
+   ],
+   "to": [
+    -16.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    255
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -12.5,
+    -1.5
+   ],
+   "to": [
+    -12.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    256
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -11.5,
+    -1.5
+   ],
+   "to": [
+    -11.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    257
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -9.5,
+    -1.5
+   ],
+   "to": [
+    -8.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    260
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -7.5,
+    -1.5
+   ],
+   "to": [
+    -7.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    262
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -6.5,
+    -1.5
+   ],
+   "to": [
+    -6.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    264
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -4.5,
+    -1.5
+   ],
+   "to": [
+    -3.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    268
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -2.5,
+    -1.5
+   ],
+   "to": [
+    -2.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    269
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -1.5,
+    -1.5
+   ],
+   "to": [
+    -1.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    271
+   ],
+   "entity": "transport-belt",
+   "from": [
+    0.5,
+    -1.5
+   ],
+   "to": [
+    1.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    274
+   ],
+   "entity": "transport-belt",
+   "from": [
+    2.5,
+    -1.5
+   ],
+   "to": [
+    2.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    276
+   ],
+   "entity": "transport-belt",
+   "from": [
+    3.5,
+    -1.5
+   ],
+   "to": [
+    3.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    278
+   ],
+   "entity": "transport-belt",
+   "from": [
+    5.5,
+    -1.5
+   ],
+   "to": [
+    6.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    282
+   ],
+   "entity": "transport-belt",
+   "from": [
+    7.5,
+    -1.5
+   ],
+   "to": [
+    7.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    283
+   ],
+   "entity": "transport-belt",
+   "from": [
+    8.5,
+    -1.5
+   ],
+   "to": [
+    8.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    285
+   ],
+   "entity": "transport-belt",
+   "from": [
+    10.5,
+    -1.5
+   ],
+   "to": [
+    11.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    288
+   ],
+   "entity": "transport-belt",
+   "from": [
+    12.5,
+    -1.5
+   ],
+   "to": [
+    12.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    290
+   ],
+   "entity": "transport-belt",
+   "from": [
+    13.5,
+    -1.5
+   ],
+   "to": [
+    13.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    292
+   ],
+   "entity": "transport-belt",
+   "from": [
+    15.5,
+    -1.5
+   ],
+   "to": [
+    16.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    296
+   ],
+   "entity": "transport-belt",
+   "from": [
+    17.5,
+    -1.5
+   ],
+   "to": [
+    17.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    297
+   ],
+   "entity": "transport-belt",
+   "from": [
+    18.5,
+    -1.5
+   ],
+   "to": [
+    18.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    299
+   ],
+   "entity": "transport-belt",
+   "from": [
+    20.5,
+    -1.5
+   ],
+   "to": [
+    21.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    302
+   ],
+   "entity": "transport-belt",
+   "from": [
+    22.5,
+    -1.5
+   ],
+   "to": [
+    22.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    304
+   ],
+   "entity": "transport-belt",
+   "from": [
+    23.5,
+    -1.5
+   ],
+   "to": [
+    23.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    306
+   ],
+   "entity": "transport-belt",
+   "from": [
+    25.5,
+    -1.5
+   ],
+   "to": [
+    26.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    310
+   ],
+   "entity": "transport-belt",
+   "from": [
+    27.5,
+    -1.5
+   ],
+   "to": [
+    27.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    311
+   ],
+   "entity": "transport-belt",
+   "from": [
+    28.5,
+    -1.5
+   ],
+   "to": [
+    28.5,
+    -0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    312
+   ],
+   "entity": "transport-belt",
+   "from": [
+    30.5,
+    -2.5
+   ],
+   "to": [
+    31.5,
+    -2.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    314
+   ],
+   "entity": "transport-belt",
+   "from": [
+    30.5,
+    -1.5
+   ],
+   "to": [
+    31.5,
+    -1.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    319,
+    318
+   ],
+   "entity": "transport-belt",
+   "from": [
+    33.5,
+    -1.5
+   ],
+   "to": [
+    33.5,
+    -3.5
+   ],
+   "direction": 0,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    320
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -33.5,
+    0.5
+   ],
+   "to": [
+    -32.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    321
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -33.5,
+    -0.5
+   ],
+   "to": [
+    -32.5,
+    -0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    323,
+    234,
+    235,
+    187,
+    188,
+    63,
+    62
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -31.5,
+    -0.5
+   ],
+   "to": [
+    -31.5,
+    -7.5
+   ],
+   "direction": 0,
+   "length": 7
+  },
+  {
+   "entity_numbers": [
+    324,
+    427,
+    428,
+    493,
+    494,
+    559
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -31.5,
+    0.5
+   ],
+   "to": [
+    -31.5,
+    6.5
+   ],
+   "direction": 8,
+   "length": 6
+  },
+  {
+   "entity_numbers": [
+    326,
+    431,
+    430,
+    496,
+    495
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -30.5,
+    0.5
+   ],
+   "to": [
+    -30.5,
+    5.5
+   ],
+   "direction": 8,
+   "length": 5
+  },
+  {
+   "entity_numbers": [
+    327,
+    239,
+    238,
+    190,
+    189,
+    64
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -30.5,
+    -0.5
+   ],
+   "to": [
+    -30.5,
+    -6.5
+   ],
+   "direction": 0,
+   "length": 6
+  },
+  {
+   "entity_numbers": [
+    328
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -28.5,
+    0.5
+   ],
+   "to": [
+    -29.5,
+    0.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    330,
+    332,
+    333,
+    335,
+    336,
+    337,
+    338,
+    341,
+    342,
+    343,
+    344,
+    346,
+    347,
+    349,
+    350,
+    351,
+    352,
+    355
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -27.5,
+    -0.5
+   ],
+   "to": [
+    -9.5,
+    -0.5
+   ],
+   "direction": 4,
+   "length": 18
+  },
+  {
+   "entity_numbers": [
+    331
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -27.5,
+    0.5
+   ],
+   "to": [
+    -27.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    334
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -26.5,
+    0.5
+   ],
+   "to": [
+    -26.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    339
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -22.5,
+    0.5
+   ],
+   "to": [
+    -22.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    340
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -21.5,
+    0.5
+   ],
+   "to": [
+    -21.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    345
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -17.5,
+    0.5
+   ],
+   "to": [
+    -17.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    348
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -16.5,
+    0.5
+   ],
+   "to": [
+    -16.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    353
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -12.5,
+    0.5
+   ],
+   "to": [
+    -12.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    354
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -11.5,
+    0.5
+   ],
+   "to": [
+    -11.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    356
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -9.5,
+    -0.5
+   ],
+   "to": [
+    -9.5,
+    -1.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    357,
+    359,
+    360,
+    362,
+    363,
+    364,
+    365,
+    368,
+    369,
+    370,
+    371,
+    373,
+    374,
+    376,
+    377,
+    378,
+    379,
+    382
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -7.5,
+    -0.5
+   ],
+   "to": [
+    10.5,
+    -0.5
+   ],
+   "direction": 4,
+   "length": 18
+  },
+  {
+   "entity_numbers": [
+    358
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -7.5,
+    0.5
+   ],
+   "to": [
+    -7.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    361
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -6.5,
+    0.5
+   ],
+   "to": [
+    -6.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    366
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -2.5,
+    0.5
+   ],
+   "to": [
+    -2.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    367
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -1.5,
+    0.5
+   ],
+   "to": [
+    -1.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    372
+   ],
+   "entity": "transport-belt",
+   "from": [
+    2.5,
+    0.5
+   ],
+   "to": [
+    2.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    375
+   ],
+   "entity": "transport-belt",
+   "from": [
+    3.5,
+    0.5
+   ],
+   "to": [
+    3.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    380
+   ],
+   "entity": "transport-belt",
+   "from": [
+    7.5,
+    0.5
+   ],
+   "to": [
+    7.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    381
+   ],
+   "entity": "transport-belt",
+   "from": [
+    8.5,
+    0.5
+   ],
+   "to": [
+    8.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    383
+   ],
+   "entity": "transport-belt",
+   "from": [
+    10.5,
+    -0.5
+   ],
+   "to": [
+    10.5,
+    0.5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    384
+   ],
+   "entity": "transport-belt",
+   "from": [
+    10.5,
+    0.5
+   ],
+   "to": [
+    11.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    385,
+    388,
+    389,
+    392,
+    393,
+    396,
+    397,
+    400,
+    401,
+    404,
+    405,
+    408,
+    409,
+    412,
+    413,
+    416,
+    417,
+    420,
+    421
+   ],
+   "entity": "transport-belt",
+   "from": [
+    12.5,
+    -0.5
+   ],
+   "to": [
+    31.5,
+    -0.5
+   ],
+   "direction": 4,
+   "length": 19
+  },
+  {
+   "entity_numbers": [
+    387
+   ],
+   "entity": "transport-belt",
+   "from": [
+    12.5,
+    0.5
+   ],
+   "to": [
+    12.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    390
+   ],
+   "entity": "transport-belt",
+   "from": [
+    13.5,
+    0.5
+   ],
+   "to": [
+    13.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    394
+   ],
+   "entity": "transport-belt",
+   "from": [
+    15.5,
+    0.5
+   ],
+   "to": [
+    16.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    398
+   ],
+   "entity": "transport-belt",
+   "from": [
+    17.5,
+    0.5
+   ],
+   "to": [
+    17.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    399
+   ],
+   "entity": "transport-belt",
+   "from": [
+    18.5,
+    0.5
+   ],
+   "to": [
+    18.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    403
+   ],
+   "entity": "transport-belt",
+   "from": [
+    20.5,
+    0.5
+   ],
+   "to": [
+    21.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    407
+   ],
+   "entity": "transport-belt",
+   "from": [
+    22.5,
+    0.5
+   ],
+   "to": [
+    22.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    410
+   ],
+   "entity": "transport-belt",
+   "from": [
+    23.5,
+    0.5
+   ],
+   "to": [
+    23.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    414
+   ],
+   "entity": "transport-belt",
+   "from": [
+    25.5,
+    0.5
+   ],
+   "to": [
+    26.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    418
+   ],
+   "entity": "transport-belt",
+   "from": [
+    27.5,
+    0.5
+   ],
+   "to": [
+    27.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    419
+   ],
+   "entity": "transport-belt",
+   "from": [
+    28.5,
+    0.5
+   ],
+   "to": [
+    28.5,
+    -0.5
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    423
+   ],
+   "entity": "transport-belt",
+   "from": [
+    30.5,
+    0.5
+   ],
+   "to": [
+    31.5,
+    0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    426
+   ],
+   "entity": "transport-belt",
+   "from": [
+    33.5,
+    -0.5
+   ],
+   "to": [
+    34.5,
+    -0.5
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    558,
+    562,
+    563,
+    566,
+    567,
+    570,
+    571,
+    574,
+    575,
+    578,
+    579,
+    582,
+    583,
+    586,
+    587,
+    590,
+    591,
+    594,
+    595,
+    598,
+    599,
+    602,
+    603,
+    606,
+    607,
+    610,
+    611,
+    614,
+    615,
+    618,
+    619,
+    622,
+    623,
+    626,
+    627,
+    630,
+    631,
+    634,
+    635,
+    638,
+    639,
+    642,
+    643,
+    646,
+    647,
+    650,
+    651,
+    654,
+    655,
+    658,
+    659,
+    662,
+    663,
+    666,
+    667,
+    670,
+    671,
+    674,
+    675,
+    678,
+    679
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -31.5,
+    6.5
+   ],
+   "to": [
+    29.5,
+    6.5
+   ],
+   "direction": 4,
+   "length": 61
+  },
+  {
+   "entity_numbers": [
+    560,
+    561,
+    564,
+    565,
+    568,
+    569,
+    572,
+    573,
+    576,
+    577,
+    580,
+    581,
+    584,
+    585,
+    588,
+    589,
+    592,
+    593,
+    596,
+    597,
+    600,
+    601,
+    604,
+    605,
+    608,
+    609,
+    612,
+    613,
+    616,
+    617,
+    620,
+    621,
+    624,
+    625,
+    628,
+    629,
+    632,
+    633,
+    636,
+    637,
+    640,
+    641,
+    644,
+    645,
+    648,
+    649,
+    652,
+    653,
+    656,
+    657,
+    660,
+    661,
+    664,
+    665,
+    668,
+    669,
+    672,
+    673,
+    676,
+    677
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -30.5,
+    5.5
+   ],
+   "to": [
+    29.5,
+    5.5
+   ],
+   "direction": 4,
+   "length": 60
+  },
+  {
+   "entity_numbers": [
+    680
+   ],
+   "entity": "transport-belt",
+   "from": [
+    29.5,
+    5.5
+   ],
+   "to": [
+    29.5,
+    4.5
+   ],
+   "direction": 0,
+   "length": 1
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    233,
+    237
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -32.5,
+    -1.5
+   ],
+   "to": [
+    -29.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    259,
+    263
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -8.5,
+    -1.5
+   ],
+   "to": [
+    -5.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    265,
+    270
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -3.5,
+    -1.5
+   ],
+   "to": [
+    -0.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    273,
+    277
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    1.5,
+    -1.5
+   ],
+   "to": [
+    4.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    279,
+    284
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    6.5,
+    -1.5
+   ],
+   "to": [
+    9.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    287,
+    291
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    11.5,
+    -1.5
+   ],
+   "to": [
+    14.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    386,
+    391
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    11.5,
+    0.5
+   ],
+   "to": [
+    14.5,
+    0.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    293,
+    298
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    16.5,
+    -1.5
+   ],
+   "to": [
+    19.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    395,
+    402
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    16.5,
+    0.5
+   ],
+   "to": [
+    19.5,
+    0.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    301,
+    305
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    21.5,
+    -1.5
+   ],
+   "to": [
+    24.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    406,
+    411
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    21.5,
+    0.5
+   ],
+   "to": [
+    24.5,
+    0.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    307,
+    313
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    26.5,
+    -1.5
+   ],
+   "to": [
+    29.5,
+    -1.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    415,
+    422
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    26.5,
+    0.5
+   ],
+   "to": [
+    29.5,
+    0.5
+   ],
+   "interactable": false
+  }
+ ],
+ "splitters": [
+  {
+   "entity_numbers": [
+    315
+   ],
+   "entity": "splitter",
+   "position": [
+    31.5,
+    -2
+   ],
+   "direction": 4,
+   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+  },
+  {
+   "entity_numbers": [
+    317
+   ],
+   "entity": "splitter",
+   "position": [
+    32.5,
+    -1
+   ],
+   "direction": 4,
+   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+  },
+  {
+   "entity_numbers": [
+    322
+   ],
+   "entity": "splitter",
+   "position": [
+    -32.5,
+    0
+   ],
+   "direction": 4,
+   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+  },
+  {
+   "entity_numbers": [
+    325
+   ],
+   "entity": "splitter",
+   "position": [
+    -29.5,
+    0
+   ],
+   "direction": 12,
+   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+  },
+  {
+   "entity_numbers": [
+    424
+   ],
+   "entity": "splitter",
+   "position": [
+    31.5,
+    0
+   ],
+   "direction": 4,
+   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+  }
+ ]
+}

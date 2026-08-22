@@ -1,0 +1,1181 @@
+<title>Vector Flow Inspector</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --panel: #121820;
+    --panel-2: #0f141b;
+    --border: #232d38;
+    --ink: #dfe6ee;
+    --muted: #7c8898;
+    --faint: #3a4553;
+    --faint-fill: #17202a;
+    --belt: #f0a838;
+    --belt-dim: #7a5a2a;
+    --inserter: #4fc3e0;
+    --inserter-basic: #e0b84a;
+    --inserter-dim: #2c5a67;
+    --underground: #7a5a2a; /* muted variant of --belt (same tier hue, dimmer) */
+    --underground-dim: #564a7a;
+    --splitter: #f2617a;
+    --splitter-dim: #7a3441;
+    --grid-minor: #161d26;
+    --grid-major: #212b37;
+    --focus: #f0a838;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, label:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 0.85rem 1.25rem;
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  header .sub {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .stats {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    padding: 0.3rem 0.6rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+  }
+
+  .stat b {
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat.belt b { color: var(--belt); }
+  .stat.inserter b { color: var(--inserter); }
+  .stat.underground b { color: var(--underground); }
+  .stat.splitter b { color: var(--splitter); }
+
+  main {
+    display: grid;
+    grid-template-columns: 232px 1fr;
+    min-height: 0;
+  }
+
+  aside {
+    background: var(--panel-2);
+    border-right: 1px solid var(--border);
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .legend-group h2 {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 0.55rem;
+    font-weight: 600;
+  }
+
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.32rem 0.15rem;
+    cursor: pointer;
+    border-radius: 3px;
+    user-select: none;
+  }
+
+  .legend-row:hover { background: var(--panel); }
+
+  .legend-row input { accent-color: var(--focus); margin: 0; cursor: pointer; }
+
+  .swatch {
+    width: 14px;
+    height: 3px;
+    border-radius: 1px;
+    flex: none;
+  }
+  .swatch.dashed {
+    background: repeating-linear-gradient(90deg, var(--sw, var(--underground)) 0 4px, transparent 4px 7px);
+  }
+  .swatch.solid { background: var(--sw); }
+  .swatch.diamond {
+    width: 9px; height: 9px; transform: rotate(45deg);
+    border-radius: 1px;
+  }
+  .swatch-inserter { height: 10px; overflow: visible; }
+
+  .legend-row .name { font-size: 0.82rem; flex: 1; }
+  .legend-row .count {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hint {
+    font-size: 0.74rem;
+    color: var(--muted);
+    line-height: 1.5;
+    border-top: 1px solid var(--border);
+    padding-top: 0.85rem;
+    margin-top: auto;
+  }
+  .hint kbd {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  svg#world {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  svg#world.grabbing { cursor: grabbing; }
+
+  .base-entity {
+    fill: var(--faint-fill);
+    stroke: var(--faint);
+    stroke-width: 0.06;
+  }
+
+  .vec-line {
+    fill: none;
+    stroke-linecap: round;
+    cursor: pointer;
+  }
+  .vec-line.belt { stroke: var(--belt); stroke-width: 0.16; }
+  .vec-line.inserter { stroke-width: 0.13; }
+  .vec-line.underground { stroke: var(--underground); stroke-width: 0.13; stroke-dasharray: 0.32 0.24; }
+  .vec-line:hover, .vec-line.hot { filter: brightness(1.35); }
+
+  .splitter-mark {
+    stroke: #0b0f14;
+    stroke-width: 0.04;
+    cursor: pointer;
+  }
+  .splitter-mark:hover, .splitter-mark.hot { filter: brightness(1.35); }
+
+  .tunnel-cap {
+    fill: var(--bg);
+    stroke: var(--underground);
+    stroke-width: 0.1;
+    cursor: pointer;
+  }
+  .tunnel-cap:hover, .tunnel-cap.hot { filter: brightness(1.6); }
+  .arrow-mark { cursor: pointer; }
+  .arrow-mark.hot { filter: brightness(1.6); }
+
+  .load-error {
+    display: none;
+    padding: 0.55rem 1.25rem;
+    background: var(--panel);
+    border-bottom: 1px solid var(--splitter);
+    color: var(--splitter);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+  }
+
+  .coord-readout {
+    position: absolute;
+    left: 0.8rem;
+    bottom: 0.8rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: rgba(15, 20, 27, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.3rem 0.55rem;
+    pointer-events: none;
+  }
+
+  .zoom-controls {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .zoom-controls button {
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--ink);
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  .zoom-controls button:hover { background: var(--faint-fill); border-color: var(--faint); }
+
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.65rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 260px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    display: none;
+    z-index: 5;
+  }
+  .tooltip .t-type { color: var(--belt); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.66rem; margin-bottom: 0.15rem; }
+  .tooltip .t-row { color: var(--muted); }
+  .tooltip .t-row b { color: var(--ink); font-weight: 500; }
+</style>
+
+<header>
+  <h1>Vector Flow Inspector</h1>
+  <span class="sub" id="bpLabel"></span>
+  <div class="stats">
+    <div class="stat belt">belt runs <b id="cBelt"></b></div>
+    <div class="stat inserter">inserters <b id="cIns"></b></div>
+    <div class="stat underground">underground <b id="cUnd"></b></div>
+    <div class="stat splitter">splitters <b id="cSpl"></b></div>
+  </div>
+</header>
+
+<div class="load-error" id="loadError"></div>
+
+<main>
+  <aside>
+    <div class="legend-group">
+      <h2>Layers</h2>
+      <label class="legend-row"><input type="checkbox" data-layer="base" checked><span class="swatch solid" style="--sw:#3a4553"></span><span class="name">Base entities</span><span class="count" id="nBase"></span></label>
+      <label class="legend-row"><input type="checkbox" data-layer="belt" checked><span class="swatch solid" style="--sw:#f0a838"></span><span class="name">Belt runs</span><span class="count" id="nBelt"></span></label>
+      <label class="legend-row"><input type="checkbox" data-layer="inserter" checked><svg class="swatch swatch-inserter" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><line x1="0.5" y1="5" x2="13.5" y2="5" stroke="#e0b84a" stroke-width="1.4" stroke-linecap="round"></line><circle cx="7" cy="5" r="2.6" fill="none" stroke="#e0b84a" stroke-width="1.4"></circle></svg><span class="name">Inserters</span><span class="count" id="nIns"></span></label>
+      <label class="legend-row"><input type="checkbox" data-layer="underground" checked><span class="swatch dashed" style="--sw:#7a5a2a"></span><span class="name">Underground</span><span class="count" id="nUnd"></span></label>
+      <label class="legend-row"><input type="checkbox" data-layer="splitter" checked><span class="swatch diamond" style="background:#f0a838"></span><span class="name">Splitters</span><span class="count" id="nSpl"></span></label>
+    </div>
+    <div class="hint">
+      Drag to pan, scroll to zoom.<br>
+      Hover a vector for its <kbd>entity_number</kbd> and <kbd>from</kbd>/<kbd>to</kbd>.<br>
+      Coordinates match the blueprint's own tile grid.
+    </div>
+  </aside>
+
+  <div class="canvas-wrap">
+    <svg id="world" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrow-belt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--belt)"></path>
+        </marker>
+        <marker id="arrow-inserter" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter)"></path>
+        </marker>
+        <marker id="arrow-inserter-basic" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-basic)"></path>
+        </marker>
+        <marker id="arrow-inserter-long" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--splitter)"></path>
+        </marker>
+      </defs>
+      <g id="gridLayer"></g>
+      <g id="baseLayer"></g>
+      <g id="undLayer"></g>
+      <g id="beltLayer"></g>
+      <g id="insLayer"></g>
+      <g id="splLayer"></g>
+    </svg>
+    <div class="coord-readout" id="coordReadout">x -, y -</div>
+    <div class="zoom-controls">
+      <button id="zoomIn" aria-label="Zoom in">+</button>
+      <button id="zoomOut" aria-label="Zoom out">-</button>
+      <button id="zoomReset" aria-label="Reset view">&#8634;</button>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+</main>
+
+<script id="vec-data" type="application/json">{"label":"Early-Game Universal Stone Furnace Smelter (Opposite-side Input and Output)","entity_count":680,"inserters":[{"entity_numbers":[70],"entity":"inserter","from":[-28.5,-6.5],"to":[-28.5,-4.3]},{"entity_numbers":[71],"entity":"long-handed-inserter","from":[-27.5,-7.5],"to":[-27.5,-3.3]},{"entity_numbers":[74],"entity":"long-handed-inserter","from":[-26.5,-7.5],"to":[-26.5,-3.3]},{"entity_numbers":[75],"entity":"inserter","from":[-25.5,-6.5],"to":[-25.5,-4.3]},{"entity_numbers":[79],"entity":"inserter","from":[-23.5,-6.5],"to":[-23.5,-4.3]},{"entity_numbers":[82],"entity":"long-handed-inserter","from":[-22.5,-7.5],"to":[-22.5,-3.3]},{"entity_numbers":[83],"entity":"long-handed-inserter","from":[-21.5,-7.5],"to":[-21.5,-3.3]},{"entity_numbers":[86],"entity":"inserter","from":[-20.5,-6.5],"to":[-20.5,-4.3]},{"entity_numbers":[90],"entity":"inserter","from":[-18.5,-6.5],"to":[-18.5,-4.3]},{"entity_numbers":[91],"entity":"long-handed-inserter","from":[-17.5,-7.5],"to":[-17.5,-3.3]},{"entity_numbers":[94],"entity":"long-handed-inserter","from":[-16.5,-7.5],"to":[-16.5,-3.3]},{"entity_numbers":[95],"entity":"inserter","from":[-15.5,-6.5],"to":[-15.5,-4.3]},{"entity_numbers":[99],"entity":"inserter","from":[-13.5,-6.5],"to":[-13.5,-4.3]},{"entity_numbers":[102],"entity":"long-handed-inserter","from":[-12.5,-7.5],"to":[-12.5,-3.3]},{"entity_numbers":[103],"entity":"long-handed-inserter","from":[-11.5,-7.5],"to":[-11.5,-3.3]},{"entity_numbers":[106],"entity":"inserter","from":[-10.5,-6.5],"to":[-10.5,-4.3]},{"entity_numbers":[110],"entity":"inserter","from":[-8.5,-6.5],"to":[-8.5,-4.3]},{"entity_numbers":[111],"entity":"long-handed-inserter","from":[-7.5,-7.5],"to":[-7.5,-3.3]},{"entity_numbers":[114],"entity":"long-handed-inserter","from":[-6.5,-7.5],"to":[-6.5,-3.3]},{"entity_numbers":[115],"entity":"inserter","from":[-5.5,-6.5],"to":[-5.5,-4.3]},{"entity_numbers":[119],"entity":"inserter","from":[-3.5,-6.5],"to":[-3.5,-4.3]},{"entity_numbers":[122],"entity":"long-handed-inserter","from":[-2.5,-7.5],"to":[-2.5,-3.3]},{"entity_numbers":[123],"entity":"long-handed-inserter","from":[-1.5,-7.5],"to":[-1.5,-3.3]},{"entity_numbers":[126],"entity":"inserter","from":[-0.5,-6.5],"to":[-0.5,-4.3]},{"entity_numbers":[130],"entity":"inserter","from":[1.5,-6.5],"to":[1.5,-4.3]},{"entity_numbers":[131],"entity":"long-handed-inserter","from":[2.5,-7.5],"to":[2.5,-3.3]},{"entity_numbers":[134],"entity":"long-handed-inserter","from":[3.5,-7.5],"to":[3.5,-3.3]},{"entity_numbers":[135],"entity":"inserter","from":[4.5,-6.5],"to":[4.5,-4.3]},{"entity_numbers":[139],"entity":"inserter","from":[6.5,-6.5],"to":[6.5,-4.3]},{"entity_numbers":[142],"entity":"long-handed-inserter","from":[7.5,-7.5],"to":[7.5,-3.3]},{"entity_numbers":[143],"entity":"long-handed-inserter","from":[8.5,-7.5],"to":[8.5,-3.3]},{"entity_numbers":[146],"entity":"inserter","from":[9.5,-6.5],"to":[9.5,-4.3]},{"entity_numbers":[150],"entity":"inserter","from":[11.5,-6.5],"to":[11.5,-4.3]},{"entity_numbers":[151],"entity":"long-handed-inserter","from":[12.5,-7.5],"to":[12.5,-3.3]},{"entity_numbers":[154],"entity":"long-handed-inserter","from":[13.5,-7.5],"to":[13.5,-3.3]},{"entity_numbers":[155],"entity":"inserter","from":[14.5,-6.5],"to":[14.5,-4.3]},{"entity_numbers":[159],"entity":"inserter","from":[16.5,-6.5],"to":[16.5,-4.3]},{"entity_numbers":[162],"entity":"long-handed-inserter","from":[17.5,-7.5],"to":[17.5,-3.3]},{"entity_numbers":[163],"entity":"long-handed-inserter","from":[18.5,-7.5],"to":[18.5,-3.3]},{"entity_numbers":[166],"entity":"inserter","from":[19.5,-6.5],"to":[19.5,-4.3]},{"entity_numbers":[170],"entity":"inserter","from":[21.5,-6.5],"to":[21.5,-4.3]},{"entity_numbers":[171],"entity":"long-handed-inserter","from":[22.5,-7.5],"to":[22.5,-3.3]},{"entity_numbers":[174],"entity":"long-handed-inserter","from":[23.5,-7.5],"to":[23.5,-3.3]},{"entity_numbers":[175],"entity":"inserter","from":[24.5,-6.5],"to":[24.5,-4.3]},{"entity_numbers":[179],"entity":"inserter","from":[26.5,-6.5],"to":[26.5,-4.3]},{"entity_numbers":[182],"entity":"long-handed-inserter","from":[27.5,-7.5],"to":[27.5,-3.3]},{"entity_numbers":[183],"entity":"long-handed-inserter","from":[28.5,-7.5],"to":[28.5,-3.3]},{"entity_numbers":[185],"entity":"inserter","from":[29.5,-6.5],"to":[29.5,-4.3]},{"entity_numbers":[241],"entity":"inserter","from":[-27.5,-3.5],"to":[-27.5,-1.3]},{"entity_numbers":[243],"entity":"inserter","from":[-26.5,-3.5],"to":[-26.5,-1.3]},{"entity_numbers":[245],"entity":"inserter","from":[-22.5,-3.5],"to":[-22.5,-1.3]},{"entity_numbers":[246],"entity":"inserter","from":[-21.5,-3.5],"to":[-21.5,-1.3]},{"entity_numbers":[249],"entity":"inserter","from":[-17.5,-3.5],"to":[-17.5,-1.3]},{"entity_numbers":[251],"entity":"inserter","from":[-16.5,-3.5],"to":[-16.5,-1.3]},{"entity_numbers":[253],"entity":"inserter","from":[-12.5,-3.5],"to":[-12.5,-1.3]},{"entity_numbers":[254],"entity":"inserter","from":[-11.5,-3.5],"to":[-11.5,-1.3]},{"entity_numbers":[258],"entity":"inserter","from":[-7.5,-3.5],"to":[-7.5,-1.3]},{"entity_numbers":[261],"entity":"inserter","from":[-6.5,-3.5],"to":[-6.5,-1.3]},{"entity_numbers":[266],"entity":"inserter","from":[-2.5,-3.5],"to":[-2.5,-1.3]},{"entity_numbers":[267],"entity":"inserter","from":[-1.5,-3.5],"to":[-1.5,-1.3]},{"entity_numbers":[272],"entity":"inserter","from":[2.5,-3.5],"to":[2.5,-1.3]},{"entity_numbers":[275],"entity":"inserter","from":[3.5,-3.5],"to":[3.5,-1.3]},{"entity_numbers":[280],"entity":"inserter","from":[7.5,-3.5],"to":[7.5,-1.3]},{"entity_numbers":[281],"entity":"inserter","from":[8.5,-3.5],"to":[8.5,-1.3]},{"entity_numbers":[286],"entity":"inserter","from":[12.5,-3.5],"to":[12.5,-1.3]},{"entity_numbers":[289],"entity":"inserter","from":[13.5,-3.5],"to":[13.5,-1.3]},{"entity_numbers":[294],"entity":"inserter","from":[17.5,-3.5],"to":[17.5,-1.3]},{"entity_numbers":[295],"entity":"inserter","from":[18.5,-3.5],"to":[18.5,-1.3]},{"entity_numbers":[300],"entity":"inserter","from":[22.5,-3.5],"to":[22.5,-1.3]},{"entity_numbers":[303],"entity":"inserter","from":[23.5,-3.5],"to":[23.5,-1.3]},{"entity_numbers":[308],"entity":"inserter","from":[27.5,-3.5],"to":[27.5,-1.3]},{"entity_numbers":[309],"entity":"inserter","from":[28.5,-3.5],"to":[28.5,-1.3]},{"entity_numbers":[433],"entity":"inserter","from":[-27.5,2.5],"to":[-27.5,0.3]},{"entity_numbers":[435],"entity":"inserter","from":[-26.5,2.5],"to":[-26.5,0.3]},{"entity_numbers":[440],"entity":"inserter","from":[-22.5,2.5],"to":[-22.5,0.3]},{"entity_numbers":[441],"entity":"inserter","from":[-21.5,2.5],"to":[-21.5,0.3]},{"entity_numbers":[443],"entity":"inserter","from":[-17.5,2.5],"to":[-17.5,0.3]},{"entity_numbers":[445],"entity":"inserter","from":[-16.5,2.5],"to":[-16.5,0.3]},{"entity_numbers":[450],"entity":"inserter","from":[-12.5,2.5],"to":[-12.5,0.3]},{"entity_numbers":[451],"entity":"inserter","from":[-11.5,2.5],"to":[-11.5,0.3]},{"entity_numbers":[453],"entity":"inserter","from":[-7.5,2.5],"to":[-7.5,0.3]},{"entity_numbers":[455],"entity":"inserter","from":[-6.5,2.5],"to":[-6.5,0.3]},{"entity_numbers":[460],"entity":"inserter","from":[-2.5,2.5],"to":[-2.5,0.3]},{"entity_numbers":[461],"entity":"inserter","from":[-1.5,2.5],"to":[-1.5,0.3]},{"entity_numbers":[463],"entity":"inserter","from":[2.5,2.5],"to":[2.5,0.3]},{"entity_numbers":[465],"entity":"inserter","from":[3.5,2.5],"to":[3.5,0.3]},{"entity_numbers":[470],"entity":"inserter","from":[7.5,2.5],"to":[7.5,0.3]},{"entity_numbers":[471],"entity":"inserter","from":[8.5,2.5],"to":[8.5,0.3]},{"entity_numbers":[473],"entity":"inserter","from":[12.5,2.5],"to":[12.5,0.3]},{"entity_numbers":[475],"entity":"inserter","from":[13.5,2.5],"to":[13.5,0.3]},{"entity_numbers":[480],"entity":"inserter","from":[17.5,2.5],"to":[17.5,0.3]},{"entity_numbers":[481],"entity":"inserter","from":[18.5,2.5],"to":[18.5,0.3]},{"entity_numbers":[483],"entity":"inserter","from":[22.5,2.5],"to":[22.5,0.3]},{"entity_numbers":[485],"entity":"inserter","from":[23.5,2.5],"to":[23.5,0.3]},{"entity_numbers":[490],"entity":"inserter","from":[27.5,2.5],"to":[27.5,0.3]},{"entity_numbers":[491],"entity":"inserter","from":[28.5,2.5],"to":[28.5,0.3]},{"entity_numbers":[498],"entity":"inserter","from":[-28.5,5.5],"to":[-28.5,3.3]},{"entity_numbers":[499],"entity":"long-handed-inserter","from":[-27.5,6.5],"to":[-27.5,2.3]},{"entity_numbers":[500],"entity":"long-handed-inserter","from":[-26.5,6.5],"to":[-26.5,2.3]},{"entity_numbers":[501],"entity":"inserter","from":[-25.5,5.5],"to":[-25.5,3.3]},{"entity_numbers":[503],"entity":"inserter","from":[-23.5,5.5],"to":[-23.5,3.3]},{"entity_numbers":[504],"entity":"long-handed-inserter","from":[-22.5,6.5],"to":[-22.5,2.3]},{"entity_numbers":[505],"entity":"long-handed-inserter","from":[-21.5,6.5],"to":[-21.5,2.3]},{"entity_numbers":[506],"entity":"inserter","from":[-20.5,5.5],"to":[-20.5,3.3]},{"entity_numbers":[508],"entity":"inserter","from":[-18.5,5.5],"to":[-18.5,3.3]},{"entity_numbers":[509],"entity":"long-handed-inserter","from":[-17.5,6.5],"to":[-17.5,2.3]},{"entity_numbers":[510],"entity":"long-handed-inserter","from":[-16.5,6.5],"to":[-16.5,2.3]},{"entity_numbers":[511],"entity":"inserter","from":[-15.5,5.5],"to":[-15.5,3.3]},{"entity_numbers":[513],"entity":"inserter","from":[-13.5,5.5],"to":[-13.5,3.3]},{"entity_numbers":[514],"entity":"long-handed-inserter","from":[-12.5,6.5],"to":[-12.5,2.3]},{"entity_numbers":[515],"entity":"long-handed-inserter","from":[-11.5,6.5],"to":[-11.5,2.3]},{"entity_numbers":[516],"entity":"inserter","from":[-10.5,5.5],"to":[-10.5,3.3]},{"entity_numbers":[518],"entity":"inserter","from":[-8.5,5.5],"to":[-8.5,3.3]},{"entity_numbers":[519],"entity":"long-handed-inserter","from":[-7.5,6.5],"to":[-7.5,2.3]},{"entity_numbers":[520],"entity":"long-handed-inserter","from":[-6.5,6.5],"to":[-6.5,2.3]},{"entity_numbers":[521],"entity":"inserter","from":[-5.5,5.5],"to":[-5.5,3.3]},{"entity_numbers":[523],"entity":"inserter","from":[-3.5,5.5],"to":[-3.5,3.3]},{"entity_numbers":[524],"entity":"long-handed-inserter","from":[-2.5,6.5],"to":[-2.5,2.3]},{"entity_numbers":[525],"entity":"long-handed-inserter","from":[-1.5,6.5],"to":[-1.5,2.3]},{"entity_numbers":[526],"entity":"inserter","from":[-0.5,5.5],"to":[-0.5,3.3]},{"entity_numbers":[528],"entity":"inserter","from":[1.5,5.5],"to":[1.5,3.3]},{"entity_numbers":[529],"entity":"long-handed-inserter","from":[2.5,6.5],"to":[2.5,2.3]},{"entity_numbers":[530],"entity":"long-handed-inserter","from":[3.5,6.5],"to":[3.5,2.3]},{"entity_numbers":[531],"entity":"inserter","from":[4.5,5.5],"to":[4.5,3.3]},{"entity_numbers":[533],"entity":"inserter","from":[6.5,5.5],"to":[6.5,3.3]},{"entity_numbers":[534],"entity":"long-handed-inserter","from":[7.5,6.5],"to":[7.5,2.3]},{"entity_numbers":[535],"entity":"long-handed-inserter","from":[8.5,6.5],"to":[8.5,2.3]},{"entity_numbers":[536],"entity":"inserter","from":[9.5,5.5],"to":[9.5,3.3]},{"entity_numbers":[538],"entity":"inserter","from":[11.5,5.5],"to":[11.5,3.3]},{"entity_numbers":[539],"entity":"long-handed-inserter","from":[12.5,6.5],"to":[12.5,2.3]},{"entity_numbers":[540],"entity":"long-handed-inserter","from":[13.5,6.5],"to":[13.5,2.3]},{"entity_numbers":[541],"entity":"inserter","from":[14.5,5.5],"to":[14.5,3.3]},{"entity_numbers":[543],"entity":"inserter","from":[16.5,5.5],"to":[16.5,3.3]},{"entity_numbers":[544],"entity":"long-handed-inserter","from":[17.5,6.5],"to":[17.5,2.3]},{"entity_numbers":[545],"entity":"long-handed-inserter","from":[18.5,6.5],"to":[18.5,2.3]},{"entity_numbers":[546],"entity":"inserter","from":[19.5,5.5],"to":[19.5,3.3]},{"entity_numbers":[548],"entity":"inserter","from":[21.5,5.5],"to":[21.5,3.3]},{"entity_numbers":[549],"entity":"long-handed-inserter","from":[22.5,6.5],"to":[22.5,2.3]},{"entity_numbers":[550],"entity":"long-handed-inserter","from":[23.5,6.5],"to":[23.5,2.3]},{"entity_numbers":[551],"entity":"inserter","from":[24.5,5.5],"to":[24.5,3.3]},{"entity_numbers":[553],"entity":"inserter","from":[26.5,5.5],"to":[26.5,3.3]},{"entity_numbers":[554],"entity":"long-handed-inserter","from":[27.5,6.5],"to":[27.5,2.3]},{"entity_numbers":[555],"entity":"long-handed-inserter","from":[28.5,6.5],"to":[28.5,2.3]},{"entity_numbers":[556],"entity":"inserter","from":[29.5,5.5],"to":[29.5,3.3]}],"belt_runs":[{"entity_numbers":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61],"entity":"transport-belt","from":[-31.5,-7.5],"to":[29.5,-7.5],"direction":4,"length":61},{"entity_numbers":[65,66,68,69,72,73,76,77,80,81,84,85,88,89,92,93,96,97,100,101,104,105,108,109,112,113,116,117,120,121,124,125,128,129,132,133,136,137,140,141,144,145,148,149,152,153,156,157,160,161,164,165,168,169,172,173,176,177,180,181],"entity":"transport-belt","from":[-30.5,-6.5],"to":[29.5,-6.5],"direction":4,"length":60},{"entity_numbers":[184],"entity":"transport-belt","from":[29.5,-6.5],"to":[29.5,-5.5],"direction":8,"length":1},{"entity_numbers":[228],"entity":"transport-belt","from":[30.5,-3.5],"to":[30.5,-2.5],"direction":8,"length":1},{"entity_numbers":[231,230,229],"entity":"transport-belt","from":[33.5,-3.5],"to":[30.5,-3.5],"direction":12,"length":3},{"entity_numbers":[232],"entity":"transport-belt","from":[-33.5,-1.5],"to":[-32.5,-1.5],"direction":4,"length":1},{"entity_numbers":[240,329],"entity":"transport-belt","from":[-28.5,-1.5],"to":[-28.5,0.5],"direction":8,"length":2},{"entity_numbers":[242],"entity":"transport-belt","from":[-27.5,-1.5],"to":[-27.5,-0.5],"direction":8,"length":1},{"entity_numbers":[244],"entity":"transport-belt","from":[-26.5,-1.5],"to":[-26.5,-0.5],"direction":8,"length":1},{"entity_numbers":[247],"entity":"transport-belt","from":[-22.5,-1.5],"to":[-22.5,-0.5],"direction":8,"length":1},{"entity_numbers":[248],"entity":"transport-belt","from":[-21.5,-1.5],"to":[-21.5,-0.5],"direction":8,"length":1},{"entity_numbers":[250],"entity":"transport-belt","from":[-17.5,-1.5],"to":[-17.5,-0.5],"direction":8,"length":1},{"entity_numbers":[252],"entity":"transport-belt","from":[-16.5,-1.5],"to":[-16.5,-0.5],"direction":8,"length":1},{"entity_numbers":[255],"entity":"transport-belt","from":[-12.5,-1.5],"to":[-12.5,-0.5],"direction":8,"length":1},{"entity_numbers":[256],"entity":"transport-belt","from":[-11.5,-1.5],"to":[-11.5,-0.5],"direction":8,"length":1},{"entity_numbers":[257],"entity":"transport-belt","from":[-9.5,-1.5],"to":[-8.5,-1.5],"direction":4,"length":1},{"entity_numbers":[260],"entity":"transport-belt","from":[-7.5,-1.5],"to":[-7.5,-0.5],"direction":8,"length":1},{"entity_numbers":[262],"entity":"transport-belt","from":[-6.5,-1.5],"to":[-6.5,-0.5],"direction":8,"length":1},{"entity_numbers":[264],"entity":"transport-belt","from":[-4.5,-1.5],"to":[-3.5,-1.5],"direction":4,"length":1},{"entity_numbers":[268],"entity":"transport-belt","from":[-2.5,-1.5],"to":[-2.5,-0.5],"direction":8,"length":1},{"entity_numbers":[269],"entity":"transport-belt","from":[-1.5,-1.5],"to":[-1.5,-0.5],"direction":8,"length":1},{"entity_numbers":[271],"entity":"transport-belt","from":[0.5,-1.5],"to":[1.5,-1.5],"direction":4,"length":1},{"entity_numbers":[274],"entity":"transport-belt","from":[2.5,-1.5],"to":[2.5,-0.5],"direction":8,"length":1},{"entity_numbers":[276],"entity":"transport-belt","from":[3.5,-1.5],"to":[3.5,-0.5],"direction":8,"length":1},{"entity_numbers":[278],"entity":"transport-belt","from":[5.5,-1.5],"to":[6.5,-1.5],"direction":4,"length":1},{"entity_numbers":[282],"entity":"transport-belt","from":[7.5,-1.5],"to":[7.5,-0.5],"direction":8,"length":1},{"entity_numbers":[283],"entity":"transport-belt","from":[8.5,-1.5],"to":[8.5,-0.5],"direction":8,"length":1},{"entity_numbers":[285],"entity":"transport-belt","from":[10.5,-1.5],"to":[11.5,-1.5],"direction":4,"length":1},{"entity_numbers":[288],"entity":"transport-belt","from":[12.5,-1.5],"to":[12.5,-0.5],"direction":8,"length":1},{"entity_numbers":[290],"entity":"transport-belt","from":[13.5,-1.5],"to":[13.5,-0.5],"direction":8,"length":1},{"entity_numbers":[292],"entity":"transport-belt","from":[15.5,-1.5],"to":[16.5,-1.5],"direction":4,"length":1},{"entity_numbers":[296],"entity":"transport-belt","from":[17.5,-1.5],"to":[17.5,-0.5],"direction":8,"length":1},{"entity_numbers":[297],"entity":"transport-belt","from":[18.5,-1.5],"to":[18.5,-0.5],"direction":8,"length":1},{"entity_numbers":[299],"entity":"transport-belt","from":[20.5,-1.5],"to":[21.5,-1.5],"direction":4,"length":1},{"entity_numbers":[302],"entity":"transport-belt","from":[22.5,-1.5],"to":[22.5,-0.5],"direction":8,"length":1},{"entity_numbers":[304],"entity":"transport-belt","from":[23.5,-1.5],"to":[23.5,-0.5],"direction":8,"length":1},{"entity_numbers":[306],"entity":"transport-belt","from":[25.5,-1.5],"to":[26.5,-1.5],"direction":4,"length":1},{"entity_numbers":[310],"entity":"transport-belt","from":[27.5,-1.5],"to":[27.5,-0.5],"direction":8,"length":1},{"entity_numbers":[311],"entity":"transport-belt","from":[28.5,-1.5],"to":[28.5,-0.5],"direction":8,"length":1},{"entity_numbers":[312],"entity":"transport-belt","from":[30.5,-2.5],"to":[31.5,-2.5],"direction":4,"length":1},{"entity_numbers":[314],"entity":"transport-belt","from":[30.5,-1.5],"to":[31.5,-1.5],"direction":4,"length":1},{"entity_numbers":[319,318],"entity":"transport-belt","from":[33.5,-1.5],"to":[33.5,-3.5],"direction":0,"length":2},{"entity_numbers":[320],"entity":"transport-belt","from":[-33.5,0.5],"to":[-32.5,0.5],"direction":4,"length":1},{"entity_numbers":[321],"entity":"transport-belt","from":[-33.5,-0.5],"to":[-32.5,-0.5],"direction":4,"length":1},{"entity_numbers":[323,234,235,187,188,63,62],"entity":"transport-belt","from":[-31.5,-0.5],"to":[-31.5,-7.5],"direction":0,"length":7},{"entity_numbers":[324,427,428,493,494,559],"entity":"transport-belt","from":[-31.5,0.5],"to":[-31.5,6.5],"direction":8,"length":6},{"entity_numbers":[326,431,430,496,495],"entity":"transport-belt","from":[-30.5,0.5],"to":[-30.5,5.5],"direction":8,"length":5},{"entity_numbers":[327,239,238,190,189,64],"entity":"transport-belt","from":[-30.5,-0.5],"to":[-30.5,-6.5],"direction":0,"length":6},{"entity_numbers":[328],"entity":"transport-belt","from":[-28.5,0.5],"to":[-29.5,0.5],"direction":12,"length":1},{"entity_numbers":[330,332,333,335,336,337,338,341,342,343,344,346,347,349,350,351,352,355],"entity":"transport-belt","from":[-27.5,-0.5],"to":[-9.5,-0.5],"direction":4,"length":18},{"entity_numbers":[331],"entity":"transport-belt","from":[-27.5,0.5],"to":[-27.5,-0.5],"direction":0,"length":1},{"entity_numbers":[334],"entity":"transport-belt","from":[-26.5,0.5],"to":[-26.5,-0.5],"direction":0,"length":1},{"entity_numbers":[339],"entity":"transport-belt","from":[-22.5,0.5],"to":[-22.5,-0.5],"direction":0,"length":1},{"entity_numbers":[340],"entity":"transport-belt","from":[-21.5,0.5],"to":[-21.5,-0.5],"direction":0,"length":1},{"entity_numbers":[345],"entity":"transport-belt","from":[-17.5,0.5],"to":[-17.5,-0.5],"direction":0,"length":1},{"entity_numbers":[348],"entity":"transport-belt","from":[-16.5,0.5],"to":[-16.5,-0.5],"direction":0,"length":1},{"entity_numbers":[353],"entity":"transport-belt","from":[-12.5,0.5],"to":[-12.5,-0.5],"direction":0,"length":1},{"entity_numbers":[354],"entity":"transport-belt","from":[-11.5,0.5],"to":[-11.5,-0.5],"direction":0,"length":1},{"entity_numbers":[356],"entity":"transport-belt","from":[-9.5,-0.5],"to":[-9.5,-1.5],"direction":0,"length":1},{"entity_numbers":[357,359,360,362,363,364,365,368,369,370,371,373,374,376,377,378,379,382],"entity":"transport-belt","from":[-7.5,-0.5],"to":[10.5,-0.5],"direction":4,"length":18},{"entity_numbers":[358],"entity":"transport-belt","from":[-7.5,0.5],"to":[-7.5,-0.5],"direction":0,"length":1},{"entity_numbers":[361],"entity":"transport-belt","from":[-6.5,0.5],"to":[-6.5,-0.5],"direction":0,"length":1},{"entity_numbers":[366],"entity":"transport-belt","from":[-2.5,0.5],"to":[-2.5,-0.5],"direction":0,"length":1},{"entity_numbers":[367],"entity":"transport-belt","from":[-1.5,0.5],"to":[-1.5,-0.5],"direction":0,"length":1},{"entity_numbers":[372],"entity":"transport-belt","from":[2.5,0.5],"to":[2.5,-0.5],"direction":0,"length":1},{"entity_numbers":[375],"entity":"transport-belt","from":[3.5,0.5],"to":[3.5,-0.5],"direction":0,"length":1},{"entity_numbers":[380],"entity":"transport-belt","from":[7.5,0.5],"to":[7.5,-0.5],"direction":0,"length":1},{"entity_numbers":[381],"entity":"transport-belt","from":[8.5,0.5],"to":[8.5,-0.5],"direction":0,"length":1},{"entity_numbers":[383],"entity":"transport-belt","from":[10.5,-0.5],"to":[10.5,0.5],"direction":8,"length":1},{"entity_numbers":[384],"entity":"transport-belt","from":[10.5,0.5],"to":[11.5,0.5],"direction":4,"length":1},{"entity_numbers":[385,388,389,392,393,396,397,400,401,404,405,408,409,412,413,416,417,420,421],"entity":"transport-belt","from":[12.5,-0.5],"to":[31.5,-0.5],"direction":4,"length":19},{"entity_numbers":[387],"entity":"transport-belt","from":[12.5,0.5],"to":[12.5,-0.5],"direction":0,"length":1},{"entity_numbers":[390],"entity":"transport-belt","from":[13.5,0.5],"to":[13.5,-0.5],"direction":0,"length":1},{"entity_numbers":[394],"entity":"transport-belt","from":[15.5,0.5],"to":[16.5,0.5],"direction":4,"length":1},{"entity_numbers":[398],"entity":"transport-belt","from":[17.5,0.5],"to":[17.5,-0.5],"direction":0,"length":1},{"entity_numbers":[399],"entity":"transport-belt","from":[18.5,0.5],"to":[18.5,-0.5],"direction":0,"length":1},{"entity_numbers":[403],"entity":"transport-belt","from":[20.5,0.5],"to":[21.5,0.5],"direction":4,"length":1},{"entity_numbers":[407],"entity":"transport-belt","from":[22.5,0.5],"to":[22.5,-0.5],"direction":0,"length":1},{"entity_numbers":[410],"entity":"transport-belt","from":[23.5,0.5],"to":[23.5,-0.5],"direction":0,"length":1},{"entity_numbers":[414],"entity":"transport-belt","from":[25.5,0.5],"to":[26.5,0.5],"direction":4,"length":1},{"entity_numbers":[418],"entity":"transport-belt","from":[27.5,0.5],"to":[27.5,-0.5],"direction":0,"length":1},{"entity_numbers":[419],"entity":"transport-belt","from":[28.5,0.5],"to":[28.5,-0.5],"direction":0,"length":1},{"entity_numbers":[423],"entity":"transport-belt","from":[30.5,0.5],"to":[31.5,0.5],"direction":4,"length":1},{"entity_numbers":[426],"entity":"transport-belt","from":[33.5,-0.5],"to":[34.5,-0.5],"direction":4,"length":1},{"entity_numbers":[558,562,563,566,567,570,571,574,575,578,579,582,583,586,587,590,591,594,595,598,599,602,603,606,607,610,611,614,615,618,619,622,623,626,627,630,631,634,635,638,639,642,643,646,647,650,651,654,655,658,659,662,663,666,667,670,671,674,675,678,679],"entity":"transport-belt","from":[-31.5,6.5],"to":[29.5,6.5],"direction":4,"length":61},{"entity_numbers":[560,561,564,565,568,569,572,573,576,577,580,581,584,585,588,589,592,593,596,597,600,601,604,605,608,609,612,613,616,617,620,621,624,625,628,629,632,633,636,637,640,641,644,645,648,649,652,653,656,657,660,661,664,665,668,669,672,673,676,677],"entity":"transport-belt","from":[-30.5,5.5],"to":[29.5,5.5],"direction":4,"length":60},{"entity_numbers":[680],"entity":"transport-belt","from":[29.5,5.5],"to":[29.5,4.5],"direction":0,"length":1}],"underground":[{"entity_numbers":[233,237],"entity":"underground-belt-tunnel","from":[-32.5,-1.5],"to":[-29.5,-1.5],"interactable":false},{"entity_numbers":[259,263],"entity":"underground-belt-tunnel","from":[-8.5,-1.5],"to":[-5.5,-1.5],"interactable":false},{"entity_numbers":[265,270],"entity":"underground-belt-tunnel","from":[-3.5,-1.5],"to":[-0.5,-1.5],"interactable":false},{"entity_numbers":[273,277],"entity":"underground-belt-tunnel","from":[1.5,-1.5],"to":[4.5,-1.5],"interactable":false},{"entity_numbers":[279,284],"entity":"underground-belt-tunnel","from":[6.5,-1.5],"to":[9.5,-1.5],"interactable":false},{"entity_numbers":[287,291],"entity":"underground-belt-tunnel","from":[11.5,-1.5],"to":[14.5,-1.5],"interactable":false},{"entity_numbers":[386,391],"entity":"underground-belt-tunnel","from":[11.5,0.5],"to":[14.5,0.5],"interactable":false},{"entity_numbers":[293,298],"entity":"underground-belt-tunnel","from":[16.5,-1.5],"to":[19.5,-1.5],"interactable":false},{"entity_numbers":[395,402],"entity":"underground-belt-tunnel","from":[16.5,0.5],"to":[19.5,0.5],"interactable":false},{"entity_numbers":[301,305],"entity":"underground-belt-tunnel","from":[21.5,-1.5],"to":[24.5,-1.5],"interactable":false},{"entity_numbers":[406,411],"entity":"underground-belt-tunnel","from":[21.5,0.5],"to":[24.5,0.5],"interactable":false},{"entity_numbers":[307,313],"entity":"underground-belt-tunnel","from":[26.5,-1.5],"to":[29.5,-1.5],"interactable":false},{"entity_numbers":[415,422],"entity":"underground-belt-tunnel","from":[26.5,0.5],"to":[29.5,0.5],"interactable":false}],"splitters":[{"entity_numbers":[315],"entity":"splitter","position":[31.5,-2],"direction":4,"note":"unresolved junction - routing depends on priority/filter settings, not fixed geometry"},{"entity_numbers":[317],"entity":"splitter","position":[32.5,-1],"direction":4,"note":"unresolved junction - routing depends on priority/filter settings, not fixed geometry"},{"entity_numbers":[322],"entity":"splitter","position":[-32.5,0],"direction":4,"note":"unresolved junction - routing depends on priority/filter settings, not fixed geometry"},{"entity_numbers":[325],"entity":"splitter","position":[-29.5,0],"direction":12,"note":"unresolved junction - routing depends on priority/filter settings, not fixed geometry"},{"entity_numbers":[424],"entity":"splitter","position":[31.5,0],"direction":4,"note":"unresolved junction - routing depends on priority/filter settings, not fixed geometry"}]}</script>
+<script id="ent-data" type="application/json">[{"e":1,"n":"transport-belt","x":-31.5,"y":-7.5,"d":4},{"e":2,"n":"transport-belt","x":-30.5,"y":-7.5,"d":4},{"e":3,"n":"transport-belt","x":-29.5,"y":-7.5,"d":4},{"e":4,"n":"transport-belt","x":-28.5,"y":-7.5,"d":4},{"e":5,"n":"transport-belt","x":-27.5,"y":-7.5,"d":4},{"e":6,"n":"transport-belt","x":-26.5,"y":-7.5,"d":4},{"e":7,"n":"transport-belt","x":-25.5,"y":-7.5,"d":4},{"e":8,"n":"transport-belt","x":-24.5,"y":-7.5,"d":4},{"e":9,"n":"transport-belt","x":-23.5,"y":-7.5,"d":4},{"e":10,"n":"transport-belt","x":-22.5,"y":-7.5,"d":4},{"e":11,"n":"transport-belt","x":-21.5,"y":-7.5,"d":4},{"e":12,"n":"transport-belt","x":-20.5,"y":-7.5,"d":4},{"e":13,"n":"transport-belt","x":-19.5,"y":-7.5,"d":4},{"e":14,"n":"transport-belt","x":-18.5,"y":-7.5,"d":4},{"e":15,"n":"transport-belt","x":-17.5,"y":-7.5,"d":4},{"e":16,"n":"transport-belt","x":-16.5,"y":-7.5,"d":4},{"e":17,"n":"transport-belt","x":-15.5,"y":-7.5,"d":4},{"e":18,"n":"transport-belt","x":-14.5,"y":-7.5,"d":4},{"e":19,"n":"transport-belt","x":-13.5,"y":-7.5,"d":4},{"e":20,"n":"transport-belt","x":-12.5,"y":-7.5,"d":4},{"e":21,"n":"transport-belt","x":-11.5,"y":-7.5,"d":4},{"e":22,"n":"transport-belt","x":-10.5,"y":-7.5,"d":4},{"e":23,"n":"transport-belt","x":-9.5,"y":-7.5,"d":4},{"e":24,"n":"transport-belt","x":-8.5,"y":-7.5,"d":4},{"e":25,"n":"transport-belt","x":-7.5,"y":-7.5,"d":4},{"e":26,"n":"transport-belt","x":-6.5,"y":-7.5,"d":4},{"e":27,"n":"transport-belt","x":-5.5,"y":-7.5,"d":4},{"e":28,"n":"transport-belt","x":-4.5,"y":-7.5,"d":4},{"e":29,"n":"transport-belt","x":-3.5,"y":-7.5,"d":4},{"e":30,"n":"transport-belt","x":-2.5,"y":-7.5,"d":4},{"e":31,"n":"transport-belt","x":-1.5,"y":-7.5,"d":4},{"e":32,"n":"transport-belt","x":-0.5,"y":-7.5,"d":4},{"e":33,"n":"transport-belt","x":0.5,"y":-7.5,"d":4},{"e":34,"n":"transport-belt","x":1.5,"y":-7.5,"d":4},{"e":35,"n":"transport-belt","x":2.5,"y":-7.5,"d":4},{"e":36,"n":"transport-belt","x":3.5,"y":-7.5,"d":4},{"e":37,"n":"transport-belt","x":4.5,"y":-7.5,"d":4},{"e":38,"n":"transport-belt","x":5.5,"y":-7.5,"d":4},{"e":39,"n":"transport-belt","x":6.5,"y":-7.5,"d":4},{"e":40,"n":"transport-belt","x":7.5,"y":-7.5,"d":4},{"e":41,"n":"transport-belt","x":8.5,"y":-7.5,"d":4},{"e":42,"n":"transport-belt","x":9.5,"y":-7.5,"d":4},{"e":43,"n":"transport-belt","x":10.5,"y":-7.5,"d":4},{"e":44,"n":"transport-belt","x":11.5,"y":-7.5,"d":4},{"e":45,"n":"transport-belt","x":12.5,"y":-7.5,"d":4},{"e":46,"n":"transport-belt","x":13.5,"y":-7.5,"d":4},{"e":47,"n":"transport-belt","x":14.5,"y":-7.5,"d":4},{"e":48,"n":"transport-belt","x":15.5,"y":-7.5,"d":4},{"e":49,"n":"transport-belt","x":16.5,"y":-7.5,"d":4},{"e":50,"n":"transport-belt","x":17.5,"y":-7.5,"d":4},{"e":51,"n":"transport-belt","x":18.5,"y":-7.5,"d":4},{"e":52,"n":"transport-belt","x":19.5,"y":-7.5,"d":4},{"e":53,"n":"transport-belt","x":20.5,"y":-7.5,"d":4},{"e":54,"n":"transport-belt","x":21.5,"y":-7.5,"d":4},{"e":55,"n":"transport-belt","x":22.5,"y":-7.5,"d":4},{"e":56,"n":"transport-belt","x":23.5,"y":-7.5,"d":4},{"e":57,"n":"transport-belt","x":24.5,"y":-7.5,"d":4},{"e":58,"n":"transport-belt","x":25.5,"y":-7.5,"d":4},{"e":59,"n":"transport-belt","x":26.5,"y":-7.5,"d":4},{"e":60,"n":"transport-belt","x":27.5,"y":-7.5,"d":4},{"e":61,"n":"transport-belt","x":28.5,"y":-7.5,"d":4},{"e":62,"n":"transport-belt","x":-31.5,"y":-6.5,"d":0},{"e":63,"n":"transport-belt","x":-31.5,"y":-5.5,"d":0},{"e":64,"n":"transport-belt","x":-30.5,"y":-5.5,"d":0},{"e":65,"n":"transport-belt","x":-30.5,"y":-6.5,"d":4},{"e":66,"n":"transport-belt","x":-29.5,"y":-6.5,"d":4},{"e":67,"n":"small-lamp","x":-29.5,"y":-5.5,"d":0},{"e":68,"n":"transport-belt","x":-28.5,"y":-6.5,"d":4},{"e":69,"n":"transport-belt","x":-27.5,"y":-6.5,"d":4},{"e":70,"n":"inserter","x":-28.5,"y":-5.5,"d":0},{"e":71,"n":"long-handed-inserter","x":-27.5,"y":-5.5,"d":0},{"e":72,"n":"transport-belt","x":-26.5,"y":-6.5,"d":4},{"e":73,"n":"transport-belt","x":-25.5,"y":-6.5,"d":4},{"e":74,"n":"long-handed-inserter","x":-26.5,"y":-5.5,"d":0},{"e":75,"n":"inserter","x":-25.5,"y":-5.5,"d":0},{"e":76,"n":"transport-belt","x":-24.5,"y":-6.5,"d":4},{"e":77,"n":"transport-belt","x":-23.5,"y":-6.5,"d":4},{"e":78,"n":"small-lamp","x":-24.5,"y":-5.5,"d":0},{"e":79,"n":"inserter","x":-23.5,"y":-5.5,"d":0},{"e":80,"n":"transport-belt","x":-22.5,"y":-6.5,"d":4},{"e":81,"n":"transport-belt","x":-21.5,"y":-6.5,"d":4},{"e":82,"n":"long-handed-inserter","x":-22.5,"y":-5.5,"d":0},{"e":83,"n":"long-handed-inserter","x":-21.5,"y":-5.5,"d":0},{"e":84,"n":"transport-belt","x":-20.5,"y":-6.5,"d":4},{"e":85,"n":"transport-belt","x":-19.5,"y":-6.5,"d":4},{"e":86,"n":"inserter","x":-20.5,"y":-5.5,"d":0},{"e":87,"n":"small-lamp","x":-19.5,"y":-5.5,"d":0},{"e":88,"n":"transport-belt","x":-18.5,"y":-6.5,"d":4},{"e":89,"n":"transport-belt","x":-17.5,"y":-6.5,"d":4},{"e":90,"n":"inserter","x":-18.5,"y":-5.5,"d":0},{"e":91,"n":"long-handed-inserter","x":-17.5,"y":-5.5,"d":0},{"e":92,"n":"transport-belt","x":-16.5,"y":-6.5,"d":4},{"e":93,"n":"transport-belt","x":-15.5,"y":-6.5,"d":4},{"e":94,"n":"long-handed-inserter","x":-16.5,"y":-5.5,"d":0},{"e":95,"n":"inserter","x":-15.5,"y":-5.5,"d":0},{"e":96,"n":"transport-belt","x":-14.5,"y":-6.5,"d":4},{"e":97,"n":"transport-belt","x":-13.5,"y":-6.5,"d":4},{"e":98,"n":"small-lamp","x":-14.5,"y":-5.5,"d":0},{"e":99,"n":"inserter","x":-13.5,"y":-5.5,"d":0},{"e":100,"n":"transport-belt","x":-12.5,"y":-6.5,"d":4},{"e":101,"n":"transport-belt","x":-11.5,"y":-6.5,"d":4},{"e":102,"n":"long-handed-inserter","x":-12.5,"y":-5.5,"d":0},{"e":103,"n":"long-handed-inserter","x":-11.5,"y":-5.5,"d":0},{"e":104,"n":"transport-belt","x":-10.5,"y":-6.5,"d":4},{"e":105,"n":"transport-belt","x":-9.5,"y":-6.5,"d":4},{"e":106,"n":"inserter","x":-10.5,"y":-5.5,"d":0},{"e":107,"n":"small-lamp","x":-9.5,"y":-5.5,"d":0},{"e":108,"n":"transport-belt","x":-8.5,"y":-6.5,"d":4},{"e":109,"n":"transport-belt","x":-7.5,"y":-6.5,"d":4},{"e":110,"n":"inserter","x":-8.5,"y":-5.5,"d":0},{"e":111,"n":"long-handed-inserter","x":-7.5,"y":-5.5,"d":0},{"e":112,"n":"transport-belt","x":-6.5,"y":-6.5,"d":4},{"e":113,"n":"transport-belt","x":-5.5,"y":-6.5,"d":4},{"e":114,"n":"long-handed-inserter","x":-6.5,"y":-5.5,"d":0},{"e":115,"n":"inserter","x":-5.5,"y":-5.5,"d":0},{"e":116,"n":"transport-belt","x":-4.5,"y":-6.5,"d":4},{"e":117,"n":"transport-belt","x":-3.5,"y":-6.5,"d":4},{"e":118,"n":"small-lamp","x":-4.5,"y":-5.5,"d":0},{"e":119,"n":"inserter","x":-3.5,"y":-5.5,"d":0},{"e":120,"n":"transport-belt","x":-2.5,"y":-6.5,"d":4},{"e":121,"n":"transport-belt","x":-1.5,"y":-6.5,"d":4},{"e":122,"n":"long-handed-inserter","x":-2.5,"y":-5.5,"d":0},{"e":123,"n":"long-handed-inserter","x":-1.5,"y":-5.5,"d":0},{"e":124,"n":"transport-belt","x":-0.5,"y":-6.5,"d":4},{"e":125,"n":"transport-belt","x":0.5,"y":-6.5,"d":4},{"e":126,"n":"inserter","x":-0.5,"y":-5.5,"d":0},{"e":127,"n":"small-lamp","x":0.5,"y":-5.5,"d":0},{"e":128,"n":"transport-belt","x":1.5,"y":-6.5,"d":4},{"e":129,"n":"transport-belt","x":2.5,"y":-6.5,"d":4},{"e":130,"n":"inserter","x":1.5,"y":-5.5,"d":0},{"e":131,"n":"long-handed-inserter","x":2.5,"y":-5.5,"d":0},{"e":132,"n":"transport-belt","x":3.5,"y":-6.5,"d":4},{"e":133,"n":"transport-belt","x":4.5,"y":-6.5,"d":4},{"e":134,"n":"long-handed-inserter","x":3.5,"y":-5.5,"d":0},{"e":135,"n":"inserter","x":4.5,"y":-5.5,"d":0},{"e":136,"n":"transport-belt","x":5.5,"y":-6.5,"d":4},{"e":137,"n":"transport-belt","x":6.5,"y":-6.5,"d":4},{"e":138,"n":"small-lamp","x":5.5,"y":-5.5,"d":0},{"e":139,"n":"inserter","x":6.5,"y":-5.5,"d":0},{"e":140,"n":"transport-belt","x":7.5,"y":-6.5,"d":4},{"e":141,"n":"transport-belt","x":8.5,"y":-6.5,"d":4},{"e":142,"n":"long-handed-inserter","x":7.5,"y":-5.5,"d":0},{"e":143,"n":"long-handed-inserter","x":8.5,"y":-5.5,"d":0},{"e":144,"n":"transport-belt","x":9.5,"y":-6.5,"d":4},{"e":145,"n":"transport-belt","x":10.5,"y":-6.5,"d":4},{"e":146,"n":"inserter","x":9.5,"y":-5.5,"d":0},{"e":147,"n":"small-lamp","x":10.5,"y":-5.5,"d":0},{"e":148,"n":"transport-belt","x":11.5,"y":-6.5,"d":4},{"e":149,"n":"transport-belt","x":12.5,"y":-6.5,"d":4},{"e":150,"n":"inserter","x":11.5,"y":-5.5,"d":0},{"e":151,"n":"long-handed-inserter","x":12.5,"y":-5.5,"d":0},{"e":152,"n":"transport-belt","x":13.5,"y":-6.5,"d":4},{"e":153,"n":"transport-belt","x":14.5,"y":-6.5,"d":4},{"e":154,"n":"long-handed-inserter","x":13.5,"y":-5.5,"d":0},{"e":155,"n":"inserter","x":14.5,"y":-5.5,"d":0},{"e":156,"n":"transport-belt","x":15.5,"y":-6.5,"d":4},{"e":157,"n":"transport-belt","x":16.5,"y":-6.5,"d":4},{"e":158,"n":"small-lamp","x":15.5,"y":-5.5,"d":0},{"e":159,"n":"inserter","x":16.5,"y":-5.5,"d":0},{"e":160,"n":"transport-belt","x":17.5,"y":-6.5,"d":4},{"e":161,"n":"transport-belt","x":18.5,"y":-6.5,"d":4},{"e":162,"n":"long-handed-inserter","x":17.5,"y":-5.5,"d":0},{"e":163,"n":"long-handed-inserter","x":18.5,"y":-5.5,"d":0},{"e":164,"n":"transport-belt","x":19.5,"y":-6.5,"d":4},{"e":165,"n":"transport-belt","x":20.5,"y":-6.5,"d":4},{"e":166,"n":"inserter","x":19.5,"y":-5.5,"d":0},{"e":167,"n":"small-lamp","x":20.5,"y":-5.5,"d":0},{"e":168,"n":"transport-belt","x":21.5,"y":-6.5,"d":4},{"e":169,"n":"transport-belt","x":22.5,"y":-6.5,"d":4},{"e":170,"n":"inserter","x":21.5,"y":-5.5,"d":0},{"e":171,"n":"long-handed-inserter","x":22.5,"y":-5.5,"d":0},{"e":172,"n":"transport-belt","x":23.5,"y":-6.5,"d":4},{"e":173,"n":"transport-belt","x":24.5,"y":-6.5,"d":4},{"e":174,"n":"long-handed-inserter","x":23.5,"y":-5.5,"d":0},{"e":175,"n":"inserter","x":24.5,"y":-5.5,"d":0},{"e":176,"n":"transport-belt","x":25.5,"y":-6.5,"d":4},{"e":177,"n":"transport-belt","x":26.5,"y":-6.5,"d":4},{"e":178,"n":"small-lamp","x":25.5,"y":-5.5,"d":0},{"e":179,"n":"inserter","x":26.5,"y":-5.5,"d":0},{"e":180,"n":"transport-belt","x":27.5,"y":-6.5,"d":4},{"e":181,"n":"transport-belt","x":28.5,"y":-6.5,"d":4},{"e":182,"n":"long-handed-inserter","x":27.5,"y":-5.5,"d":0},{"e":183,"n":"long-handed-inserter","x":28.5,"y":-5.5,"d":0},{"e":184,"n":"transport-belt","x":29.5,"y":-6.5,"d":8},{"e":185,"n":"inserter","x":29.5,"y":-5.5,"d":0},{"e":186,"n":"small-lamp","x":30.5,"y":-5.5,"d":0},{"e":187,"n":"transport-belt","x":-31.5,"y":-3.5,"d":0},{"e":188,"n":"transport-belt","x":-31.5,"y":-4.5,"d":0},{"e":189,"n":"transport-belt","x":-30.5,"y":-4.5,"d":0},{"e":190,"n":"transport-belt","x":-30.5,"y":-3.5,"d":0},{"e":191,"n":"small-electric-pole","x":-29.5,"y":-4.5,"d":0},{"e":192,"n":"stone-furnace","x":-28,"y":-4,"d":0},{"e":193,"n":"stone-furnace","x":-26,"y":-4,"d":0},{"e":194,"n":"stone-furnace","x":-23,"y":-4,"d":0},{"e":195,"n":"small-electric-pole","x":-24.5,"y":-4.5,"d":0},{"e":196,"n":"stone-furnace","x":-21,"y":-4,"d":0},{"e":197,"n":"small-electric-pole","x":-19.5,"y":-4.5,"d":0},{"e":198,"n":"stone-furnace","x":-18,"y":-4,"d":0},{"e":199,"n":"stone-furnace","x":-16,"y":-4,"d":0},{"e":200,"n":"stone-furnace","x":-13,"y":-4,"d":0},{"e":201,"n":"small-electric-pole","x":-14.5,"y":-4.5,"d":0},{"e":202,"n":"stone-furnace","x":-11,"y":-4,"d":0},{"e":203,"n":"small-electric-pole","x":-9.5,"y":-4.5,"d":0},{"e":204,"n":"stone-furnace","x":-8,"y":-4,"d":0},{"e":205,"n":"stone-furnace","x":-6,"y":-4,"d":0},{"e":206,"n":"stone-furnace","x":-3,"y":-4,"d":0},{"e":207,"n":"small-electric-pole","x":-4.5,"y":-4.5,"d":0},{"e":208,"n":"stone-furnace","x":-1,"y":-4,"d":0},{"e":209,"n":"small-electric-pole","x":0.5,"y":-4.5,"d":0},{"e":210,"n":"stone-furnace","x":2,"y":-4,"d":0},{"e":211,"n":"stone-furnace","x":4,"y":-4,"d":0},{"e":212,"n":"stone-furnace","x":7,"y":-4,"d":0},{"e":213,"n":"small-electric-pole","x":5.5,"y":-4.5,"d":0},{"e":214,"n":"stone-furnace","x":9,"y":-4,"d":0},{"e":215,"n":"small-electric-pole","x":10.5,"y":-4.5,"d":0},{"e":216,"n":"stone-furnace","x":12,"y":-4,"d":0},{"e":217,"n":"stone-furnace","x":14,"y":-4,"d":0},{"e":218,"n":"stone-furnace","x":17,"y":-4,"d":0},{"e":219,"n":"small-electric-pole","x":15.5,"y":-4.5,"d":0},{"e":220,"n":"stone-furnace","x":19,"y":-4,"d":0},{"e":221,"n":"small-electric-pole","x":20.5,"y":-4.5,"d":0},{"e":222,"n":"stone-furnace","x":22,"y":-4,"d":0},{"e":223,"n":"stone-furnace","x":24,"y":-4,"d":0},{"e":224,"n":"stone-furnace","x":27,"y":-4,"d":0},{"e":225,"n":"small-electric-pole","x":25.5,"y":-4.5,"d":0},{"e":226,"n":"stone-furnace","x":29,"y":-4,"d":0},{"e":227,"n":"small-electric-pole","x":30.5,"y":-4.5,"d":0},{"e":228,"n":"transport-belt","x":30.5,"y":-3.5,"d":8},{"e":229,"n":"transport-belt","x":31.5,"y":-3.5,"d":12},{"e":230,"n":"transport-belt","x":32.5,"y":-3.5,"d":12},{"e":231,"n":"transport-belt","x":33.5,"y":-3.5,"d":12},{"e":232,"n":"transport-belt","x":-33.5,"y":-1.5,"d":4},{"e":233,"n":"underground-belt","x":-32.5,"y":-1.5,"d":4},{"e":234,"n":"transport-belt","x":-31.5,"y":-1.5,"d":0},{"e":235,"n":"transport-belt","x":-31.5,"y":-2.5,"d":0},{"e":236,"n":"small-lamp","x":-29.5,"y":-2.5,"d":0},{"e":237,"n":"underground-belt","x":-29.5,"y":-1.5,"d":4},{"e":238,"n":"transport-belt","x":-30.5,"y":-2.5,"d":0},{"e":239,"n":"transport-belt","x":-30.5,"y":-1.5,"d":0},{"e":240,"n":"transport-belt","x":-28.5,"y":-1.5,"d":8},{"e":241,"n":"inserter","x":-27.5,"y":-2.5,"d":0},{"e":242,"n":"transport-belt","x":-27.5,"y":-1.5,"d":8},{"e":243,"n":"inserter","x":-26.5,"y":-2.5,"d":0},{"e":244,"n":"transport-belt","x":-26.5,"y":-1.5,"d":8},{"e":245,"n":"inserter","x":-22.5,"y":-2.5,"d":0},{"e":246,"n":"inserter","x":-21.5,"y":-2.5,"d":0},{"e":247,"n":"transport-belt","x":-22.5,"y":-1.5,"d":8},{"e":248,"n":"transport-belt","x":-21.5,"y":-1.5,"d":8},{"e":249,"n":"inserter","x":-17.5,"y":-2.5,"d":0},{"e":250,"n":"transport-belt","x":-17.5,"y":-1.5,"d":8},{"e":251,"n":"inserter","x":-16.5,"y":-2.5,"d":0},{"e":252,"n":"transport-belt","x":-16.5,"y":-1.5,"d":8},{"e":253,"n":"inserter","x":-12.5,"y":-2.5,"d":0},{"e":254,"n":"inserter","x":-11.5,"y":-2.5,"d":0},{"e":255,"n":"transport-belt","x":-12.5,"y":-1.5,"d":8},{"e":256,"n":"transport-belt","x":-11.5,"y":-1.5,"d":8},{"e":257,"n":"transport-belt","x":-9.5,"y":-1.5,"d":4},{"e":258,"n":"inserter","x":-7.5,"y":-2.5,"d":0},{"e":259,"n":"underground-belt","x":-8.5,"y":-1.5,"d":4},{"e":260,"n":"transport-belt","x":-7.5,"y":-1.5,"d":8},{"e":261,"n":"inserter","x":-6.5,"y":-2.5,"d":0},{"e":262,"n":"transport-belt","x":-6.5,"y":-1.5,"d":8},{"e":263,"n":"underground-belt","x":-5.5,"y":-1.5,"d":4},{"e":264,"n":"transport-belt","x":-4.5,"y":-1.5,"d":4},{"e":265,"n":"underground-belt","x":-3.5,"y":-1.5,"d":4},{"e":266,"n":"inserter","x":-2.5,"y":-2.5,"d":0},{"e":267,"n":"inserter","x":-1.5,"y":-2.5,"d":0},{"e":268,"n":"transport-belt","x":-2.5,"y":-1.5,"d":8},{"e":269,"n":"transport-belt","x":-1.5,"y":-1.5,"d":8},{"e":270,"n":"underground-belt","x":-0.5,"y":-1.5,"d":4},{"e":271,"n":"transport-belt","x":0.5,"y":-1.5,"d":4},{"e":272,"n":"inserter","x":2.5,"y":-2.5,"d":0},{"e":273,"n":"underground-belt","x":1.5,"y":-1.5,"d":4},{"e":274,"n":"transport-belt","x":2.5,"y":-1.5,"d":8},{"e":275,"n":"inserter","x":3.5,"y":-2.5,"d":0},{"e":276,"n":"transport-belt","x":3.5,"y":-1.5,"d":8},{"e":277,"n":"underground-belt","x":4.5,"y":-1.5,"d":4},{"e":278,"n":"transport-belt","x":5.5,"y":-1.5,"d":4},{"e":279,"n":"underground-belt","x":6.5,"y":-1.5,"d":4},{"e":280,"n":"inserter","x":7.5,"y":-2.5,"d":0},{"e":281,"n":"inserter","x":8.5,"y":-2.5,"d":0},{"e":282,"n":"transport-belt","x":7.5,"y":-1.5,"d":8},{"e":283,"n":"transport-belt","x":8.5,"y":-1.5,"d":8},{"e":284,"n":"underground-belt","x":9.5,"y":-1.5,"d":4},{"e":285,"n":"transport-belt","x":10.5,"y":-1.5,"d":4},{"e":286,"n":"inserter","x":12.5,"y":-2.5,"d":0},{"e":287,"n":"underground-belt","x":11.5,"y":-1.5,"d":4},{"e":288,"n":"transport-belt","x":12.5,"y":-1.5,"d":8},{"e":289,"n":"inserter","x":13.5,"y":-2.5,"d":0},{"e":290,"n":"transport-belt","x":13.5,"y":-1.5,"d":8},{"e":291,"n":"underground-belt","x":14.5,"y":-1.5,"d":4},{"e":292,"n":"transport-belt","x":15.5,"y":-1.5,"d":4},{"e":293,"n":"underground-belt","x":16.5,"y":-1.5,"d":4},{"e":294,"n":"inserter","x":17.5,"y":-2.5,"d":0},{"e":295,"n":"inserter","x":18.5,"y":-2.5,"d":0},{"e":296,"n":"transport-belt","x":17.5,"y":-1.5,"d":8},{"e":297,"n":"transport-belt","x":18.5,"y":-1.5,"d":8},{"e":298,"n":"underground-belt","x":19.5,"y":-1.5,"d":4},{"e":299,"n":"transport-belt","x":20.5,"y":-1.5,"d":4},{"e":300,"n":"inserter","x":22.5,"y":-2.5,"d":0},{"e":301,"n":"underground-belt","x":21.5,"y":-1.5,"d":4},{"e":302,"n":"transport-belt","x":22.5,"y":-1.5,"d":8},{"e":303,"n":"inserter","x":23.5,"y":-2.5,"d":0},{"e":304,"n":"transport-belt","x":23.5,"y":-1.5,"d":8},{"e":305,"n":"underground-belt","x":24.5,"y":-1.5,"d":4},{"e":306,"n":"transport-belt","x":25.5,"y":-1.5,"d":4},{"e":307,"n":"underground-belt","x":26.5,"y":-1.5,"d":4},{"e":308,"n":"inserter","x":27.5,"y":-2.5,"d":0},{"e":309,"n":"inserter","x":28.5,"y":-2.5,"d":0},{"e":310,"n":"transport-belt","x":27.5,"y":-1.5,"d":8},{"e":311,"n":"transport-belt","x":28.5,"y":-1.5,"d":8},{"e":312,"n":"transport-belt","x":30.5,"y":-2.5,"d":4},{"e":313,"n":"underground-belt","x":29.5,"y":-1.5,"d":4},{"e":314,"n":"transport-belt","x":30.5,"y":-1.5,"d":4},{"e":315,"n":"splitter","x":31.5,"y":-2,"d":4},{"e":316,"n":"small-lamp","x":32.5,"y":-2.5,"d":0},{"e":317,"n":"splitter","x":32.5,"y":-1,"d":4},{"e":318,"n":"transport-belt","x":33.5,"y":-2.5,"d":0},{"e":319,"n":"transport-belt","x":33.5,"y":-1.5,"d":0},{"e":320,"n":"transport-belt","x":-33.5,"y":0.5,"d":4},{"e":321,"n":"transport-belt","x":-33.5,"y":-0.5,"d":4},{"e":322,"n":"splitter","x":-32.5,"y":0,"d":4},{"e":323,"n":"transport-belt","x":-31.5,"y":-0.5,"d":0},{"e":324,"n":"transport-belt","x":-31.5,"y":0.5,"d":8},{"e":325,"n":"splitter","x":-29.5,"y":0,"d":12},{"e":326,"n":"transport-belt","x":-30.5,"y":0.5,"d":8},{"e":327,"n":"transport-belt","x":-30.5,"y":-0.5,"d":0},{"e":328,"n":"transport-belt","x":-28.5,"y":0.5,"d":12},{"e":329,"n":"transport-belt","x":-28.5,"y":-0.5,"d":8},{"e":330,"n":"transport-belt","x":-27.5,"y":-0.5,"d":4},{"e":331,"n":"transport-belt","x":-27.5,"y":0.5,"d":0},{"e":332,"n":"transport-belt","x":-26.5,"y":-0.5,"d":4},{"e":333,"n":"transport-belt","x":-25.5,"y":-0.5,"d":4},{"e":334,"n":"transport-belt","x":-26.5,"y":0.5,"d":0},{"e":335,"n":"transport-belt","x":-24.5,"y":-0.5,"d":4},{"e":336,"n":"transport-belt","x":-23.5,"y":-0.5,"d":4},{"e":337,"n":"transport-belt","x":-22.5,"y":-0.5,"d":4},{"e":338,"n":"transport-belt","x":-21.5,"y":-0.5,"d":4},{"e":339,"n":"transport-belt","x":-22.5,"y":0.5,"d":0},{"e":340,"n":"transport-belt","x":-21.5,"y":0.5,"d":0},{"e":341,"n":"transport-belt","x":-20.5,"y":-0.5,"d":4},{"e":342,"n":"transport-belt","x":-19.5,"y":-0.5,"d":4},{"e":343,"n":"transport-belt","x":-18.5,"y":-0.5,"d":4},{"e":344,"n":"transport-belt","x":-17.5,"y":-0.5,"d":4},{"e":345,"n":"transport-belt","x":-17.5,"y":0.5,"d":0},{"e":346,"n":"transport-belt","x":-16.5,"y":-0.5,"d":4},{"e":347,"n":"transport-belt","x":-15.5,"y":-0.5,"d":4},{"e":348,"n":"transport-belt","x":-16.5,"y":0.5,"d":0},{"e":349,"n":"transport-belt","x":-14.5,"y":-0.5,"d":4},{"e":350,"n":"transport-belt","x":-13.5,"y":-0.5,"d":4},{"e":351,"n":"transport-belt","x":-12.5,"y":-0.5,"d":4},{"e":352,"n":"transport-belt","x":-11.5,"y":-0.5,"d":4},{"e":353,"n":"transport-belt","x":-12.5,"y":0.5,"d":0},{"e":354,"n":"transport-belt","x":-11.5,"y":0.5,"d":0},{"e":355,"n":"transport-belt","x":-10.5,"y":-0.5,"d":4},{"e":356,"n":"transport-belt","x":-9.5,"y":-0.5,"d":0},{"e":357,"n":"transport-belt","x":-7.5,"y":-0.5,"d":4},{"e":358,"n":"transport-belt","x":-7.5,"y":0.5,"d":0},{"e":359,"n":"transport-belt","x":-6.5,"y":-0.5,"d":4},{"e":360,"n":"transport-belt","x":-5.5,"y":-0.5,"d":4},{"e":361,"n":"transport-belt","x":-6.5,"y":0.5,"d":0},{"e":362,"n":"transport-belt","x":-4.5,"y":-0.5,"d":4},{"e":363,"n":"transport-belt","x":-3.5,"y":-0.5,"d":4},{"e":364,"n":"transport-belt","x":-2.5,"y":-0.5,"d":4},{"e":365,"n":"transport-belt","x":-1.5,"y":-0.5,"d":4},{"e":366,"n":"transport-belt","x":-2.5,"y":0.5,"d":0},{"e":367,"n":"transport-belt","x":-1.5,"y":0.5,"d":0},{"e":368,"n":"transport-belt","x":-0.5,"y":-0.5,"d":4},{"e":369,"n":"transport-belt","x":0.5,"y":-0.5,"d":4},{"e":370,"n":"transport-belt","x":1.5,"y":-0.5,"d":4},{"e":371,"n":"transport-belt","x":2.5,"y":-0.5,"d":4},{"e":372,"n":"transport-belt","x":2.5,"y":0.5,"d":0},{"e":373,"n":"transport-belt","x":3.5,"y":-0.5,"d":4},{"e":374,"n":"transport-belt","x":4.5,"y":-0.5,"d":4},{"e":375,"n":"transport-belt","x":3.5,"y":0.5,"d":0},{"e":376,"n":"transport-belt","x":5.5,"y":-0.5,"d":4},{"e":377,"n":"transport-belt","x":6.5,"y":-0.5,"d":4},{"e":378,"n":"transport-belt","x":7.5,"y":-0.5,"d":4},{"e":379,"n":"transport-belt","x":8.5,"y":-0.5,"d":4},{"e":380,"n":"transport-belt","x":7.5,"y":0.5,"d":0},{"e":381,"n":"transport-belt","x":8.5,"y":0.5,"d":0},{"e":382,"n":"transport-belt","x":9.5,"y":-0.5,"d":4},{"e":383,"n":"transport-belt","x":10.5,"y":-0.5,"d":8},{"e":384,"n":"transport-belt","x":10.5,"y":0.5,"d":4},{"e":385,"n":"transport-belt","x":12.5,"y":-0.5,"d":4},{"e":386,"n":"underground-belt","x":11.5,"y":0.5,"d":4},{"e":387,"n":"transport-belt","x":12.5,"y":0.5,"d":0},{"e":388,"n":"transport-belt","x":13.5,"y":-0.5,"d":4},{"e":389,"n":"transport-belt","x":14.5,"y":-0.5,"d":4},{"e":390,"n":"transport-belt","x":13.5,"y":0.5,"d":0},{"e":391,"n":"underground-belt","x":14.5,"y":0.5,"d":4},{"e":392,"n":"transport-belt","x":15.5,"y":-0.5,"d":4},{"e":393,"n":"transport-belt","x":16.5,"y":-0.5,"d":4},{"e":394,"n":"transport-belt","x":15.5,"y":0.5,"d":4},{"e":395,"n":"underground-belt","x":16.5,"y":0.5,"d":4},{"e":396,"n":"transport-belt","x":17.5,"y":-0.5,"d":4},{"e":397,"n":"transport-belt","x":18.5,"y":-0.5,"d":4},{"e":398,"n":"transport-belt","x":17.5,"y":0.5,"d":0},{"e":399,"n":"transport-belt","x":18.5,"y":0.5,"d":0},{"e":400,"n":"transport-belt","x":19.5,"y":-0.5,"d":4},{"e":401,"n":"transport-belt","x":20.5,"y":-0.5,"d":4},{"e":402,"n":"underground-belt","x":19.5,"y":0.5,"d":4},{"e":403,"n":"transport-belt","x":20.5,"y":0.5,"d":4},{"e":404,"n":"transport-belt","x":21.5,"y":-0.5,"d":4},{"e":405,"n":"transport-belt","x":22.5,"y":-0.5,"d":4},{"e":406,"n":"underground-belt","x":21.5,"y":0.5,"d":4},{"e":407,"n":"transport-belt","x":22.5,"y":0.5,"d":0},{"e":408,"n":"transport-belt","x":23.5,"y":-0.5,"d":4},{"e":409,"n":"transport-belt","x":24.5,"y":-0.5,"d":4},{"e":410,"n":"transport-belt","x":23.5,"y":0.5,"d":0},{"e":411,"n":"underground-belt","x":24.5,"y":0.5,"d":4},{"e":412,"n":"transport-belt","x":25.5,"y":-0.5,"d":4},{"e":413,"n":"transport-belt","x":26.5,"y":-0.5,"d":4},{"e":414,"n":"transport-belt","x":25.5,"y":0.5,"d":4},{"e":415,"n":"underground-belt","x":26.5,"y":0.5,"d":4},{"e":416,"n":"transport-belt","x":27.5,"y":-0.5,"d":4},{"e":417,"n":"transport-belt","x":28.5,"y":-0.5,"d":4},{"e":418,"n":"transport-belt","x":27.5,"y":0.5,"d":0},{"e":419,"n":"transport-belt","x":28.5,"y":0.5,"d":0},{"e":420,"n":"transport-belt","x":29.5,"y":-0.5,"d":4},{"e":421,"n":"transport-belt","x":30.5,"y":-0.5,"d":4},{"e":422,"n":"underground-belt","x":29.5,"y":0.5,"d":4},{"e":423,"n":"transport-belt","x":30.5,"y":0.5,"d":4},{"e":424,"n":"splitter","x":31.5,"y":0,"d":4},{"e":425,"n":"small-lamp","x":32.5,"y":0.5,"d":0},{"e":426,"n":"transport-belt","x":33.5,"y":-0.5,"d":4},{"e":427,"n":"transport-belt","x":-31.5,"y":1.5,"d":8},{"e":428,"n":"transport-belt","x":-31.5,"y":2.5,"d":8},{"e":429,"n":"small-lamp","x":-29.5,"y":1.5,"d":0},{"e":430,"n":"transport-belt","x":-30.5,"y":2.5,"d":8},{"e":431,"n":"transport-belt","x":-30.5,"y":1.5,"d":8},{"e":432,"n":"small-electric-pole","x":-29.5,"y":2.5,"d":0},{"e":433,"n":"inserter","x":-27.5,"y":1.5,"d":8},{"e":434,"n":"stone-furnace","x":-28,"y":3,"d":0},{"e":435,"n":"inserter","x":-26.5,"y":1.5,"d":8},{"e":436,"n":"stone-furnace","x":-26,"y":3,"d":0},{"e":437,"n":"stone-furnace","x":-23,"y":3,"d":0},{"e":438,"n":"small-electric-pole","x":-24.5,"y":2.5,"d":0},{"e":439,"n":"stone-furnace","x":-21,"y":3,"d":0},{"e":440,"n":"inserter","x":-22.5,"y":1.5,"d":8},{"e":441,"n":"inserter","x":-21.5,"y":1.5,"d":8},{"e":442,"n":"small-electric-pole","x":-19.5,"y":2.5,"d":0},{"e":443,"n":"inserter","x":-17.5,"y":1.5,"d":8},{"e":444,"n":"stone-furnace","x":-18,"y":3,"d":0},{"e":445,"n":"inserter","x":-16.5,"y":1.5,"d":8},{"e":446,"n":"stone-furnace","x":-16,"y":3,"d":0},{"e":447,"n":"stone-furnace","x":-13,"y":3,"d":0},{"e":448,"n":"small-electric-pole","x":-14.5,"y":2.5,"d":0},{"e":449,"n":"stone-furnace","x":-11,"y":3,"d":0},{"e":450,"n":"inserter","x":-12.5,"y":1.5,"d":8},{"e":451,"n":"inserter","x":-11.5,"y":1.5,"d":8},{"e":452,"n":"small-electric-pole","x":-9.5,"y":2.5,"d":0},{"e":453,"n":"inserter","x":-7.5,"y":1.5,"d":8},{"e":454,"n":"stone-furnace","x":-8,"y":3,"d":0},{"e":455,"n":"inserter","x":-6.5,"y":1.5,"d":8},{"e":456,"n":"stone-furnace","x":-6,"y":3,"d":0},{"e":457,"n":"stone-furnace","x":-3,"y":3,"d":0},{"e":458,"n":"small-electric-pole","x":-4.5,"y":2.5,"d":0},{"e":459,"n":"stone-furnace","x":-1,"y":3,"d":0},{"e":460,"n":"inserter","x":-2.5,"y":1.5,"d":8},{"e":461,"n":"inserter","x":-1.5,"y":1.5,"d":8},{"e":462,"n":"small-electric-pole","x":0.5,"y":2.5,"d":0},{"e":463,"n":"inserter","x":2.5,"y":1.5,"d":8},{"e":464,"n":"stone-furnace","x":2,"y":3,"d":0},{"e":465,"n":"inserter","x":3.5,"y":1.5,"d":8},{"e":466,"n":"stone-furnace","x":4,"y":3,"d":0},{"e":467,"n":"stone-furnace","x":7,"y":3,"d":0},{"e":468,"n":"small-electric-pole","x":5.5,"y":2.5,"d":0},{"e":469,"n":"stone-furnace","x":9,"y":3,"d":0},{"e":470,"n":"inserter","x":7.5,"y":1.5,"d":8},{"e":471,"n":"inserter","x":8.5,"y":1.5,"d":8},{"e":472,"n":"small-electric-pole","x":10.5,"y":2.5,"d":0},{"e":473,"n":"inserter","x":12.5,"y":1.5,"d":8},{"e":474,"n":"stone-furnace","x":12,"y":3,"d":0},{"e":475,"n":"inserter","x":13.5,"y":1.5,"d":8},{"e":476,"n":"stone-furnace","x":14,"y":3,"d":0},{"e":477,"n":"stone-furnace","x":17,"y":3,"d":0},{"e":478,"n":"small-electric-pole","x":15.5,"y":2.5,"d":0},{"e":479,"n":"stone-furnace","x":19,"y":3,"d":0},{"e":480,"n":"inserter","x":17.5,"y":1.5,"d":8},{"e":481,"n":"inserter","x":18.5,"y":1.5,"d":8},{"e":482,"n":"small-electric-pole","x":20.5,"y":2.5,"d":0},{"e":483,"n":"inserter","x":22.5,"y":1.5,"d":8},{"e":484,"n":"stone-furnace","x":22,"y":3,"d":0},{"e":485,"n":"inserter","x":23.5,"y":1.5,"d":8},{"e":486,"n":"stone-furnace","x":24,"y":3,"d":0},{"e":487,"n":"stone-furnace","x":27,"y":3,"d":0},{"e":488,"n":"small-electric-pole","x":25.5,"y":2.5,"d":0},{"e":489,"n":"stone-furnace","x":29,"y":3,"d":0},{"e":490,"n":"inserter","x":27.5,"y":1.5,"d":8},{"e":491,"n":"inserter","x":28.5,"y":1.5,"d":8},{"e":492,"n":"small-electric-pole","x":30.5,"y":2.5,"d":0},{"e":493,"n":"transport-belt","x":-31.5,"y":3.5,"d":8},{"e":494,"n":"transport-belt","x":-31.5,"y":4.5,"d":8},{"e":495,"n":"transport-belt","x":-30.5,"y":4.5,"d":8},{"e":496,"n":"transport-belt","x":-30.5,"y":3.5,"d":8},{"e":497,"n":"small-lamp","x":-29.5,"y":4.5,"d":0},{"e":498,"n":"inserter","x":-28.5,"y":4.5,"d":8},{"e":499,"n":"long-handed-inserter","x":-27.5,"y":4.5,"d":8},{"e":500,"n":"long-handed-inserter","x":-26.5,"y":4.5,"d":8},{"e":501,"n":"inserter","x":-25.5,"y":4.5,"d":8},{"e":502,"n":"small-lamp","x":-24.5,"y":4.5,"d":0},{"e":503,"n":"inserter","x":-23.5,"y":4.5,"d":8},{"e":504,"n":"long-handed-inserter","x":-22.5,"y":4.5,"d":8},{"e":505,"n":"long-handed-inserter","x":-21.5,"y":4.5,"d":8},{"e":506,"n":"inserter","x":-20.5,"y":4.5,"d":8},{"e":507,"n":"small-lamp","x":-19.5,"y":4.5,"d":0},{"e":508,"n":"inserter","x":-18.5,"y":4.5,"d":8},{"e":509,"n":"long-handed-inserter","x":-17.5,"y":4.5,"d":8},{"e":510,"n":"long-handed-inserter","x":-16.5,"y":4.5,"d":8},{"e":511,"n":"inserter","x":-15.5,"y":4.5,"d":8},{"e":512,"n":"small-lamp","x":-14.5,"y":4.5,"d":0},{"e":513,"n":"inserter","x":-13.5,"y":4.5,"d":8},{"e":514,"n":"long-handed-inserter","x":-12.5,"y":4.5,"d":8},{"e":515,"n":"long-handed-inserter","x":-11.5,"y":4.5,"d":8},{"e":516,"n":"inserter","x":-10.5,"y":4.5,"d":8},{"e":517,"n":"small-lamp","x":-9.5,"y":4.5,"d":0},{"e":518,"n":"inserter","x":-8.5,"y":4.5,"d":8},{"e":519,"n":"long-handed-inserter","x":-7.5,"y":4.5,"d":8},{"e":520,"n":"long-handed-inserter","x":-6.5,"y":4.5,"d":8},{"e":521,"n":"inserter","x":-5.5,"y":4.5,"d":8},{"e":522,"n":"small-lamp","x":-4.5,"y":4.5,"d":0},{"e":523,"n":"inserter","x":-3.5,"y":4.5,"d":8},{"e":524,"n":"long-handed-inserter","x":-2.5,"y":4.5,"d":8},{"e":525,"n":"long-handed-inserter","x":-1.5,"y":4.5,"d":8},{"e":526,"n":"inserter","x":-0.5,"y":4.5,"d":8},{"e":527,"n":"small-lamp","x":0.5,"y":4.5,"d":0},{"e":528,"n":"inserter","x":1.5,"y":4.5,"d":8},{"e":529,"n":"long-handed-inserter","x":2.5,"y":4.5,"d":8},{"e":530,"n":"long-handed-inserter","x":3.5,"y":4.5,"d":8},{"e":531,"n":"inserter","x":4.5,"y":4.5,"d":8},{"e":532,"n":"small-lamp","x":5.5,"y":4.5,"d":0},{"e":533,"n":"inserter","x":6.5,"y":4.5,"d":8},{"e":534,"n":"long-handed-inserter","x":7.5,"y":4.5,"d":8},{"e":535,"n":"long-handed-inserter","x":8.5,"y":4.5,"d":8},{"e":536,"n":"inserter","x":9.5,"y":4.5,"d":8},{"e":537,"n":"small-lamp","x":10.5,"y":4.5,"d":0},{"e":538,"n":"inserter","x":11.5,"y":4.5,"d":8},{"e":539,"n":"long-handed-inserter","x":12.5,"y":4.5,"d":8},{"e":540,"n":"long-handed-inserter","x":13.5,"y":4.5,"d":8},{"e":541,"n":"inserter","x":14.5,"y":4.5,"d":8},{"e":542,"n":"small-lamp","x":15.5,"y":4.5,"d":0},{"e":543,"n":"inserter","x":16.5,"y":4.5,"d":8},{"e":544,"n":"long-handed-inserter","x":17.5,"y":4.5,"d":8},{"e":545,"n":"long-handed-inserter","x":18.5,"y":4.5,"d":8},{"e":546,"n":"inserter","x":19.5,"y":4.5,"d":8},{"e":547,"n":"small-lamp","x":20.5,"y":4.5,"d":0},{"e":548,"n":"inserter","x":21.5,"y":4.5,"d":8},{"e":549,"n":"long-handed-inserter","x":22.5,"y":4.5,"d":8},{"e":550,"n":"long-handed-inserter","x":23.5,"y":4.5,"d":8},{"e":551,"n":"inserter","x":24.5,"y":4.5,"d":8},{"e":552,"n":"small-lamp","x":25.5,"y":4.5,"d":0},{"e":553,"n":"inserter","x":26.5,"y":4.5,"d":8},{"e":554,"n":"long-handed-inserter","x":27.5,"y":4.5,"d":8},{"e":555,"n":"long-handed-inserter","x":28.5,"y":4.5,"d":8},{"e":556,"n":"inserter","x":29.5,"y":4.5,"d":8},{"e":557,"n":"small-lamp","x":30.5,"y":4.5,"d":0},{"e":558,"n":"transport-belt","x":-31.5,"y":6.5,"d":4},{"e":559,"n":"transport-belt","x":-31.5,"y":5.5,"d":8},{"e":560,"n":"transport-belt","x":-30.5,"y":5.5,"d":4},{"e":561,"n":"transport-belt","x":-29.5,"y":5.5,"d":4},{"e":562,"n":"transport-belt","x":-30.5,"y":6.5,"d":4},{"e":563,"n":"transport-belt","x":-29.5,"y":6.5,"d":4},{"e":564,"n":"transport-belt","x":-28.5,"y":5.5,"d":4},{"e":565,"n":"transport-belt","x":-27.5,"y":5.5,"d":4},{"e":566,"n":"transport-belt","x":-28.5,"y":6.5,"d":4},{"e":567,"n":"transport-belt","x":-27.5,"y":6.5,"d":4},{"e":568,"n":"transport-belt","x":-26.5,"y":5.5,"d":4},{"e":569,"n":"transport-belt","x":-25.5,"y":5.5,"d":4},{"e":570,"n":"transport-belt","x":-26.5,"y":6.5,"d":4},{"e":571,"n":"transport-belt","x":-25.5,"y":6.5,"d":4},{"e":572,"n":"transport-belt","x":-24.5,"y":5.5,"d":4},{"e":573,"n":"transport-belt","x":-23.5,"y":5.5,"d":4},{"e":574,"n":"transport-belt","x":-24.5,"y":6.5,"d":4},{"e":575,"n":"transport-belt","x":-23.5,"y":6.5,"d":4},{"e":576,"n":"transport-belt","x":-22.5,"y":5.5,"d":4},{"e":577,"n":"transport-belt","x":-21.5,"y":5.5,"d":4},{"e":578,"n":"transport-belt","x":-22.5,"y":6.5,"d":4},{"e":579,"n":"transport-belt","x":-21.5,"y":6.5,"d":4},{"e":580,"n":"transport-belt","x":-20.5,"y":5.5,"d":4},{"e":581,"n":"transport-belt","x":-19.5,"y":5.5,"d":4},{"e":582,"n":"transport-belt","x":-20.5,"y":6.5,"d":4},{"e":583,"n":"transport-belt","x":-19.5,"y":6.5,"d":4},{"e":584,"n":"transport-belt","x":-18.5,"y":5.5,"d":4},{"e":585,"n":"transport-belt","x":-17.5,"y":5.5,"d":4},{"e":586,"n":"transport-belt","x":-18.5,"y":6.5,"d":4},{"e":587,"n":"transport-belt","x":-17.5,"y":6.5,"d":4},{"e":588,"n":"transport-belt","x":-16.5,"y":5.5,"d":4},{"e":589,"n":"transport-belt","x":-15.5,"y":5.5,"d":4},{"e":590,"n":"transport-belt","x":-16.5,"y":6.5,"d":4},{"e":591,"n":"transport-belt","x":-15.5,"y":6.5,"d":4},{"e":592,"n":"transport-belt","x":-14.5,"y":5.5,"d":4},{"e":593,"n":"transport-belt","x":-13.5,"y":5.5,"d":4},{"e":594,"n":"transport-belt","x":-14.5,"y":6.5,"d":4},{"e":595,"n":"transport-belt","x":-13.5,"y":6.5,"d":4},{"e":596,"n":"transport-belt","x":-12.5,"y":5.5,"d":4},{"e":597,"n":"transport-belt","x":-11.5,"y":5.5,"d":4},{"e":598,"n":"transport-belt","x":-12.5,"y":6.5,"d":4},{"e":599,"n":"transport-belt","x":-11.5,"y":6.5,"d":4},{"e":600,"n":"transport-belt","x":-10.5,"y":5.5,"d":4},{"e":601,"n":"transport-belt","x":-9.5,"y":5.5,"d":4},{"e":602,"n":"transport-belt","x":-10.5,"y":6.5,"d":4},{"e":603,"n":"transport-belt","x":-9.5,"y":6.5,"d":4},{"e":604,"n":"transport-belt","x":-8.5,"y":5.5,"d":4},{"e":605,"n":"transport-belt","x":-7.5,"y":5.5,"d":4},{"e":606,"n":"transport-belt","x":-8.5,"y":6.5,"d":4},{"e":607,"n":"transport-belt","x":-7.5,"y":6.5,"d":4},{"e":608,"n":"transport-belt","x":-6.5,"y":5.5,"d":4},{"e":609,"n":"transport-belt","x":-5.5,"y":5.5,"d":4},{"e":610,"n":"transport-belt","x":-6.5,"y":6.5,"d":4},{"e":611,"n":"transport-belt","x":-5.5,"y":6.5,"d":4},{"e":612,"n":"transport-belt","x":-4.5,"y":5.5,"d":4},{"e":613,"n":"transport-belt","x":-3.5,"y":5.5,"d":4},{"e":614,"n":"transport-belt","x":-4.5,"y":6.5,"d":4},{"e":615,"n":"transport-belt","x":-3.5,"y":6.5,"d":4},{"e":616,"n":"transport-belt","x":-2.5,"y":5.5,"d":4},{"e":617,"n":"transport-belt","x":-1.5,"y":5.5,"d":4},{"e":618,"n":"transport-belt","x":-2.5,"y":6.5,"d":4},{"e":619,"n":"transport-belt","x":-1.5,"y":6.5,"d":4},{"e":620,"n":"transport-belt","x":-0.5,"y":5.5,"d":4},{"e":621,"n":"transport-belt","x":0.5,"y":5.5,"d":4},{"e":622,"n":"transport-belt","x":-0.5,"y":6.5,"d":4},{"e":623,"n":"transport-belt","x":0.5,"y":6.5,"d":4},{"e":624,"n":"transport-belt","x":1.5,"y":5.5,"d":4},{"e":625,"n":"transport-belt","x":2.5,"y":5.5,"d":4},{"e":626,"n":"transport-belt","x":1.5,"y":6.5,"d":4},{"e":627,"n":"transport-belt","x":2.5,"y":6.5,"d":4},{"e":628,"n":"transport-belt","x":3.5,"y":5.5,"d":4},{"e":629,"n":"transport-belt","x":4.5,"y":5.5,"d":4},{"e":630,"n":"transport-belt","x":3.5,"y":6.5,"d":4},{"e":631,"n":"transport-belt","x":4.5,"y":6.5,"d":4},{"e":632,"n":"transport-belt","x":5.5,"y":5.5,"d":4},{"e":633,"n":"transport-belt","x":6.5,"y":5.5,"d":4},{"e":634,"n":"transport-belt","x":5.5,"y":6.5,"d":4},{"e":635,"n":"transport-belt","x":6.5,"y":6.5,"d":4},{"e":636,"n":"transport-belt","x":7.5,"y":5.5,"d":4},{"e":637,"n":"transport-belt","x":8.5,"y":5.5,"d":4},{"e":638,"n":"transport-belt","x":7.5,"y":6.5,"d":4},{"e":639,"n":"transport-belt","x":8.5,"y":6.5,"d":4},{"e":640,"n":"transport-belt","x":9.5,"y":5.5,"d":4},{"e":641,"n":"transport-belt","x":10.5,"y":5.5,"d":4},{"e":642,"n":"transport-belt","x":9.5,"y":6.5,"d":4},{"e":643,"n":"transport-belt","x":10.5,"y":6.5,"d":4},{"e":644,"n":"transport-belt","x":11.5,"y":5.5,"d":4},{"e":645,"n":"transport-belt","x":12.5,"y":5.5,"d":4},{"e":646,"n":"transport-belt","x":11.5,"y":6.5,"d":4},{"e":647,"n":"transport-belt","x":12.5,"y":6.5,"d":4},{"e":648,"n":"transport-belt","x":13.5,"y":5.5,"d":4},{"e":649,"n":"transport-belt","x":14.5,"y":5.5,"d":4},{"e":650,"n":"transport-belt","x":13.5,"y":6.5,"d":4},{"e":651,"n":"transport-belt","x":14.5,"y":6.5,"d":4},{"e":652,"n":"transport-belt","x":15.5,"y":5.5,"d":4},{"e":653,"n":"transport-belt","x":16.5,"y":5.5,"d":4},{"e":654,"n":"transport-belt","x":15.5,"y":6.5,"d":4},{"e":655,"n":"transport-belt","x":16.5,"y":6.5,"d":4},{"e":656,"n":"transport-belt","x":17.5,"y":5.5,"d":4},{"e":657,"n":"transport-belt","x":18.5,"y":5.5,"d":4},{"e":658,"n":"transport-belt","x":17.5,"y":6.5,"d":4},{"e":659,"n":"transport-belt","x":18.5,"y":6.5,"d":4},{"e":660,"n":"transport-belt","x":19.5,"y":5.5,"d":4},{"e":661,"n":"transport-belt","x":20.5,"y":5.5,"d":4},{"e":662,"n":"transport-belt","x":19.5,"y":6.5,"d":4},{"e":663,"n":"transport-belt","x":20.5,"y":6.5,"d":4},{"e":664,"n":"transport-belt","x":21.5,"y":5.5,"d":4},{"e":665,"n":"transport-belt","x":22.5,"y":5.5,"d":4},{"e":666,"n":"transport-belt","x":21.5,"y":6.5,"d":4},{"e":667,"n":"transport-belt","x":22.5,"y":6.5,"d":4},{"e":668,"n":"transport-belt","x":23.5,"y":5.5,"d":4},{"e":669,"n":"transport-belt","x":24.5,"y":5.5,"d":4},{"e":670,"n":"transport-belt","x":23.5,"y":6.5,"d":4},{"e":671,"n":"transport-belt","x":24.5,"y":6.5,"d":4},{"e":672,"n":"transport-belt","x":25.5,"y":5.5,"d":4},{"e":673,"n":"transport-belt","x":26.5,"y":5.5,"d":4},{"e":674,"n":"transport-belt","x":25.5,"y":6.5,"d":4},{"e":675,"n":"transport-belt","x":26.5,"y":6.5,"d":4},{"e":676,"n":"transport-belt","x":27.5,"y":5.5,"d":4},{"e":677,"n":"transport-belt","x":28.5,"y":5.5,"d":4},{"e":678,"n":"transport-belt","x":27.5,"y":6.5,"d":4},{"e":679,"n":"transport-belt","x":28.5,"y":6.5,"d":4},{"e":680,"n":"transport-belt","x":29.5,"y":5.5,"d":0}]</script>
+<script>
+(function () {
+  "use strict";
+
+  // ---- ?source=<blueprint string> support ----
+  // Factorio's own export format (not site-specific): a version byte
+  // followed by base64(zlib-deflate(JSON)) - same as blueprints/codec.py's
+  // decode_blueprint_string, ported here so this page can vectorize a
+  // blueprint entirely client-side without a server round-trip.
+  // DecompressionStream("deflate") speaks zlib framing directly (as opposed
+  // to "deflate-raw"), so no bundled inflate library is needed.
+  function decodeBlueprintString(bpStr) {
+    var payload = bpStr.trim().replace(/ /g, "+"); // literal "+" in a query value is read back as space
+    var binStr = atob(payload.slice(1));
+    var bytes = new Uint8Array(binStr.length);
+    for (var i = 0; i < binStr.length; i++) bytes[i] = binStr.charCodeAt(i);
+    var stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"));
+    return new Response(stream).arrayBuffer().then(function (buf) {
+      return JSON.parse(new TextDecoder("utf-8").decode(buf));
+    });
+  }
+
+  function findFirstBlueprint(decoded) {
+    if (decoded.blueprint) return decoded.blueprint;
+    if (decoded.blueprint_book) {
+      var kids = decoded.blueprint_book.blueprints || [];
+      for (var i = 0; i < kids.length; i++) {
+        var found = findFirstBlueprint(kids[i]);
+        if (found) return found;
+      }
+    }
+    return null;
+  }
+
+  function showLoadError(msg) {
+    var banner = document.getElementById("loadError");
+    banner.textContent = "Could not load ?source= blueprint string (" + msg + ") - showing demo data instead.";
+    banner.style.display = "block";
+  }
+
+  // Same cardinal rotation the render code below uses for splitter lanes -
+  // needed up here too since the vectorizer runs before boot()'s own copy
+  // exists. Matches blueprints/build_vectors.py's rotate().
+  function rotateCardinal(x, y, dir) {
+    if (dir === 0) return [x, y];
+    if (dir === 4) return [-y, x];
+    if (dir === 8) return [-x, -y];
+    if (dir === 12) return [y, -x];
+    return [x, y];
+  }
+
+  // ---- client-side vectorizer - mirrors blueprints/build_vectors.py's
+  // geometry and merge rules exactly, so a blueprint loaded via ?source=
+  // produces the identical shape as the pre-baked demo data. ----
+  var INSERTER_GEOMETRY = {
+    "inserter": { pickup: [0, -1], insert: [0, 1.2] },
+    "fast-inserter": { pickup: [0, -1], insert: [0, 1.2] },
+    "bulk-inserter": { pickup: [0, -1], insert: [0, 1.2] },
+    "stack-inserter": { pickup: [0, -1], insert: [0, 1.2] },
+    "burner-inserter": { pickup: [0, -1], insert: [0, 1.2] },
+    "long-handed-inserter": { pickup: [0, -2], insert: [0, 2.2] }
+  };
+  var VEC_BELT_NAMES = { "transport-belt": 1, "fast-transport-belt": 1, "express-transport-belt": 1, "turbo-transport-belt": 1 };
+  var VEC_UNDERGROUND_NAMES = ["underground-belt", "fast-underground-belt", "express-underground-belt", "turbo-underground-belt"];
+  var VEC_UNDERGROUND_MAX_DISTANCE = { "underground-belt": 5, "fast-underground-belt": 7, "express-underground-belt": 9, "turbo-underground-belt": 11 };
+  var VEC_DIR_UNIT = { 0: [0, -1], 4: [1, 0], 8: [0, 1], 12: [-1, 0] };
+
+  function round3(n) { return Math.round(n * 1000) / 1000; }
+
+  function buildInserterVectors(entities) {
+    var out = [];
+    entities.forEach(function (e) {
+      var geo = INSERTER_GEOMETRY[e.name];
+      if (!geo) return;
+      var d = e.direction || 0;
+      var p = rotateCardinal(geo.pickup[0], geo.pickup[1], d);
+      var ins = rotateCardinal(geo.insert[0], geo.insert[1], d);
+      out.push({
+        entity_numbers: [e.entity_number],
+        entity: e.name,
+        from: [round3(e.position.x + p[0]), round3(e.position.y + p[1])],
+        to: [round3(e.position.x + ins[0]), round3(e.position.y + ins[1])]
+      });
+    });
+    return out;
+  }
+
+  function buildBeltRuns(entities) {
+    var byName = {};
+    entities.forEach(function (e) {
+      if (!VEC_BELT_NAMES[e.name]) return;
+      var m = byName[e.name] || (byName[e.name] = {});
+      m[e.position.x + "," + e.position.y] = e;
+    });
+    var out = [];
+    Object.keys(byName).forEach(function (name) {
+      var tiles = byName[name];
+      var hasPredecessor = {};
+      Object.keys(tiles).forEach(function (k) {
+        var e = tiles[k];
+        var d = e.direction || 0;
+        var u = VEC_DIR_UNIT[d];
+        var nxt = (e.position.x + u[0]) + "," + (e.position.y + u[1]);
+        var succ = tiles[nxt];
+        if (succ && (succ.direction || 0) === d) hasPredecessor[nxt] = true;
+      });
+      Object.keys(tiles).forEach(function (k) {
+        if (hasPredecessor[k]) return;
+        var e = tiles[k];
+        var chain = [e];
+        var curX = e.position.x, curY = e.position.y;
+        var d = e.direction || 0;
+        for (;;) {
+          var u = VEC_DIR_UNIT[d];
+          var nxt = (curX + u[0]) + "," + (curY + u[1]);
+          var succ = tiles[nxt];
+          if (!succ || (succ.direction || 0) !== d) break;
+          chain.push(succ);
+          curX += u[0]; curY += u[1];
+          d = succ.direction || 0;
+        }
+        var start = chain[0].position;
+        var last = chain[chain.length - 1];
+        var eu = VEC_DIR_UNIT[last.direction || 0];
+        out.push({
+          entity_numbers: chain.map(function (c) { return c.entity_number; }),
+          entity: name,
+          from: [start.x, start.y],
+          to: [last.position.x + eu[0], last.position.y + eu[1]],
+          direction: chain[0].direction || 0,
+          length: chain.length
+        });
+      });
+    });
+    return out;
+  }
+
+  function buildUndergroundVectors(entities) {
+    var out = [];
+    VEC_UNDERGROUND_NAMES.forEach(function (name) {
+      var candidates = entities.filter(function (e) { return e.name === name; });
+      var inputs = candidates.filter(function (e) { return e.type === "input"; });
+      var outputs = candidates.filter(function (e) { return e.type === "output"; });
+      var maxDist = VEC_UNDERGROUND_MAX_DISTANCE[name];
+      var claimed = {};
+      inputs.slice().sort(function (a, b) {
+        return a.position.x - b.position.x || a.position.y - b.position.y;
+      }).forEach(function (inp) {
+        var d = inp.direction || 0;
+        var u = VEC_DIR_UNIT[d];
+        var best = null, bestDist = null;
+        outputs.forEach(function (o) {
+          if (claimed[o.entity_number]) return;
+          if ((o.direction || 0) !== d) return;
+          var ddx = o.position.x - inp.position.x, ddy = o.position.y - inp.position.y;
+          var dist;
+          if (u[0] !== 0) {
+            if (ddy !== 0 || ddx * u[0] <= 0) return;
+            dist = ddx * u[0];
+          } else {
+            if (ddx !== 0 || ddy * u[1] <= 0) return;
+            dist = ddy * u[1];
+          }
+          if (dist > maxDist) return;
+          if (best === null || dist < bestDist) { best = o; bestDist = dist; }
+        });
+        if (best) {
+          claimed[best.entity_number] = true;
+          out.push({
+            entity_numbers: [inp.entity_number, best.entity_number],
+            entity: name + "-tunnel",
+            from: [inp.position.x, inp.position.y],
+            to: [best.position.x, best.position.y],
+            interactable: false
+          });
+        } else {
+          out.push({
+            entity_numbers: [inp.entity_number],
+            entity: name + "-dead-end",
+            from: [inp.position.x, inp.position.y],
+            to: null,
+            interactable: false,
+            note: "no matching output within max_distance - sink, not a parse error"
+          });
+        }
+      });
+    });
+    return out;
+  }
+
+  function buildSplitterNodes(entities) {
+    var names = { "splitter": 1, "fast-splitter": 1, "express-splitter": 1, "turbo-splitter": 1 };
+    var out = [];
+    entities.forEach(function (e) {
+      if (!names[e.name]) return;
+      out.push({
+        entity_numbers: [e.entity_number],
+        entity: e.name,
+        position: [e.position.x, e.position.y],
+        direction: e.direction || 0,
+        note: "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+      });
+    });
+    return out;
+  }
+
+  function vectorizeBlueprint(bp) {
+    var entities = bp.entities || [];
+    var vec = {
+      label: bp.label || "(untitled blueprint)",
+      entity_count: entities.length,
+      inserters: buildInserterVectors(entities),
+      belt_runs: buildBeltRuns(entities),
+      underground: buildUndergroundVectors(entities),
+      splitters: buildSplitterNodes(entities)
+    };
+    var ents = entities.map(function (e) {
+      return { e: e.entity_number, n: e.name, x: e.position.x, y: e.position.y, d: e.direction || 0 };
+    });
+    return { VEC: vec, ENTS: ents };
+  }
+
+  function boot(VEC, ENTS) {
+  var ENT_BY_NUMBER = {};
+  ENTS.forEach(function (e) { ENT_BY_NUMBER[e.e] = e; });
+
+  document.getElementById("bpLabel").textContent = VEC.label + "  ·  " + VEC.entity_count + " entities";
+  document.getElementById("cBelt").textContent = VEC.belt_runs.length;
+  document.getElementById("cIns").textContent = VEC.inserters.length;
+  document.getElementById("cUnd").textContent = VEC.underground.length;
+  document.getElementById("cSpl").textContent = VEC.splitters.length;
+  document.getElementById("nBase").textContent = ENTS.length;
+  document.getElementById("nBelt").textContent = VEC.belt_runs.length;
+  document.getElementById("nIns").textContent = VEC.inserters.length;
+  document.getElementById("nUnd").textContent = VEC.underground.length;
+  document.getElementById("nSpl").textContent = VEC.splitters.length;
+
+  // ---- footprint size lookup (tiles), used only for base-entity context boxes ----
+  var FOOTPRINT = {
+    "stone-furnace": 2, "steel-furnace": 2, "electric-furnace": 2,
+    "splitter": 1, "fast-splitter": 1, "express-splitter": 1,
+    "underground-belt": 1, "fast-underground-belt": 1, "express-underground-belt": 1,
+    "small-electric-pole": 0.35, "medium-electric-pole": 0.5,
+    "small-lamp": 0.3,
+    "inserter": 0.5, "long-handed-inserter": 0.5,
+    "iron-chest": 1
+  };
+  function footprint(name) { return FOOTPRINT[name] || 0.85; }
+
+  // ---- SVG helpers ----
+  var svg = document.getElementById("world");
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // Manual arrowhead, independent of SVG marker-start/auto-start-reverse
+  // support - drawn as its own rotated triangle so "point A, pointing toward
+  // unit vector (ux,uy)" is unambiguous regardless of renderer quirks.
+  function arrowHead(point, ux, uy, color) {
+    var deg = Math.atan2(uy, ux) * 180 / Math.PI;
+    var tri = el("polygon", {
+      points: "0,0 -0.34,-0.15 -0.34,0.15",
+      fill: color,
+      class: "arrow-mark",
+      transform: "translate(" + point[0] + "," + point[1] + ") rotate(" + deg + ")"
+    });
+    return tri;
+  }
+
+  // world bbox from all data
+  var xs = [], ys = [];
+  ENTS.forEach(function (e) { xs.push(e.x); ys.push(e.y); });
+  VEC.belt_runs.concat(VEC.underground).forEach(function (v) {
+    xs.push(v.from[0], v.to ? v.to[0] : v.from[0]);
+    ys.push(v.from[1], v.to ? v.to[1] : v.from[1]);
+  });
+  VEC.inserters.forEach(function (v) { xs.push(v.from[0], v.to[0]); ys.push(v.from[1], v.to[1]); });
+  VEC.splitters.forEach(function (v) { xs.push(v.position[0]); ys.push(v.position[1]); });
+
+  var minX = Math.min.apply(null, xs) - 3, maxX = Math.max.apply(null, xs) + 3;
+  var minY = Math.min.apply(null, ys) - 3, maxY = Math.max.apply(null, ys) + 3;
+  var worldW = maxX - minX, worldH = maxY - minY;
+
+  // ---- pan/zoom state, in SVG user units (1 unit = 1 tile) ----
+  var view = { x: minX, y: minY, w: worldW, h: worldH };
+  function applyView() {
+    svg.setAttribute("viewBox", view.x + " " + view.y + " " + view.w + " " + view.h);
+  }
+  var homeView = { x: minX, y: minY, w: worldW, h: worldH };
+  applyView();
+
+  // ---- grid ----
+  var gridLayer = document.getElementById("gridLayer");
+  function drawGrid() {
+    gridLayer.textContent = "";
+    var x0 = Math.floor(minX), x1 = Math.ceil(maxX);
+    var y0 = Math.floor(minY), y1 = Math.ceil(maxY);
+    for (var x = x0; x <= x1; x++) {
+      var major = (Math.abs(x) % 8 === 0);
+      gridLayer.appendChild(el("line", {
+        x1: x, y1: y0, x2: x, y2: y1,
+        stroke: major ? "var(--grid-major)" : "var(--grid-minor)",
+        "stroke-width": major ? 0.045 : 0.02
+      }));
+    }
+    for (var y = y0; y <= y1; y++) {
+      var majorY = (Math.abs(y) % 8 === 0);
+      gridLayer.appendChild(el("line", {
+        x1: x0, y1: y, x2: x1, y2: y,
+        stroke: majorY ? "var(--grid-major)" : "var(--grid-minor)",
+        "stroke-width": majorY ? 0.045 : 0.02
+      }));
+    }
+  }
+  drawGrid();
+
+  // ---- base entities (context) ----
+  var SPLITTER_NAMES = { "splitter": 1, "fast-splitter": 1, "express-splitter": 1, "turbo-splitter": 1 };
+  var BELT_NAMES = { "transport-belt": 1, "fast-transport-belt": 1, "express-transport-belt": 1, "turbo-transport-belt": 1 };
+  var UNDERGROUND_NAMES = { "underground-belt": 1, "fast-underground-belt": 1, "express-underground-belt": 1, "turbo-underground-belt": 1 };
+  var baseLayer = document.getElementById("baseLayer");
+  ENTS.forEach(function (e) {
+    if (SPLITTER_NAMES[e.n]) {
+      // true footprint: 2 tiles across the belt lanes, 1 tile deep along flow -
+      // rotated the same way as the splitter vector marker, not a square.
+      var g = el("g", { transform: "translate(" + e.x + "," + e.y + ") rotate(" + e.d * 22.5 + ")" });
+      g.appendChild(el("rect", { x: -1, y: -0.5, width: 2, height: 1, class: "base-entity", rx: 0.06 }));
+      baseLayer.appendChild(g);
+      return;
+    }
+    if (BELT_NAMES[e.n]) return; // drawn as one rect per belt_run below, not per tile
+    if (UNDERGROUND_NAMES[e.n]) return; // drawn as one rect per tunnel below, not per entrance/exit tile
+    var s = footprint(e.n);
+    baseLayer.appendChild(el("rect", {
+      x: e.x - s / 2, y: e.y - s / 2, width: s, height: s,
+      class: "base-entity", rx: 0.06
+    }));
+  });
+  // One rectangle per underground tunnel, spanning entrance tile through exit
+  // tile (the buried middle included), drawn BEFORE the surface belt_run
+  // rects below - a belt can legitimately cross straight over a tunnel's
+  // buried middle (the classic underground-belt use case: only the crossing
+  // surface belt is visible in-game there, not the tunnel beneath it), so
+  // underground has to paint first/underneath, not after/on top.
+  (VEC.underground || []).forEach(function (v) {
+    var w = 0.85;
+    if (!v.to) {
+      // dead end - no exit to span to, just the entrance tile itself.
+      baseLayer.appendChild(el("rect", {
+        x: v.from[0] - w / 2, y: v.from[1] - w / 2, width: w, height: w,
+        class: "base-entity", rx: 0.06
+      }));
+      return;
+    }
+    var dx = v.to[0] - v.from[0], dy = v.to[1] - v.from[1];
+    var ux = dx === 0 ? 0 : (dx > 0 ? 1 : -1), uy = dy === 0 ? 0 : (dy > 0 ? 1 : -1);
+    var rect;
+    if (ux !== 0) {
+      var x1 = v.from[0] - 0.5 * ux, x2 = v.to[0] + 0.5 * ux;
+      rect = { x: Math.min(x1, x2), y: v.from[1] - w / 2, width: Math.abs(x2 - x1), height: w };
+    } else {
+      var y1 = v.from[1] - 0.5 * uy, y2 = v.to[1] + 0.5 * uy;
+      rect = { x: v.from[0] - w / 2, y: Math.min(y1, y2), width: w, height: Math.abs(y2 - y1) };
+    }
+    rect.class = "base-entity";
+    rect.rx = 0.06;
+    baseLayer.appendChild(el("rect", rect));
+  });
+  // One rectangle per merged belt_run vector, instead of a square per tile -
+  // matches how the belt line itself is drawn (from/to along the run), so the
+  // faded context footprint reads as the same connected run rather than a
+  // strip of separate squares. Same fill, no stroke as the underground rects
+  // above, so a belt crossing a tunnel blends into one shape at the overlap
+  // instead of showing a seam.
+  (VEC.belt_runs || []).forEach(function (v) {
+    var unit = rotateCardinal(0, -1, v.direction);
+    var startX = v.from[0] - 0.5 * unit[0], startY = v.from[1] - 0.5 * unit[1];
+    var endX = v.to[0] - 0.5 * unit[0], endY = v.to[1] - 0.5 * unit[1];
+    var w = 0.85, rect;
+    if (unit[0] !== 0) {
+      rect = { x: Math.min(startX, endX), y: v.from[1] - w / 2, width: Math.abs(endX - startX), height: w };
+    } else {
+      rect = { x: v.from[0] - w / 2, y: Math.min(startY, endY), width: w, height: Math.abs(endY - startY) };
+    }
+    rect.class = "base-entity";
+    rect.rx = 0.06;
+    baseLayer.appendChild(el("rect", rect));
+  });
+  // ---- tooltip ----
+  var tooltip = document.getElementById("tooltip");
+  var wrap = document.querySelector(".canvas-wrap");
+  function showTip(evt, html) {
+    tooltip.innerHTML = html;
+    tooltip.style.display = "block";
+    positionTip(evt);
+  }
+  function positionTip(evt) {
+    var r = wrap.getBoundingClientRect();
+    var x = evt.clientX - r.left + 14;
+    var y = evt.clientY - r.top + 14;
+    if (x + 270 > r.width) x = evt.clientX - r.left - 270;
+    tooltip.style.left = x + "px";
+    tooltip.style.top = y + "px";
+  }
+  function hideTip() { tooltip.style.display = "none"; }
+
+  function fmtNums(arr) {
+    if (arr.length <= 6) return arr.join(", ");
+    return arr.slice(0, 6).join(", ") + " …(+" + (arr.length - 6) + ")";
+  }
+
+  // ---- belt runs ----
+  // A 1-tile run whose both ends are actually connected to other belt geometry
+  // (something feeds into its start, something continues from its end) is just
+  // a link in a longer chain, not a genuine start/end point - skip its arrowhead
+  // so a chain of these reads as one continuous line rather than many fragments.
+  function ptKey(p) { return p[0].toFixed(2) + "," + p[1].toFixed(2); }
+  // Same cardinal rotation used by the Python generator (pickup/insert_position
+  // geometry), reimplemented here to locate a splitter's output-lane tiles in
+  // world space - both for its own connector lines and so a belt tile also fed
+  // by a splitter counts as a merge point, same as two belts converging.
+  function rotateCardinal(x, y, dir) {
+    if (dir === 0) return [x, y];
+    if (dir === 4) return [-y, x];
+    if (dir === 8) return [-x, -y];
+    if (dir === 12) return [y, -x];
+    return [x, y];
+  }
+  function splitterOutputPoints(v) {
+    var p = v.position;
+    return [-0.5, 0.5].map(function (laneX) {
+      // Connector starts at the splitter's own center row (depth 0), not the
+      // half-tile footprint edge - belt from/to coordinates are on a full-tile
+      // grid (one full unit vector between adjacent entity centers), so a
+      // half-tile "edge" start point left a visible gap between the splitter
+      // and where its incoming belt line actually terminates.
+      var start = rotateCardinal(laneX, 0, v.direction);
+      var next = rotateCardinal(laneX, -1.0, v.direction);
+      return { edge: [p[0] + start[0], p[1] + start[1]], next: [p[0] + next[0], p[1] + next[1]] };
+    });
+  }
+  function splitterInputPoints(v) {
+    var p = v.position;
+    return [-0.5, 0.5].map(function (laneX) {
+      var start = rotateCardinal(laneX, 0, v.direction);
+      var prev = rotateCardinal(laneX, 1.0, v.direction);
+      return { edge: [p[0] + start[0], p[1] + start[1]], prev: [p[0] + prev[0], p[1] + prev[1]] };
+    });
+  }
+
+  var fromPoints = {}, toPoints = {}, toCounts = {}, undergroundEntrancePoints = {};
+  VEC.belt_runs.forEach(function (v) {
+    fromPoints[ptKey(v.from)] = true;
+    toPoints[ptKey(v.to)] = true;
+    var k = ptKey(v.to);
+    toCounts[k] = (toCounts[k] || 0) + 1;
+  });
+  VEC.underground.filter(function (u) { return u.to; }).forEach(function (v) {
+    fromPoints[ptKey(v.from)] = true;
+    undergroundEntrancePoints[ptKey(v.from)] = true;
+    toPoints[ptKey(v.to)] = true;
+    var k = ptKey(v.to);
+    toCounts[k] = (toCounts[k] || 0) + 1;
+  });
+  VEC.splitters.forEach(function (v) {
+    splitterOutputPoints(v).forEach(function (lane) {
+      var k = ptKey(lane.next);
+      toPoints[k] = true;
+      toCounts[k] = (toCounts[k] || 0) + 1;
+    });
+  });
+  // An inserter dropping onto a belt tile also counts as "has input" for that
+  // tile - common right at a turn (e.g. a furnace's output inserter feeding the
+  // corner tile that curves into the main collector lane).
+  VEC.inserters.forEach(function (v) { toPoints[ptKey(v.to)] = true; });
+
+  var beltLayer = document.getElementById("beltLayer");
+  VEC.belt_runs.forEach(function (v) {
+    /* Arrow marks where THIS run's flow ends - if something else's `from`
+       (another run, an underground entrance) picks up exactly where this run
+       stops, the flow continues (often a turn to a new direction, or a
+       name/tier change), so this isn't a true terminal point regardless of
+       the run's own length - a long straight run turning a corner is just
+       as much a "through" point as a short one. But if a SECOND run also
+       ends at that same tile (a merge/side-load junction, e.g. two belts
+       converging from opposite sides before one continues on), both incoming
+       arrows stay - a junction is worth seeing, not smoothed away. */
+    /* ...except heading into an underground entrance: going underground is a
+       meaningful transition worth marking on its own, so it keeps its arrow
+       even though the tunnel "continues" the flow. */
+    var isThrough = !!fromPoints[ptKey(v.to)] && !undergroundEntrancePoints[ptKey(v.to)] &&
+      (toCounts[ptKey(v.to)] || 1) <= 1;
+    var line = el("line", {
+      x1: v.from[0], y1: v.from[1], x2: v.to[0], y2: v.to[1],
+      class: "vec-line belt"
+    });
+    if (!isThrough) line.setAttribute("marker-end", "url(#arrow-belt)");
+    line.addEventListener("mouseenter", function (evt) {
+      line.classList.add("hot");
+      showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+        '<div class="t-row">from <b>[' + v.from + ']</b></div>' +
+        '<div class="t-row">to <b>[' + v.to + ']</b></div>' +
+        '<div class="t-row">length <b>' + v.length + '</b> tile(s)</div>' +
+        '<div class="t-row">entities <b>' + fmtNums(v.entity_numbers) + '</b></div>');
+    });
+    line.addEventListener("mousemove", positionTip);
+    line.addEventListener("mouseleave", function () { line.classList.remove("hot"); hideTip(); });
+    beltLayer.appendChild(line);
+  });
+
+  // ---- inserters ----
+  // Drawn drop end is trimmed 0.5 tile short of the true insert_position - the raw
+  // reach (e.g. 1.2 tiles for a regular inserter) visually overshoots into the
+  // target entity; the pickup end is drawn at its true, untrimmed position.
+  var insLayer = document.getElementById("insLayer");
+  var INSERTER_STYLE = {
+    "inserter": { color: "var(--inserter-basic)", marker: "arrow-inserter-basic" },
+    "burner-inserter": { color: "var(--inserter-basic)", marker: "arrow-inserter-basic" },
+    "fast-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
+    "bulk-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
+    "stack-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
+    "long-handed-inserter": { color: "var(--splitter)", marker: "arrow-inserter-long" }
+  };
+  VEC.inserters.forEach(function (v) {
+    // Both ends drawn short of their true pickup/insert_position - the raw
+    // reach overshoots into the neighboring entity on either side. A short
+    // perpendicular tick marks the pickup (input) end; the arrowhead marks the
+    // drop (output) end - so the two ends read differently even at a glance.
+    // The arrow end is trimmed back further (0.5) than the tick end (0.25) so
+    // the arrowhead clears the target entity's own base marker more visibly.
+    var dx = v.to[0] - v.from[0], dy = v.to[1] - v.from[1];
+    var len = Math.sqrt(dx * dx + dy * dy) || 1;
+    var trimIn = Math.min(0.25, len / 2 - 0.05);
+    var trimOut = Math.min(0.5, len / 2 - 0.05);
+    var ux = dx / len, uy = dy / len;
+    var fx = v.from[0] + ux * trimIn, fy = v.from[1] + uy * trimIn;
+    var tx = v.to[0] - ux * trimOut, ty = v.to[1] - uy * trimOut;
+    var style = INSERTER_STYLE[v.entity] || INSERTER_STYLE["fast-inserter"];
+    var line = el("line", {
+      x1: fx, y1: fy, x2: tx, y2: ty,
+      stroke: style.color,
+      class: "vec-line inserter",
+      "marker-end": "url(#" + style.marker + ")"
+    });
+    var px = -uy, py = ux, crossHalf = 0.18;
+    var inputTick = el("line", {
+      x1: fx - px * crossHalf, y1: fy - py * crossHalf,
+      x2: fx + px * crossHalf, y2: fy + py * crossHalf,
+      stroke: style.color, "stroke-width": 0.09, "stroke-linecap": "round"
+    });
+    line.addEventListener("mouseenter", function (evt) {
+      line.classList.add("hot");
+      showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+        '<div class="t-row">pickup <b>[' + v.from + ']</b></div>' +
+        '<div class="t-row">drop &nbsp;<b>[' + v.to + ']</b></div>' +
+        '<div class="t-row">entity_number <b>' + v.entity_numbers[0] + '</b></div>');
+    });
+    line.addEventListener("mousemove", positionTip);
+    line.addEventListener("mouseleave", function () { line.classList.remove("hot"); hideTip(); });
+    insLayer.appendChild(line);
+    insLayer.appendChild(inputTick);
+
+    // Base-tile marker, same color as the arrow - belts and basic inserters are
+    // both shades of yellow, so the inserter's own tile needs its own anchor to
+    // stay legible against a belt run running right through the same area.
+    var base = ENT_BY_NUMBER[v.entity_numbers[0]];
+    if (base) {
+      var dot = el("circle", { cx: base.x, cy: base.y, r: 0.22, fill: "none", stroke: style.color, "stroke-width": 0.09, opacity: 0.9 });
+      insLayer.appendChild(dot);
+    }
+  });
+
+  // ---- underground tunnels ----
+  var undLayer = document.getElementById("undLayer");
+  VEC.underground.forEach(function (v) {
+    if (!v.to) {
+      // dead-end sink: short stub + open cap
+      var dx = 0, dy = 0;
+      undLayer.appendChild(el("circle", { cx: v.from[0], cy: v.from[1], r: 0.22, class: "tunnel-cap" }));
+      var t = el("text", {
+        x: v.from[0], y: v.from[1] - 0.4, fill: "var(--underground)",
+        "font-size": 0.34, "text-anchor": "middle", "font-family": "IBM Plex Mono, monospace"
+      });
+      t.textContent = "dead end";
+      undLayer.appendChild(t);
+      var stub = el("circle", { cx: v.from[0], cy: v.from[1], r: 0.09, fill: "var(--underground)" });
+      stub.addEventListener("mouseenter", function (evt) {
+        showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+          '<div class="t-row">' + (v.note || "") + '</div>' +
+          '<div class="t-row">entity_number <b>' + v.entity_numbers[0] + '</b></div>');
+      });
+      stub.addEventListener("mousemove", positionTip);
+      stub.addEventListener("mouseleave", hideTip);
+      undLayer.appendChild(stub);
+      return;
+    }
+    var line = el("line", {
+      x1: v.from[0], y1: v.from[1], x2: v.to[0], y2: v.to[1],
+      class: "vec-line underground"
+    });
+    line.addEventListener("mouseenter", function (evt) {
+      line.classList.add("hot");
+      showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+        '<div class="t-row">entrance <b>[' + v.from + ']</b></div>' +
+        '<div class="t-row">exit &nbsp;&nbsp;&nbsp;<b>[' + v.to + ']</b></div>' +
+        '<div class="t-row">interactable <b>false</b></div>' +
+        '<div class="t-row">entities <b>' + fmtNums(v.entity_numbers) + '</b></div>');
+    });
+    line.addEventListener("mousemove", positionTip);
+    line.addEventListener("mouseleave", function () { line.classList.remove("hot"); hideTip(); });
+    undLayer.appendChild(line);
+    // Entrance and exit are two separate underground-belt entities in the
+    // blueprint, not just the two ends of one abstract line - each gets its
+    // own hover, not just the tunnel line's combined tooltip. The direction
+    // arrow drawn on that same tile is part of the same entity visually, so
+    // it shares the cap's hover group rather than being its own dead target.
+    var ddx = v.to[0] - v.from[0], ddy = v.to[1] - v.from[1];
+    var ulen = Math.max(Math.abs(ddx), Math.abs(ddy)) || 1;
+    var eux = ddx / ulen, euy = ddy / ulen;
+
+    function undergroundEndpointGroup(capPoint, arrowPoint, entityNumber, label) {
+      var g = el("g", {});
+      var cap = el("circle", { cx: capPoint[0], cy: capPoint[1], r: 0.14, class: "tunnel-cap" });
+      var arrow = arrowHead(arrowPoint, eux, euy, "var(--underground)");
+      g.appendChild(cap);
+      g.appendChild(arrow);
+      g.addEventListener("mouseenter", function (evt) {
+        cap.classList.add("hot");
+        arrow.classList.add("hot");
+        showTip(evt, '<div class="t-type">' + v.entity + ' (' + label + ')</div>' +
+          '<div class="t-row">position <b>[' + capPoint + ']</b></div>' +
+          '<div class="t-row">entity_number <b>' + entityNumber + '</b></div>');
+      });
+      g.addEventListener("mousemove", positionTip);
+      g.addEventListener("mouseleave", function () {
+        cap.classList.remove("hot");
+        arrow.classList.remove("hot");
+        hideTip();
+      });
+      return g;
+    }
+    undLayer.appendChild(undergroundEndpointGroup(
+      v.from, [v.from[0] + eux * 0.5, v.from[1] + euy * 0.5], v.entity_numbers[0], "entrance"));
+    undLayer.appendChild(undergroundEndpointGroup(v.to, v.to, v.entity_numbers[1], "exit"));
+
+    // Bridge the 1-tile visual gap between the exit tile's own center and the
+    // first surface belt tile that actually continues the flow from it - the
+    // exit is interactable surface belt, not tunnel, so draw it belt-colored
+    // and solid rather than in the tunnel's dashed/muted style.
+    var nextPt = [v.to[0] + eux, v.to[1] + euy];
+    if (fromPoints[ptKey(nextPt)]) {
+      undLayer.appendChild(el("line", {
+        x1: v.to[0], y1: v.to[1], x2: nextPt[0], y2: nextPt[1],
+        stroke: "var(--belt)", "stroke-width": 0.1
+      }));
+    }
+  });
+
+  // ---- splitters ----
+  // Tier color follows the matching surface belt tier (basic splitter = --belt,
+  // fast-splitter+ = --splitter/red). Drawn as a thin bar spanning the true 2-tile
+  // footprint width, sitting at the output edge (not the entity's center) so it
+  // reads as "where material leaves the splitter."
+  var SPLITTER_COLOR = {
+    "splitter": "var(--belt)",
+    "fast-splitter": "var(--splitter)",
+    "express-splitter": "var(--splitter)",
+    "turbo-splitter": "var(--splitter)"
+  };
+  var splLayer = document.getElementById("splLayer");
+  // Bar+arrow groups are appended in a separate pass after all connector
+  // lines (below), so a splitter's bar always sits above every connector
+  // line - its own and any other splitter's - regardless of loop order.
+  var splitterMarkGroups = [];
+  VEC.splitters.forEach(function (v) {
+    var p = v.position;
+    var g = el("g", { transform: "translate(" + p[0] + "," + p[1] + ") rotate(" + v.direction * 22.5 + ")" });
+    var barH = 0.16;
+    var color = SPLITTER_COLOR[v.entity] || "var(--splitter)";
+    var d = el("rect", {
+      x: -1, y: -0.5 - barH / 2, width: 2, height: barH,
+      fill: color,
+      class: "splitter-mark", rx: 0.03
+    });
+    g.appendChild(d);
+    // Flow-direction arrow on top of the bar, in the splitter's own local
+    // frame (g already carries the translate+rotate) - local (0,-1) is
+    // "forward" at direction=0, same convention as the Python generator's
+    // DIR_UNIT.
+    var arrow = arrowHead([0, -0.5], 0, -1, color);
+    g.appendChild(arrow);
+
+    // Bridge each output lane to its receiving belt tile, same idea as the
+    // underground-exit connector - only drawn where a belt run actually starts
+    // there, not as a generic stub off every splitter.
+    splitterOutputPoints(v).forEach(function (lane) {
+      if (fromPoints[ptKey(lane.next)]) {
+        splLayer.appendChild(el("line", {
+          x1: lane.edge[0], y1: lane.edge[1], x2: lane.next[0], y2: lane.next[1],
+          stroke: color, "stroke-width": 0.1
+        }));
+      }
+    });
+    // Same idea on the input side - bridge each input lane back to the belt
+    // feeding it, only drawn where one actually exists.
+    splitterInputPoints(v).forEach(function (lane) {
+      if (toPoints[ptKey(lane.prev)]) {
+        splLayer.appendChild(el("line", {
+          x1: lane.edge[0], y1: lane.edge[1], x2: lane.prev[0], y2: lane.prev[1],
+          stroke: color, "stroke-width": 0.1
+        }));
+      }
+    });
+    g.addEventListener("mouseenter", function (evt) {
+      d.classList.add("hot");
+      arrow.classList.add("hot");
+      showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+        '<div class="t-row">' + (v.note || "") + '</div>' +
+        '<div class="t-row">position <b>[' + p + ']</b></div>' +
+        '<div class="t-row">direction <b>' + v.direction + '</b></div>' +
+        '<div class="t-row">entity_number <b>' + v.entity_numbers[0] + '</b></div>');
+    });
+    g.addEventListener("mousemove", positionTip);
+    g.addEventListener("mouseleave", function () { d.classList.remove("hot"); arrow.classList.remove("hot"); hideTip(); });
+    splitterMarkGroups.push(g);
+  });
+  splitterMarkGroups.forEach(function (g) { splLayer.appendChild(g); });
+
+  // ---- layer toggles ----
+  var LAYER_EL = { base: baseLayer, belt: beltLayer, inserter: insLayer, underground: undLayer, splitter: splLayer };
+  document.querySelectorAll(".legend-row input").forEach(function (cb) {
+    cb.addEventListener("change", function () {
+      LAYER_EL[cb.dataset.layer].style.display = cb.checked ? "" : "none";
+    });
+  });
+
+  // ---- pan / zoom ----
+  var isDown = false, lastX = 0, lastY = 0;
+  svg.addEventListener("pointerdown", function (evt) {
+    isDown = true;
+    svg.classList.add("grabbing");
+    lastX = evt.clientX; lastY = evt.clientY;
+    svg.setPointerCapture(evt.pointerId);
+  });
+  svg.addEventListener("pointerup", function () { isDown = false; svg.classList.remove("grabbing"); });
+  svg.addEventListener("pointerleave", function () { isDown = false; svg.classList.remove("grabbing"); });
+  svg.addEventListener("pointermove", function (evt) {
+    var r = svg.getBoundingClientRect();
+    var ux = view.x + (evt.clientX - r.left) / r.width * view.w;
+    var uy = view.y + (evt.clientY - r.top) / r.height * view.h;
+    document.getElementById("coordReadout").textContent = "x " + ux.toFixed(1) + ", y " + uy.toFixed(1);
+    if (!isDown) return;
+    var dxPx = evt.clientX - lastX, dyPx = evt.clientY - lastY;
+    lastX = evt.clientX; lastY = evt.clientY;
+    view.x -= dxPx / r.width * view.w;
+    view.y -= dyPx / r.height * view.h;
+    applyView();
+  });
+
+  function zoomAt(factor, cx, cy) {
+    var newW = view.w * factor;
+    var minW = 4, maxW = worldW * 2.5;
+    if (newW < minW) factor = minW / view.w;
+    if (newW > maxW) factor = maxW / view.w;
+    view.x = cx - (cx - view.x) * factor;
+    view.y = cy - (cy - view.y) * factor;
+    view.w *= factor;
+    view.h *= factor;
+    applyView();
+  }
+
+  svg.addEventListener("wheel", function (evt) {
+    evt.preventDefault();
+    var r = svg.getBoundingClientRect();
+    var ux = view.x + (evt.clientX - r.left) / r.width * view.w;
+    var uy = view.y + (evt.clientY - r.top) / r.height * view.h;
+    var factor = evt.deltaY > 0 ? 1.12 : 1 / 1.12;
+    zoomAt(factor, ux, uy);
+  }, { passive: false });
+
+  document.getElementById("zoomIn").addEventListener("click", function () {
+    zoomAt(1 / 1.3, view.x + view.w / 2, view.y + view.h / 2);
+  });
+  document.getElementById("zoomOut").addEventListener("click", function () {
+    zoomAt(1.3, view.x + view.w / 2, view.y + view.h / 2);
+  });
+  document.getElementById("zoomReset").addEventListener("click", function () {
+    view = { x: homeView.x, y: homeView.y, w: homeView.w, h: homeView.h };
+    applyView();
+  });
+  } // end boot()
+
+  function bootFromEmbedded() {
+    var vec0 = JSON.parse(document.getElementById("vec-data").textContent);
+    var ents0 = JSON.parse(document.getElementById("ent-data").textContent);
+    boot(vec0, ents0);
+  }
+
+  var sourceParam = new URLSearchParams(location.search).get("source");
+  if (!sourceParam) {
+    bootFromEmbedded();
+  } else if (typeof DecompressionStream === "undefined") {
+    showLoadError("this browser has no DecompressionStream support");
+    bootFromEmbedded();
+  } else {
+    decodeBlueprintString(sourceParam).then(function (decoded) {
+      var bp = findFirstBlueprint(decoded);
+      if (!bp) throw new Error("decoded data has no blueprint (empty book, or unrecognized shape)");
+      var vec = vectorizeBlueprint(bp);
+      boot(vec.VEC, vec.ENTS);
+    }).catch(function (err) {
+      console.error(err);
+      showLoadError(err && err.message ? err.message : String(err));
+      bootFromEmbedded();
+    });
+  }
+})();
+</script>
