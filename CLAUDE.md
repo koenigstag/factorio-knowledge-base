@@ -109,6 +109,19 @@ bigger factories.
    against the actual recipe first, and had to be corrected by the
    project owner. If `mechanics/` doesn't cover it yet, source it (rule
    1) before using it — don't state it from recollection either way.
+   Reading the file isn't enough if the file itself is wrong, either:
+   [mechanics/inserters-directionality.md](mechanics/inserters-directionality.md)
+   stated the pickup/drop-side rule backwards from 2026-08-08 until
+   2026-08-22 — sourced, "verified," cited, and still wrong, because
+   its source was a wiki paraphrase nobody had cross-checked against
+   `datapacks/dump/vanilla/inserter/*.json`'s own `pickup_position`/
+   `insert_position` fields. It produced the *same* wrong answer twice
+   on two independent real blueprints before the mistake was caught by
+   re-deriving from the dump directly instead of trusting the file's
+   prose. When a `mechanics/` claim is about to drive a consequential
+   judgment (like which belt is import vs export), and a primitive
+   dump value can check it directly, check the primitive — don't just
+   cite the file.
 
 ## Current structure
 
