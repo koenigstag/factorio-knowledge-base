@@ -20,20 +20,44 @@ identical in `datapacks/dump/vanilla/inserter/*.json` (`[0,-1]`/
 `[0,1.2]` for both), so this is a pure speed change with zero
 positional risk.
 
-**One underground-belt pair kept at `fast-underground-belt`
-(entities 115/56)**: its entrance-to-exit span is 6 tiles (`y=166.5`
+**One underground-belt pair needed a real patch, not just a rename
+(entities 115/56)**: its entrance-to-exit span was 6 tiles (`y=166.5`
 to `y=160.5`), and `underground-belt.max_distance` is **5**
 (`fast-underground-belt.max_distance` is **7** —
-`datapacks/dump/vanilla/underground-belt/*.json`). A tier-1 tunnel
-physically cannot bridge this gap — the entrance and exit wouldn't
-connect in-game. The belt goes underground here specifically to free
-its surface tiles for two `long-handed-inserter`s sitting directly on
-the tunnel's path (see `midgame/lab-setup-module.md`'s layout note);
-shortening the span would mean moving those inserters and the belts
-they interact with, which risks breaking the design's alignment with
-the rest of the tileable block. Kept at tier-2 for this one pair
-rather than redesigning around it — the pragmatic fix, not a full
-re-layout.
+`datapacks/dump/vanilla/underground-belt/*.json`) — a tier-1 tunnel
+can't bridge a 6-tile gap; a straight rename would leave the entrance
+and exit disconnected in-game. First pass at this entry kept the pair
+at tier-2 as a pragmatic compromise; the project owner caught that
+this could be avoided instead: the exit end (not the boundary-facing
+entrance at the southern edge, `y=166.5`) had slack to shorten by
+exactly the 1 tile needed:
+
+- Removed `long-handed-inserter` entity 57 at `(-68.5, 161.5)` — the
+  tile the new exit needs to occupy. (The *other* LHI on this same
+  tunnel, entity 74 at `y=162.5`, stays — it still sits on the
+  now-4-tile hidden middle span, `162.5` through `165.5`, which is
+  exactly `underground-belt`'s `crossing_gap` of 4
+  (`max_distance − 1`, see
+  `formulas/underground_belt_crossing_gap.py`); only the entrance/exit
+  tiles themselves are real placed entities that can't share a tile
+  with an inserter, the hidden middle can.)
+- Moved entity 56's exit from `y=160.5` to `y=161.5` and downgraded
+  both 56 and entrance entity 115 to `underground-belt`. New span:
+  exactly 5 tiles — tier-1's maximum, verified via `build_vectors.py`
+  (`span: 5.0`, 0 dead-ends).
+- Added a new `transport-belt` tile at the vacated old-exit position
+  (`-68.5, 160.5`) to keep the lane connected through to the existing
+  belt at `y=159.5`.
+
+**Real cost, stated plainly**: entity 57 fed science packs from the
+belt/tunnel network into the `lab` at `(-70.5, 161.5)` (a
+`long-handed-inserter`, reach confirmed against
+`datapacks/dump/vanilla/inserter/long-handed-inserter.json`'s
+`pickup_position`/`insert_position`). That lab loses this one feed
+inserter — one science-pack type it could otherwise receive from this
+direction. Removing it was the project owner's explicit call, not
+independently re-derived here; not undone or second-guessed, just
+recorded honestly rather than glossed over.
 
 **Power poles retiered and two added, not just renamed**:
 `medium-electric-pole` → `small-electric-pole` for all 8 original
@@ -64,13 +88,17 @@ component), not assumed from the rename alone.
 - **Power connectivity**: all 10 poles resolve to one connected
   component under `maximum_wire_distance=7.5` (union-find over the
   pairwise distance graph).
-- **Belt/inserter geometry unchanged**: `build_vectors.py` produces
-  the identical shape as `midgame/lab-setup-module` — 30 inserters (0
-  flagged), 21 belt_runs, 5 underground pairs (0 dead-ends) — pole and
-  belt-tier changes don't move anything, so this is expected, but
-  checked rather than assumed.
+- **Belt/inserter geometry**: `build_vectors.py` reports 29 inserters
+  (0 flagged), 21 belt_runs, 5 underground pairs (0 dead-ends) — one
+  fewer inserter than `midgame/lab-setup-module`'s 30, the direct
+  result of removing entity 57 above; every other vector is unchanged
+  in shape/position.
 - `blueprints/validate.py` (factorio-draftsman): **OK, 0 errors, 0
   warnings**.
+- Zero `fast-*`-tier entities remain anywhere in this blueprint —
+  fully tier-1 (`transport-belt`/`underground-belt`/`inserter`/
+  `small-electric-pole` plus the tier-agnostic `lab`/
+  `long-handed-inserter`), unlike the first pass at this entry.
 
 ## Provenance
 

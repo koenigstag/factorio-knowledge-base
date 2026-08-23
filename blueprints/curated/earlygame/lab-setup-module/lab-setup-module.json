@@ -482,21 +482,12 @@
    },
    {
     "entity_number": 56,
-    "name": "fast-underground-belt",
-    "position": {
-     "x": -68.5,
-     "y": 160.5
-    },
-    "type": "output"
-   },
-   {
-    "entity_number": 57,
-    "name": "long-handed-inserter",
+    "name": "underground-belt",
     "position": {
      "x": -68.5,
      "y": 161.5
     },
-    "direction": 2
+    "type": "output"
    },
    {
     "entity_number": 58,
@@ -993,7 +984,7 @@
    },
    {
     "entity_number": 115,
-    "name": "fast-underground-belt",
+    "name": "underground-belt",
     "position": {
      "x": -68.5,
      "y": 166.5
@@ -1039,6 +1030,14 @@
     "position": {
      "x": -61.5,
      "y": 159.5
+    }
+   },
+   {
+    "entity_number": 121,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 160.5
     }
    }
   ]

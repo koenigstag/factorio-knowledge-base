@@ -396,10 +396,12 @@ A related but distinct case: `midgame/lab-setup-module` (factorio.school,
 correctly at midgame since its own site listing requires `fast-*`
 tiers. `earlygame/lab-setup-module` is **not** an independent
 third-party fetch — it's the project owner's own tier-1 downgrade of
-that same entry, done in-repo (belts/inserters/poles re-tiered, one
-underground-belt pair kept at `fast-` tier because tier-1's
-`max_distance` can't bridge its span, 2 poles added because tier-1's
-shorter `supply_area_distance` left 4 inserters uncovered — see that
+that same entry, done in-repo (belts/inserters/poles re-tiered, 2
+poles added because tier-1's shorter `supply_area_distance` left 4
+inserters uncovered, and — after a first pass mistakenly kept one
+underground-belt pair at `fast-` tier — one `long-handed-inserter`
+removed to shorten that pair's span to exactly tier-1's `max_distance`
+instead, at the cost of one lab losing that inserter's feed; see that
 entry's own `.md` for the full derivation and verification). Treated
 as a personal entry for folder-placement purposes since the
 modification work is the project owner's, even though the base design
