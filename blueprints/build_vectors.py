@@ -55,22 +55,48 @@ def rotate(vec, direction):
     raise ValueError(f"unsupported direction {direction}")
 
 
+def snap_to_cardinal(direction):
+    """Floor a 16-way direction value (0-15) down to its enclosing cardinal
+    (0/4/8/12). Only meant for inserters: per mechanics/inserters-
+    directionality.md, the game engine never allows a real inserter to be
+    placed facing a non-cardinal direction - a blueprint carrying one is
+    either an old save re-exported from before the 2.0.47-2.0.53 diagonal-
+    inserter bug was fixed in 2.0.54, or a hand-edited attempt at the same
+    dead exploit. Confirmed from the primary source (the bug report) is
+    only that current Factorio imports such a blueprint "as a straight
+    inserter" - NOT which specific cardinal it snaps to, so floor-to-
+    nearest-lower-cardinal here is this project's own deterministic
+    choice for producing a plotable vector, not a verified replica of the
+    engine's exact tie-breaking rule. Flag it (see build_inserter_vectors)
+    rather than presenting it as equivalent to a real cardinal placement."""
+    return (direction % 16) - (direction % 16) % 4
+
+
 def build_inserter_vectors(entities):
     out = []
     for e in entities:
         geo = INSERTER_GEOMETRY.get(e["name"])
         if geo is None:
             continue
-        d = e.get("direction", 0)
+        raw_d = e.get("direction", 0)
+        d = snap_to_cardinal(raw_d)
         px, py = rotate(geo["pickup"], d)
         ix, iy = rotate(geo["insert"], d)
         pos = e["position"]
-        out.append({
+        vec = {
             "entity_numbers": [e["entity_number"]],
             "entity": e["name"],
             "from": [round(pos["x"] + px, 3), round(pos["y"] + py, 3)],
             "to": [round(pos["x"] + ix, 3), round(pos["y"] + iy, 3)],
-        })
+        }
+        if d != raw_d:
+            vec["note"] = (
+                f"non-cardinal direction {raw_d} in source data - the game engine "
+                f"does not allow diagonal inserter placement (mechanics/"
+                f"inserters-directionality.md); snapped to {d} for this vector, "
+                f"exact in-game snap behavior unconfirmed"
+            )
+        out.append(vec)
     return out
 
 

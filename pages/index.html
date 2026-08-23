@@ -587,20 +587,38 @@
 
   function round3(n) { return Math.round(n * 1000) / 1000; }
 
+  // Floor a 16-way direction value down to its enclosing cardinal
+  // (0/4/8/12). Mirrors build_vectors.py's snap_to_cardinal() - see that
+  // function's docstring and mechanics/inserters-directionality.md for why
+  // this exists (the game engine never allows a real inserter to face a
+  // non-cardinal direction; floor-to-nearest-lower-cardinal is this
+  // project's own deterministic choice, not a confirmed replica of the
+  // engine's exact tie-breaking rule).
+  function snapToCardinal(dir) {
+    var d = ((dir % 16) + 16) % 16;
+    return d - (d % 4);
+  }
   function buildInserterVectors(entities) {
     var out = [];
     entities.forEach(function (e) {
       var geo = INSERTER_GEOMETRY[e.name];
       if (!geo) return;
-      var d = e.direction || 0;
+      var rawD = e.direction || 0;
+      var d = snapToCardinal(rawD);
       var p = rotateCardinal(geo.pickup[0], geo.pickup[1], d);
       var ins = rotateCardinal(geo.insert[0], geo.insert[1], d);
-      out.push({
+      var vec = {
         entity_numbers: [e.entity_number],
         entity: e.name,
         from: [round3(e.position.x + p[0]), round3(e.position.y + p[1])],
         to: [round3(e.position.x + ins[0]), round3(e.position.y + ins[1])]
-      });
+      };
+      if (d !== rawD) {
+        vec.note = "non-cardinal direction " + rawD + " in source data - the game engine " +
+          "does not allow diagonal inserter placement (mechanics/inserters-directionality.md); " +
+          "snapped to " + d + " for this vector, exact in-game snap behavior unconfirmed";
+      }
+      out.push(vec);
     });
     return out;
   }
@@ -1254,6 +1272,7 @@
       inputTick.classList.add("hot");
       if (dot) dot.classList.add("hot");
       showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
+        (v.note ? '<div class="t-row">' + v.note + '</div>' : '') +
         '<div class="t-row">pickup <b>[' + v.from + ']</b></div>' +
         '<div class="t-row">drop &nbsp;<b>[' + v.to + ']</b></div>' +
         '<div class="t-row">entity_number <b>' + v.entity_numbers[0] + '</b></div>');
