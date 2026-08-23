@@ -32,11 +32,13 @@
     --inserter-basic: #e0b84a;
     --inserter-burner: #6e7580;
     --inserter-dim: #2c5a67;
-    /* bulk/stack are the two tiers above fast that still shared --inserter -
-       same "not extractable from data.raw" caveat as --belt-*: no tint field
-       on these prototypes, this is just a distinguishable pick. */
-    --inserter-bulk: #9b6bce;
-    --inserter-stack: #5fbf6f;
+    /* bulk/stack are the two tiers above fast that still shared --inserter.
+       Colors sourced from the actual wiki.factorio.com icons (Bulk_inserter.png,
+       Stack_inserter.png) - not extractable from data.raw, which carries no
+       tint field for these prototypes, so this is a by-eye match rather than
+       a value pulled from the dump. */
+    --inserter-bulk: #6fcf5a;
+    --inserter-stack: #e8e8e8;
     --underground: #7a5a2a; /* muted variant of --belt (same tier hue, dimmer) */
     --underground-dim: #564a7a;
     --splitter: #f2617a;
