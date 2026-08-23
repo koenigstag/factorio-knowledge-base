@@ -1,0 +1,1046 @@
+{
+ "blueprint": {
+  "icons": [
+   {
+    "signal": {
+     "type": "item",
+     "name": "lab"
+    },
+    "index": 1
+   }
+  ],
+  "item": "blueprint",
+  "label": "Science Lab Setup (tier-1 downgrade)",
+  "version": 281474976710656,
+  "entities": [
+   {
+    "entity_number": 1,
+    "name": "lab",
+    "position": {
+     "x": -78.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 2,
+    "name": "lab",
+    "position": {
+     "x": -74.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 3,
+    "name": "transport-belt",
+    "position": {
+     "x": -72.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 4,
+    "name": "transport-belt",
+    "position": {
+     "x": -71.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 5,
+    "name": "transport-belt",
+    "position": {
+     "x": -70.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 6,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 156.5
+    }
+   },
+   {
+    "entity_number": 7,
+    "name": "transport-belt",
+    "position": {
+     "x": -69.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 8,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 9,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 10,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 156.5
+    }
+   },
+   {
+    "entity_number": 11,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 156.5
+    }
+   },
+   {
+    "entity_number": 12,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 13,
+    "name": "transport-belt",
+    "position": {
+     "x": -65.5,
+     "y": 156.5
+    }
+   },
+   {
+    "entity_number": 14,
+    "name": "transport-belt",
+    "position": {
+     "x": -64.5,
+     "y": 156.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 15,
+    "name": "transport-belt",
+    "position": {
+     "x": -65.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 16,
+    "name": "transport-belt",
+    "position": {
+     "x": -64.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 17,
+    "name": "transport-belt",
+    "position": {
+     "x": -63.5,
+     "y": 156.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 18,
+    "name": "transport-belt",
+    "position": {
+     "x": -62.5,
+     "y": 156.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 19,
+    "name": "transport-belt",
+    "position": {
+     "x": -63.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 20,
+    "name": "transport-belt",
+    "position": {
+     "x": -62.5,
+     "y": 157.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 21,
+    "name": "lab",
+    "position": {
+     "x": -59.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 22,
+    "name": "transport-belt",
+    "position": {
+     "x": -61.5,
+     "y": 156.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 23,
+    "name": "transport-belt",
+    "position": {
+     "x": -61.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 24,
+    "name": "lab",
+    "position": {
+     "x": -55.5,
+     "y": 157.5
+    }
+   },
+   {
+    "entity_number": 25,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -76.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 26,
+    "name": "inserter",
+    "position": {
+     "x": -77.5,
+     "y": 159.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 27,
+    "name": "inserter",
+    "position": {
+     "x": -75.5,
+     "y": 159.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 28,
+    "name": "transport-belt",
+    "position": {
+     "x": -72.5,
+     "y": 158.5
+    }
+   },
+   {
+    "entity_number": 29,
+    "name": "transport-belt",
+    "position": {
+     "x": -71.5,
+     "y": 158.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 30,
+    "name": "transport-belt",
+    "position": {
+     "x": -70.5,
+     "y": 158.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 31,
+    "name": "inserter",
+    "position": {
+     "x": -71.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 32,
+    "name": "inserter",
+    "position": {
+     "x": -70.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 33,
+    "name": "transport-belt",
+    "position": {
+     "x": -69.5,
+     "y": 158.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 34,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 158.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 35,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -69.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 36,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 37,
+    "name": "underground-belt",
+    "position": {
+     "x": -66.5,
+     "y": 158.5
+    },
+    "type": "output"
+   },
+   {
+    "entity_number": 38,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 158.5
+    }
+   },
+   {
+    "entity_number": 39,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 40,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -66.5,
+     "y": 159.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 41,
+    "name": "underground-belt",
+    "position": {
+     "x": -65.5,
+     "y": 158.5
+    },
+    "type": "output"
+   },
+   {
+    "entity_number": 42,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -64.5,
+     "y": 158.5
+    }
+   },
+   {
+    "entity_number": 43,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -65.5,
+     "y": 159.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 44,
+    "name": "lab",
+    "position": {
+     "x": -63.5,
+     "y": 160.5
+    }
+   },
+   {
+    "entity_number": 45,
+    "name": "inserter",
+    "position": {
+     "x": -63.5,
+     "y": 158.5
+    }
+   },
+   {
+    "entity_number": 46,
+    "name": "inserter",
+    "position": {
+     "x": -62.5,
+     "y": 158.5
+    }
+   },
+   {
+    "entity_number": 47,
+    "name": "inserter",
+    "position": {
+     "x": -58.5,
+     "y": 159.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 48,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -57.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 49,
+    "name": "inserter",
+    "position": {
+     "x": -56.5,
+     "y": 159.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 50,
+    "name": "lab",
+    "position": {
+     "x": -78.5,
+     "y": 161.5
+    }
+   },
+   {
+    "entity_number": 51,
+    "name": "inserter",
+    "position": {
+     "x": -76.5,
+     "y": 161.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 52,
+    "name": "lab",
+    "position": {
+     "x": -74.5,
+     "y": 161.5
+    }
+   },
+   {
+    "entity_number": 53,
+    "name": "inserter",
+    "position": {
+     "x": -72.5,
+     "y": 160.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 54,
+    "name": "inserter",
+    "position": {
+     "x": -72.5,
+     "y": 161.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 55,
+    "name": "lab",
+    "position": {
+     "x": -70.5,
+     "y": 161.5
+    }
+   },
+   {
+    "entity_number": 56,
+    "name": "fast-underground-belt",
+    "position": {
+     "x": -68.5,
+     "y": 160.5
+    },
+    "type": "output"
+   },
+   {
+    "entity_number": 57,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -68.5,
+     "y": 161.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 58,
+    "name": "underground-belt",
+    "position": {
+     "x": -67.5,
+     "y": 160.5
+    },
+    "type": "output"
+   },
+   {
+    "entity_number": 59,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -66.5,
+     "y": 160.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 60,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -67.5,
+     "y": 161.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 61,
+    "name": "underground-belt",
+    "position": {
+     "x": -66.5,
+     "y": 161.5
+    },
+    "type": "input"
+   },
+   {
+    "entity_number": 62,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -65.5,
+     "y": 160.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 63,
+    "name": "underground-belt",
+    "position": {
+     "x": -65.5,
+     "y": 161.5
+    },
+    "type": "input"
+   },
+   {
+    "entity_number": 64,
+    "name": "lab",
+    "position": {
+     "x": -59.5,
+     "y": 161.5
+    }
+   },
+   {
+    "entity_number": 65,
+    "name": "inserter",
+    "position": {
+     "x": -61.5,
+     "y": 160.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 66,
+    "name": "inserter",
+    "position": {
+     "x": -61.5,
+     "y": 161.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 67,
+    "name": "lab",
+    "position": {
+     "x": -55.5,
+     "y": 161.5
+    }
+   },
+   {
+    "entity_number": 68,
+    "name": "inserter",
+    "position": {
+     "x": -57.5,
+     "y": 161.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 69,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -76.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 70,
+    "name": "inserter",
+    "position": {
+     "x": -77.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 71,
+    "name": "inserter",
+    "position": {
+     "x": -75.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 72,
+    "name": "inserter",
+    "position": {
+     "x": -71.5,
+     "y": 163.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 73,
+    "name": "inserter",
+    "position": {
+     "x": -70.5,
+     "y": 163.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 74,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -68.5,
+     "y": 162.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 75,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -69.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 76,
+    "name": "long-handed-inserter",
+    "position": {
+     "x": -67.5,
+     "y": 162.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 77,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 162.5
+    }
+   },
+   {
+    "entity_number": 78,
+    "name": "underground-belt",
+    "position": {
+     "x": -67.5,
+     "y": 163.5
+    },
+    "type": "input"
+   },
+   {
+    "entity_number": 79,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 80,
+    "name": "transport-belt",
+    "position": {
+     "x": -65.5,
+     "y": 163.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 81,
+    "name": "transport-belt",
+    "position": {
+     "x": -64.5,
+     "y": 163.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 82,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -64.5,
+     "y": 162.5
+    }
+   },
+   {
+    "entity_number": 83,
+    "name": "underground-belt",
+    "position": {
+     "x": -65.5,
+     "y": 162.5
+    },
+    "type": "output"
+   },
+   {
+    "entity_number": 84,
+    "name": "inserter",
+    "position": {
+     "x": -63.5,
+     "y": 162.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 85,
+    "name": "inserter",
+    "position": {
+     "x": -62.5,
+     "y": 162.5
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 86,
+    "name": "transport-belt",
+    "position": {
+     "x": -63.5,
+     "y": 163.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 87,
+    "name": "transport-belt",
+    "position": {
+     "x": -62.5,
+     "y": 163.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 88,
+    "name": "transport-belt",
+    "position": {
+     "x": -61.5,
+     "y": 163.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 89,
+    "name": "inserter",
+    "position": {
+     "x": -58.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 90,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -57.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 91,
+    "name": "inserter",
+    "position": {
+     "x": -56.5,
+     "y": 163.5
+    }
+   },
+   {
+    "entity_number": 92,
+    "name": "lab",
+    "position": {
+     "x": -78.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 93,
+    "name": "lab",
+    "position": {
+     "x": -74.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 94,
+    "name": "transport-belt",
+    "position": {
+     "x": -72.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 95,
+    "name": "transport-belt",
+    "position": {
+     "x": -72.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 96,
+    "name": "transport-belt",
+    "position": {
+     "x": -71.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 97,
+    "name": "transport-belt",
+    "position": {
+     "x": -70.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 98,
+    "name": "transport-belt",
+    "position": {
+     "x": -71.5,
+     "y": 165.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 99,
+    "name": "transport-belt",
+    "position": {
+     "x": -70.5,
+     "y": 165.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 100,
+    "name": "transport-belt",
+    "position": {
+     "x": -69.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 101,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 102,
+    "name": "transport-belt",
+    "position": {
+     "x": -69.5,
+     "y": 165.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 103,
+    "name": "transport-belt",
+    "position": {
+     "x": -68.5,
+     "y": 165.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 104,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 105,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 106,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 164.5
+    }
+   },
+   {
+    "entity_number": 107,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 165.5
+    },
+    "direction": 6
+   },
+   {
+    "entity_number": 108,
+    "name": "transport-belt",
+    "position": {
+     "x": -64.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 109,
+    "name": "transport-belt",
+    "position": {
+     "x": -65.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 110,
+    "name": "transport-belt",
+    "position": {
+     "x": -62.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 111,
+    "name": "transport-belt",
+    "position": {
+     "x": -63.5,
+     "y": 164.5
+    },
+    "direction": 2
+   },
+   {
+    "entity_number": 112,
+    "name": "transport-belt",
+    "position": {
+     "x": -61.5,
+     "y": 164.5
+    }
+   },
+   {
+    "entity_number": 113,
+    "name": "lab",
+    "position": {
+     "x": -59.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 114,
+    "name": "lab",
+    "position": {
+     "x": -55.5,
+     "y": 165.5
+    }
+   },
+   {
+    "entity_number": 115,
+    "name": "fast-underground-belt",
+    "position": {
+     "x": -68.5,
+     "y": 166.5
+    },
+    "type": "input"
+   },
+   {
+    "entity_number": 116,
+    "name": "transport-belt",
+    "position": {
+     "x": -67.5,
+     "y": 166.5
+    }
+   },
+   {
+    "entity_number": 117,
+    "name": "transport-belt",
+    "position": {
+     "x": -66.5,
+     "y": 166.5
+    }
+   },
+   {
+    "entity_number": 118,
+    "name": "underground-belt",
+    "position": {
+     "x": -65.5,
+     "y": 166.5
+    },
+    "type": "input"
+   },
+   {
+    "entity_number": 119,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -72.5,
+     "y": 159.5
+    }
+   },
+   {
+    "entity_number": 120,
+    "name": "small-electric-pole",
+    "position": {
+     "x": -61.5,
+     "y": 159.5
+    }
+   }
+  ]
+ }
+}

@@ -391,14 +391,30 @@ instruction — `military-science-module`/`chemical-science-module` use
 their earlygame siblings, consistent with a midgame-tier build even
 though they share the same book and the same pre-2.0 `version`.
 
+A related but distinct case: `midgame/lab-setup-module` (factorio.school,
+"Science Lab Setup" by Roel) is third-party per the rule above, filed
+correctly at midgame since its own site listing requires `fast-*`
+tiers. `earlygame/lab-setup-module` is **not** an independent
+third-party fetch — it's the project owner's own tier-1 downgrade of
+that same entry, done in-repo (belts/inserters/poles re-tiered, one
+underground-belt pair kept at `fast-` tier because tier-1's
+`max_distance` can't bridge its span, 2 poles added because tier-1's
+shorter `supply_area_distance` left 4 inserters uncovered — see that
+entry's own `.md` for the full derivation and verification). Treated
+as a personal entry for folder-placement purposes since the
+modification work is the project owner's, even though the base design
+isn't.
+
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,
 `coal-burner-miners-w-burner-inserters`, `city-block-100x100`,
 `furnaces-import-block`, `high-density-miners`, `iron-gear-tileable`,
-`starter-electrical-miners`), plus the two third-party exceptions noted
-above (`automation-science-module`, `logistic-science-module`),
+`starter-electrical-miners`, `lab-setup-module` [derived, see above]),
+plus the two third-party exceptions noted above
+(`automation-science-module`, `logistic-science-module`),
 `init-game/` (`4-burner-miners-w-chests`,
 `4-burner-miners-w-furnaces-and-chests`), `midgame/`
 (`4x2-electrical-furnaces-w-tier2-belts`, `city-block-100x100`,
-`iron-gear-tileable`), plus the two third-party exceptions noted above
-(`military-science-module`, `chemical-science-module`).
+`iron-gear-tileable`), plus the three third-party exceptions noted
+above (`military-science-module`, `chemical-science-module`,
+`lab-setup-module`).
