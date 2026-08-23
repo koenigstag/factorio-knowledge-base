@@ -86,6 +86,68 @@ for (see the linked forum thread for the primary source before
 assuming any specific snap-to-cardinal rule if this needs handling
 precisely).
 
+### Reconstructing the true direction from a bugged blueprint — pitfalls found by trial
+
+If a blueprint's non-cardinal inserter direction needs to be resolved
+to something usable (not just flagged), two attempted shortcuts both
+failed on a real 30-inserter test case before a third approach
+resolved all 30 correctly:
+
+**Pitfall 1: assuming the true direction is one of the two cardinals
+*nearest* the stored diagonal value.** `direction: 6` sits exactly
+between East(4) and South(8) on the 16-value circle, so "snap to the
+nearer of the two adjacent cardinals" seems like the obvious
+approach — `build_vectors.py`'s `snap_to_cardinal()` does exactly
+this (floors to the lower one). Tested against the real case, this
+assumption was **wrong for roughly half the affected inserters**: their
+true direction was **West** — the cardinal *opposite* `direction: 6`
+on the circle, not adjacent to it at all. There's no reason to expect
+"nearest" to hold: these are genuine leftover values from the
+pre-2.0.54 exploit (see above), not a rounding error, so there's no
+mathematical reason the original diagonal angle would correlate with
+proximity to any particular cardinal on the enum.
+
+**Pitfall 2: treating "pickup and drop both land on some real entity"
+as sufficient confirmation.** Checking each candidate direction's
+computed pickup/insert position against the blueprint's actual entity
+layout (does something occupy that tile?) is a real, necessary filter
+— but passing it is not sufficient. The nearest-cardinal guess (East)
+for one group of inserters passed this check cleanly (pickup landed on
+a belt, drop landed inside a machine) while being **functionally
+impossible**: it read as an inserter taking a machine's own recipe
+*output* and feeding it back in as if it were an *ingredient* — not a
+valid interaction in the game at all. Geometry alone can't catch this;
+it takes a domain-specific constraint the geometry doesn't encode.
+
+**What actually resolved all 30**: testing **all four cardinals**
+(not just the two nearest) against **two independent constraints**
+instead of one — the coordinate/occupancy check above, plus a recipe-
+validity check (an inserter may only move a *recipe ingredient* onto a
+machine or a *recipe result* off of one, never the reverse) informed
+by lane identities that were independently confirmed from unwired
+`constant-combinator` signals sitting over each lane (see
+`blueprints/README.md`'s "Constant-combinator signals as informal lane
+labels"). With both constraints applied, every one of the 30
+inserters collapsed to **exactly one** valid direction — no ties, no
+remaining unresolved cases — splitting cleanly into 10 ingredient-A-feed
+/ 10 ingredient-B-feed / 10 output-collect, matching the module's 10
+assembling machines exactly. That clean 10/10/10 split, falling out
+without being targeted for, is itself decent evidence the constraint
+set was actually right rather than merely permissive.
+
+**The limits of this, honestly stated**: this resolution used
+blueprint-specific context (a single fixed recipe, and combinator
+labels that happened to be present and confirmed strict) that won't
+exist for an arbitrary blueprint. `build_vectors.py`'s general-purpose
+`snap_to_cardinal()` was deliberately *not* changed to a "try all four,
+pick the semantically valid one" approach based on this single
+confirmed case — that would be encoding one blueprint's resolved
+answer as if it were a general rule, the same mistake this section
+already warns against. The tool still floors to the nearest cardinal
+and flags the result as uncertain; resolving it further, when
+possible at all, is analysis work per blueprint, not something to
+automate from one data point.
+
 Practical consequence for layout design: an inserter servicing a belt,
 chest, or machine must be oriented so both its source and destination
 sit on that front-back line — you cannot "reach around a corner" with
@@ -115,4 +177,11 @@ Prompted by a real blueprint pasted into this project with `inserter`/
 and no other entity type in that same blueprint using non-cardinal
 values — initially misread as an intentional 2.0 diagonal-placement
 feature before being corrected; this is the verified account.
+Verified: 2026-08-23
+
+Reconstruction-pitfalls subsection source: worked directly against
+that same real blueprint's full entity layout (positions, recipe
+fields, combinator signals) — not a second external citation, an
+empirical trial of two failed approaches followed by a third that
+resolved all 30 affected inserters uniquely and consistently.
 Verified: 2026-08-23
