@@ -19,6 +19,15 @@
     --faint-fill: #17202a;
     --belt: #f0a838;
     --belt-dim: #7a5a2a;
+    /* Per-tier belt colors - approximate the game's actual sprite colors
+       (not extractable from data.raw: item/transport-belt prototypes carry
+       no tint/color field, this is community-known visual convention only,
+       see build_vectors.py's BELT_NAMES for the four tiers). --belt above
+       stays as the generic/fallback color for any name not in this list. */
+    --belt-basic: #f0c33c;
+    --belt-fast: #e0454a;
+    --belt-express: #4a90d9;
+    --belt-turbo: #2ec4b6;
     --inserter: #4fc3e0;
     --inserter-basic: #e0b84a;
     --inserter-burner: #6e7580;
@@ -213,7 +222,7 @@
     stroke-linecap: round;
     cursor: pointer;
   }
-  .vec-line.belt { stroke: var(--belt); stroke-width: 0.16; }
+  .vec-line.belt { stroke-width: 0.16; }
   .vec-line.inserter { stroke-width: 0.13; }
   .vec-line.underground { stroke: var(--underground); stroke-width: 0.13; stroke-dasharray: 0.32 0.24; }
   .vec-line:hover, .vec-line.hot { filter: brightness(1.35); }
@@ -438,6 +447,18 @@
       <defs>
         <marker id="arrow-belt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--belt)"></path>
+        </marker>
+        <marker id="arrow-belt-basic" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--belt-basic)"></path>
+        </marker>
+        <marker id="arrow-belt-fast" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--belt-fast)"></path>
+        </marker>
+        <marker id="arrow-belt-express" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--belt-express)"></path>
+        </marker>
+        <marker id="arrow-belt-turbo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--belt-turbo)"></path>
         </marker>
         <marker id="arrow-inserter" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter)"></path>
@@ -1095,6 +1116,16 @@
   VEC.inserters.forEach(function (v) { toPoints[ptKey(v.to)] = true; });
 
   var beltLayer = document.getElementById("beltLayer");
+  // Per-tier colors, keyed by the vector's own `entity` (prototype) name -
+  // see the --belt-* declarations up top for sourcing. Falls back to the
+  // generic --belt color for any name not in this list.
+  var BELT_TIER_STYLE = {
+    "transport-belt": { color: "var(--belt-basic)", marker: "arrow-belt-basic" },
+    "fast-transport-belt": { color: "var(--belt-fast)", marker: "arrow-belt-fast" },
+    "express-transport-belt": { color: "var(--belt-express)", marker: "arrow-belt-express" },
+    "turbo-transport-belt": { color: "var(--belt-turbo)", marker: "arrow-belt-turbo" }
+  };
+  var BELT_TIER_FALLBACK = { color: "var(--belt)", marker: "arrow-belt" };
   VEC.belt_runs.forEach(function (v) {
     /* Arrow marks where THIS run's flow ends - if something else's `from`
        (another run, an underground entrance) picks up exactly where this run
@@ -1110,11 +1141,13 @@
        even though the tunnel "continues" the flow. */
     var isThrough = !!fromPoints[ptKey(v.to)] && !undergroundEntrancePoints[ptKey(v.to)] &&
       (toCounts[ptKey(v.to)] || 1) <= 1;
+    var beltStyle = BELT_TIER_STYLE[v.entity] || BELT_TIER_FALLBACK;
     var line = el("line", {
       x1: v.from[0], y1: v.from[1], x2: v.to[0], y2: v.to[1],
+      stroke: beltStyle.color,
       class: "vec-line belt"
     });
-    if (!isThrough) line.setAttribute("marker-end", "url(#arrow-belt)");
+    if (!isThrough) line.setAttribute("marker-end", "url(#" + beltStyle.marker + ")");
     line.addEventListener("mouseenter", function (evt) {
       line.classList.add("hot");
       showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
