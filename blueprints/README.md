@@ -279,6 +279,38 @@ needed per entry (`tileable`/`tiling_notes`, `layout_pattern`, `role`
 for a non-smelter block) — the four required keys per port are `tile`,
 `edge`, `role`, `resource`.
 
+## Constant-combinator (or `display-panel`) signals as informal lane labels
+
+A separate, complementary heuristic from the edge-port one above:
+authors commonly drop a `constant-combinator` set to a single item
+signal (or, since 2.0.7, the purpose-built `display-panel` entity —
+"a small monitor that can display icons and text above the entity",
+wiki.factorio.com/Display_panel) right next to or above a belt/
+underground lane purely to label what that lane carries for a human
+reading the blueprint later — not to feed a circuit condition
+anywhere. Observed directly while analyzing a blueprint pasted into
+this project: three `constant-combinator`s sat in a row, each filtered
+to one item (`automation-science-pack`, `copper-plate`,
+`iron-gear-wheel`), each positioned directly above one of three
+parallel lanes — and matching each label's x-coordinate to the lane
+beneath it resolved which lane carried which ingredient, including
+correcting a wrong guess (the vertical spine had looked like the
+gear-input bus from its belt/underground geometry alone; the label
+above it said `automation-science-pack`, i.e. it was the packed
+*output* collector instead).
+
+**Confirm it's actually just a label before trusting it**: check the
+entity for a `connections` field (or the blueprint's top-level `wires`
+array in the 2.0 wire format) — a combinator/display-panel *can* be
+wired to a real circuit condition (train limits, a logistic request)
+elsewhere in the same design, in which case its signal reflects actual
+circuit logic, not necessarily "this is the lane directly below me."
+No wire connections at all is what confirms pure-label intent (as in
+the observed case above); don't assume it from position alone the way
+`classify_edge_ports`'s candidates shouldn't be trusted from position
+alone either — same "candidate, not ground truth" caution as that
+section.
+
 ## curated/
 
 **"ideal-blueprint" = a blueprint worth keeping a verified local copy
