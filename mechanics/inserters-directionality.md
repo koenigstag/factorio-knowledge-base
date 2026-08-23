@@ -47,10 +47,44 @@ No `data.raw` field states the axis-lock behavior itself as a rule
 directly — it falls out of how the engine applies
 `pickup_position`/`insert_position` (vectors relative to the
 inserter's current facing) combined with placement being restricted
-to the four cardinal directions. There's nothing to extract from a
-dump for *that* part; the rule itself is what's worth recording. The
-pickup/drop-side mapping, though, **is** directly checkable against
-the dump, and should be checked there first, not assumed from prose.
+to the four cardinal directions (see below). There's nothing to
+extract from a dump for *that* part; the rule itself is what's worth
+recording. The pickup/drop-side mapping, though, **is** directly
+checkable against the dump, and should be checked there first, not
+assumed from prose.
+
+## Placement is cardinal-only — diagonal inserters are a patched bug, not a feature
+
+Inserters can only be placed facing the four cardinal directions
+(`direction` 0/4/8/12 — North/East/South/West); the building-placement
+logic itself enforces this, there's no `data.raw` field to check since
+it's pure engine behavior, same as the axis-lock rule above.
+
+A real exception existed briefly and is worth recording because a
+blueprint can still carry evidence of it: in Factorio 2.0.47–2.0.53, a
+bug let players force-build over an existing inserter using a
+blueprint whose entity had a non-cardinal `direction` (e.g. `6` =
+southeast), producing a genuinely functional diagonal inserter — not a
+visual glitch, it actually picked up and dropped diagonally. Reported
+on the official bug forum, confirmed and fixed by developer boskid in
+2.0.54: re-testing the same bug-report blueprint in 2.0.54 imports it
+as a straight (cardinal) inserter instead. So as of current versions,
+pasting a blueprint with `direction: 2` or `direction: 6` on an
+inserter does **not** produce a diagonal inserter — the game silently
+snaps it to a cardinal direction on import.
+
+Practical upshot for this project's tooling: a blueprint can still
+contain a non-cardinal `direction` value on an `inserter`/
+`*-inserter` entity — either exported from an old save that still has
+a bugged diagonal inserter placed before 2.0.54 (those keep working
+once already placed, per the same bug thread), or a blueprint string
+someone hand-edited attempting the now-dead exploit. Either way, that
+value does not describe a valid diagonal placement in current
+Factorio — `build_vectors.py`/the visualizer should treat it as an
+anomaly to flag, not a direction to compute pickup/insert geometry
+for (see the linked forum thread for the primary source before
+assuming any specific snap-to-cardinal rule if this needs handling
+precisely).
 
 Practical consequence for layout design: an inserter servicing a belt,
 chest, or machine must be oriented so both its source and destination
@@ -70,3 +104,15 @@ describing the `direction` field the way this file first assumed; the
 dump values are the authoritative, checkable source and take
 precedence.
 Verified: 2026-08-22
+
+Cardinal-only-placement/diagonal-inserter-bug section source:
+https://forums.factorio.com/viewtopic.php?p=673349 ("[2.0.47]
+Inserters can face diagonally" bug report, developer boskid confirming
+the fix landed in 2.0.54, and a commenter confirming the same
+bug-report blueprint imports as a straight inserter once patched).
+Prompted by a real blueprint pasted into this project with `inserter`/
+`long-handed-inserter` entities carrying `direction: 2`/`direction: 6`
+and no other entity type in that same blueprint using non-cardinal
+values — initially misread as an intentional 2.0 diagonal-placement
+feature before being corrected; this is the verified account.
+Verified: 2026-08-23
