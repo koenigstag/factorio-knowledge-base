@@ -88,10 +88,22 @@ geometry sources):
   is recorded as a dead-end sink, not a parse error. The buried middle
   itself (`interactable: false`) is a separate vector from the
   surface belts on either side.
-- **Splitters are geometry-only nodes** — position, direction, and a
-  `note` flagging that priority/filter routing isn't fixed geometry
-  (see [splitter-priority.md](../mechanics/splitter-priority.md)), not
-  a resolved input→output flow.
+- **Splitters carry position/direction plus their actual
+  `input_priority`/`output_priority`/`filter` config** (each `null` if
+  unset — the blueprint format omits these fields entirely rather than
+  writing a "none" default, so their absence is itself meaningful, not
+  missing data) **and a `configured` flag**. An unconfigured splitter
+  (`configured: false`, the common case — none of this project's own
+  curated blueprints happen to set any of the three) is a
+  **balancer**: per
+  [splitter-priority.md](../mechanics/splitter-priority.md), no
+  priority set means items split evenly between both outputs, a fully
+  resolved, deterministic behavior, not an unresolved junction. Only a
+  splitter that actually sets one of the three stays genuinely
+  unresolved as input→output flow (routing then also depends on
+  runtime backpressure, per the same doc) — but even then its actual
+  settings are in the vector, not just a "check the JSON yourself"
+  note.
 
 `<slug>.vectors.json` is an optional sibling file for a `curated/`
 entry (see "curated/" below) — regenerate it whenever the source

@@ -185,16 +185,37 @@ def build_underground_vectors(entities):
 
 
 def build_splitter_nodes(entities):
+    """input_priority/output_priority/filter are omitted from the blueprint
+    entity entirely when unset (wiki.factorio.com/Blueprint_string_format),
+    not present with a "none" default - so their absence IS the fact that
+    this splitter is an unconfigured balancer, not just missing data.
+    Per mechanics/splitter-priority.md (sourced from the wiki's belt
+    transport system page): no priority set means items split evenly
+    between both outputs, a fully deterministic behavior - only a splitter
+    that actually sets one of these three is genuinely unresolved from
+    geometry alone (routing then depends on runtime backpressure too)."""
     out = []
     for e in entities:
         if e["name"] not in {"splitter", "fast-splitter", "express-splitter", "turbo-splitter"}:
             continue
+        input_priority = e.get("input_priority")
+        output_priority = e.get("output_priority")
+        item_filter = e.get("filter")
+        configured = input_priority is not None or output_priority is not None or item_filter is not None
+        if configured:
+            note = "priority/filter configured - routing depends on that plus runtime backpressure, not fixed geometry"
+        else:
+            note = "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
         out.append({
             "entity_numbers": [e["entity_number"]],
             "entity": e["name"],
             "position": [e["position"]["x"], e["position"]["y"]],
             "direction": e.get("direction", 0),
-            "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry",
+            "input_priority": input_priority,
+            "output_priority": output_priority,
+            "filter": item_filter,
+            "configured": configured,
+            "note": note,
         })
     return out
 

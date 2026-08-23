@@ -3948,7 +3948,11 @@
     -2
    ],
    "direction": 4,
-   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
   },
   {
    "entity_numbers": [
@@ -3960,7 +3964,11 @@
     -1
    ],
    "direction": 4,
-   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
   },
   {
    "entity_numbers": [
@@ -3972,7 +3980,11 @@
     0
    ],
    "direction": 4,
-   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
   },
   {
    "entity_numbers": [
@@ -3984,7 +3996,11 @@
     0
    ],
    "direction": 12,
-   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
   },
   {
    "entity_numbers": [
@@ -3996,7 +4012,11 @@
     0
    ],
    "direction": 4,
-   "note": "unresolved junction - routing depends on priority/filter settings, not fixed geometry"
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
   }
  ]
 }
