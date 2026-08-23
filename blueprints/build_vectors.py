@@ -41,6 +41,53 @@ UNDERGROUND_MAX_DISTANCE = {
 
 DIR_UNIT = {0: (0, -1), 4: (1, 0), 8: (0, 1), 12: (-1, 0)}
 
+# Factorio changed the `direction` field's own scale at 2.0.0 (FFF #377):
+# pre-2.0, an 8-value enum with cardinals spaced 2 apart (N=0,E=2,S=4,W=6);
+# 2.0+, a 16-value enum with cardinals spaced 4 apart (N=0,E=4,S=8,W=12) -
+# same cardinal compass directions, just double the raw integer. A
+# blueprint's `version` field (packed uint64: main<<48 | major<<32 |
+# minor<<16 | developer) says which scale its own entities were written
+# in; this project's codec.py deliberately does NOT rescale on decode (it
+# promises a faithful, format-preserving transcode - see its own
+# round-trip guarantee), so any caller that computes geometry from
+# `direction` needs to rescale pre-2.0 values itself first.
+#
+# Confirmed against a real pre-2.0 blueprint (version 0.17.79.0) pasted
+# into this project: un-rescaled, several inserters and belts had
+# non-cardinal-looking direction values that were first (wrongly)
+# investigated as the unrelated, genuinely-real pre-2.0.54 diagonal-
+# inserter placement bug (see mechanics/inserters-directionality.md) -
+# rescaling by this exact factor turned every single one into a clean
+# cardinal with zero remaining ambiguity, independently matching a
+# constraint-satisfaction resolution worked out by hand beforehand.
+# Cross-checked against github.com/FactoryGameFan/factorio-blueprint-
+# editor's own Blueprint.ts, which does precisely this: `dirMult = pre_2_0
+# ? 2 : 1` applied to every entity's raw `direction` on import.
+FACTORIO_2_0_0 = (2, 0, 0)
+
+
+def unpack_factorio_version(version_int):
+    """(main, major, minor) from a blueprint's packed `version` uint64.
+    Drops the low 16 bits (developer/build number) - not needed for the
+    pre/post-2.0 comparison this exists for."""
+    return (version_int >> 48, (version_int >> 32) & 0xFFFF, (version_int >> 16) & 0xFFFF)
+
+
+def normalize_pre_2_0_directions(entities, version_int):
+    """Doubles every entity's `direction` field in place if `version_int`
+    indicates a pre-2.0.0 blueprint. No-op (including when `version` is
+    absent) for 2.0+ blueprints, where direction is already in the modern
+    scale. Entities with no `direction` field are untouched either way -
+    Factorio omits the field entirely for direction=0 in both eras, and
+    0*2 is still 0, so there's nothing to change even if it were present."""
+    if version_int is None:
+        return
+    if unpack_factorio_version(version_int) >= FACTORIO_2_0_0:
+        return
+    for e in entities:
+        if "direction" in e:
+            e["direction"] = e["direction"] * 2
+
 
 def rotate(vec, direction):
     x, y = vec
@@ -252,6 +299,7 @@ def vectorize(bp: dict) -> dict:
     for a lone blueprint, or one entry from `codec.walk_blueprints` for
     a book."""
     entities = bp["entities"]
+    normalize_pre_2_0_directions(entities, bp.get("version"))
     return {
         "label": bp.get("label"),
         "entity_count": len(entities),

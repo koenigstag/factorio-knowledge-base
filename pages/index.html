@@ -569,6 +569,33 @@
     return [x, y];
   }
 
+  // Factorio changed the `direction` field's own scale at 2.0.0 (FFF #377):
+  // pre-2.0, an 8-value enum with cardinals spaced 2 apart (N=0,E=2,S=4,W=6);
+  // 2.0+, a 16-value enum with cardinals spaced 4 apart (N=0,E=4,S=8,W=12) -
+  // same compass directions, just double the raw integer. Mirrors
+  // build_vectors.py's normalize_pre_2_0_directions() - see that function's
+  // comment for the full story (a real pre-2.0 blueprint's inserters/belts
+  // were first misdiagnosed as hitting the unrelated, genuinely-real
+  // pre-2.0.54 diagonal-inserter bug before this was found to be the actual
+  // cause, cross-checked against github.com/FactoryGameFan/factorio-
+  // blueprint-editor's own Blueprint.ts `dirMult` logic).
+  function unpackFactorioVersion(versionInt) {
+    var main = Math.floor(versionInt / Math.pow(2, 48));
+    var major = Math.floor(versionInt / Math.pow(2, 32)) & 0xFFFF;
+    var minor = Math.floor(versionInt / Math.pow(2, 16)) & 0xFFFF;
+    return [main, major, minor];
+  }
+  function normalizePre20Directions(entities, versionInt) {
+    if (versionInt === undefined || versionInt === null) return;
+    // major/minor are never negative, so (main,major,minor) < (2,0,0)
+    // collapses to just main < 2.
+    var main = unpackFactorioVersion(versionInt)[0];
+    if (main >= 2) return;
+    entities.forEach(function (e) {
+      if (typeof e.direction === "number") e.direction = e.direction * 2;
+    });
+  }
+
   // ---- client-side vectorizer - mirrors blueprints/build_vectors.py's
   // geometry and merge rules exactly, so a blueprint loaded via ?source=
   // produces the identical shape as the pre-baked demo data. ----
@@ -763,6 +790,7 @@
 
   function vectorizeBlueprint(bp) {
     var entities = bp.entities || [];
+    normalizePre20Directions(entities, bp.version);
     var vec = {
       label: bp.label || "(untitled blueprint)",
       entity_count: entities.length,
