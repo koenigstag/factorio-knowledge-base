@@ -224,7 +224,7 @@
   }
   .vec-line.belt { stroke-width: 0.16; }
   .vec-line.inserter { stroke-width: 0.13; }
-  .vec-line.underground { stroke: var(--underground); stroke-width: 0.13; stroke-dasharray: 0.32 0.24; }
+  .vec-line.underground { stroke-width: 0.13; stroke-dasharray: 0.32 0.24; }
   .vec-line:hover, .vec-line.hot { filter: brightness(1.35); }
 
   .splitter-mark {
@@ -236,7 +236,6 @@
 
   .tunnel-cap {
     fill: var(--bg);
-    stroke: var(--underground);
     stroke-width: 0.1;
     cursor: pointer;
   }
@@ -1235,19 +1234,36 @@
   });
 
   // ---- underground tunnels ----
+  // Same --belt-* palette as surface belts (see BELT_TIER_STYLE above) -
+  // an underground-belt tunnel is the same tier family as its matching
+  // surface belt, so it reads as a continuation of the same lane rather
+  // than a differently-colored thing. `entity` here is "<tier>-tunnel" or
+  // "<tier>-dead-end" (see build_vectors.py's build_underground_vectors),
+  // so strip that suffix before the lookup.
+  var UNDERGROUND_TIER_COLOR = {
+    "underground-belt": "var(--belt-basic)",
+    "fast-underground-belt": "var(--belt-fast)",
+    "express-underground-belt": "var(--belt-express)",
+    "turbo-underground-belt": "var(--belt-turbo)"
+  };
+  function undergroundTierColor(entityName) {
+    var base = entityName.replace(/-tunnel$|-dead-end$/, "");
+    return UNDERGROUND_TIER_COLOR[base] || "var(--underground)";
+  }
   var undLayer = document.getElementById("undLayer");
   VEC.underground.forEach(function (v) {
+    var undColor = undergroundTierColor(v.entity);
     if (!v.to) {
       // dead-end sink: short stub + open cap
       var dx = 0, dy = 0;
-      undLayer.appendChild(el("circle", { cx: v.from[0], cy: v.from[1], r: 0.22, class: "tunnel-cap" }));
+      undLayer.appendChild(el("circle", { cx: v.from[0], cy: v.from[1], r: 0.22, class: "tunnel-cap", stroke: undColor }));
       var t = el("text", {
-        x: v.from[0], y: v.from[1] - 0.4, fill: "var(--underground)",
+        x: v.from[0], y: v.from[1] - 0.4, fill: undColor,
         "font-size": 0.34, "text-anchor": "middle", "font-family": "IBM Plex Mono, monospace"
       });
       t.textContent = "dead end";
       undLayer.appendChild(t);
-      var stub = el("circle", { cx: v.from[0], cy: v.from[1], r: 0.09, fill: "var(--underground)" });
+      var stub = el("circle", { cx: v.from[0], cy: v.from[1], r: 0.09, fill: undColor });
       stub.addEventListener("mouseenter", function (evt) {
         showTip(evt, '<div class="t-type">' + v.entity + '</div>' +
           '<div class="t-row">' + (v.note || "") + '</div>' +
@@ -1260,6 +1276,7 @@
     }
     var line = el("line", {
       x1: v.from[0], y1: v.from[1], x2: v.to[0], y2: v.to[1],
+      stroke: undColor,
       class: "vec-line underground"
     });
     line.addEventListener("mouseenter", function (evt) {
@@ -1284,8 +1301,8 @@
 
     function undergroundEndpointGroup(capPoint, arrowPoint, entityNumber, label) {
       var g = el("g", {});
-      var cap = el("circle", { cx: capPoint[0], cy: capPoint[1], r: 0.14, class: "tunnel-cap" });
-      var arrow = arrowHead(arrowPoint, eux, euy, "var(--underground)");
+      var cap = el("circle", { cx: capPoint[0], cy: capPoint[1], r: 0.14, class: "tunnel-cap", stroke: undColor });
+      var arrow = arrowHead(arrowPoint, eux, euy, undColor);
       g.appendChild(cap);
       g.appendChild(arrow);
       g.addEventListener("mouseenter", function (evt) {
@@ -1310,26 +1327,30 @@
     // Bridge the 1-tile visual gap between the exit tile's own center and the
     // first surface belt tile that actually continues the flow from it - the
     // exit is interactable surface belt, not tunnel, so draw it belt-colored
-    // and solid rather than in the tunnel's dashed/muted style.
+    // and solid rather than in the tunnel's dashed/muted style. Same tier
+    // color as the tunnel itself (undColor), not the generic --belt.
     var nextPt = [v.to[0] + eux, v.to[1] + euy];
     if (fromPoints[ptKey(nextPt)]) {
       undLayer.appendChild(el("line", {
         x1: v.to[0], y1: v.to[1], x2: nextPt[0], y2: nextPt[1],
-        stroke: "var(--belt)", "stroke-width": 0.1
+        stroke: undColor, "stroke-width": 0.1
       }));
     }
   });
 
   // ---- splitters ----
-  // Tier color follows the matching surface belt tier (basic splitter = --belt,
-  // fast-splitter+ = --splitter/red). Drawn as a thin bar spanning the true 2-tile
-  // footprint width, sitting at the output edge (not the entity's center) so it
-  // reads as "where material leaves the splitter."
+  // Same --belt-* palette as surface belts/underground tunnels (see
+  // BELT_TIER_STYLE above) - a splitter's tier reads as part of its belt
+  // tier's lane, not a separately-colored thing. Drawn as a thin bar
+  // spanning the true 2-tile footprint width, sitting at the output edge
+  // (not the entity's center) so it reads as "where material leaves the
+  // splitter." Falls back to --splitter (the old flat color) for any name
+  // not in this list.
   var SPLITTER_COLOR = {
-    "splitter": "var(--belt)",
-    "fast-splitter": "var(--splitter)",
-    "express-splitter": "var(--splitter)",
-    "turbo-splitter": "var(--splitter)"
+    "splitter": "var(--belt-basic)",
+    "fast-splitter": "var(--belt-fast)",
+    "express-splitter": "var(--belt-express)",
+    "turbo-splitter": "var(--belt-turbo)"
   };
   var splLayer = document.getElementById("splLayer");
   // Bar+arrow groups are appended in a separate pass after all connector
