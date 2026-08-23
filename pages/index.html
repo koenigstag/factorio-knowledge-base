@@ -32,6 +32,11 @@
     --inserter-basic: #e0b84a;
     --inserter-burner: #6e7580;
     --inserter-dim: #2c5a67;
+    /* bulk/stack are the two tiers above fast that still shared --inserter -
+       same "not extractable from data.raw" caveat as --belt-*: no tint field
+       on these prototypes, this is just a distinguishable pick. */
+    --inserter-bulk: #9b6bce;
+    --inserter-stack: #5fbf6f;
     --underground: #7a5a2a; /* muted variant of --belt (same tier hue, dimmer) */
     --underground-dim: #564a7a;
     --splitter: #f2617a;
@@ -467,6 +472,12 @@
         </marker>
         <marker id="arrow-inserter-burner" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-burner)"></path>
+        </marker>
+        <marker id="arrow-inserter-bulk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-bulk)"></path>
+        </marker>
+        <marker id="arrow-inserter-stack" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--inserter-stack)"></path>
         </marker>
         <marker id="arrow-inserter-long" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--splitter)"></path>
@@ -1169,8 +1180,8 @@
     "inserter": { color: "var(--inserter-basic)", marker: "arrow-inserter-basic" },
     "burner-inserter": { color: "var(--inserter-burner)", marker: "arrow-inserter-burner" },
     "fast-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
-    "bulk-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
-    "stack-inserter": { color: "var(--inserter)", marker: "arrow-inserter" },
+    "bulk-inserter": { color: "var(--inserter-bulk)", marker: "arrow-inserter-bulk" },
+    "stack-inserter": { color: "var(--inserter-stack)", marker: "arrow-inserter-stack" },
     "long-handed-inserter": { color: "var(--splitter)", marker: "arrow-inserter-long" }
   };
   VEC.inserters.forEach(function (v) {
