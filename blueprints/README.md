@@ -407,13 +407,22 @@ as a personal entry for folder-placement purposes since the
 modification work is the project owner's, even though the base design
 isn't.
 
+`earlygame/electronic-circuit-module` is also third-party — one entry
+("Basic Green Circuits") from Robbie Theron's "Nauvis Start - Factorio
+2.1" book, https://factorioprints.com/view/-P-hYRfTCEjpttIq9oSr. It
+replaced an earlier from-scratch draft the project owner built at this
+same slug: the project owner pasted this design in for comparison,
+judged it better, and asked for the replacement — see that entry's own
+`.md` for how the two compared.
+
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,
 `coal-burner-miners-w-burner-inserters`, `city-block-100x100`,
 `furnaces-import-block`, `high-density-miners`, `iron-gear-tileable`,
 `starter-electrical-miners`, `lab-setup-module` [derived, see above]),
-plus the two third-party exceptions noted above
-(`automation-science-module`, `logistic-science-module`),
+plus the three third-party exceptions noted above
+(`automation-science-module`, `logistic-science-module`,
+`electronic-circuit-module`),
 `init-game/` (`4-burner-miners-w-chests`,
 `4-burner-miners-w-furnaces-and-chests`, `4-burner-drills-into-one-chest`,
 `4-burner-drills-chained`), `midgame/`

@@ -1,0 +1,1195 @@
+{
+ "label": "Basic Green Circuits",
+ "entity_count": 176,
+ "inserters": [
+  {
+   "entity_numbers": [
+    5
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    28.5,
+    33.5
+   ],
+   "to": [
+    30.7,
+    33.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    8
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    28.5,
+    38.5
+   ],
+   "to": [
+    30.7,
+    38.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    14
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    25.5
+   ],
+   "to": [
+    31.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    15
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    29.5
+   ],
+   "to": [
+    31.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    17
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    33.5
+   ],
+   "to": [
+    31.5,
+    35.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    19
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    38.5
+   ],
+   "to": [
+    31.5,
+    36.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    21
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    42.5
+   ],
+   "to": [
+    31.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    22
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    31.5,
+    46.5
+   ],
+   "to": [
+    31.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    26
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    32.5,
+    29.5
+   ],
+   "to": [
+    32.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    31
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    32.5,
+    42.5
+   ],
+   "to": [
+    32.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    47
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    25.5
+   ],
+   "to": [
+    34.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    48
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    29.5
+   ],
+   "to": [
+    34.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    50
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    33.5
+   ],
+   "to": [
+    34.5,
+    35.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    52
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    38.5
+   ],
+   "to": [
+    34.5,
+    36.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    54
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    42.5
+   ],
+   "to": [
+    34.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    55
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    34.5,
+    46.5
+   ],
+   "to": [
+    34.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    58
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    35.5,
+    25.5
+   ],
+   "to": [
+    35.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    59
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    35.5,
+    29.5
+   ],
+   "to": [
+    35.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    64
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    35.5,
+    42.5
+   ],
+   "to": [
+    35.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    65
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    35.5,
+    46.5
+   ],
+   "to": [
+    35.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    69
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    37.5,
+    33.5
+   ],
+   "to": [
+    35.3,
+    33.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    74
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    37.5,
+    38.5
+   ],
+   "to": [
+    35.3,
+    38.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    86
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    37.5,
+    33.5
+   ],
+   "to": [
+    39.7,
+    33.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    91
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    37.5,
+    38.5
+   ],
+   "to": [
+    39.7,
+    38.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    102
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    25.5
+   ],
+   "to": [
+    40.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    103
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    29.5
+   ],
+   "to": [
+    40.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    105
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    33.5
+   ],
+   "to": [
+    40.5,
+    35.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    107
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    38.5
+   ],
+   "to": [
+    40.5,
+    36.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    109
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    42.5
+   ],
+   "to": [
+    40.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    110
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    40.5,
+    46.5
+   ],
+   "to": [
+    40.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    114
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    41.5,
+    29.5
+   ],
+   "to": [
+    41.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    119
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    41.5,
+    42.5
+   ],
+   "to": [
+    41.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    135
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    25.5
+   ],
+   "to": [
+    43.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    136
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    29.5
+   ],
+   "to": [
+    43.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    138
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    33.5
+   ],
+   "to": [
+    43.5,
+    35.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    140
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    38.5
+   ],
+   "to": [
+    43.5,
+    36.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    142
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    42.5
+   ],
+   "to": [
+    43.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    143
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    46.5
+   ],
+   "to": [
+    43.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    146
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    44.5,
+    25.5
+   ],
+   "to": [
+    44.5,
+    27.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    147
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    44.5,
+    29.5
+   ],
+   "to": [
+    44.5,
+    31.7
+   ]
+  },
+  {
+   "entity_numbers": [
+    150
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    43.5,
+    36.5
+   ],
+   "to": [
+    45.7,
+    36.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    152
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    44.5,
+    42.5
+   ],
+   "to": [
+    44.5,
+    40.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    153
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    44.5,
+    46.5
+   ],
+   "to": [
+    44.5,
+    44.3
+   ]
+  },
+  {
+   "entity_numbers": [
+    157
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    46.5,
+    33.5
+   ],
+   "to": [
+    44.3,
+    33.5
+   ]
+  },
+  {
+   "entity_numbers": [
+    162
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    46.5,
+    38.5
+   ],
+   "to": [
+    44.3,
+    38.5
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    6
+   ],
+   "entity": "transport-belt",
+   "from": [
+    29.5,
+    34.5
+   ],
+   "to": [
+    28.5,
+    34.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    7
+   ],
+   "entity": "transport-belt",
+   "from": [
+    29.5,
+    37.5
+   ],
+   "to": [
+    28.5,
+    37.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    28,
+    39
+   ],
+   "entity": "transport-belt",
+   "from": [
+    32.5,
+    35.5
+   ],
+   "to": [
+    34.5,
+    35.5
+   ],
+   "direction": 4,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    29,
+    40
+   ],
+   "entity": "transport-belt",
+   "from": [
+    32.5,
+    36.5
+   ],
+   "to": [
+    34.5,
+    36.5
+   ],
+   "direction": 4,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    61,
+    71,
+    80,
+    88,
+    96
+   ],
+   "entity": "transport-belt",
+   "from": [
+    35.5,
+    35.5
+   ],
+   "to": [
+    40.5,
+    35.5
+   ],
+   "direction": 4,
+   "length": 5
+  },
+  {
+   "entity_numbers": [
+    62,
+    72,
+    81,
+    89,
+    97
+   ],
+   "entity": "transport-belt",
+   "from": [
+    35.5,
+    36.5
+   ],
+   "to": [
+    40.5,
+    36.5
+   ],
+   "direction": 4,
+   "length": 5
+  },
+  {
+   "entity_numbers": [
+    70
+   ],
+   "entity": "transport-belt",
+   "from": [
+    36.5,
+    34.5
+   ],
+   "to": [
+    35.5,
+    34.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    73
+   ],
+   "entity": "transport-belt",
+   "from": [
+    36.5,
+    37.5
+   ],
+   "to": [
+    35.5,
+    37.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    87
+   ],
+   "entity": "transport-belt",
+   "from": [
+    38.5,
+    34.5
+   ],
+   "to": [
+    37.5,
+    34.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    90
+   ],
+   "entity": "transport-belt",
+   "from": [
+    38.5,
+    37.5
+   ],
+   "to": [
+    37.5,
+    37.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    116,
+    127
+   ],
+   "entity": "transport-belt",
+   "from": [
+    41.5,
+    35.5
+   ],
+   "to": [
+    43.5,
+    35.5
+   ],
+   "direction": 4,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    117,
+    128
+   ],
+   "entity": "transport-belt",
+   "from": [
+    41.5,
+    36.5
+   ],
+   "to": [
+    43.5,
+    36.5
+   ],
+   "direction": 4,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    149,
+    159,
+    168
+   ],
+   "entity": "transport-belt",
+   "from": [
+    44.5,
+    35.5
+   ],
+   "to": [
+    47.5,
+    35.5
+   ],
+   "direction": 4,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    158
+   ],
+   "entity": "transport-belt",
+   "from": [
+    45.5,
+    34.5
+   ],
+   "to": [
+    44.5,
+    34.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    161
+   ],
+   "entity": "transport-belt",
+   "from": [
+    45.5,
+    37.5
+   ],
+   "to": [
+    44.5,
+    37.5
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    165,
+    155,
+    145,
+    134,
+    122,
+    112,
+    101,
+    93,
+    85,
+    77,
+    67,
+    57,
+    46,
+    34,
+    24,
+    13
+   ],
+   "entity": "transport-belt",
+   "from": [
+    46.5,
+    25.5
+   ],
+   "to": [
+    30.5,
+    25.5
+   ],
+   "direction": 12,
+   "length": 16
+  },
+  {
+   "entity_numbers": [
+    171,
+    164,
+    154,
+    144,
+    133,
+    121,
+    111,
+    100,
+    92,
+    84,
+    76,
+    66,
+    56,
+    45,
+    33,
+    23
+   ],
+   "entity": "transport-belt",
+   "from": [
+    46.5,
+    46.5
+   ],
+   "to": [
+    30.5,
+    46.5
+   ],
+   "direction": 12,
+   "length": 16
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    60,
+    10
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    35.5,
+    34.5
+   ],
+   "to": [
+    30.5,
+    34.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    63,
+    11
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    35.5,
+    37.5
+   ],
+   "to": [
+    30.5,
+    37.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    148,
+    95
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    44.5,
+    34.5
+   ],
+   "to": [
+    39.5,
+    34.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    151,
+    98
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    44.5,
+    37.5
+   ],
+   "to": [
+    39.5,
+    37.5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    174
+   ],
+   "entity": "underground-belt-dead-end",
+   "from": [
+    47.5,
+    35.5
+   ],
+   "to": null,
+   "interactable": false,
+   "note": "no matching output within max_distance - sink, not a parse error"
+  }
+ ],
+ "splitters": [
+  {
+   "entity_numbers": [
+    2
+   ],
+   "entity": "splitter",
+   "position": [
+    28.5,
+    34
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    3
+   ],
+   "entity": "splitter",
+   "position": [
+    28.5,
+    38
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    18
+   ],
+   "entity": "splitter",
+   "position": [
+    31.5,
+    36
+   ],
+   "direction": 4,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    51
+   ],
+   "entity": "splitter",
+   "position": [
+    34.5,
+    36
+   ],
+   "direction": 4,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    79
+   ],
+   "entity": "splitter",
+   "position": [
+    37.5,
+    34
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    82
+   ],
+   "entity": "splitter",
+   "position": [
+    37.5,
+    38
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    106
+   ],
+   "entity": "splitter",
+   "position": [
+    40.5,
+    36
+   ],
+   "direction": 4,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    139
+   ],
+   "entity": "splitter",
+   "position": [
+    43.5,
+    36
+   ],
+   "direction": 4,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    167
+   ],
+   "entity": "splitter",
+   "position": [
+    46.5,
+    34
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  },
+  {
+   "entity_numbers": [
+    169
+   ],
+   "entity": "splitter",
+   "position": [
+    46.5,
+    38
+   ],
+   "direction": 12,
+   "input_priority": null,
+   "output_priority": null,
+   "filter": null,
+   "configured": false,
+   "note": "balancer - no priority/filter set, splits input evenly between both outputs (mechanics/splitter-priority.md)"
+  }
+ ]
+}
