@@ -135,6 +135,7 @@ decisions/                 ADRs — 000N-title.md, context/alternatives/decision
 examples/                  walkthroughs: question → which files to read → formula call → result
 layouts/                   spatial arrangement patterns for base-building (drills/furnaces/main-bus/labs/...) — one <name>.md per pattern; numeric params cite formulas/relations or stay flagged open, never guessed
 blueprints/                 blueprint-string parsing tooling (codec.py) + curated/ reference designs, one <slug>/ folder per entry (<slug>.txt raw string + <slug>.json decoded + <slug>.md provenance) — third-party entry folders directly at curated/, personal collection grouped by game stage in curated/{earlygame,init-game,midgame}/<slug>/ — see blueprints/README.md
+guides/                     curated third-party strategy/opinion content (progression checklists, playstyle advice) — not engine facts, so no Source:/Verified: fields; provenance (thread/author/date) noted in prose instead, same spirit as blueprints/curated/'s third-party entries
 ```
 
 `examples/` vs `relations/`: `relations/` is the cached answer,
@@ -171,7 +172,10 @@ uncreated folder until this project's own rail-spacing research
 real third-party blueprint — at that point there was real content
 (the parsing code already written ad-hoc for that research, plus a
 blueprint this project's own claims cite) to justify creating it,
-rather than scaffolding an empty blueprint library speculatively.)
+rather than scaffolding an empty blueprint library speculatively.
+`guides/` wasn't on this list at all — it didn't exist as a concept
+until the project owner brought a first piece of curatable third-party
+strategy content (2026-08-23), same reactive pattern as the rest.)
 
 ## Versioning
 
