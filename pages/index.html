@@ -36,7 +36,12 @@
        Colors sourced from the actual wiki.factorio.com icons (Bulk_inserter.png,
        Stack_inserter.png) - not extractable from data.raw, which carries no
        tint field for these prototypes, so this is a by-eye match rather than
-       a value pulled from the dump. */
+       a value pulled from the dump. White specifically was freed up for the
+       new stack-inserter by filter-inserter's removal in 2.0.7 (see
+       https://wiki.factorio.com/Archive:Filter_inserter's History section) -
+       filtering became a built-in property of every inserter instead of a
+       separate colored variant, which is also why this list tops out at six
+       prototypes rather than the old filter/stack-filter set. */
     --inserter-bulk: #6fcf5a;
     --inserter-stack: #e8e8e8;
     --underground: #7a5a2a; /* muted variant of --belt (same tier hue, dimmer) */
