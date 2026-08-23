@@ -1,0 +1,53 @@
+{
+ "blueprint": {
+  "icons": [
+   {
+    "signal": {
+     "type": "item",
+     "name": "coal"
+    },
+    "index": 1
+   }
+  ],
+  "entities": [
+   {
+    "entity_number": 1,
+    "name": "burner-mining-drill",
+    "position": {
+     "x": 0,
+     "y": 0
+    },
+    "direction": 4
+   },
+   {
+    "entity_number": 2,
+    "name": "burner-mining-drill",
+    "position": {
+     "x": 2,
+     "y": 0
+    },
+    "direction": 8
+   },
+   {
+    "entity_number": 3,
+    "name": "burner-mining-drill",
+    "position": {
+     "x": 2,
+     "y": 2
+    },
+    "direction": 12
+   },
+   {
+    "entity_number": 4,
+    "name": "burner-mining-drill",
+    "position": {
+     "x": 0,
+     "y": 2
+    },
+    "direction": 0
+   }
+  ],
+  "item": "blueprint",
+  "version": 562949956239360
+ }
+}

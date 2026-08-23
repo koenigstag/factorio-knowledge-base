@@ -415,7 +415,8 @@ Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 plus the two third-party exceptions noted above
 (`automation-science-module`, `logistic-science-module`),
 `init-game/` (`4-burner-miners-w-chests`,
-`4-burner-miners-w-furnaces-and-chests`), `midgame/`
+`4-burner-miners-w-furnaces-and-chests`, `4-burner-drills-into-one-chest`,
+`4-burner-drills-chained`), `midgame/`
 (`4x2-electrical-furnaces-w-tier2-belts`, `city-block-100x100`,
 `iron-gear-tileable`), plus the three third-party exceptions noted
 above (`military-science-module`, `chemical-science-module`,
