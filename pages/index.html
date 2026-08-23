@@ -239,6 +239,17 @@
   .vec-line.underground { stroke-width: 0.13; stroke-dasharray: 0.32 0.24; }
   .vec-line:hover, .vec-line.hot { filter: brightness(1.35); }
 
+  /* Underground tunnels: dimmed relative to their matching surface belt tier,
+     on top of the dashed stroke - restores the pre-tier-coloring page's
+     "same tier hue, dimmer" distinction (see the old --underground var's own
+     comment) without regressing the tier-coloring fix that replaced a single
+     flat muted color with per-tier ones. Applied once at the layer-group
+     level (not per-element) so every tunnel element - line, caps, dead-end
+     stub/label, exit-to-surface bridge - dims together regardless of which
+     tier's --belt-* color it's using; hover's brightness filter still lifts
+     an individual element back out on top of this. */
+  #undLayer { opacity: 0.6; }
+
   .splitter-mark {
     stroke: #0b0f14;
     stroke-width: 0.04;
