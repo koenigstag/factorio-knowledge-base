@@ -1,0 +1,13 @@
+{
+ "bbox": {"x_min": -10, "x_max": 8, "y_min": -9, "y_max": 8},
+ "ports": [
+  {"tile": [-10, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "coal", "notes": "underground-belt entrance entity_number 1; identity confirmed by the unwired constant-combinator at (-10,-8)"},
+  {"tile": [-4, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-plate", "notes": "underground-belt entrance entity_number 2; identity confirmed by the unwired constant-combinator at (-4,-8)"},
+  {"tile": [-2, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "stone-brick", "notes": "underground-belt entrance entity_number 3; identity confirmed by the unwired constant-combinator at (-2,-8)"},
+  {"tile": [1, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "steel-plate", "notes": "underground-belt entrance entity_number 5; identity confirmed by the unwired constant-combinator at (1,-8)"},
+  {"tile": [2, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "copper-plate", "notes": "underground-belt entrance entity_number 4; identity confirmed by the unwired constant-combinator at (2,-8)"},
+  {"tile": [5, -9], "edge": "y_min", "direction": 0, "role": "export", "resource": "military-science-pack", "notes": "surface exit of underground-belt entity_number 6; identity confirmed by the unwired constant-combinator immediately below at (5,-8)"}
+ ],
+ "tileable": false,
+ "layout_pattern": "5 raw/semi-raw imports feed two sub-crafting columns: x=-7 (1x stone-wall + 4x grenade) and a middle pair (1x firearm-magazine feeding 2x piercing-rounds-magazine), which both feed the x=8 column of 5 assembling-machine-2 running military-science-pack directly. Widest import set of the 4 curated science modules so far - military-science-pack's recipe (0.5 piercing-rounds-magazine + 0.5 grenade + 1.0 stone-wall) pulls in 5 distinct raw/semi-raw items rather than 2-3."
+}

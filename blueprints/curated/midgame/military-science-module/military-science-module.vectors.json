@@ -1,0 +1,1138 @@
+{
+ "label": "Military Science 0.75/s",
+ "entity_count": 172,
+ "inserters": [
+  {
+   "entity_numbers": [
+    22
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    -5
+   ],
+   "to": [
+    -6.2,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    23
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    -6
+   ],
+   "to": [
+    -2.8,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    37
+   ],
+   "entity": "inserter",
+   "from": [
+    7,
+    -6
+   ],
+   "to": [
+    4.8,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    44
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    -4
+   ],
+   "to": [
+    -6.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    55
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -4
+   ],
+   "to": [
+    7.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    56
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    4,
+    -4
+   ],
+   "to": [
+    8.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    57
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -3
+   ],
+   "to": [
+    7.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    58
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    4,
+    -3
+   ],
+   "to": [
+    8.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    62
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -10,
+    -1
+   ],
+   "to": [
+    -7.8,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    63
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    -2
+   ],
+   "to": [
+    -6.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    64
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    -1
+   ],
+   "to": [
+    -2.8,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    70
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    -2
+   ],
+   "to": [
+    -3.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    71
+   ],
+   "entity": "inserter",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    0,
+    -2.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    72
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    0
+   ],
+   "to": [
+    1,
+    -2.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    73
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    2,
+    0
+   ],
+   "to": [
+    2,
+    -2.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    79
+   ],
+   "entity": "inserter",
+   "from": [
+    7,
+    -1
+   ],
+   "to": [
+    4.8,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    82
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -10,
+    0
+   ],
+   "to": [
+    -7.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    84
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    0
+   ],
+   "to": [
+    -2.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    89
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    1
+   ],
+   "to": [
+    -1.8,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    100
+   ],
+   "entity": "inserter",
+   "from": [
+    7,
+    0
+   ],
+   "to": [
+    4.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    106
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    2
+   ],
+   "to": [
+    -6.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    107
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    3
+   ],
+   "to": [
+    -6.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    110
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    2
+   ],
+   "to": [
+    -1.8,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    111
+   ],
+   "entity": "inserter",
+   "from": [
+    0,
+    2
+   ],
+   "to": [
+    0,
+    4.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    114
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    2
+   ],
+   "to": [
+    1,
+    4.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    115
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    2,
+    2
+   ],
+   "to": [
+    2,
+    4.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    120
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    4,
+    2
+   ],
+   "to": [
+    8.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    121
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    2
+   ],
+   "to": [
+    7.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    123
+   ],
+   "entity": "inserter",
+   "from": [
+    7,
+    3
+   ],
+   "to": [
+    4.8,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    127
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -10,
+    5
+   ],
+   "to": [
+    -7.8,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    130
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    5
+   ],
+   "to": [
+    -2.8,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    133
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    5
+   ],
+   "to": [
+    -3.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    140
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    5
+   ],
+   "to": [
+    7.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    141
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    4,
+    5
+   ],
+   "to": [
+    8.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    144
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -10,
+    7
+   ],
+   "to": [
+    -7.8,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    149
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    6
+   ],
+   "to": [
+    -2.8,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    161
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    6
+   ],
+   "to": [
+    7.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    163
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    4,
+    6
+   ],
+   "to": [
+    8.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    167
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -4,
+    8
+   ],
+   "to": [
+    -6.2,
+    8
+   ]
+  },
+  {
+   "entity_numbers": [
+    172
+   ],
+   "entity": "inserter",
+   "from": [
+    7,
+    8
+   ],
+   "to": [
+    4.8,
+    8
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    19,
+    20,
+    39,
+    40,
+    60,
+    61,
+    80,
+    81,
+    102,
+    103,
+    125,
+    126,
+    142,
+    143,
+    165
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -10,
+    -6
+   ],
+   "to": [
+    -10,
+    9
+   ],
+   "direction": 8,
+   "length": 15
+  },
+  {
+   "entity_numbers": [
+    24
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -4,
+    -5
+   ],
+   "to": [
+    -4,
+    -4
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    27,
+    29
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -2,
+    -5
+   ],
+   "to": [
+    -4,
+    -5
+   ],
+   "direction": 12,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    28
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -2,
+    -6
+   ],
+   "to": [
+    -2,
+    -5
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    32,
+    34,
+    53,
+    54,
+    76,
+    77,
+    96,
+    97,
+    118,
+    119,
+    137,
+    138,
+    160
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    4,
+    -6
+   ],
+   "to": [
+    4,
+    7
+   ],
+   "direction": 8,
+   "length": 13
+  },
+  {
+   "entity_numbers": [
+    45,
+    49
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -4,
+    -4
+   ],
+   "to": [
+    -2,
+    -4
+   ],
+   "direction": 4,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    48
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -2,
+    -4
+   ],
+   "to": [
+    -2,
+    -3
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    65,
+    66,
+    85,
+    86,
+    108,
+    105,
+    129,
+    128,
+    148,
+    147,
+    166
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -4,
+    -2
+   ],
+   "to": [
+    -4,
+    9
+   ],
+   "direction": 8,
+   "length": 11
+  },
+  {
+   "entity_numbers": [
+    68,
+    69
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -3,
+    -2
+   ],
+   "to": [
+    -3,
+    0
+   ],
+   "direction": 8,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    92
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    1,
+    1
+   ],
+   "to": [
+    1,
+    2
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    93
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    2,
+    1
+   ],
+   "to": [
+    2,
+    2
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    152,
+    151,
+    155,
+    154,
+    157,
+    156
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -3,
+    7
+   ],
+   "to": [
+    3,
+    7
+   ],
+   "direction": 4,
+   "length": 6
+  },
+  {
+   "entity_numbers": [
+    153
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -3,
+    6
+   ],
+   "to": [
+    -3,
+    7
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    159,
+    158,
+    136,
+    135,
+    117,
+    116,
+    95,
+    94,
+    75,
+    74,
+    52,
+    51
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    3,
+    7
+   ],
+   "to": [
+    3,
+    -5
+   ],
+   "direction": 0,
+   "length": 12
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    1,
+    8
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -10,
+    -9
+   ],
+   "to": [
+    -10,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    2,
+    10
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -4,
+    -9
+   ],
+   "to": [
+    -4,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    25,
+    46
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -4,
+    -6
+   ],
+   "to": [
+    -4,
+    -3
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    26,
+    33
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -3,
+    -6
+   ],
+   "to": [
+    3,
+    -6
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    88,
+    132
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -3,
+    0
+   ],
+   "to": [
+    -3,
+    5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    3,
+    11
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -2,
+    -9
+   ],
+   "to": [
+    -2,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    47,
+    109
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -2,
+    -3
+   ],
+   "to": [
+    -2,
+    3
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    131,
+    168
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -2,
+    4
+   ],
+   "to": [
+    -2,
+    8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    5,
+    16
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    1,
+    -9
+   ],
+   "to": [
+    1,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    30,
+    90
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    1,
+    -6
+   ],
+   "to": [
+    1,
+    0
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    112,
+    169
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    1,
+    2
+   ],
+   "to": [
+    1,
+    8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    4,
+    15
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    2,
+    -9
+   ],
+   "to": [
+    2,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    31,
+    91
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    2,
+    -6
+   ],
+   "to": [
+    2,
+    0
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    113,
+    170
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    2,
+    2
+   ],
+   "to": [
+    2,
+    8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    18,
+    6
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    5,
+    -7
+   ],
+   "to": [
+    5,
+    -9
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    78,
+    36
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    5,
+    -1
+   ],
+   "to": [
+    5,
+    -6
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    122,
+    99
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    5,
+    3
+   ],
+   "to": [
+    5,
+    0
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    171,
+    139
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    5,
+    8
+   ],
+   "to": [
+    5,
+    4
+   ],
+   "interactable": false
+  }
+ ],
+ "splitters": []
+}

@@ -1,0 +1,11 @@
+{
+ "bbox": {"x_min": -12, "x_max": 11, "y_min": -10, "y_max": 10},
+ "ports": [
+  {"tile": [-12, -10], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-plate", "notes": "underground-belt entrance entity_number 1; identity confirmed by the unwired constant-combinator at (-12,-9)"},
+  {"tile": [-4, -10], "edge": "y_min", "direction": 8, "role": "import", "resource": "steel-plate", "notes": "underground-belt entrance entity_number 3; identity confirmed by the unwired constant-combinator at (-4,-9)"},
+  {"tile": [8, -10], "edge": "y_min", "direction": 8, "role": "import", "resource": "advanced-circuit + sulfur", "notes": "underground-belt entrance entity_number 5; the constant-combinator at (8,-9) carries two filters (advanced-circuit, sulfur) on one signal set rather than two separate combinators - most likely labeling the belt's two lanes (transport-belt tiles carry two independent item lanes) rather than one combined resource, but which physical lane is which item was not traced further"},
+  {"tile": [7, -10], "edge": "y_min", "direction": 0, "role": "export", "resource": "chemical-science-pack", "notes": "surface exit of underground-belt entity_number 6; identity confirmed by the unwired constant-combinator immediately below at (7,-9)"}
+ ],
+ "tileable": false,
+ "layout_pattern": "3 import lanes feed a 10-assembler engine-unit sub-column (x=-8 and x=0, 5 each) plus single support assemblers for pipe and iron-gear-wheel (engine-unit's own ingredients), which combine with the imported advanced-circuit and sulfur to feed 12 assembling-machine-2 running chemical-science-pack directly, in two columns of 6 (x=3, x=11)."
+}

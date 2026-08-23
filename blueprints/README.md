@@ -376,13 +376,20 @@ folders sit at `earlygame/city-block-100x100/` and
 stage folder disambiguates them.
 
 Exception: `automation-science-module` and `logistic-science-module`
-in `earlygame/` are third-party — both are individual blueprints
-extracted from Christoffer Ramqvist's "Tileable Science Production
-1.0-2.0" book, https://factorioprints.com/view/-KnQ865j-qQ21WoUPbd3 —
-not personal, but sit under the game-stage folder rather than
-`curated/`'s root at the project owner's explicit instruction — their
-own `.md` files say so, so this isn't silently inconsistent with the
-rule above.
+in `earlygame/`, and `military-science-module` and
+`chemical-science-module` in `midgame/`, are third-party — all four
+are individual blueprints extracted from Christoffer Ramqvist's
+"Tileable Science Production 1.0-2.0" book,
+https://factorioprints.com/view/-KnQ865j-qQ21WoUPbd3 — not personal,
+but sit under a game-stage folder rather than `curated/`'s root at the
+project owner's explicit instruction — their own `.md` files say so,
+so this isn't silently inconsistent with the rule above. The book's
+own 6 base-game science-pack blueprints were deliberately split across
+both stage folders (not all filed together) at the project owner's
+instruction — `military-science-module`/`chemical-science-module` use
+`fast-*` belt tiers and are noticeably larger/more entity-dense than
+their earlygame siblings, consistent with a midgame-tier build even
+though they share the same book and the same pre-2.0 `version`.
 
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,
@@ -393,4 +400,5 @@ above (`automation-science-module`, `logistic-science-module`),
 `init-game/` (`4-burner-miners-w-chests`,
 `4-burner-miners-w-furnaces-and-chests`), `midgame/`
 (`4x2-electrical-furnaces-w-tier2-belts`, `city-block-100x100`,
-`iron-gear-tileable`).
+`iron-gear-tileable`), plus the two third-party exceptions noted above
+(`military-science-module`, `chemical-science-module`).

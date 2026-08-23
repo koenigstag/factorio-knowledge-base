@@ -1,0 +1,1495 @@
+{
+ "label": "Chemical Science 0.75/s",
+ "entity_count": 197,
+ "inserters": [
+  {
+   "entity_numbers": [
+    14
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -7
+   ],
+   "to": [
+    7.2,
+    -7
+   ]
+  },
+  {
+   "entity_numbers": [
+    15
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    -7
+   ],
+   "to": [
+    3.8,
+    -7
+   ]
+  },
+  {
+   "entity_numbers": [
+    20
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    -7
+   ],
+   "to": [
+    10.2,
+    -7
+   ]
+  },
+  {
+   "entity_numbers": [
+    27
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    -5
+   ],
+   "to": [
+    3.8,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    31
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    -5
+   ],
+   "to": [
+    10.2,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    33
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    -5
+   ],
+   "to": [
+    6.8,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    35
+   ],
+   "entity": "inserter",
+   "from": [
+    -5,
+    -4
+   ],
+   "to": [
+    -7.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    36
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    -3
+   ],
+   "to": [
+    -8.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    39
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    -3
+   ],
+   "to": [
+    -2.8,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    41
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -5,
+    -4
+   ],
+   "to": [
+    -0.8,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    42
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    -4
+   ],
+   "to": [
+    0.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    44
+   ],
+   "entity": "inserter",
+   "from": [
+    -1,
+    -3
+   ],
+   "to": [
+    -3.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    46
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    -4
+   ],
+   "to": [
+    3.8,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    49
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    -4
+   ],
+   "to": [
+    10.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    51
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    -4
+   ],
+   "to": [
+    6.8,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    53
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -12,
+    0
+   ],
+   "to": [
+    -12,
+    -2.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    55
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -10,
+    -2
+   ],
+   "to": [
+    -10,
+    0.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    57
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    -2
+   ],
+   "to": [
+    -8.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    59
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    -2
+   ],
+   "to": [
+    -2.8,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    63
+   ],
+   "entity": "inserter",
+   "from": [
+    -1,
+    -2
+   ],
+   "to": [
+    -3.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    67
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -2
+   ],
+   "to": [
+    7.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    68
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    -2
+   ],
+   "to": [
+    3.8,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    69
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -1
+   ],
+   "to": [
+    7.2,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    70
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    -1
+   ],
+   "to": [
+    3.8,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    75
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    -2
+   ],
+   "to": [
+    10.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    76
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    -1
+   ],
+   "to": [
+    10.2,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    84
+   ],
+   "entity": "inserter",
+   "from": [
+    -5,
+    0
+   ],
+   "to": [
+    -7.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    85
+   ],
+   "entity": "inserter",
+   "from": [
+    -5,
+    1
+   ],
+   "to": [
+    -7.2,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    90
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -5,
+    0
+   ],
+   "to": [
+    -0.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    91
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    0
+   ],
+   "to": [
+    0.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    92
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -5,
+    1
+   ],
+   "to": [
+    -0.8,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    93
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    1
+   ],
+   "to": [
+    0.2,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    96
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    1
+   ],
+   "to": [
+    3.8,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    100
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    1
+   ],
+   "to": [
+    10.2,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    102
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    1
+   ],
+   "to": [
+    6.8,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    104
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    3
+   ],
+   "to": [
+    -8.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    106
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    3
+   ],
+   "to": [
+    -2.8,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    109
+   ],
+   "entity": "inserter",
+   "from": [
+    -1,
+    3
+   ],
+   "to": [
+    -3.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    111
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    2
+   ],
+   "to": [
+    3.8,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    114
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    2
+   ],
+   "to": [
+    10.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    116
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    2
+   ],
+   "to": [
+    6.8,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    119
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    4
+   ],
+   "to": [
+    -8.2,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    120
+   ],
+   "entity": "inserter",
+   "from": [
+    -5,
+    5
+   ],
+   "to": [
+    -7.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    121
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    4
+   ],
+   "to": [
+    -2.8,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    126
+   ],
+   "entity": "inserter",
+   "from": [
+    -1,
+    4
+   ],
+   "to": [
+    -3.2,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    127
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -5,
+    5
+   ],
+   "to": [
+    -0.8,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    128
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    5
+   ],
+   "to": [
+    0.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    131
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    4
+   ],
+   "to": [
+    7.2,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    132
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    4
+   ],
+   "to": [
+    3.8,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    133
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    5
+   ],
+   "to": [
+    7.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    134
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    5
+   ],
+   "to": [
+    3.8,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    139
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    4
+   ],
+   "to": [
+    10.2,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    140
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    5
+   ],
+   "to": [
+    10.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    142
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -12,
+    7
+   ],
+   "to": [
+    -12,
+    4.8
+   ]
+  },
+  {
+   "entity_numbers": [
+    144
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    -11,
+    5
+   ],
+   "to": [
+    -11,
+    7.2
+   ]
+  },
+  {
+   "entity_numbers": [
+    149
+   ],
+   "entity": "inserter",
+   "from": [
+    -5,
+    7
+   ],
+   "to": [
+    -7.2,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    155
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -5,
+    7
+   ],
+   "to": [
+    -0.8,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    156
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    7
+   ],
+   "to": [
+    0.2,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    158
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    6
+   ],
+   "to": [
+    3.8,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    163
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    6
+   ],
+   "to": [
+    10.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    165
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    6
+   ],
+   "to": [
+    6.8,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    172
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -4,
+    9
+   ],
+   "to": [
+    -8.2,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    175
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -7,
+    9
+   ],
+   "to": [
+    -2.8,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    178
+   ],
+   "entity": "inserter",
+   "from": [
+    -1,
+    8
+   ],
+   "to": [
+    -3.2,
+    8
+   ]
+  },
+  {
+   "entity_numbers": [
+    182
+   ],
+   "entity": "inserter",
+   "from": [
+    6,
+    8
+   ],
+   "to": [
+    3.8,
+    8
+   ]
+  },
+  {
+   "entity_numbers": [
+    188
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    6,
+    9
+   ],
+   "to": [
+    10.2,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    190
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    11,
+    9
+   ],
+   "to": [
+    6.8,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    193
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    10
+   ],
+   "to": [
+    7.2,
+    10
+   ]
+  },
+  {
+   "entity_numbers": [
+    194
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    8,
+    10
+   ],
+   "to": [
+    3.8,
+    10
+   ]
+  },
+  {
+   "entity_numbers": [
+    197
+   ],
+   "entity": "inserter",
+   "from": [
+    8,
+    10
+   ],
+   "to": [
+    10.2,
+    10
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    12,
+    23,
+    24,
+    38,
+    40,
+    60,
+    61,
+    87,
+    89,
+    105,
+    107,
+    122,
+    124,
+    151,
+    153,
+    174,
+    176,
+    192
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -4,
+    -7
+   ],
+   "to": [
+    -4,
+    11
+   ],
+   "direction": 8,
+   "length": 18
+  },
+  {
+   "entity_numbers": [
+    28
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    6,
+    -5
+   ],
+   "to": [
+    6,
+    -6
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    43
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -3,
+    -3
+   ],
+   "to": [
+    -3,
+    -2
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    80
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -11,
+    0
+   ],
+   "to": [
+    -11,
+    1
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    81
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -10,
+    0
+   ],
+   "to": [
+    -11,
+    0
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    167,
+    168,
+    191
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -12,
+    8
+   ],
+   "to": [
+    -12,
+    11
+   ],
+   "direction": 8,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    169
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -11,
+    8
+   ],
+   "to": [
+    -10,
+    8
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    173,
+    152,
+    150
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -5,
+    8
+   ],
+   "to": [
+    -5,
+    5
+   ],
+   "direction": 0,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    179
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    -3,
+    9
+   ],
+   "to": [
+    -2,
+    9
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    185,
+    183,
+    161
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    6,
+    9
+   ],
+   "to": [
+    6,
+    6
+   ],
+   "direction": 0,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    195,
+    187,
+    186,
+    164,
+    162,
+    137,
+    135,
+    115,
+    113,
+    99,
+    98,
+    73,
+    71,
+    50,
+    48,
+    30,
+    29,
+    18
+   ],
+   "entity": "fast-transport-belt",
+   "from": [
+    7,
+    10
+   ],
+   "to": [
+    7,
+    -8
+   ],
+   "direction": 0,
+   "length": 18
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    1,
+    9
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -12,
+    -10
+   ],
+   "to": [
+    -12,
+    -8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    10,
+    78
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -12,
+    -7
+   ],
+   "to": [
+    -12,
+    0
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    79,
+    143
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -12,
+    1
+   ],
+   "to": [
+    -12,
+    7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    82,
+    145
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -11,
+    1
+   ],
+   "to": [
+    -11,
+    7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    170,
+    171
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -10,
+    8
+   ],
+   "to": [
+    -6,
+    8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    86,
+    37
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -5,
+    0
+   ],
+   "to": [
+    -5,
+    -4
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    123,
+    88
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -5,
+    5
+   ],
+   "to": [
+    -5,
+    1
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    3,
+    11
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -4,
+    -10
+   ],
+   "to": [
+    -4,
+    -8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    62,
+    108
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -3,
+    -2
+   ],
+   "to": [
+    -3,
+    3
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    125,
+    177
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -3,
+    4
+   ],
+   "to": [
+    -3,
+    8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    180,
+    184
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    -2,
+    9
+   ],
+   "to": [
+    5,
+    9
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    97,
+    47
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    6,
+    1
+   ],
+   "to": [
+    6,
+    -4
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    159,
+    112
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    6,
+    6
+   ],
+   "to": [
+    6,
+    2
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    17,
+    6
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    7,
+    -8
+   ],
+   "to": [
+    7,
+    -10
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    5,
+    16
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    8,
+    -10
+   ],
+   "to": [
+    8,
+    -8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    19,
+    72
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    8,
+    -7
+   ],
+   "to": [
+    8,
+    -2
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    74,
+    136
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    8,
+    -1
+   ],
+   "to": [
+    8,
+    4
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    138,
+    196
+   ],
+   "entity": "fast-underground-belt-tunnel",
+   "from": [
+    8,
+    5
+   ],
+   "to": [
+    8,
+    10
+   ],
+   "interactable": false
+  }
+ ],
+ "splitters": []
+}
