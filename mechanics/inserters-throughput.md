@@ -36,6 +36,14 @@ against `datapacks/dump/vanilla/inserter/*.json`: `inserter`,
 | bulk-inserter | 5.0 |
 | stack-inserter | 15.0 |
 
+These six are the complete current set — not an arbitrary subset.
+`filter-inserter` and `stack-filter-inserter` existed as separate
+colored/priced entities pre-2.0 but were [removed from the game
+entirely in 2.0.7](https://wiki.factorio.com/Archive:Filter_inserter)
+once filtering became a built-in property every inserter has, rather
+than a distinct tier; `datapacks/dump/vanilla/inserter/*.json` already
+only has these six files, confirming the dump reflects that removal.
+
 `bulk-inserter`/`stack-inserter` resolved via
 `wiki.factorio.com/Inserter_capacity_bonus_(research)`'s stated
 **base** (unresearched) grab sizes: regular inserters=1,
