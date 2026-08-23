@@ -1,0 +1,836 @@
+{
+ "label": "Logistic Science 1.5/s",
+ "entity_count": 147,
+ "inserters": [
+  {
+   "entity_numbers": [
+    21
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    -6
+   ],
+   "to": [
+    -3.8,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    23
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    -5
+   ],
+   "to": [
+    -7.2,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    26
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -6
+   ],
+   "to": [
+    -4.2,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    28
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    -5
+   ],
+   "to": [
+    -0.8,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    33
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    7,
+    -5
+   ],
+   "to": [
+    4.8,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    39
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    -3
+   ],
+   "to": [
+    -7.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    44
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    -3
+   ],
+   "to": [
+    -0.8,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    47
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    2,
+    -4
+   ],
+   "to": [
+    2,
+    -1.8
+   ]
+  },
+  {
+   "entity_numbers": [
+    48
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    3,
+    -4
+   ],
+   "to": [
+    3,
+    -1.8
+   ]
+  },
+  {
+   "entity_numbers": [
+    50
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    7,
+    -4
+   ],
+   "to": [
+    4.8,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    55
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    -2
+   ],
+   "to": [
+    -3.8,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    59
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -2
+   ],
+   "to": [
+    -4.2,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    63
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    6,
+    -2
+   ],
+   "to": [
+    3.8,
+    -2
+   ]
+  },
+  {
+   "entity_numbers": [
+    68
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    0
+   ],
+   "to": [
+    -3.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    70
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    1
+   ],
+   "to": [
+    -7.2,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    73
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    -4.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    75
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    1
+   ],
+   "to": [
+    -0.8,
+    1
+   ]
+  },
+  {
+   "entity_numbers": [
+    78
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    4,
+    0
+   ],
+   "to": [
+    6.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    87
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    3
+   ],
+   "to": [
+    -7.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    92
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    3
+   ],
+   "to": [
+    -0.8,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    97
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    5,
+    3
+   ],
+   "to": [
+    5,
+    0.8
+   ]
+  },
+  {
+   "entity_numbers": [
+    101
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    4
+   ],
+   "to": [
+    -3.8,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    105
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    4
+   ],
+   "to": [
+    -4.2,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    110
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    7,
+    4
+   ],
+   "to": [
+    4.8,
+    4
+   ]
+  },
+  {
+   "entity_numbers": [
+    113
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    6
+   ],
+   "to": [
+    -3.8,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    115
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    7
+   ],
+   "to": [
+    -7.2,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    118
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    6
+   ],
+   "to": [
+    -4.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    120
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    7
+   ],
+   "to": [
+    -0.8,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    125
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    5,
+    7
+   ],
+   "to": [
+    5,
+    4.8
+   ]
+  },
+  {
+   "entity_numbers": [
+    131
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    -3,
+    9
+   ],
+   "to": [
+    -7.2,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    136
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    9
+   ],
+   "to": [
+    -0.8,
+    9
+   ]
+  },
+  {
+   "entity_numbers": [
+    140
+   ],
+   "entity": "fast-inserter",
+   "from": [
+    7,
+    8
+   ],
+   "to": [
+    4.8,
+    8
+   ]
+  },
+  {
+   "entity_numbers": [
+    143
+   ],
+   "entity": "inserter",
+   "from": [
+    -6,
+    10
+   ],
+   "to": [
+    -3.8,
+    10
+   ]
+  },
+  {
+   "entity_numbers": [
+    145
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    10
+   ],
+   "to": [
+    -4.2,
+    10
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    10,
+    25,
+    27,
+    41,
+    43,
+    58,
+    60,
+    72,
+    74,
+    89,
+    91,
+    104,
+    106,
+    117,
+    119,
+    133,
+    135
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -3,
+    -7
+   ],
+   "to": [
+    -3,
+    10
+   ],
+   "direction": 8,
+   "length": 17
+  },
+  {
+   "entity_numbers": [
+    14,
+    29,
+    30
+   ],
+   "entity": "transport-belt",
+   "from": [
+    2,
+    -7
+   ],
+   "to": [
+    2,
+    -4
+   ],
+   "direction": 8,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    18,
+    17,
+    16
+   ],
+   "entity": "transport-belt",
+   "from": [
+    6,
+    -7
+   ],
+   "to": [
+    3,
+    -7
+   ],
+   "direction": 12,
+   "length": 3
+  },
+  {
+   "entity_numbers": [
+    20,
+    34,
+    35,
+    52
+   ],
+   "entity": "transport-belt",
+   "from": [
+    7,
+    -7
+   ],
+   "to": [
+    7,
+    -3
+   ],
+   "direction": 8,
+   "length": 4
+  },
+  {
+   "entity_numbers": [
+    51
+   ],
+   "entity": "transport-belt",
+   "from": [
+    6,
+    -3
+   ],
+   "to": [
+    6,
+    -2
+   ],
+   "direction": 8,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    53
+   ],
+   "entity": "transport-belt",
+   "from": [
+    7,
+    -3
+   ],
+   "to": [
+    6,
+    -3
+   ],
+   "direction": 12,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    64
+   ],
+   "entity": "transport-belt",
+   "from": [
+    6,
+    -2
+   ],
+   "to": [
+    7,
+    -2
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    66,
+    67,
+    82,
+    83,
+    98,
+    99,
+    111,
+    112,
+    126,
+    127,
+    141,
+    142,
+    147
+   ],
+   "entity": "transport-belt",
+   "from": [
+    7,
+    -2
+   ],
+   "to": [
+    7,
+    11
+   ],
+   "direction": 8,
+   "length": 13
+  },
+  {
+   "entity_numbers": [
+    80
+   ],
+   "entity": "transport-belt",
+   "from": [
+    5,
+    1
+   ],
+   "to": [
+    6,
+    1
+   ],
+   "direction": 4,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    81,
+    79
+   ],
+   "entity": "transport-belt",
+   "from": [
+    6,
+    1
+   ],
+   "to": [
+    6,
+    -1
+   ],
+   "direction": 0,
+   "length": 2
+  },
+  {
+   "entity_numbers": [
+    94,
+    95,
+    108,
+    109,
+    121,
+    122,
+    138,
+    139,
+    146
+   ],
+   "entity": "transport-belt",
+   "from": [
+    2,
+    2
+   ],
+   "to": [
+    2,
+    11
+   ],
+   "direction": 8,
+   "length": 9
+  },
+  {
+   "entity_numbers": [
+    144,
+    132,
+    130,
+    116,
+    114,
+    103,
+    102,
+    88,
+    86,
+    71,
+    69,
+    57,
+    56,
+    40,
+    38,
+    24,
+    22,
+    9
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -4,
+    10
+   ],
+   "to": [
+    -4,
+    -8
+   ],
+   "direction": 0,
+   "length": 18
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    8,
+    1
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -4,
+    -8
+   ],
+   "to": [
+    -4,
+    -10
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    3,
+    13
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    2,
+    -10
+   ],
+   "to": [
+    2,
+    -8
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    46,
+    76
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    2,
+    -4
+   ],
+   "to": [
+    2,
+    1
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    15,
+    11
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    3,
+    -7
+   ],
+   "to": [
+    -2,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    65,
+    32
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    6,
+    -1
+   ],
+   "to": [
+    6,
+    -6
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    5,
+    19
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    7,
+    -10
+   ],
+   "to": [
+    7,
+    -8
+   ],
+   "interactable": false
+  }
+ ],
+ "splitters": []
+}

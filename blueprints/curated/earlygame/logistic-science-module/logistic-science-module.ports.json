@@ -1,0 +1,10 @@
+{
+ "bbox": {"x_min": -7, "x_max": 7, "y_min": -10, "y_max": 10},
+ "ports": [
+  {"tile": [-4, -10], "edge": "y_min", "direction": 0, "role": "export", "resource": "logistic-science-pack", "notes": "surface exit of underground-belt entity_number 1; identity confirmed by the unwired constant-combinator immediately below at (-4,-9)"},
+  {"tile": [2, -10], "edge": "y_min", "direction": 8, "role": "import", "resource": "electronic-circuit", "notes": "underground-belt entrance entity_number 3; identity confirmed by the unwired constant-combinator at (2,-9)"},
+  {"tile": [7, -10], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-plate", "notes": "underground-belt entrance entity_number 5; identity confirmed by the unwired constant-combinator at (7,-9)"}
+ ],
+ "tileable": false,
+ "layout_pattern": "Unlike automation-science-module in this same folder, raw inputs (iron-plate, electronic-circuit) are not finished ingredients: a 4-assembler support column (2x iron-gear-wheel, 1x inserter, 1x transport-belt) crafts the two actual logistic-science-pack ingredients (inserter, transport-belt) on-site. 12 assembling-machine-2 in two columns of 6 (x=-7, x=0) run logistic-science-pack, fed by a full-height belt spine at x=-3 carrying the crafted inserter/transport-belt items - long-handed-inserters reach across to the far column, regular inserters feed the near one."
+}

@@ -375,11 +375,20 @@ folders sit at `earlygame/city-block-100x100/` and
 `midgame/city-block-100x100/` — same slug, no collision, since the
 stage folder disambiguates them.
 
+Exception: `automation-science-module` and `logistic-science-module`
+in `earlygame/` are third-party (source site/author unknown — pasted
+directly by the project owner), not personal, but sit under the
+game-stage folder rather than `curated/`'s root at the project owner's
+explicit instruction — their own `.md` files say so, so this isn't
+silently inconsistent with the rule above.
+
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,
 `coal-burner-miners-w-burner-inserters`, `city-block-100x100`,
 `furnaces-import-block`, `high-density-miners`, `iron-gear-tileable`,
-`starter-electrical-miners`), `init-game/` (`4-burner-miners-w-chests`,
+`starter-electrical-miners`), plus the two third-party exceptions noted
+above (`automation-science-module`, `logistic-science-module`),
+`init-game/` (`4-burner-miners-w-chests`,
 `4-burner-miners-w-furnaces-and-chests`), `midgame/`
 (`4x2-electrical-furnaces-w-tier2-belts`, `city-block-100x100`,
 `iron-gear-tileable`).

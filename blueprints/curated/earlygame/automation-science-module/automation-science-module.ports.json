@@ -1,0 +1,10 @@
+{
+ "bbox": {"x_min": -4, "x_max": 4, "y_min": -9, "y_max": 8},
+ "ports": [
+  {"tile": [-1, -9], "edge": "y_min", "direction": 0, "role": "export", "resource": "automation-science-pack", "notes": "surface exit of underground-belt entity_number 1; identity confirmed by the unwired constant-combinator immediately below at (-1,-8)"},
+  {"tile": [0, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "copper-plate", "notes": "underground-belt entrance entity_number 4; identity confirmed by the unwired constant-combinator at (0,-8)"},
+  {"tile": [1, -9], "edge": "y_min", "direction": 8, "role": "import", "resource": "iron-gear-wheel", "notes": "underground-belt entrance entity_number 3; identity confirmed by the unwired constant-combinator at (1,-8)"}
+ ],
+ "tileable": false,
+ "layout_pattern": "Both raw inputs (copper-plate, iron-gear-wheel) arrive already refined - this module has no sub-crafting of its own, unlike logistic-science-module in this same folder. 10 assembling-machine-2 in two columns of 5 (x=-4, x=4), each running automation-science-pack directly, fed from 3 continuous vertical lanes (x=-1 output collector, x=0 copper-plate, x=1 iron-gear-wheel) tapped from both sides by 30 inserters (10 per lane)."
+}

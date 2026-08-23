@@ -1,0 +1,637 @@
+{
+ "label": "Automation Science 1.5/s (Gear-input)",
+ "entity_count": 84,
+ "inserters": [
+  {
+   "entity_numbers": [
+    9
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    -6
+   ],
+   "to": [
+    -0.8,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    15
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -6
+   ],
+   "to": [
+    4.2,
+    -6
+   ]
+  },
+  {
+   "entity_numbers": [
+    19
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -4
+   ],
+   "to": [
+    -4.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    20
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    -4
+   ],
+   "to": [
+    -3.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    22
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -5
+   ],
+   "to": [
+    -1.2,
+    -5
+   ]
+  },
+  {
+   "entity_numbers": [
+    26
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    -4
+   ],
+   "to": [
+    3.2,
+    -4
+   ]
+  },
+  {
+   "entity_numbers": [
+    28
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -3
+   ],
+   "to": [
+    -4.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    29
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    -3
+   ],
+   "to": [
+    -3.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    33
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    -3
+   ],
+   "to": [
+    3.2,
+    -3
+   ]
+  },
+  {
+   "entity_numbers": [
+    36
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    -1
+   ],
+   "to": [
+    -0.8,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    38
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    0
+   ],
+   "to": [
+    -0.8,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    41
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    -1
+   ],
+   "to": [
+    -1.2,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    43
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    0
+   ],
+   "to": [
+    -1.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    44
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    -1
+   ],
+   "to": [
+    4.2,
+    -1
+   ]
+  },
+  {
+   "entity_numbers": [
+    45
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    4.2,
+    0
+   ]
+  },
+  {
+   "entity_numbers": [
+    48
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    2
+   ],
+   "to": [
+    -4.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    49
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    2
+   ],
+   "to": [
+    -3.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    54
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    2
+   ],
+   "to": [
+    3.2,
+    2
+   ]
+  },
+  {
+   "entity_numbers": [
+    56
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    3
+   ],
+   "to": [
+    -4.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    57
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    3
+   ],
+   "to": [
+    -3.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    61
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    3
+   ],
+   "to": [
+    3.2,
+    3
+   ]
+  },
+  {
+   "entity_numbers": [
+    64
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    5
+   ],
+   "to": [
+    -0.8,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    66
+   ],
+   "entity": "inserter",
+   "from": [
+    -3,
+    6
+   ],
+   "to": [
+    -0.8,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    69
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    5
+   ],
+   "to": [
+    -1.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    71
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    3,
+    6
+   ],
+   "to": [
+    -1.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    72
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    5
+   ],
+   "to": [
+    4.2,
+    5
+   ]
+  },
+  {
+   "entity_numbers": [
+    73
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    6
+   ],
+   "to": [
+    4.2,
+    6
+   ]
+  },
+  {
+   "entity_numbers": [
+    76
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    1,
+    7
+   ],
+   "to": [
+    -3.2,
+    7
+   ]
+  },
+  {
+   "entity_numbers": [
+    77
+   ],
+   "entity": "long-handed-inserter",
+   "from": [
+    0,
+    8
+   ],
+   "to": [
+    -4.2,
+    8
+   ]
+  },
+  {
+   "entity_numbers": [
+    84
+   ],
+   "entity": "inserter",
+   "from": [
+    1,
+    8
+   ],
+   "to": [
+    3.2,
+    8
+   ]
+  }
+ ],
+ "belt_runs": [
+  {
+   "entity_numbers": [
+    10
+   ],
+   "entity": "transport-belt",
+   "from": [
+    -1,
+    -6
+   ],
+   "to": [
+    -1,
+    -7
+   ],
+   "direction": 0,
+   "length": 1
+  },
+  {
+   "entity_numbers": [
+    13,
+    21,
+    23,
+    30,
+    32,
+    40,
+    42,
+    50,
+    51,
+    58,
+    60,
+    68,
+    70,
+    79,
+    81
+   ],
+   "entity": "transport-belt",
+   "from": [
+    0,
+    -6
+   ],
+   "to": [
+    0,
+    9
+   ],
+   "direction": 8,
+   "length": 15
+  },
+  {
+   "entity_numbers": [
+    82
+   ],
+   "entity": "transport-belt",
+   "from": [
+    1,
+    8
+   ],
+   "to": [
+    1,
+    9
+   ],
+   "direction": 8,
+   "length": 1
+  }
+ ],
+ "underground": [
+  {
+   "entity_numbers": [
+    8,
+    1
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -1,
+    -7
+   ],
+   "to": [
+    -1,
+    -9
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    37,
+    18
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -1,
+    -1
+   ],
+   "to": [
+    -1,
+    -5
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    65,
+    39
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -1,
+    5
+   ],
+   "to": [
+    -1,
+    0
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    78,
+    67
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    -1,
+    8
+   ],
+   "to": [
+    -1,
+    6
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    4,
+    12
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    0,
+    -9
+   ],
+   "to": [
+    0,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    3,
+    11
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    1,
+    -9
+   ],
+   "to": [
+    1,
+    -7
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    14,
+    24
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    1,
+    -6
+   ],
+   "to": [
+    1,
+    -4
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    31,
+    52
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    1,
+    -3
+   ],
+   "to": [
+    1,
+    2
+   ],
+   "interactable": false
+  },
+  {
+   "entity_numbers": [
+    59,
+    80
+   ],
+   "entity": "underground-belt-tunnel",
+   "from": [
+    1,
+    3
+   ],
+   "to": [
+    1,
+    7
+   ],
+   "interactable": false
+  }
+ ],
+ "splitters": []
+}
