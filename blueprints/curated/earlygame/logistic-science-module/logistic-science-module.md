@@ -1,12 +1,17 @@
 # Logistic Science Module
 
-Third-party blueprint — source site/author unknown, pasted directly to
-the project owner. Filed under `curated/earlygame/` per the project
-owner's own placement instruction. Same author style as
-`automation-science-module` in this same folder (unwired
-constant-combinator lane labels, pre-2.0 export, matching "N.N/s"
-label naming) — likely the same source, though the site itself is
-unknown.
+Third-party blueprint, one entry from a blueprint *book*: "Tileable
+Science Production 1.0-2.0 - Early to Mid Game (Vanilla)" by
+Christoffer Ramqvist,
+https://factorioprints.com/view/-KnQ865j-qQ21WoUPbd3 (created
+2017-06-24, 4007 favorites as of 2026-08-23) — the same book as
+`automation-science-module` in this same folder. The book holds 9
+blueprints, one per vanilla science pack (some with an alternate
+"-input" ingredient variant); this entry is its `Logistic Science
+1.5/s` blueprint specifically — confirmed byte-identical to this
+project's own stored copy by decoding the book's blueprint string and
+comparing entity-by-entity. Filed under `curated/earlygame/` per the
+project owner's own placement instruction.
 
 Blueprint's own label: `"Logistic Science 1.5/s"`. 147 entities:
 `assembling-machine-2` (16), `transport-belt` (73), `inserter` (12),
@@ -47,7 +52,15 @@ here is already in modern-scale cardinals, zero ambiguity across all
 
 ## Provenance
 
-- Author: unknown (third-party, no site/URL available).
+- Author: Christoffer Ramqvist (factorioprints.com user, display name
+  resolved via the site's public Firebase Realtime Database at
+  `/users/<userId>/displayName`).
+- Source: https://factorioprints.com/view/-KnQ865j-qQ21WoUPbd3 — the
+  book's own `blueprintString` was fetched from factorioprints' public
+  CDN cache (`factorio-blueprint-firebase-cdn.pages.dev`, the same
+  backing store the site's own front end reads from) and decoded with
+  this project's `codec.py`; this specific sub-blueprint matched this
+  project's already-curated copy exactly.
 - Added to the repository: 2026-08-23, at the project owner's request
   to curate this blueprint (and `automation-science-module`, its
   sibling in this same folder) as reference material — no specific

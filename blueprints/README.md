@@ -376,11 +376,13 @@ folders sit at `earlygame/city-block-100x100/` and
 stage folder disambiguates them.
 
 Exception: `automation-science-module` and `logistic-science-module`
-in `earlygame/` are third-party (source site/author unknown — pasted
-directly by the project owner), not personal, but sit under the
-game-stage folder rather than `curated/`'s root at the project owner's
-explicit instruction — their own `.md` files say so, so this isn't
-silently inconsistent with the rule above.
+in `earlygame/` are third-party — both are individual blueprints
+extracted from Christoffer Ramqvist's "Tileable Science Production
+1.0-2.0" book, https://factorioprints.com/view/-KnQ865j-qQ21WoUPbd3 —
+not personal, but sit under the game-stage folder rather than
+`curated/`'s root at the project owner's explicit instruction — their
+own `.md` files say so, so this isn't silently inconsistent with the
+rule above.
 
 Current personal entries: `earlygame/` (`24x2-stone-furnaces-module`,
 `4-boilers-w-burner-inserters`, `4x2-stone-furnaces-w-upgrade-spacing`,
