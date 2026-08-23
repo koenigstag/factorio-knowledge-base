@@ -149,6 +149,70 @@ a blueprint:
 - **Download vectors.json button** — saves the currently-loaded `VEC`
   object as a `.json` file, named from the blueprint's own label.
 
+### Tier/type colors
+
+Belt runs, underground tunnels, splitters, and inserters are colored
+by their exact prototype name (`entity` field in the vector JSON), not
+one flat color per vector category — added after an early version
+colored every belt tier, every splitter tier, and every underground
+tier identically, and folded `bulk-inserter`/`stack-inserter` into
+`fast-inserter`'s color, making tier impossible to tell apart on
+sight.
+
+**None of this is extractable from `data.raw`** — `item`/entity
+prototypes for belts, splitters, underground-belts, and inserters
+carry no tint/color field in this repo's dump (or in the real
+prototype at all; sprite coloring is baked into the art assets, not
+data). So unlike everything else this project sources from the dump,
+these are visual picks, sourced by looking at the actual
+wiki.factorio.com icon images rather than assumed from memory — see
+below for where each came from and one place this went wrong before
+being corrected.
+
+Belts, underground tunnels (by matching tier: `fast-underground-belt`
+gets the same color as `fast-transport-belt`), and splitters (same
+matching-tier rule) all share one palette:
+
+| Tier | Color |
+|---|---|
+| `transport-belt` / `underground-belt` / `splitter` | yellow |
+| `fast-*` | red |
+| `express-*` | blue |
+| `turbo-*` | teal |
+
+Inserters get their own six-way palette (not tied to the belt
+palette — inserters aren't belt-tiered):
+
+| Prototype | Color |
+|---|---|
+| `burner-inserter` | dark gray |
+| `inserter` (basic) | yellow |
+| `long-handed-inserter` | red |
+| `fast-inserter` | blue |
+| `bulk-inserter` | green |
+| `stack-inserter` | white/silver |
+
+`bulk-inserter` and `stack-inserter` were guessed wrong on the first
+pass (assigned violet and green respectively, arbitrarily, without
+checking) and corrected by fetching and directly viewing the actual
+`Bulk_inserter.png`/`Stack_inserter.png` icons from
+wiki.factorio.com — bulk's arm is green, stack's is white/silver.
+**The lesson driving this note**: for anything sourced from a sprite's
+actual appearance rather than `data.raw`, verify against the real
+icon (fetch and view the image) before assigning a color — don't
+guess from memory or assume a plausible-sounding scheme, the same
+"don't state it from recollection" discipline CLAUDE.md's hard rule 6
+already applies to engine behavior.
+
+Only six inserter prototypes exist to color — no `filter-inserter` or
+`stack-filter-inserter`. Those were separate colored entities pre-2.0;
+[filter-inserter was removed from the game entirely in
+2.0.7](https://wiki.factorio.com/Archive:Filter_inserter) once every
+inserter gained built-in filtering, which is also where
+`stack-inserter`'s white color came from — freed up by that removal
+and reused for the new (2.0-renamed) stack tier rather than invented
+fresh.
+
 ## Import/export port heuristic (and its limits)
 
 `classify_edge_ports` (in `codec.py`) flags belt/underground-belt/
